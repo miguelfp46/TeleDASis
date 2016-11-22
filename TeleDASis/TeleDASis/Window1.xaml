@@ -7,11 +7,17 @@
         mc:Ignorable="d"
         Title="Empleado" Height="549.796" Width="926.632">
     <Grid Margin="0,0,-8,-21" RenderTransformOrigin="0.492,0.551" Height="540" VerticalAlignment="Top">
-        <Label x:Name="label" Content="Nombre:" HorizontalAlignment="Left" Margin="55,78,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="ID:" HorizontalAlignment="Left" Margin="55,178,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Apellido:" HorizontalAlignment="Left" Margin="55,125,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Movil:" HorizontalAlignment="Left" Margin="55,273,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy3" Content="Teléfono:" HorizontalAlignment="Left" Margin="55,224,0,0" VerticalAlignment="Top"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF5421E0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="label" Content="Nombre:" HorizontalAlignment="Left" Margin="55,78,0,0" VerticalAlignment="Top" Foreground="#FFF7F5F5"/>
+        <Label x:Name="label_Copy" Content="ID:" HorizontalAlignment="Left" Margin="55,178,0,0" VerticalAlignment="Top" Foreground="#FFF9F3F3"/>
+        <Label x:Name="label_Copy1" Content="Apellido:" HorizontalAlignment="Left" Margin="55,125,0,0" VerticalAlignment="Top" Foreground="#FFF9F7F7"/>
+        <Label x:Name="label_Copy2" Content="Movil:" HorizontalAlignment="Left" Margin="55,273,0,0" VerticalAlignment="Top" Foreground="#FFFBF9F9"/>
+        <Label x:Name="label_Copy3" Content="Teléfono:" HorizontalAlignment="Left" Margin="55,224,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="170" Margin="707,34,0,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.513,0.503"/>
         <Image x:Name="AAEAAQAAAAAAAAgrAAAAJGUyODQ1NGNiLWQzYjAtNGUxNC05NTQ4LTgwMTMwNjQxMDhlMg_jpg" Margin="678,34,67,306" Source="AAEAAQAAAAAAAAgrAAAAJGUyODQ1NGNiLWQzYjAtNGUxNC05NTQ4LTgwMTMwNjQxMDhlMg.jpg" Stretch="Fill"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="154,78,0,0" TextWrapping="Wrap" Text="Miky" VerticalAlignment="Top" Width="120"/>
@@ -19,7 +25,9 @@
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="154,227,0,0" TextWrapping="Wrap" Text="93 656 45 23" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="154,178,0,0" TextWrapping="Wrap" Text="E00001" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="154,129,0,0" TextWrapping="Wrap" Text="Fernandez Pereira" VerticalAlignment="Top" Width="274"/>
-        <Label x:Name="label_Copy4" Content="DNI:" HorizontalAlignment="Left" Margin="55,317,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy4" Content="DNI:" HorizontalAlignment="Left" Margin="55,317,0,0" VerticalAlignment="Top" Foreground="#FFF5E9E9"/>
         <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="23" Margin="154,317,0,0" TextWrapping="Wrap" Text="47556866W" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Editar" HorizontalAlignment="Left" Margin="678,284,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Eliminar" HorizontalAlignment="Left" Margin="785,284,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
