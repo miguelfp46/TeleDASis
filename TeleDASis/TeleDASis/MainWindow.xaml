@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <!-- Tabla situada al fondo para hacer la ventana que sea responsive -->
+        <Grid>
+            <StackPanel HorizontalAlignment="Left" Height="100" Margin="175,130,0,0" VerticalAlignment="Top" Width="165">
+                <TextBlock><Run Text="Inicio de sesión"/></TextBlock>
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Usuario:"/>
+                <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="TextBox"/>
+                <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="Contraseña:"/>
+                <TextBox x:Name="textBox_Copy" Height="23" TextWrapping="Wrap" Text="TextBox"/>
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
