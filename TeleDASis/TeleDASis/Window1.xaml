@@ -28,7 +28,7 @@
         <Label x:Name="label_Copy4" Content="DNI:" HorizontalAlignment="Left" Margin="55,317,0,0" VerticalAlignment="Top" Foreground="#FF0A0909" FontSize="20"/>
         <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="28" Margin="154,326,0,0" TextWrapping="Wrap" Text="47556866W" VerticalAlignment="Top" Width="120" FontSize="20"/>
         <Button x:Name="button" Content="Editar" HorizontalAlignment="Left" Margin="55,470,0,0" VerticalAlignment="Top" Width="141" Height="42" FontSize="20"/>
-        <Button x:Name="button_Copy" Content="Eliminar" HorizontalAlignment="Left" Margin="287,470,0,0" VerticalAlignment="Top" Width="141" Height="42" FontSize="20"/>
+        <Button x:Name="button_Copy" Content="Eliminar" HorizontalAlignment="Left" Margin="287,470,0,0" VerticalAlignment="Top" Width="141" Height="42" FontSize="20" Click="Eliminar"/>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="927">
             <MenuItem Header="Anterior" Height="29"/>
             <MenuItem Header="Siguiente"/>
