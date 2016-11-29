@@ -23,5 +23,15 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
+
+        private void Eliminar(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Estas seguro que quieres eliminar al Empleado?", "Eliminar", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Introduzca su Contraseña","Eliminar");
+            }
+        }
     }
 }
