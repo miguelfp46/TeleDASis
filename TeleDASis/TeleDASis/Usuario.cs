@@ -18,7 +18,11 @@ namespace TeleDASis
         public String dni { get; set; }
         public String vivienda { get; set;}
         public DateTime fechaentrada { get; set; }
-
+        public Boolean Baja { get; set; }// Para ver si esta de baja o no
+        public DateTime fechabaja { get; set; }
+        public String motivodeBaja { get; set; }
+        public String EmpleadohaceBaja { get; set; }//relacionado con bbdd empleados modificar tipo por objeto
+        
 
     }
 }
