@@ -1,0 +1,14 @@
+﻿<Window x:Class="TeleDASis.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeleDASis"
+        mc:Ignorable="d"
+        Title="Eliminar Empleado" Height="163.953" Width="500">
+    <Grid Margin="0,0,-8,0">
+        <Label x:Name="label" Content="Introduzca su contraseña para eliminar al empleado" HorizontalAlignment="Left" Margin="61,26,0,0" VerticalAlignment="Top" Width="376" FontSize="16"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="132,81,0,0" VerticalAlignment="Top" Width="216"/>
+
+    </Grid>
+</Window>

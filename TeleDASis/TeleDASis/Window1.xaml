@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Empleado" Height="642" Width="1108" FontSize="20">
+        Title="Empleado" Height="544" Width="1108" FontSize="20">
     <Grid Margin="0,0,2,-3">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,13 +13,13 @@
                 <GradientStop Color="#FFD5FB92"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="1374">
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="1098">
             <MenuItem Header="Inicio" Height="58" Width="113" FontSize="20"/>
             <MenuItem Header="Archivo" Height="58" Width="113" FontSize="20">
-                <MenuItem Header="Nuevo" HorizontalAlignment="Left" Width="176"/>
-                <MenuItem Header="Editar" HorizontalAlignment="Left" Width="176"/>
-                <MenuItem Header="Eliminar" HorizontalAlignment="Left" Width="176" Click="Eliminar"/>
-                <MenuItem Header="Guardar" HorizontalAlignment="Left" Width="176"/>
+                <MenuItem Header="Nuevo" HorizontalAlignment="Left" Width="262" Height="30" Margin="0,0,-86,0"/>
+                <MenuItem Header="Editar" HorizontalAlignment="Left" Width="264" Height="30" Margin="0,0,-88,0"/>
+                <MenuItem Header="Eliminar" HorizontalAlignment="Left" Width="176" Click="Eliminar" Height="30"/>
+                <MenuItem Header="Guardar" HorizontalAlignment="Left" Width="284" Height="30" Margin="0,0,-108,0"/>
             </MenuItem>
             <MenuItem Header="" Height="58" Width="113" FontSize="20"/>
         </Menu>
@@ -33,7 +33,7 @@
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="33" Margin="328,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="33" Margin="328,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
         <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="33" Margin="328,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <Image x:Name="Image2_png" Margin="816,101,44,312" Source="Image2.png" Stretch="Fill"/>
+        <Image x:Name="Image2_png" Margin="816,101,44,214" Source="Image2.png" Stretch="Fill"/>
         <Button x:Name="button" Content="Editar" HorizontalAlignment="Left" Margin="816,308,0,0" VerticalAlignment="Top" Width="238" Height="37"/>
 
     </Grid>

@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace TeleDASis
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for Window2.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window2 : Window
     {
-        public Window1()
+        public Window2()
         {
             InitializeComponent();
-        }
-
-        private void Eliminar(object sender, RoutedEventArgs e)
-        {
-            var result = MessageBox.Show("Estas seguro que quieres eliminar al Empleado?", "Eliminar", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                var StartupUri = "Window2.xaml";
-            }
         }
     }
 }
