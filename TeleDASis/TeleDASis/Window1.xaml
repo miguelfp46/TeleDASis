@@ -13,7 +13,7 @@
                 <GradientStop Color="#FFD5FB92"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="1098">
+        <Menu x:Name="menu" Height="56" VerticalAlignment="Top">
             <MenuItem Header="Inicio" Height="58" Width="113" FontSize="20"/>
             <MenuItem Header="Archivo" Height="58" Width="113" FontSize="20">
                 <MenuItem Header="Nuevo" HorizontalAlignment="Left" Width="262" Height="30" Margin="0,0,-86,0"/>
@@ -33,8 +33,8 @@
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="33" Margin="328,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="33" Margin="328,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
         <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="33" Margin="328,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <Image x:Name="Image2_png" Margin="816,101,44,214" Source="Image2.png" Stretch="Fill"/>
-        <Button x:Name="button" Content="Editar" HorizontalAlignment="Left" Margin="816,308,0,0" VerticalAlignment="Top" Width="238" Height="37"/>
+        <Image x:Name="Image2_png" Margin="0,101,44,0" Source="Image2.png" Stretch="Fill" HorizontalAlignment="Right" Width="238" Height="201" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Editar" Margin="0,308,44,0" HorizontalAlignment="Right" Width="238" Height="37" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
