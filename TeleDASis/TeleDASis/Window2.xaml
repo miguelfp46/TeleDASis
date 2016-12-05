@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Eliminar Empleado" Height="163.953" Width="500">
-    <Grid Margin="0,0,-8,0">
+        Title="Eliminar Empleado" Height="158.869" Width="504.448">
+    <Grid Margin="0,0,-1,-1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="White"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label x:Name="label" Content="Introduzca su contraseña para eliminar al empleado" HorizontalAlignment="Left" Margin="61,26,0,0" VerticalAlignment="Top" Width="376" FontSize="16"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="132,81,0,0" VerticalAlignment="Top" Width="216"/>
 

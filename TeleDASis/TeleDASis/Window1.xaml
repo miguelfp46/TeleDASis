@@ -8,10 +8,17 @@
         Title="Empleado" Height="544" Width="1108" FontSize="20">
     <Grid Margin="0,0,2,-3">
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFF4F9EB" Offset="0"/>
-                <GradientStop Color="#FFD5FB92"/>
-            </LinearGradientBrush>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFFBCFDA"/>
+                <GradientStop Color="#FFFF6800"/>
+                <GradientStop Color="#FFDAD119"/>
+                <GradientStop Color="#FFF1C810"/>
+                <GradientStop Color="#FFC529B0"/>
+                <GradientStop Color="#FFDCD424"/>
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FFDC243D"/>
+                <GradientStop Color="White"/>
+            </RadialGradientBrush>
         </Grid.Background>
         <Menu x:Name="menu" Height="56" VerticalAlignment="Top">
             <MenuItem Header="Inicio" Height="58" Width="113" FontSize="20"/>

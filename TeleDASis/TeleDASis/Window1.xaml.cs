@@ -30,7 +30,7 @@ namespace TeleDASis
 
             if (result == MessageBoxResult.Yes)
             {
-                var StartupUri = "Window2.xaml";
+               
             }
         }
     }
