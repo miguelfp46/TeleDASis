@@ -6,27 +6,20 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Empleado" Height="544" Width="1108" FontSize="20">
-    <Grid Margin="0,0,2,-3">
+    <Grid Margin="0,0,2,-3" RenderTransformOrigin="0.506,0.506">
         <Grid.Background>
             <RadialGradientBrush>
-                <GradientStop Color="#FFFBCFDA"/>
-                <GradientStop Color="#FFFF6800"/>
-                <GradientStop Color="#FFDAD119"/>
-                <GradientStop Color="#FFF1C810"/>
-                <GradientStop Color="#FFC529B0"/>
-                <GradientStop Color="#FFDCD424"/>
                 <GradientStop Color="White"/>
-                <GradientStop Color="#FFDC243D"/>
-                <GradientStop Color="White"/>
+
             </RadialGradientBrush>
         </Grid.Background>
         <Menu x:Name="menu" Height="56" VerticalAlignment="Top">
             <MenuItem Header="Inicio" Height="58" Width="113" FontSize="20"/>
             <MenuItem Header="Archivo" Height="58" Width="113" FontSize="20">
-                <MenuItem Header="Nuevo" HorizontalAlignment="Left" Width="262" Height="30" Margin="0,0,-86,0"/>
-                <MenuItem Header="Editar" HorizontalAlignment="Left" Width="264" Height="30" Margin="0,0,-88,0"/>
+                <MenuItem Header="Nuevo" HorizontalAlignment="Left" Width="176" Height="30"/>
+                <MenuItem Header="Editar" HorizontalAlignment="Left" Width="176" Height="30"/>
                 <MenuItem Header="Eliminar" HorizontalAlignment="Left" Width="176" Click="Eliminar" Height="30"/>
-                <MenuItem Header="Guardar" HorizontalAlignment="Left" Width="284" Height="30" Margin="0,0,-108,0"/>
+                <MenuItem Header="Guardar" HorizontalAlignment="Left" Width="174" Height="30"/>
             </MenuItem>
             <MenuItem Header="" Height="58" Width="113" FontSize="20"/>
         </Menu>
