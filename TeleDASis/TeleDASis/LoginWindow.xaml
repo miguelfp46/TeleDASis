@@ -8,8 +8,9 @@
         Title="MainWindow" Height="417" Width="914" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid VerticalAlignment="Center">
         <!-- Tabla situada al fondo para hacer la ventana que sea responsive -->
-        <StackPanel>
-            <TextBlock Margin="363,0" Height="15"><Run Text="Inicio de sesión"/></TextBlock>
+        <StackPanel Width="180">
+            <Image x:Name="image" Height="100" Source="Assets/logojpg.jpg"/>
+            <TextBlock Height="15">Inicio de sesión</TextBlock>
             <TextBox Height="23" Width="180">
                 <TextBox.Style >
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -35,8 +36,10 @@
                 </TextBox.Style>
             </TextBox>
             <PasswordBox x:Name="passwd" Height="23" Width="180"/>
-            <Button x:Name="botonEntrar" Content="Entrar" Height="23" Width="100"/>
+            <Button x:Name="botonEntrar" Content="Entrar" Height="23" HorizontalAlignment="Right" Width="100"/>
             
+
+
         </StackPanel>
     </Grid>
 </Window>
