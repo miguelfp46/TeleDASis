@@ -5,36 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Empleado" Height="544" Width="1108" FontSize="20">
-    <Grid Margin="0,0,2,-3" RenderTransformOrigin="0.506,0.506">
+        Title="Empleado" Height="356.5" Width="686" FontSize="10">
+    <Grid Margin="0,0,-4,13" RenderTransformOrigin="0.506,0.506">
         <Grid.Background>
             <RadialGradientBrush>
                 <GradientStop Color="White"/>
 
             </RadialGradientBrush>
         </Grid.Background>
-        <Menu x:Name="menu" Height="56" VerticalAlignment="Top">
-            <MenuItem Header="Inicio" Height="58" Width="113" FontSize="20"/>
-            <MenuItem Header="Archivo" Height="58" Width="113" FontSize="20">
+        <Menu x:Name="menu" Height="28" VerticalAlignment="Top" Margin="3,0,1,0">
+            <MenuItem Header="Inicio" Height="28"  FontSize="12"/>
+            <MenuItem Header="Archivo" Height="28"  FontSize="12">
                 <MenuItem Header="Nuevo" HorizontalAlignment="Left" Width="176" Height="30"/>
                 <MenuItem Header="Editar" HorizontalAlignment="Left" Width="176" Height="30"/>
                 <MenuItem Header="Eliminar" HorizontalAlignment="Left" Width="176" Click="Eliminar" Height="30"/>
                 <MenuItem Header="Guardar" HorizontalAlignment="Left" Width="174" Height="30"/>
             </MenuItem>
-            <MenuItem Header="" Height="58" Width="113" FontSize="20"/>
         </Menu>
-        <Label x:Name="label" Content="Nombre:" HorizontalAlignment="Left" Margin="96,125,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="96,265,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Aoellidos:" HorizontalAlignment="Left" Margin="96,197,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Teléfono:" HorizontalAlignment="Left" Margin="96,331,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Móvil:" HorizontalAlignment="Left" Margin="93,401,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="33" Margin="328,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="33" Margin="328,405,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="33" Margin="328,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="33" Margin="328,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="33" Margin="328,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <Image x:Name="Image2_png" Margin="0,101,44,0" Source="Image2.png" Stretch="Fill" HorizontalAlignment="Right" Width="238" Height="201" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Editar" Margin="0,308,44,0" HorizontalAlignment="Right" Width="238" Height="37" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Nombre:" Margin="0,51,604,224" FontSize="12" HorizontalAlignment="Right" Width="56"/>
+        <Label x:Name="label1" Content="ID:" Margin="0,0,618,136" FontSize="12" HorizontalAlignment="Right" Width="24" Height="26" VerticalAlignment="Bottom"/>
+        <Label x:Name="label_Copy" Content="Apellidos:" HorizontalAlignment="Right" Margin="0,0,596,183" VerticalAlignment="Bottom" FontSize="12"/>
+        <Label x:Name="label_Copy1" Content="Teléfono:" HorizontalAlignment="Right" Margin="0,0,599,94" VerticalAlignment="Bottom" FontSize="12"/>
+        <Label x:Name="label_Copy2" Content="Móvil:" HorizontalAlignment="Right" Margin="0,0,600,36" RenderTransformOrigin="0.486,0.391" FontSize="12" Width="50" Height="32" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="22" Margin="0,0,390,234" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="170"/>
+        <Image x:Name="Image2_png" Margin="0,71,78,0" Source="Image2.png" Stretch="Fill" Height="155" VerticalAlignment="Top" HorizontalAlignment="Right" Width="185"/>
+        <Button x:Name="button" Content="Editar" Margin="0,228,78,0" HorizontalAlignment="Right" Width="183" Height="27" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy4" Margin="0,0,390,187" TextWrapping="Wrap" Text="" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="170"/>
+        <TextBox x:Name="textBox_Copy" Margin="0,0,388,44" TextWrapping="Wrap" Text="" HorizontalAlignment="Right" Width="170" Height="22" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="textBox_Copy1" Margin="0,0,390,96" TextWrapping="Wrap" Text="" HorizontalAlignment="Right" Width="170" Height="22" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="textBox_Copy2" Margin="0,0,390,138" TextWrapping="Wrap" Text="" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="170"/>
 
     </Grid>
 </Window>
