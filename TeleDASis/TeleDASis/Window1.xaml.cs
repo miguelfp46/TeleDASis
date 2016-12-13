@@ -23,5 +23,10 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
