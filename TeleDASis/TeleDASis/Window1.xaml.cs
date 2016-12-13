@@ -24,9 +24,17 @@ namespace TeleDASis
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+        private void Eliminar(object sender, RoutedEventArgs e)
+        {//Esto mostrara un mensaje de aviso
+            var result = MessageBox.Show("Estas seguro que quieres eliminar al Empleado?", "Eliminar", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                //Esto mustra la Window2
+                Window2 MiVentana = new Window2();
+                MiVentana.Owner = this;
+                MiVentana.ShowDialog();
+            }
         }
     }
 }
