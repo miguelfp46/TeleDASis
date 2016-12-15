@@ -2,7 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TeleDASis"
+<<<<<<< HEAD
              StartupUri="Window1.xaml">
+=======
+             StartupUri="LoginWindow.xaml">
+>>>>>>> ac12b9edee920ced2b5b4688c49463bcee81ece9
     <Application.Resources>
          
     </Application.Resources>

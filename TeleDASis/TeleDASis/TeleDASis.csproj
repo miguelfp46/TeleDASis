@@ -62,7 +62,7 @@
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -70,8 +70,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Window1.xaml">
@@ -111,13 +111,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="AAEAAQAAAAAAAAgrAAAAJGUyODQ1NGNiLWQzYjAtNGUxNC05NTQ4LTgwMTMwNjQxMDhlMg.jpg" />
+    <Resource Include="Assets\AAEAAQAAAAAAAAgrAAAAJGUyODQ1NGNiLWQzYjAtNGUxNC05NTQ4LTgwMTMwNjQxMDhlMg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image1.png" />
+    <Resource Include="Assets\Image1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image2.png" />
+    <Resource Include="Assets\Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logojpg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
