@@ -1,30 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace TeleDASis
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+
     public partial class MainWindow : Window
     {
+        // Load data base
+        TestDatabase ddbb = null;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // Load data base
+            ddbb = TestDatabase.instance;
         }
 
+        private void enter_Click(object sender, RoutedEventArgs e)
+        {
+            User user = ddbb.checkUser(loginName.Text, passwd.Password);
+            if (user == null)
+            {
+                // NOT IN DATABASE or PASSWORD INCORRECT
+                MessageBox.Show("Error! El usuario o la contraseña es incorrecto!!!!");
+            }
+            else
+            {
+                MessageBox.Show("Bienvenido " + user.name);
+                Application.Current.Shutdown();
+            }
+        }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            ddbb.close();
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            new AddUser().Show();
+
+        }
     }
 }

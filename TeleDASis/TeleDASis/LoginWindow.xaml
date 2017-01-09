@@ -11,7 +11,7 @@
         <StackPanel Width="180">
             <Image x:Name="image" Height="137" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="180"/>
             <TextBlock Height="15"><Run Text="Inicio de sesión"/></TextBlock>
-            <TextBox Height="23" Width="180">
+            <TextBox x:Name="loginName" Height="23" Width="180">
                 <TextBox.Style >
                     <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
                         <Style.Resources>
@@ -35,7 +35,8 @@
                     </Style>
                 </TextBox.Style>
             </TextBox>
-            <PasswordBox x:Name="passwd" Height="23" Width="180"/>
+            <PasswordBox x:Name="passwd" Height="23" Width="180" />
+            <Button x:Name="addUserButton"  Content="Registrarse" Height="23" HorizontalAlignment="Right" Width="100" Click="add_Click"/>
             <Button x:Name="botonEntrar"  Content="Entrar" Height="23" HorizontalAlignment="Right" Width="100"/>
 
 

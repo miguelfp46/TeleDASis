@@ -1,0 +1,24 @@
+﻿<Window x:Class="TeleDASis.AddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeleDASis"
+        mc:Ignorable="d"
+        Title="AddUser" Height="300" Width="300">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="249" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+            <Label x:Name="label" Content="Nombre"/>
+            <TextBox x:Name="textName" Height="23" TextWrapping="Wrap" TextChanged="textName_TextChanged"/>
+            <Label x:Name="label1" Content="Contraseña" Margin="0,20,0,0"/>
+            <PasswordBox x:Name="passwordBox" Height="23"/>
+            <Label x:Name="label2" Content="Sexo"/>
+            <StackPanel Height="19" Orientation="Horizontal">
+                <RadioButton x:Name="radioMan" Content="Hombre"/>
+                <RadioButton x:Name="radioWoman" Content="Mujer" Margin="20,0,0,0"/>
+            </StackPanel>
+            <Button x:Name="button" Content="Alta" Width="75" Margin="0,40,0,0" Click="button_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
