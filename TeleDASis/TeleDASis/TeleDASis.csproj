@@ -71,6 +71,9 @@
     <Compile Include="llamadareclamacion.xaml.cs">
       <DependentUpon>llamadareclamacion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormularioInformativa.xaml.cs">
+      <DependentUpon>FormularioInformativa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="llamadareclamacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormularioInformativa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
