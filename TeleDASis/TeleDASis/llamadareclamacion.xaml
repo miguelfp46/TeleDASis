@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="llamadareclamacion" Height="300" Width="300">
-    <Grid>
-        <Button x:Name="button" Content="Alexis" HorizontalAlignment="Left" Margin="122,79,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="llamadareclamacion" Height="397" Width="701.117">
+    <Grid Margin="0,0,2,1">
+        <Label x:Name="label" Content="Fecha:" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Hora:" HorizontalAlignment="Left" Margin="36,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Telefono:" HorizontalAlignment="Left" Margin="34,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-0.038"/>
+        <Label x:Name="label3" Content="Nombre:" HorizontalAlignment="Left" Margin="36,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Sugerencia o reclamación" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="55" Margin="34,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
+        <Label x:Name="label5" Content="Motivo" HorizontalAlignment="Left" Margin="36,236,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="61" Margin="34,267,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="426"/>
+        <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="489,324,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="583,324,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
