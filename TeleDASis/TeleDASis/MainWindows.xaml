@@ -22,7 +22,10 @@
                         <ColumnDefinition Width="23*"/>
                         <ColumnDefinition Width="727*"/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="label" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="43,51,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="button_Copy3" Content="Dar de Alta" HorizontalAlignment="Left" Margin="30,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="button_Copy3_Click"/>
+                    <Button x:Name="button_Copy4" Content="Dar de Baja" HorizontalAlignment="Left" Margin="364,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="button_Copy3_Click"/>
+                    <Button x:Name="button_Copy5" Content="Consultas" HorizontalAlignment="Left" Margin="30,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="button_Copy3_Click"/>
+                    <Button x:Name="button_Copy6" Content="Modificaciones" HorizontalAlignment="Left" Margin="364,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="button_Copy3_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">
