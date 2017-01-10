@@ -65,8 +65,8 @@
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
-    <Compile Include="formLlamadaAgenda.xaml.cs">
-      <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
+    <Compile Include="llamadareclamacion.xaml.cs">
+      <DependentUpon>llamadareclamacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
@@ -82,7 +82,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="formLlamadaAgenda.xaml">
+    <Page Include="llamadareclamacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

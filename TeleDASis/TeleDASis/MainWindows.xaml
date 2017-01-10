@@ -12,7 +12,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="button" Content="Informativa" HorizontalAlignment="Left" Margin="51,48,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
                     <Button x:Name="button_Copy" Content="Emergencia" HorizontalAlignment="Left" Margin="435,282,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
-                    <Button x:Name="button_Copy1" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
+                    <Button x:Name="boton_reclamacion" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="boton_reclamacion_Click"/>
                     <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,280,0,0" VerticalAlignment="Top" Width="214" Height="122"/>
                 </Grid>
             </TabItem>
