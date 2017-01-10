@@ -7,17 +7,22 @@
         mc:Ignorable="d"
         Title="Window3" Height="635.404" Width="842.236">
     <Grid Background="#FF0C6AF3">
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="14,55,0,0" VerticalAlignment="Top" Width="80"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="531" Margin="130,71,0,0" VerticalAlignment="Top" Width="702">
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Llamadas">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="button" Content="Informativa" HorizontalAlignment="Left" Margin="51,48,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
+                    <Button x:Name="button_Copy" Content="Emergencia" HorizontalAlignment="Left" Margin="435,282,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
+                    <Button x:Name="button_Copy1" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
+                    <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,280,0,0" VerticalAlignment="Top" Width="214" Height="122"/>
+                </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="Registro de Usuarios">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="23*"/>
                         <ColumnDefinition Width="727*"/>
                     </Grid.ColumnDefinitions>
+                    <Label x:Name="label" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="43,51,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">
@@ -25,5 +30,7 @@
             </TabItem>
         </TabControl>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="834"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="20,45,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="106" Margin="9,4,719,420"/>
     </Grid>
 </Window>
