@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindows" Height="657" Width="864">
     <Grid>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="531" Margin="130,71,-540,-333" VerticalAlignment="Top" Width="702">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="531" Margin="132,60,0,0" VerticalAlignment="Top" Width="702">
             <TabItem Header="Llamadas">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="button" Content="Informativa" HorizontalAlignment="Left" Margin="51,48,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
@@ -31,7 +31,7 @@
         </TabControl>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="834" Margin="0,0,-542,0"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="20,45,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="106" Margin="0,10,750,79"/>
+        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="106" Margin="0,33,750,56"/>
 
     </Grid>
 </Window>
