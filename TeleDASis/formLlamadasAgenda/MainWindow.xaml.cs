@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TeleDASis
+namespace formLlamadasAgenda
 {
     /// <summary>
-    /// Interaction logic for MainWindows.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindows : Window
+    public partial class MainWindow : Window
     {
-        public MainWindows()
+        public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void button_Copy3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void boton_reclamacion_Click(object sender, RoutedEventArgs e)
-        {
-            var nuevaventana = new llamadareclamacion();
-            nuevaventana.Show();
         }
     }
 }
