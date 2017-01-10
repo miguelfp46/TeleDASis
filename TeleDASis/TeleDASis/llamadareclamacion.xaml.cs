@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace TeleDASis
 {
     /// <summary>
-    /// Interaction logic for MainWindows.xaml
+    /// Interaction logic for llamadareclamacion.xaml
     /// </summary>
-    public partial class MainWindows : Window
+    public partial class llamadareclamacion : Window
     {
-        public MainWindows()
+        public llamadareclamacion()
         {
             InitializeComponent();
-        }
-
-        private void button_Copy3_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void boton_reclamacion_Click(object sender, RoutedEventArgs e)
-        {
-            var nuevaventana = new llamadareclamacion();
-            nuevaventana.Show();
         }
     }
 }
