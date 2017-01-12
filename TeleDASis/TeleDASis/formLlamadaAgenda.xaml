@@ -6,28 +6,23 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="formLlamadaAgenda" Height="502" Width="1164">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <TextBox x:Name="textBoxFecha" HorizontalAlignment="Left" Height="20" Margin="125,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="0"/>
-        <Label x:Name="fechaLabel" Content="Fecha" HorizontalAlignment="Left" Margin="77,46,0,0" VerticalAlignment="Top" Height="25" Width="64" Grid.Column="0" Grid.Row="0"/>
-        <TextBox x:Name="textBoxHora" HorizontalAlignment="Left" Height="20" Margin="338,49,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="horaLabel" Content="Hora" HorizontalAlignment="Left" Margin="290,45,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
-        <TextBox x:Name="textBoxTelefono" HorizontalAlignment="Left" Height="20" Margin="653,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="telefonoLabel" Content="Teléfono" HorizontalAlignment="Left" Margin="596,50,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
-        <TextBox x:Name="textBoxNombre" HorizontalAlignment="Left" Height="20" Margin="137,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="nombreLabel" Content="Nombre:" HorizontalAlignment="Left" Margin="77,88,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
-        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="20" Margin="358,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="labelApellido" Content="Apellidos" HorizontalAlignment="Left" Margin="290,88,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
-        <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="20" Margin="653,96,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy4" Content="Teléfono" HorizontalAlignment="Left" Margin="596,92,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
+    <Grid Margin="0,0,2,1">
+        <Label x:Name="label" Content="Fecha:" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Hora:" HorizontalAlignment="Left" Margin="36,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Telefono:" HorizontalAlignment="Left" Margin="34,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-0.038"/>
+        <Label x:Name="label3" Content="Nombre:" HorizontalAlignment="Left" Margin="36,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Motivo de llamada" HorizontalAlignment="Left" Margin="36,137,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="55" Margin="36,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
+        <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="489,324,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="583,324,0,0" VerticalAlignment="Top" Width="75"/>
+        <DatePicker HorizontalAlignment="Left" Margin="98,34,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="98,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="98,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="98,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy" Content="Fecha de alarma:" HorizontalAlignment="Left" Margin="34,229,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy" Content="Hora de alarma:" HorizontalAlignment="Left" Margin="36,255,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="138,231,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox2_Copy" HorizontalAlignment="Left" Height="23" Margin="138,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
