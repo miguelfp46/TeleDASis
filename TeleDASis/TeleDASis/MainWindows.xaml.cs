@@ -41,5 +41,14 @@ namespace TeleDASis
             
             info.Show();
         }
+
+        private void button_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+           formLlamadaAgenda agenda = new formLlamadaAgenda();
+
+            agenda.Show();
+        }
     }
 }
