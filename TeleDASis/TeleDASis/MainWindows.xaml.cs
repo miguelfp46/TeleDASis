@@ -50,5 +50,11 @@ namespace TeleDASis
 
             agenda.Show();
         }
+
+        private void boton_emergencia_Click(object sender, RoutedEventArgs e)
+        {
+            var nuevaventana = new LlamadaEmergencia();
+            nuevaventana.Show();
+        }
     }
 }
