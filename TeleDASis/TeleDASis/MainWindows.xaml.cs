@@ -34,5 +34,27 @@ namespace TeleDASis
             var nuevaventana = new llamadareclamacion();
             nuevaventana.Show();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            FormularioInformativa info = new FormularioInformativa();
+            
+            info.Show();
+        }
+
+        private void button_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+           formLlamadaAgenda agenda = new formLlamadaAgenda();
+
+            agenda.Show();
+        }
+
+        private void boton_emergencia_Click(object sender, RoutedEventArgs e)
+        {
+            var nuevaventana = new LlamadaEmergencia();
+            nuevaventana.Show();
+        }
     }
 }

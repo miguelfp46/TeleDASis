@@ -14,13 +14,13 @@
         <Label x:Name="label4" Content="Sugerencia o reclamación" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="55" Margin="34,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
         <Label x:Name="label5" Content="Motivo" HorizontalAlignment="Left" Margin="36,236,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="61" Margin="34,267,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="426"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="61" Margin="34,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
         <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="489,324,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="583,324,0,0" VerticalAlignment="Top" Width="75"/>
         <DatePicker HorizontalAlignment="Left" Margin="98,34,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="98,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="98,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="98,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="98,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="98,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="98,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

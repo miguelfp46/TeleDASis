@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="MainWindows" Height="657" Width="864">
-    <Grid>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="531" Margin="132,60,0,0" VerticalAlignment="Top" Width="702">
+    <Grid Background="#FF3C3CEA">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="564" Margin="132,60,-1,0" VerticalAlignment="Top" Width="725">
             <TabItem Header="Llamadas">
-                <Grid Background="#FFE5E5E5">
-                    <Button x:Name="button" Content="Informativa" HorizontalAlignment="Left" Margin="51,48,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
-                    <Button x:Name="button_Copy" Content="Emergencia" HorizontalAlignment="Left" Margin="435,282,0,0" VerticalAlignment="Top" Width="214" Height="121"/>
+                <Grid Background="#FFE5E5E5" Margin="0,0,1,0">
+                    <Button x:Name="button" Content="Informativa" HorizontalAlignment="Left" Margin="51,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="button_Click"/>
+                    <Button x:Name="boton_emergencia" Content="Emergencia" HorizontalAlignment="Left" Margin="435,282,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="boton_emergencia_Click"/>
                     <Button x:Name="boton_reclamacion" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="boton_reclamacion_Click"/>
-                    <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,280,0,0" VerticalAlignment="Top" Width="214" Height="122"/>
+                    <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,280,0,0" VerticalAlignment="Top" Width="214" Height="122" Click="button_Copy2_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Registro de Usuarios">
@@ -32,9 +32,9 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="834" Margin="0,0,-542,0"/>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="855"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="20,45,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="106" Margin="0,33,750,56"/>
+        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="106" Margin="14,65,736,459"/>
 
     </Grid>
 </Window>
