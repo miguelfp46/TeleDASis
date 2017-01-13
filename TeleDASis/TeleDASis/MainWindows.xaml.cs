@@ -37,7 +37,7 @@ namespace TeleDASis
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            FormularioInformativa info = new FormularioInformativa();
+            LlamadaInformativa info = new LlamadaInformativa();
             
             info.Show();
         }

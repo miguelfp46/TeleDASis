@@ -34,7 +34,7 @@
         </TabControl>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="855"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="20,45,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Center" Width="106" Margin="14,65,736,459"/>
+        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Right" Width="106" Margin="0,71,736,453"/>
 
     </Grid>
 </Window>
