@@ -65,5 +65,15 @@ namespace TeleDASis
             var nuevaventana = new LlamadaEmergencia();
             nuevaventana.Show();
         }
+
+        private void button_Copy6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button_Copy5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
