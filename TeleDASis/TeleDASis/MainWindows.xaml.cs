@@ -26,7 +26,16 @@ namespace TeleDASis
 
         private void button_Copy3_Click(object sender, RoutedEventArgs e)
         {
+           Alta info = new Alta();
 
+            info.Show();
+        }
+
+        private void button_Copy4_Click(object sender, RoutedEventArgs e)
+        {
+            Baja info = new Baja();
+
+            info.Show();
         }
 
         private void boton_reclamacion_Click(object sender, RoutedEventArgs e)
