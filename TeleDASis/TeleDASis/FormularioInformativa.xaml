@@ -23,6 +23,12 @@
         <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Height="23" Margin="121,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <DatePicker HorizontalAlignment="Left" Margin="121,60,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox1_Copy1" HorizontalAlignment="Left" Height="23" Margin="121,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy5" Content="Apellido:" HorizontalAlignment="Left" Margin="260,165,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1_Copy2" HorizontalAlignment="Left" Height="23" Margin="322,167,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy6" Content="Identificador de llamada:" HorizontalAlignment="Left" Margin="267,19,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy7" Content="DNI:" HorizontalAlignment="Left" Margin="259,128,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1_Copy3" HorizontalAlignment="Left" Height="23" Margin="322,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox1_Copy4" HorizontalAlignment="Left" Height="23" Margin="410,22,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="48"/>
 
     </Grid>
 </Window>

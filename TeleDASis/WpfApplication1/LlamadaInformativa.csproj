@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66F3D81F-E320-4261-A426-DCDAA630B65D}</ProjectGuid>
+    <ProjectGuid>{C9393570-7340-4062-90A7-E24469603EFF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TeleDASis</RootNamespace>
-    <AssemblyName>TeleDASis</AssemblyName>
+    <RootNamespace>WpfApplication1</RootNamespace>
+    <AssemblyName>WpfApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,14 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,74 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddUser.xaml.cs">
-      <DependentUpon>AddUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Alta.xaml.cs">
-      <DependentUpon>Alta.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Baja.xaml.cs">
-      <DependentUpon>Baja.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase.cs" />
-    <Compile Include="formLlamadaAgenda.xaml.cs">
-      <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LlamadaEmergencia.xaml.cs">
-      <DependentUpon>LlamadaEmergencia.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LlamadaInformativa.xaml.cs">
-      <DependentUpon>LlamadaInformativa.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="llamadareclamacion.xaml.cs">
-      <DependentUpon>llamadareclamacion.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioInformativa.xaml.cs">
-      <DependentUpon>FormularioInformativa.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindows.xaml.cs">
-      <DependentUpon>MainWindows.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario.cs" />
-    <Compile Include="Empleados.xaml.cs">
-      <DependentUpon>Empleados.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Eliminar.xaml.cs">
-      <DependentUpon>Eliminar.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AddUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Alta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Baja.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="formLlamadaAgenda.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LlamadaEmergencia.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LlamadaInformativa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="llamadareclamacion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FormularioInformativa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LoginWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -136,22 +63,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Empleados.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Eliminar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindows.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -171,7 +86,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,18 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\AAEAAQAAAAAAAAgrAAAAJGUyODQ1NGNiLWQzYjAtNGUxNC05NTQ4LTgwMTMwNjQxMDhlMg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Image1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Image2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\logojpg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

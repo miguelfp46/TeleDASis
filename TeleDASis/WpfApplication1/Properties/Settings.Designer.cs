@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace crystalReports.Properties
+namespace WpfApplication1.Properties
 {
 
 
