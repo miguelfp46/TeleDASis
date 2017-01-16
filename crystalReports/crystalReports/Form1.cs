@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace crystalReports
@@ -15,6 +8,20 @@ namespace crystalReports
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            formulario1 fr1 = new formulario1(new CrystalReport1());
+            fr1.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formulario1 fr1 = new formulario1(new CrystalReport2());
+            fr1.ShowDialog();
+            
         }
     }
 }

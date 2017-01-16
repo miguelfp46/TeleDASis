@@ -10,17 +10,17 @@ using System.Security.Cryptography;
 
 namespace TeleDASis
 {
-    class TestDatabase
+    class databaseConnector
     {
         // Singletone
-        protected static TestDatabase _instance = null;
+        protected static databaseConnector _instance = null;
 
-        public static TestDatabase instance
+        public static databaseConnector instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new TestDatabase();
+                    _instance = new databaseConnector();
                 return _instance;
             }
         }
@@ -35,7 +35,7 @@ namespace TeleDASis
 
         protected uint serverPort = 3306;
 
-        protected TestDatabase()
+        protected databaseConnector()
         {
             // Create connection to MySql database
             connStr = "server=" + serverName + "; user=" + serverUser + ";database=" + database + ";port=" + serverPort + ";password=" + password + ";";
@@ -60,14 +60,19 @@ namespace TeleDASis
             return null;
         }
 
-        public bool addUser(User newUser)
+        public bool addUser(string dni, string nombre, string apellidos, string fechaDeAlta , int telefono, int movil, int telefonoFamiliar)
         {
             try
             {
-                string sql = "iNSERT INTO user (name, pass) VALUES (@nombre, @pass)";
+                string sql = "INSERT INTO usuarios (dni, nombre, apellidos, fechaDeAlta, telefono, movil, telefonoFamiliar) VALUES (@dni, @nombre, @apellido, @fechaDeAlta, @telefono, @movil, @telefonoFamiliar)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@nombre", newUser.name);
-                cmd.Parameters.AddWithValue("@pass", newUser.pass);
+                cmd.Parameters.AddWithValue("@dni", dni);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@apellidos", apellidos);
+                cmd.Parameters.AddWithValue("@fechaDeAlta", fechaDeAlta);
+                cmd.Parameters.AddWithValue("@telefono", telefono);
+                cmd.Parameters.AddWithValue("@movil", movil);
+                cmd.Parameters.AddWithValue("@telefonoFamiliar", telefonoFamiliar);
                 cmd.ExecuteNonQuery();
 
                 return true;
@@ -83,13 +88,13 @@ namespace TeleDASis
         {
             // If user exists returns user from database
             // TODO
-            string sql = "SELECT * from user WHERE name = @name";
+            string sql = "SELECT * from usuarios WHERE dni = @dni";
             MySqlCommand cmd = new MySqlCommand(sql, connection);
-            cmd.Parameters.AddWithValue("@name", username);
+            cmd.Parameters.AddWithValue("@dni", username);
             MySqlDataReader rdr = cmd.ExecuteReader();
             if (rdr.Read())
             {
-                User dataUser = new User((string)rdr["name"]);
+                User dataUser = new User((string)rdr["dni"]);
                 dataUser.hashPass = (string)rdr["pass"];
                 rdr.Close();
                 return dataUser.checkPassword(password) ? dataUser : null;
@@ -130,7 +135,7 @@ namespace TeleDASis
         }
 
         // GETTERS & SETTERS
-        public string name
+        public string dni
         {
             get { return _name; }
         }
@@ -148,7 +153,7 @@ namespace TeleDASis
         // PUBLIC METHODS
         public bool save()
         {
-            return TestDatabase.instance.addUser(this);
+            return databaseConnector.instance.addUser(this);
         }
 
         public bool checkPassword(string plainPass)

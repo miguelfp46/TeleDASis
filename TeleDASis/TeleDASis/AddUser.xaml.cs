@@ -22,7 +22,7 @@ namespace TeleDASis
         private void button_Click(object sender, RoutedEventArgs e)
         {
         
-            TestDatabase ddbb = TestDatabase.instance;
+            databaseConnector ddbb = databaseConnector.instance;
 
             // Check texts
             if (textName.Text.Length == 0 || passwordBox.Password.Length == 0)

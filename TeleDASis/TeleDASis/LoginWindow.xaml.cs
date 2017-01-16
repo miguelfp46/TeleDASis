@@ -12,14 +12,14 @@ namespace TeleDASis
     public partial class MainWindow : Window
     {
         // Load data base
-        TestDatabase ddbb = null;
+        databaseConnector ddbb = null;
 
         public MainWindow()
         {
             InitializeComponent();
 
             // Load data base
-            ddbb = TestDatabase.instance;
+            ddbb = databaseConnector.instance;
         }
 
         private void enter_Click(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace TeleDASis
             }
             else
             {
-                MessageBox.Show("Bienvenido " + user.name);
+                MessageBox.Show("Bienvenido " + user.dni);
                 Application.Current.Shutdown();
             }
         }
