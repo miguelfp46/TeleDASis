@@ -7,30 +7,30 @@
         mc:Ignorable="d"
         Title="Alta" Height="300" Width="674.419">
     <Grid Margin="-2,0,0,0" HorizontalAlignment="Left" Width="666">
-        <Label x:Name="label" Content="CI:" Margin="40,33,603,210"/>
-        <TextBox x:Name="textBox" Height="23" Margin="79,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy" Content="Fecha:" Margin="490,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
-        <DatePicker Margin="545,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.069,-1.006" HorizontalAlignment="Left" Width="102"/>
-        <Label x:Name="label_Copy1" Content="DNI:" Margin="40,64,593,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy" Height="23" Margin="79,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy2" Content="Nombre:" Margin="40,95,570,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy1" Height="23" Margin="103,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy3" Content="Apellido:" Margin="242,95,368,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy2" Height="23" Margin="301,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy4" Content="Apellido:" Margin="450,95,160,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy3" Height="23" Margin="510,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy5" Content="Teléfono:" Margin="40,126,568,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy4" Height="23" Margin="103,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy6" Content="Móvil:" Margin="242,126,382,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy5" Height="23" Margin="302,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy7" Content="Tel. Familiar:" Margin="450,126,142,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy6" Margin="528,126,0,0" TextWrapping="Wrap" Text="" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy8" Content="T.S.:" HorizontalAlignment="Left" Margin="243,64,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy7" Height="23" Margin="301,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="label_Copy9" Content="Vivienda:" Margin="40,157,568,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy8" Height="23" Margin="103,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Button x:Name="button" Content="Aceptar" Margin="0,0,115,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom"/>
-        <Button x:Name="button_Copy" Content="Cancelar" Margin="0,0,12,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <Label x:Name="lCodigoIdentificacion" Content="CI:" Margin="40,33,603,210"/>
+        <TextBox x:Name="tbCodigoIdentificacion" Height="23" Margin="79,33,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lFecha" Content="Fecha:" Margin="490,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
+        <DatePicker x:Name="tbFechaDeAlta" Margin="545,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.069,-1.006" HorizontalAlignment="Left" Width="102"/>
+        <Label x:Name="lDni" Content="DNI:" Margin="40,64,593,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDni" Height="23" Margin="79,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lNombre" Content="Nombre:" Margin="40,95,570,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNombre" Height="23" Margin="103,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lApellido" Content="Apellido:" Margin="242,95,368,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbApellido" Height="23" Margin="301,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lApellido2" Content="Apellido:" Margin="450,95,160,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbApellido2" Height="23" Margin="510,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lTelefono" Content="Teléfono:" Margin="40,126,568,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbTelefono" Height="23" Margin="103,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lMovil" Content="Móvil:" Margin="242,126,382,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbMovil" Height="23" Margin="302,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lTelFamiliar" Content="Tel. Familiar:" Margin="450,126,142,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbFamiliar" Margin="528,126,0,0" TextWrapping="Wrap" Text="" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lTargetaSanitaria" Content="T.S.:" HorizontalAlignment="Left" Margin="243,64,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbTargetaSanitaria" Height="23" Margin="301,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="lVivienda" Content="Vivienda:" Margin="40,157,568,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbVivienda" Height="23" Margin="103,157,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Button x:Name="btAccept" Content="Aceptar" Margin="0,0,115,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click"/>
+        <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,12,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
 
     </Grid>
 </Window>

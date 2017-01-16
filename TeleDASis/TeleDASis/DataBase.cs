@@ -54,21 +54,34 @@ namespace TeleDASis
         }
 
 
- 
 
-        public bool addUser(string dni, string nombre, string apellidos, string fechaDeAlta, int telefono, int movil, int telefonoFamiliar)
+
+        public bool addUser(String nombre,
+        String apellido,
+        String apellido2,
+        String dni,
+        String nTelefono,
+        String nTelefonoFamiliar,
+        String movil,
+        int codigoIdentificacion,
+        String targetaSanitaria,
+        String fechaDeAlta,
+        int vivienda)
         {
             try
             {
-                string sql = "INSERT INTO usuarios (dni, nombre, apellidos, fechaDeAlta, telefono, movil, telefonoFamiliar) VALUES (@dni, @nombre, @apellidos, @fechaDeAlta, @telefono, @movil, @telefonoFamiliar)";
+                string sql = "INSERT INTO usuarios (nombre, apellido, apellido2, dni, nTelefono, nTelefonoFamiliar, movil, codigoIdentificacion, targetaSanitaria, fechaDeAlta, vivienda) VALUES (@nombre, @apellido, @apellido2, @dni, @nTelefono, @nTelefonoFamiliar, @movil, @codigoIdentificacion, @targetaSanitaria, @fechaDeAlta, @vivienda)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@dni", dni);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
-                cmd.Parameters.AddWithValue("@apellidos", apellidos);
-                cmd.Parameters.AddWithValue("@fechaDeAlta", fechaDeAlta);
-                cmd.Parameters.AddWithValue("@telefono", telefono);
+                cmd.Parameters.AddWithValue("@apellido", apellido);
+                cmd.Parameters.AddWithValue("@apellido2", apellido2);
+                cmd.Parameters.AddWithValue("@nTelefono", nTelefono);
+                cmd.Parameters.AddWithValue("@nTelefonoFamiliar", nTelefonoFamiliar);
                 cmd.Parameters.AddWithValue("@movil", movil);
-                cmd.Parameters.AddWithValue("@telefonoFamiliar", telefonoFamiliar);
+                cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
+                cmd.Parameters.AddWithValue("@targetaSanitaria", targetaSanitaria);
+                cmd.Parameters.AddWithValue("@fechaDeAlta", fechaDeAlta);
+                cmd.Parameters.AddWithValue("@vivienda", vivienda);
                 cmd.ExecuteNonQuery();
 
                 return true;
