@@ -36,7 +36,7 @@
                 </TextBox.Style>
             </TextBox>
             <PasswordBox x:Name="passwd" Height="23" Width="180" />
-            <Button x:Name="addUserButton"  Content="Registrarse" Height="23" HorizontalAlignment="Right" Width="100" Click="add_Click"/>
+            <Button x:Name="addUserButton"  Content="Registrarse" Height="23" HorizontalAlignment="Right" Width="100"/>
             <Button x:Name="botonEntrar"  Content="Entrar" Height="23" HorizontalAlignment="Right" Width="100"/>
 
 

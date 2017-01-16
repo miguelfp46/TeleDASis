@@ -61,9 +61,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddUser.xaml.cs">
-      <DependentUpon>AddUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Alta.xaml.cs">
       <DependentUpon>Alta.xaml</DependentUpon>
     </Compile>
@@ -96,10 +93,6 @@
     <Compile Include="Eliminar.xaml.cs">
       <DependentUpon>Eliminar.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Alta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
