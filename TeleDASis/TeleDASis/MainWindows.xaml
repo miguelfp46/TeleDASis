@@ -10,10 +10,10 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="634" Margin="132,60,0,0" VerticalAlignment="Top" Width="725">
             <TabItem Header="Llamadas">
                 <Grid Background="#FFE5E5E5" Margin="0,0,1,-510">
-                    <Button x:Name="button" Content="Informativa" HorizontalAlignment="Left" Margin="51,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="button_Click"/>
-                    <Button x:Name="boton_emergencia" Content="Emergencia" HorizontalAlignment="Left" Margin="435,302,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="boton_emergencia_Click"/>
-                    <Button x:Name="boton_reclamacion" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="boton_reclamacion_Click"/>
-                    <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,300,0,0" VerticalAlignment="Top" Width="214" Height="122" Click="button_Copy2_Click"/>
+                    <Button x:Name="button" Content="Informativa" Margin="51,48,453,0" VerticalAlignment="Top" Height="121" Click="button_Click"/>
+                    <Button x:Name="boton_emergencia" Content="Emergencia" Margin="435,302,69,693" Click="boton_emergencia_Click"/>
+                    <Button x:Name="boton_reclamacion" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,944" Width="214" Click="boton_reclamacion_Click"/>
+                    <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,300,0,694" Width="214" Click="button_Copy2_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Registro de Usuarios">
