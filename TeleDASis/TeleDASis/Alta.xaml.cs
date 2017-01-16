@@ -22,6 +22,8 @@ namespace TeleDASis
         public Alta()
         {
             InitializeComponent();
+
+            databaseConnector.instance.addUser("45545", "Miguel", "Fernandez", "2016-01-01", 666777888, 888777666, 111222333);
         }
     }
 }

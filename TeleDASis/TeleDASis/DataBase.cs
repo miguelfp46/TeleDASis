@@ -28,10 +28,10 @@ namespace TeleDASis
         // ATTRIBUTES
         protected string connStr;
         protected MySqlConnection connection = null;
-        protected string serverName = "10.0.0.7";
-        protected string serverUser = "admin";
-        protected string database = "test";
-        protected string password = "admintest";
+        protected string serverName = "127.0.0.1";
+        protected string serverUser = "root";
+        protected string database = "mydb";
+        protected string password = "olakase";
 
         protected uint serverPort = 3306;
 
@@ -60,7 +60,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO usuarios (dni, nombre, apellidos, fechaDeAlta, telefono, movil, telefonoFamiliar) VALUES (@dni, @nombre, @apellido, @fechaDeAlta, @telefono, @movil, @telefonoFamiliar)";
+                string sql = "INSERT INTO usuarios (dni, nombre, apellidos, fechaDeAlta, telefono, movil, telefonoFamiliar) VALUES (@dni, @nombre, @apellidos, @fechaDeAlta, @telefono, @movil, @telefonoFamiliar)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
