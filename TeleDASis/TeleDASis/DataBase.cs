@@ -56,17 +56,11 @@ namespace TeleDASis
 
 
 
-        public bool addUser(String nombre,
-        String apellido,
-        String apellido2,
-        String dni,
-        String nTelefono,
-        String nTelefonoFamiliar,
-        String movil,
-        int codigoIdentificacion,
-        String targetaSanitaria,
-        String fechaDeAlta,
-        int vivienda)
+        public bool addUser(String nombre,String apellido,String apellido2,String dni,String nTelefono,
+                            String nTelefonoFamiliar, String movil,int codigoIdentificacion,String targetaSanitaria,
+                            String fechaDeAlta, int vivienda)
+            //falta recuperar los datos 
+
         {
             try
             {
@@ -75,6 +69,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.Parameters.AddWithValue("@apellido", apellido);
                 cmd.Parameters.AddWithValue("@apellido2", apellido2);
+                cmd.Parameters.AddWithValue("@dni", dni);
                 cmd.Parameters.AddWithValue("@nTelefono", nTelefono);
                 cmd.Parameters.AddWithValue("@nTelefonoFamiliar", nTelefonoFamiliar);
                 cmd.Parameters.AddWithValue("@movil", movil);
