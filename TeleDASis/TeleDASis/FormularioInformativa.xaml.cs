@@ -23,5 +23,10 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

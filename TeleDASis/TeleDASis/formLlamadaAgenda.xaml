@@ -14,7 +14,7 @@
         <Label x:Name="label4" Content="Motivo de llamada" HorizontalAlignment="Left" Margin="36,137,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="55" Margin="36,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
         <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="489,324,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="583,324,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="583,324,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
         <DatePicker HorizontalAlignment="Left" Margin="98,34,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="98,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="98,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>

@@ -18,7 +18,7 @@
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="60" Margin="45,330,0,0" TextWrapping="Wrap" 
             VerticalAlignment="Top" Width="454"/>
         <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="609,392,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="716,392,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="716,392,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="121,167,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Height="23" Margin="121,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <DatePicker HorizontalAlignment="Left" Margin="121,60,0,0" VerticalAlignment="Top"/>
