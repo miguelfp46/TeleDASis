@@ -9,7 +9,7 @@
     <Grid Background="#FF2955EA">
         <Button x:Name="button" Content="Formulario" HorizontalAlignment="Left" Margin="35,51,0,0" VerticalAlignment="Top" Width="151" Height="67" Click="button_Click"/>
         <Button x:Name="button1" Content="Historial" HorizontalAlignment="Left" Margin="373,50,0,0" VerticalAlignment="Top" Width="151" Height="67" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Salir" HorizontalAlignment="Left" Margin="242,171,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <Button x:Name="button2" Content="Salir" HorizontalAlignment="Left" Margin="242,171,0,0" VerticalAlignment="Top" Width="75" Click="botonsalir_Click"/>
 
     </Grid>
 </Window>
