@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Alta" Height="300" Width="674.419">
-    <Grid Margin="-2,0,0,0" HorizontalAlignment="Left" Width="666">
-        <Label x:Name="label" Content="CI:" Margin="40,33,603,210"/>
+    <Grid Margin="-2,0,0,0" HorizontalAlignment="Left" Width="666" OpacityMask="#FF1A10E8">
+        <Label x:Name="label" Content="CI:" Margin="40,33,603,205"/>
         <TextBox x:Name="textBox" Height="23" Margin="79,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <Label x:Name="label_Copy" Content="Fecha:" Margin="490,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
         <DatePicker Margin="545,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.069,-1.006" HorizontalAlignment="Left" Width="102"/>
