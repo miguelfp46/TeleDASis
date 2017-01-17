@@ -39,9 +39,6 @@ namespace TeleDASis
         private void botonsalir_Click(object sender, RoutedEventArgs e)
         {
 
-            //MainWindows info = new MainWindows();
-
-            //info.Show();
             this.Close();
         }
     }
