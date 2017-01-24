@@ -29,7 +29,7 @@ namespace TeleDASis
         String movil;
         int codigoIdentificacion = 0;
         String targetaSanitaria;
-        String fechaDeAlta;
+        String fechaDeAlta = "2016-01-01";
         int vivienda = 0;
         
         
@@ -40,7 +40,7 @@ namespace TeleDASis
             nombre = tbNombre.Text;
             apellido = tbApellido.Text;
             apellido2 = tbApellido2.Text;
-            dni = tbDni.Text;
+            //dni = tbDni.Text;
             nTelefono = tbTelefono.Text;
             nTelefonoFamiliar = tbFamiliar.Text;
             movil = tbMovil.Text;

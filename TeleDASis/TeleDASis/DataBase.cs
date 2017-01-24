@@ -75,6 +75,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.Parameters.AddWithValue("@apellido", apellido);
                 cmd.Parameters.AddWithValue("@apellido2", apellido2);
+                cmd.Parameters.AddWithValue("@dni", dni);
                 cmd.Parameters.AddWithValue("@nTelefono", nTelefono);
                 cmd.Parameters.AddWithValue("@nTelefonoFamiliar", nTelefonoFamiliar);
                 cmd.Parameters.AddWithValue("@movil", movil);
