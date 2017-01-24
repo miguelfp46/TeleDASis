@@ -52,14 +52,13 @@ namespace TeleDASis
             }
             Console.WriteLine("Done.");
         }
-
-
-
+        
 
         public bool addUser(String nombre,String apellido,String apellido2,String dni,String nTelefono,
                             String nTelefonoFamiliar, String movil,int codigoIdentificacion,String targetaSanitaria,
                             String fechaDeAlta, int vivienda)
             //falta recuperar los datos 
+
 
         {
             try
@@ -78,6 +77,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@fechaDeAlta", fechaDeAlta);
                 cmd.Parameters.AddWithValue("@vivienda", vivienda);
                 cmd.ExecuteNonQuery();
+                
 
                 return true;
             }
