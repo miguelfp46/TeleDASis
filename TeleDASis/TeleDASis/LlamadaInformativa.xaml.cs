@@ -36,11 +36,10 @@ namespace TeleDASis
 
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void botonsalir_Click(object sender, RoutedEventArgs e)
         {
-            MainWindows info = new MainWindows();
 
-            info.Show();
+            this.Close();
         }
     }
 }

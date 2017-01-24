@@ -20,7 +20,7 @@
         <Label x:Name="label_Copy4" Content="Empleado:" HorizontalAlignment="Left" Margin="41,234,0,0" VerticalAlignment="Top" Width="64"/>
         <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="110,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="426,291,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="526,291,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="526,291,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy_Click"/>
 
     </Grid>
 </Window>
