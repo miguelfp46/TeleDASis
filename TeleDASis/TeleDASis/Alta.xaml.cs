@@ -27,16 +27,19 @@ namespace TeleDASis
         String nTelefono;
         String nTelefonoFamiliar;
         String movil;
-        int codigoIdentificacion = 0;
+        
         String targetaSanitaria;
-        String fechaDeAlta;
+        String fechaDeAlta = "2016-01-01";
         int vivienda = 0;
         
         
         public Alta()
         {
+            InitializeComponent();   
+        }
 
-            InitializeComponent();
+        private void btAccept_Click(object sender, RoutedEventArgs e)
+        {
             nombre = tbNombre.Text;
             apellido = tbApellido.Text;
             apellido2 = tbApellido2.Text;
@@ -44,18 +47,12 @@ namespace TeleDASis
             nTelefono = tbTelefono.Text;
             nTelefonoFamiliar = tbFamiliar.Text;
             movil = tbMovil.Text;
-            codigoIdentificacion = int.Parse(tbCodigoIdentificacion.Text);
+            
             targetaSanitaria = tbTargetaSanitaria.Text;
-            fechaDeAlta = tbFechaDeAlta.Text;
+            //fechaDeAlta = tbFechaDeAlta.Text;
             vivienda = int.Parse(tbCodigoIdentificacion.Text);
-            
-            
-        }
-
-        private void btAccept_Click(object sender, RoutedEventArgs e)
-        {
             databaseConnector.instance.addUser(nombre,apellido,apellido2,dni,nTelefono,
-                nTelefonoFamiliar,movil,codigoIdentificacion,targetaSanitaria,fechaDeAlta,vivienda);
+                nTelefonoFamiliar,movil,targetaSanitaria,fechaDeAlta,vivienda);
         }
     }
 }

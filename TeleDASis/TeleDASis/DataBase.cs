@@ -55,7 +55,7 @@ namespace TeleDASis
         
 
         public bool addUser(String nombre,String apellido,String apellido2,String dni,String nTelefono,
-                            String nTelefonoFamiliar, String movil,int codigoIdentificacion,String targetaSanitaria,
+                            String nTelefonoFamiliar, String movil,String targetaSanitaria,
                             String fechaDeAlta, int vivienda)
             //falta recuperar los datos 
 
@@ -63,7 +63,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO usuarios (nombre, apellido, apellido2, dni, nTelefono, nTelefonoFamiliar, movil, codigoIdentificacion, targetaSanitaria, fechaDeAlta, vivienda) VALUES (@nombre, @apellido, @apellido2, @dni, @nTelefono, @nTelefonoFamiliar, @movil, @codigoIdentificacion, @targetaSanitaria, @fechaDeAlta, @vivienda)";
+                string sql = "INSERT INTO usuarios (nombre, apellido, apellido2, dni, nTelefono, nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda) VALUES (@nombre, @apellido, @apellido2, @dni, @nTelefono, @nTelefonoFamiliar, @movil, @targetaSanitaria, @fechaDeAlta, @vivienda)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.Parameters.AddWithValue("@apellido", apellido);
@@ -72,10 +72,11 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@nTelefono", nTelefono);
                 cmd.Parameters.AddWithValue("@nTelefonoFamiliar", nTelefonoFamiliar);
                 cmd.Parameters.AddWithValue("@movil", movil);
-                cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
+                //cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
                 cmd.Parameters.AddWithValue("@targetaSanitaria", targetaSanitaria);
                 cmd.Parameters.AddWithValue("@fechaDeAlta", fechaDeAlta);
                 cmd.Parameters.AddWithValue("@vivienda", vivienda);
+                Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 
 
