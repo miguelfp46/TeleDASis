@@ -26,7 +26,7 @@
         <Label x:Name="lTargetaSanitaria" Content="T.S.:" HorizontalAlignment="Left" Margin="243,64,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbTargetaSanitaria" Height="23" Margin="301,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <Label x:Name="lVivienda" Content="Vivienda:" Margin="40,157,568,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbVivienda" Height="23" Margin="103,157,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="tbVivienda" Height="23" Margin="103,157,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" TextChanged="tbVivienda_TextChanged"/>
         <Button x:Name="btAccept" Content="Aceptar" Margin="0,0,115,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click"/>
         <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,12,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
 

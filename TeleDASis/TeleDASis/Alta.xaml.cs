@@ -50,7 +50,7 @@ namespace TeleDASis
             
             targetaSanitaria = tbTargetaSanitaria.Text;
             //fechaDeAlta = tbFechaDeAlta.Text;
-            vivienda = int.Parse(tbCodigoIdentificacion.Text);
+            vivienda = int.Parse(tbVivienda.Text);
             databaseConnector.instance.addUser(nombre,apellido,apellido2,dni,nTelefono,
                 nTelefonoFamiliar,movil,targetaSanitaria,fechaDeAlta,vivienda);
         }
