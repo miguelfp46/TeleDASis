@@ -34,7 +34,8 @@ namespace TeleDASis
         
         public Alta()
         {
-            InitializeComponent();   
+            InitializeComponent();
+            tbFechaDeAlta.SelectedDate = DateTime.Today;   
         }
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
