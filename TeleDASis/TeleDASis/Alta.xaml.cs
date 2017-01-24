@@ -27,9 +27,8 @@ namespace TeleDASis
         String nTelefono;
         String nTelefonoFamiliar;
         String movil;
-        
         String targetaSanitaria;
-        String fechaDeAlta = "2016-01-01";
+        String fechaDeAlta;
         int vivienda = 0;
         
         
@@ -46,13 +45,13 @@ namespace TeleDASis
             dni = tbDni.Text;
             nTelefono = tbTelefono.Text;
             nTelefonoFamiliar = tbFamiliar.Text;
-            movil = tbMovil.Text;
-            
+            movil = tbMovil.Text;        
             targetaSanitaria = tbTargetaSanitaria.Text;
-            //fechaDeAlta = tbFechaDeAlta.Text;
+            DateTime dt = tbFechaDeAlta.DisplayDate;
+            fechaDeAlta = dt.ToString("yyyy/MM/dd");
             vivienda = int.Parse(tbVivienda.Text);
-            databaseConnector.instance.addUser(nombre,apellido,apellido2,dni,nTelefono,
-                nTelefonoFamiliar,movil,targetaSanitaria,fechaDeAlta,vivienda);
+            databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
+                nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda);
         }
     }
 }

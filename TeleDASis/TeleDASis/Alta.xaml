@@ -8,7 +8,7 @@
         Title="Alta" Height="300" Width="674.419">
     <Grid Margin="-2,0,0,0" HorizontalAlignment="Left" Width="666">
         <Label x:Name="lFecha" Content="Fecha:" Margin="450,61,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
-        <DatePicker x:Name="tbFechaDeAlta" Margin="528,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.069,-1.006" HorizontalAlignment="Left" Width="119"/>
+        <DatePicker x:Name="tbFechaDeAlta" Margin="528,63,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left" Width="119" />
         <Label x:Name="lDni" Content="DNI:" Margin="40,64,593,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbDni" Height="23" Margin="103,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <Label x:Name="lNombre" Content="Nombre:" Margin="40,95,570,0" VerticalAlignment="Top"/>
