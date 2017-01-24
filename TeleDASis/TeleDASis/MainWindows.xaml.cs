@@ -40,9 +40,8 @@ namespace TeleDASis
 
         private void boton_reclamacion_Click(object sender, RoutedEventArgs e)
         {
-            Window3 info = new Window3();
-
-            info.Show();
+            var nuevaventana = new llamadareclamacion();
+            nuevaventana.Show();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
