@@ -5,28 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="llamadareclamacion" Height="397" Width="701.117">
+        Title="llamadareclamacion" Height="458.171" Width="692.544">
     <Grid Margin="0,0,2,1">
-        <Label x:Name="label" Content="Fecha:" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Hora:" HorizontalAlignment="Left" Margin="36,58,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Telefono:" HorizontalAlignment="Left" Margin="38,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-0.038"/>
-        <Label x:Name="label3" Content="Nombre:" HorizontalAlignment="Left" Margin="36,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="Sugerencia o reclamación" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="55" Margin="34,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
-        <Label x:Name="label5" Content="Motivo" HorizontalAlignment="Left" Margin="36,236,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="61" Margin="34,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="426"/>
+        
+       
+      
+        
+       
+        
         <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="489,324,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="588,324,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <DatePicker HorizontalAlignment="Left" Margin="98,34,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="98,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="98,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="98,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label2_Copy" Content="DNI:" HorizontalAlignment="Left" Margin="248,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-0.038"/>
-        <TextBox x:Name="textBox3_Copy" HorizontalAlignment="Left" Height="23" Margin="282,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label3_Copy" Content="Apellido:" HorizontalAlignment="Left" Margin="246,110,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox4_Copy" HorizontalAlignment="Left" Height="23" Margin="306,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label1_Copy" Content="Identificador de Llamada:" Margin="0,58,81,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="144"/>
-        <TextBox x:Name="textBox2_Copy" Height="23" Margin="0,60,23,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Right" Width="50"/>
+       
+       
+       
+        
+       
 
     </Grid>
 </Window>
