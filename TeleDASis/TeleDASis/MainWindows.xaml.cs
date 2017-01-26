@@ -57,6 +57,8 @@ namespace TeleDASis
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)
         {
+            ModificacionesUsuarios modificar = new ModificacionesUsuarios();
+            modificar.Show();
 
         }
 
@@ -78,6 +80,7 @@ namespace TeleDASis
         private void botonConsultas_Click(object sender, RoutedEventArgs e)
         {
             ConsultasUsuarios consultas = new ConsultasUsuarios();
+
             consultas.Show();
         }
     }

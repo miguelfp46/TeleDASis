@@ -92,6 +92,9 @@
     <Compile Include="MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModificacionesUsuarios.xaml.cs">
+      <DependentUpon>ModificacionesUsuarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Empleados.xaml.cs">
       <DependentUpon>Empleados.xaml</DependentUpon>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModificacionesUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
