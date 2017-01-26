@@ -10,15 +10,15 @@
         <Label x:Name="label" Content="DNI:" HorizontalAlignment="Left" Margin="41,33,0,0" VerticalAlignment="Top" Width="34"/>
         <Label x:Name="label_Copy" Content="Nombre:" HorizontalAlignment="Left" Margin="41,61,0,0" VerticalAlignment="Top" Width="64"/>
         <Label x:Name="label_Copy1" Content="Apellido:" HorizontalAlignment="Left" Margin="252,61,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="110,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="319,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="110,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="110,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtapellido" HorizontalAlignment="Left" Height="23" Margin="319,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtdni" HorizontalAlignment="Left" Height="23" Margin="110,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label_Copy2" Content="Fecha:" HorizontalAlignment="Left" Margin="416,33,0,0" VerticalAlignment="Top" Width="44"/>
         <DatePicker HorizontalAlignment="Left" Margin="468,34,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy3" Content="Motivo:" HorizontalAlignment="Left" Margin="41,98,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="96" Margin="47,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="398"/>
+        <TextBox x:Name="txtmotivo" HorizontalAlignment="Left" Height="96" Margin="47,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="398"/>
         <Label x:Name="label_Copy4" Content="Empleado:" HorizontalAlignment="Left" Margin="41,234,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" Margin="110,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtempleado" HorizontalAlignment="Left" Height="23" Margin="110,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="426,291,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="button_Copy" Content="Cancelar" HorizontalAlignment="Left" Margin="526,291,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy_Click"/>
 
