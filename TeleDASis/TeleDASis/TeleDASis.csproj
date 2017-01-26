@@ -70,6 +70,9 @@
     <Compile Include="Baja.xaml.cs">
       <DependentUpon>Baja.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConsultasUsuarios.xaml.cs">
+      <DependentUpon>ConsultasUsuarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="formLlamadaAgenda.xaml.cs">
       <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Baja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConsultasUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -23,20 +23,8 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
-
-        private void button_Copy3_Click(object sender, RoutedEventArgs e)
-        {
-           Alta info = new Alta();
-
-            info.Show();
-        }
-
-        private void button_Copy4_Click(object sender, RoutedEventArgs e)
-        {
-            Baja info = new Baja();
-
-            info.Show();
-        }
+        
+     
 
         private void boton_reclamacion_Click(object sender, RoutedEventArgs e)
         {
@@ -67,14 +55,30 @@ namespace TeleDASis
             nuevaventana.Show();
         }
 
-        private void button_Copy6_Click(object sender, RoutedEventArgs e)
+        private void botonModificaciones_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button_Copy5_Click(object sender, RoutedEventArgs e)
+        private void botonAlta_Click(object sender, RoutedEventArgs e)
         {
+            Alta info = new Alta();
 
+            info.Show();
+
+        }
+
+        private void botonBaja_Click(object sender, RoutedEventArgs e)
+        {
+            Baja info = new Baja();
+
+            info.Show();
+        }
+
+        private void botonConsultas_Click(object sender, RoutedEventArgs e)
+        {
+            ConsultasUsuarios consultas = new ConsultasUsuarios();
+            consultas.Show();
         }
     }
 }
