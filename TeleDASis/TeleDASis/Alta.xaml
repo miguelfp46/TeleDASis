@@ -6,29 +6,68 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Alta" Height="300" Width="674.419">
-    <Grid Margin="-2,0,0,0" HorizontalAlignment="Left" Width="666">
-        <Label x:Name="lFecha" Content="Fecha:" Margin="450,61,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
-        <DatePicker x:Name="tbFechaDeAlta" Margin="528,63,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left" Width="119" />
-        <Label x:Name="lDni" Content="DNI:" Margin="40,64,593,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbDni" Height="23" Margin="103,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lNombre" Content="Nombre:" Margin="40,95,570,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbNombre" Height="23" Margin="103,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lApellido" Content="Apellido:" Margin="242,95,368,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbApellido" Height="23" Margin="301,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lApellido2" Content="Apellido:" Margin="450,95,160,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbApellido2" Height="23" Margin="527,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lTelefono" Content="Teléfono:" Margin="40,126,568,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbTelefono" Height="23" Margin="103,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lMovil" Content="Móvil:" Margin="242,126,382,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbMovil" Height="23" Margin="302,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lTelFamiliar" Content="Tel. Familiar:" Margin="450,126,142,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbFamiliar" Margin="528,126,0,0" TextWrapping="Wrap" Text="" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lTargetaSanitaria" Content="T.S.:" HorizontalAlignment="Left" Margin="243,64,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbTargetaSanitaria" Height="23" Margin="301,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Label x:Name="lVivienda" Content="Vivienda:" Margin="40,157,568,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbVivienda" Height="23" Margin="103,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
-        <Button x:Name="btAccept" Content="Aceptar" Margin="0,0,115,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click"/>
-        <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,12,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+    <Grid Margin="0,0,4,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="208*" />
+            <ColumnDefinition Width="208*" />
+            <ColumnDefinition Width="208*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal">
+            <Label x:Name="lFecha" Content="Fecha:" VerticalAlignment = "Center" Width = "100"/>
+            <DatePicker x:Name="tbFechaDeAlta" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
+            <Label x:Name="lDni" Content="Dni:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbDni" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
+            <Label x:Name="lNombre" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
+            <Label x:Name="lApellido" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal">
+            <Label x:Name="lApellido2" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
+            <Label x:Name="lTelefono" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
+            <Label x:Name="lMovil" Content="Móvil:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "3" Orientation = "Horizontal">
+            <Label x:Name="lTelFamiliar" Content="Tel. Familiar:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbFamiliar" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
+            <Label x:Name="lTargetaSanitaria" Content="T.S.:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbTargetaSanitaria" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "1" Orientation = "Horizontal">
+            <Label x:Name="lVivienda" Content="Vivienda:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="tbVivienda" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "4" Orientation = "Horizontal">
+            <Button x:Name="btAccept" Content="Aceptar" Margin="20,0,45,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click"/>
+            <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        </StackPanel>
+
+
+        
+        
 
     </Grid>
 </Window>

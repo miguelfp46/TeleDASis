@@ -8,10 +8,10 @@
         Title="formLlamadaAgenda" Height="502" Width="1164">
     <Grid Margin="0,0,4,4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="208*" />
-            <ColumnDefinition Width="208*" />
-           
-            
+            <ColumnDefinition Width="341*" />
+            <ColumnDefinition Width="235*" />
+
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height = "*"/>
@@ -42,10 +42,10 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
             <Label x:Name="label4" Content="Motivo:" VerticalAlignment = "Center" Width = "100"/>
-           
+
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "5" Orientation = "Horizontal">
-           
+
             <TextBox x:Name="motivo" HorizontalAlignment="Left" Height="55" Margin="36,-2,0,-1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="530"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal">
@@ -57,10 +57,10 @@
             <DatePicker x:Name="hora_alarma" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "7" Orientation = "Horizontal">
-            
+
         </StackPanel>
-        <Button x:Name="button" Content="Aceptar" Grid.Column="1" HorizontalAlignment="Left" Margin="47,14,0,0" Grid.Row="8" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Cancelar" Grid.Column="1" HorizontalAlignment="Left" Margin="341,14,0,0" Grid.Row="8" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button" Content="Aceptar" Grid.Column="1" HorizontalAlignment="Left" Margin="47,14,0,0" Grid.Row="8" VerticalAlignment="Top" Width="75" Height="20"/>
+        <Button x:Name="button1" Content="Cancelar" Grid.Column="1" HorizontalAlignment="Left" Margin="341,14,0,0" Grid.Row="8" VerticalAlignment="Top" Width="75" Height="20"/>
 
     </Grid>
 </Window>
