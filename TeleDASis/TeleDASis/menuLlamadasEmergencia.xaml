@@ -10,6 +10,7 @@
         <Button x:Name="btnemergencia1" Content="Emergencia Leve" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia1_Click" Height="35"/>
         <Button x:Name="btnemergencia2" Content="Emergencia " HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia2_Click" Height="35"/>
         <Button x:Name="btnemergencia3" Content="Emergencia Grave" HorizontalAlignment="Left" Margin="80,170,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia3_Click" Height="35"/>
+        <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="207,239,0,0" VerticalAlignment="Top" Width="75" Click="btnVolver_Click"/>
 
     </Grid>
 </Window>
