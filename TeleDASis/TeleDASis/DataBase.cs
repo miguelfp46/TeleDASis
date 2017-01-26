@@ -57,9 +57,6 @@ namespace TeleDASis
         public bool addUser(String nombre,String apellido,String apellido2,String dni,String nTelefono,
                             String nTelefonoFamiliar, String movil,String targetaSanitaria,
                             String fechaDeAlta, int vivienda)
-           
-
-
         {
             try
             {
@@ -88,6 +85,34 @@ namespace TeleDASis
                 return false;
             }
         }
+
+        //TODO
+        //public bool showUser(String dni)
+        //{
+        //    try
+        //    {
+                
+        //        string sql = "SELECT nombre FROM usuarios WHERE dni = @dni";
+        //        MySqlCommand cmd = new MySqlCommand(sql, connection);
+        //        cmd.Parameters.AddWithValue("@dni", dni);
+
+        //        MySqlDataReader reader = cmd.ExecuteReader();
+
+        //        if (reader.Read())
+        //        {
+        //            n.Text = Convert.ToString(reader("nombrecampo1"));
+        //            Textbox1.Text = Convert.ToString(reader("nombrecampo2"));
+        //        }
+
+        //        reader.Close();
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.ToString());
+        //        return false;
+        //    }
+        //}
 
         //public User checkUser(string username, string password)
         //{
