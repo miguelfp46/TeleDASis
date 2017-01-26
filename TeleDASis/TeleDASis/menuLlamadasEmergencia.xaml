@@ -1,0 +1,15 @@
+﻿<Window x:Class="TeleDASis.menuLlamadaEmergencia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeleDASis"
+        mc:Ignorable="d"
+        Title="Menu de llamadas Emergencia" Height="300" Width="300">
+    <Grid>
+        <Button x:Name="btnemergencia1" Content="Emergencia Leve" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia1_Click" Height="35"/>
+        <Button x:Name="btnemergencia2" Content="Emergencia " HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia2_Click" Height="35"/>
+        <Button x:Name="btnemergencia3" Content="Emergencia Grave" HorizontalAlignment="Left" Margin="80,170,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia3_Click" Height="35"/>
+
+    </Grid>
+</Window>

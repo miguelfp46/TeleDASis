@@ -17,11 +17,26 @@ namespace TeleDASis
     /// <summary>
     /// Interaction logic for LlamadaEmergencia.xaml
     /// </summary>
-    public partial class LlamadaEmergencia : Window
+    public partial class menuLlamadaEmergencia : Window
     {
-        public LlamadaEmergencia()
+        public menuLlamadaEmergencia()
         {
             InitializeComponent();
+        }
+
+        private void btnemergencia1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnemergencia2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnemergencia3_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

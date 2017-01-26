@@ -77,8 +77,8 @@
     <Compile Include="formLlamadaAgenda.xaml.cs">
       <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LlamadaEmergencia.xaml.cs">
-      <DependentUpon>LlamadaEmergencia.xaml</DependentUpon>
+    <Compile Include="menuLlamadasEmergencia.xaml.cs">
+      <DependentUpon>menuLlamadasEmergencia.xaml</DependentUpon>
     </Compile>
     <Compile Include="LlamadaInformativa.xaml.cs">
       <DependentUpon>LlamadaInformativa.xaml</DependentUpon>
@@ -118,7 +118,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LlamadaEmergencia.xaml">
+    <Page Include="menuLlamadasEmergencia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

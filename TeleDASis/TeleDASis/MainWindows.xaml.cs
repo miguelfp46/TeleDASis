@@ -51,7 +51,7 @@ namespace TeleDASis
 
         private void boton_emergencia_Click(object sender, RoutedEventArgs e)
         {
-            var nuevaventana = new LlamadaEmergencia();
+            menuLlamadaEmergencia nuevaventana = new menuLlamadaEmergencia();
             nuevaventana.Show();
         }
 
