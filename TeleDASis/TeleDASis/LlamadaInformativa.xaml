@@ -6,10 +6,33 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Llamada Informativa" Height="246.123" Width="571.837">
-    <Grid Background="#FF2955EA">
-        <Button x:Name="button" Content="Formulario" HorizontalAlignment="Left" Margin="35,51,0,0" VerticalAlignment="Top" Width="151" Height="67" Click="button_Click"/>
-        <Button x:Name="button1" Content="Historial" HorizontalAlignment="Left" Margin="373,50,0,0" VerticalAlignment="Top" Width="151" Height="67" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Salir" HorizontalAlignment="Left" Margin="242,171,0,0" VerticalAlignment="Top" Width="75" Click="botonsalir_Click"/>
+    <Grid Background="#FF2955EA" Margin="0,0,0,0" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="206*" />
+            <ColumnDefinition Width="165*" />
+            <ColumnDefinition Width="193*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
+            <Button x:Name="button" Content="Formulario" HorizontalAlignment="Left" Margin="36,2,0,0" VerticalAlignment="Top" Width="156" Height="67" Click="button_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "1" Orientation = "Horizontal">
+            <Button x:Name="button1" Content="Historial" HorizontalAlignment="Left" Margin="5,2,0,0" VerticalAlignment="Top" Width="151" Height="67" Click="button1_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row = "2" Orientation = "Horizontal" Grid.Column="1">
+            <Button x:Name="button2" Content="Salir" Width="169" Margin="0,28,0,16"/>
+
+        </StackPanel>
+
+
+
+
+
 
     </Grid>
 </Window>

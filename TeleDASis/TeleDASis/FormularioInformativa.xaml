@@ -7,28 +7,66 @@
         mc:Ignorable="d"
         Title="Llamada Informativa " Height="457.959" Width="815.51">
     <Grid Margin="0,0,4,4">
-        <Label x:Name="label" Content="Fecha:" HorizontalAlignment="Left" Margin="40,55,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Hora:" HorizontalAlignment="Left" Margin="40,92,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Teléfono:" HorizontalAlignment="Left" Margin="40,128,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Nombre:" HorizontalAlignment="Left" Margin="40,165,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy3" Content="Motivo:" HorizontalAlignment="Left" Margin="40,198,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="60" Margin="45,234,0,0" TextWrapping="Wrap" 
-                 VerticalAlignment="Top" Width="454"/>
-        <Label x:Name="label_Copy4" Content="Solución:" HorizontalAlignment="Left" Margin="41,302,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="60" Margin="45,330,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="454"/>
-        <Button x:Name="button" Content="Aceptar" HorizontalAlignment="Left" Margin="609,392,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="716,392,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="121,167,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Height="23" Margin="121,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <DatePicker HorizontalAlignment="Left" Margin="121,60,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1_Copy1" HorizontalAlignment="Left" Height="23" Margin="121,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy5" Content="Apellido:" HorizontalAlignment="Left" Margin="260,165,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1_Copy2" HorizontalAlignment="Left" Height="23" Margin="322,167,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy6" Content="Identificador de llamada:" HorizontalAlignment="Left" Margin="267,19,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy7" Content="DNI:" HorizontalAlignment="Left" Margin="259,128,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1_Copy3" HorizontalAlignment="Left" Height="23" Margin="322,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1_Copy4" HorizontalAlignment="Left" Height="23" Margin="410,22,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="48"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="208*" />
+            <ColumnDefinition Width="191*" />
+            <ColumnDefinition Width="169*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal">
+            <Label x:Name="label" Content="Fecha:" VerticalAlignment = "Center" Width = "100"/>
+            <DatePicker x:Name="Fecha" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
+            <Label x:Name="label1" Content="Hora:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Hora" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
+            <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
+            <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Nom" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
+            <Label x:Name="label5" Content="Motivo:" VerticalAlignment = "Center" Width = "148" Margin="0,2"/>
+            <TextBox x:Name="SoR" Text="" VerticalAlignment = "Center" Width = "395" Margin="0,6,0,-26" Height="50"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
+            <Label x:Name="label6" Content="Motivo:" VerticalAlignment = "Center" Width = "148" Margin="0,2"/>
+            <TextBox x:Name="Motivo" Text="" VerticalAlignment = "Center" Width = "395" Margin="0,6,0,-26" Height="50"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">
+            <Label x:Name="label7" Content="DNI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
+            <TextBox x:Name="dni" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">
+            <Label x:Name="label8" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
+            <TextBox x:Name="APELLIDO" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0">
+            <Label x:Name="label9" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
+            <TextBox x:Name="APELLIDO2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "0" Orientation = "Horizontal" Margin="0,0,1,0">
+            <Label x:Name="label10" Content="CI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
+            <TextBox x:Name="ci" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "9" Orientation = "Horizontal" Margin="0,0,1,0">
+            <Button x:Name="button" Content="Aceptar"  Margin="0,0,0,0" VerticalAlignment="Center" Width="75"/>
+            <Button x:Name="button1" Content="Cancelar"  Margin="30,6,0,5" VerticalAlignment="Center" Width="75"/>
+        </StackPanel>
 
     </Grid>
 </Window>
