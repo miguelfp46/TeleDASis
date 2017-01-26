@@ -19,6 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class Baja : Window
     {
+        public String nombre;
+        public String dni;
         public Baja()
         {
             InitializeComponent();
@@ -27,6 +29,13 @@ namespace TeleDASis
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void bAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            tbDni.Text = dni;
+
+            databaseConnector.instance.showUser(dni);
         }
     }
 }
