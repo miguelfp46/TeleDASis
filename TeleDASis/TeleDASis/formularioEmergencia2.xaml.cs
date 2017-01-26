@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace TeleDASis
 {
     /// <summary>
-    /// Interaction logic for LlamadaEmergencia.xaml
+    /// Interaction logic for formularioEmergencia2.xaml
     /// </summary>
-    public partial class LlamadaEmergencia : Window
+    public partial class formularioEmergencia2 : Window
     {
-        public LlamadaEmergencia()
+        public formularioEmergencia2()
         {
             InitializeComponent();
         }

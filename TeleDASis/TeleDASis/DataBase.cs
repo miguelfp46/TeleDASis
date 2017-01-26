@@ -57,7 +57,7 @@ namespace TeleDASis
         public bool addUser(String nombre,String apellido,String apellido2,String dni,String nTelefono,
                             String nTelefonoFamiliar, String movil,String targetaSanitaria,
                             String fechaDeAlta, int vivienda)
-            //falta recuperar los datos 
+           
 
 
         {
