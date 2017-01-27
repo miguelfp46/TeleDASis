@@ -35,7 +35,7 @@ namespace TeleDASis
         {
             tbDni.Text = dni;
 
-            databaseConnector.instance.showUser(dni);
+          //  databaseConnector.instance.showUser(dni);
         }
     }
 }
