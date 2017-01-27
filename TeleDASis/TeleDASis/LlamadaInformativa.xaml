@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Llamada Informativa" Height="246.123" Width="571.837">
-    <Grid Background="#FF2955EA" Margin="0,0,0,0" >
+    <Grid Background="#FF2955EA" Margin="0,0,0,28" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="206*" />
             <ColumnDefinition Width="165*" />
@@ -25,13 +25,13 @@
             <Button x:Name="button1" Content="Historial" HorizontalAlignment="Left" Margin="5,2,0,0" VerticalAlignment="Top" Width="151" Height="67" Click="button1_Click"/>
         </StackPanel>
         <StackPanel Grid.Row = "2" Orientation = "Horizontal" Grid.Column="1">
-            <Button x:Name="button2" Content="Salir" Width="169" Margin="0,28,0,16" Click="button2_Click"/>
+
 
         </StackPanel>
 
 
 
-
+        <Button x:Name="button2" Content="Salir" Width="169" Margin="9,63,15,-20" Click="button2_Click" Grid.Column="2" Grid.Row="2"/>
 
 
     </Grid>
