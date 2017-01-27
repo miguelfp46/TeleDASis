@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="formLlamadaAgenda" Height="502" Width="1164">
-    <Grid Margin="0,0,4,4">
+        Title="formLlamadaAgenda" Height="679" Width="1164">
+    <Grid Margin="1,4,3,52">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="341*" />
             <ColumnDefinition Width="235*" />
@@ -22,7 +22,7 @@
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
+
         </Grid.RowDefinitions>
         <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal">
             <Label x:Name="label" Content="Fecha:" VerticalAlignment = "Center" Width = "100" Margin="0,13"/>
@@ -45,22 +45,19 @@
 
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "5" Orientation = "Horizontal">
-
             <TextBox x:Name="motivo" HorizontalAlignment="Left" Height="55" Margin="36,-2,0,-1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="530"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal">
             <Label x:Name="label5" Content="Fecha de alarma:" VerticalAlignment = "Center" Width = "100"/>
             <DatePicker x:Name="alarma" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "7" Orientation = "Horizontal">
+        <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" Margin="0,79,12,0" Grid.RowSpan="2">
             <Label x:Name="label6" Content="Hora de alarma:" VerticalAlignment = "Center" Width = "100"/>
             <DatePicker x:Name="hora_alarma" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "7" Orientation = "Horizontal">
 
-        </StackPanel>
-        <Button x:Name="button" Content="Aceptar" Grid.Column="1" HorizontalAlignment="Left" Margin="47,14,0,0" Grid.Row="8" VerticalAlignment="Top" Width="75" Height="20"/>
-        <Button x:Name="button1" Content="Cancelar" Grid.Column="1" HorizontalAlignment="Left" Margin="341,14,0,0" Grid.Row="8" VerticalAlignment="Top" Width="75" Height="20"/>
+        <Button x:Name="button" Content="Aceptar" Grid.Column="1" Margin="0,88,322,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="76"/>
+        <Button x:Name="button1" Content="Cancelar" Grid.Column="1" Margin="0,88,52,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" Click="button1_Click_1" HorizontalAlignment="Right" Width="74"/>
 
     </Grid>
 </Window>
