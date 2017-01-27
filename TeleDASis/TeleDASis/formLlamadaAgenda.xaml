@@ -57,7 +57,7 @@
         </StackPanel>
 
         <Button x:Name="button" Content="Aceptar" Grid.Column="1" Margin="0,88,322,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="76"/>
-        <Button x:Name="button1" Content="Cancelar" Grid.Column="1" Margin="0,88,52,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" Click="button1_Click_1" HorizontalAlignment="Right" Width="74"/>
+        <Button x:Name="button1" Content="Salir" Grid.Column="1" Margin="0,88,52,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" Click="button1_Click_1" HorizontalAlignment="Right" Width="74"/>
 
     </Grid>
 </Window>
