@@ -44,7 +44,7 @@
             <TextBox x:Name="SoR" Text="" VerticalAlignment = "Center" Width = "395" Margin="0,6,0,-26" Height="50"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
-            <Label x:Name="label6" Content="Motivo:" VerticalAlignment = "Center" Width = "148" Margin="0,2"/>
+            <Label x:Name="label6" Content="Solucion" VerticalAlignment = "Center" Width = "148" Margin="0,2"/>
             <TextBox x:Name="Motivo" Text="" VerticalAlignment = "Center" Width = "395" Margin="0,6,0,-26" Height="50"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">

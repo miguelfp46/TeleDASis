@@ -36,7 +36,9 @@ namespace TeleDASis
 
         }
 
-        private void botonsalir_Click(object sender, RoutedEventArgs e)
+       
+
+        private void button2_Click(object sender, RoutedEventArgs e)
         {
 
             this.Close();
