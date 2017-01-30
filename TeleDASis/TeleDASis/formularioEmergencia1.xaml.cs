@@ -23,5 +23,20 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(CMB.Text == "Ambulancia")
+            {
+                //perfil = 1;
+            }else if (CMB.Text == "Policia")
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
