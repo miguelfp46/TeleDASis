@@ -32,13 +32,13 @@ namespace TeleDASis
 
         private void btnemergencia2_Click(object sender, RoutedEventArgs e)
         {
-            formularioEmergencia2 emergencia = new formularioEmergencia2();
+            formularioEmergencia1 emergencia = new formularioEmergencia1();
             emergencia.Show();
         }
 
         private void btnemergencia3_Click(object sender, RoutedEventArgs e)
         {
-            formularioEmergencia3 emergrave = new formularioEmergencia3();
+            formularioEmergencia1 emergrave = new formularioEmergencia1();
             emergrave.Show();
         }
 
