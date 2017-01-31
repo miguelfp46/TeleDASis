@@ -9,9 +9,11 @@
     <Grid Margin="0,0,0,3">
         <Label x:Name="lDni" Content="DNI:" HorizontalAlignment="Left" Margin="41,33,0,0" VerticalAlignment="Top" Width="34"/>
         <Label x:Name="lName" Content="Nombre:" HorizontalAlignment="Left" Margin="41,61,0,0" VerticalAlignment="Top" Width="64"/>
-        <Label x:Name="lApellido" Content="Apellido:" HorizontalAlignment="Left" Margin="252,61,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="110,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbApellido" HorizontalAlignment="Left" Height="23" Margin="319,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lPrimerApellido" Content="Apellido:" HorizontalAlignment="Left" Margin="252,61,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="lSegundoApellido" Content="Apellido:" HorizontalAlignment="Left" Margin="252,88,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="110,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tbPrimerApellido" HorizontalAlignment="Left" Height="23" Margin="319,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tbSegundoApellido" HorizontalAlignment="Left" Height="23" Margin="319,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <TextBox x:Name="tbDni" HorizontalAlignment="Left" Height="23" Margin="110,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lFecha" Content="Fecha:" HorizontalAlignment="Left" Margin="416,33,0,0" VerticalAlignment="Top" Width="44"/>
         <DatePicker HorizontalAlignment="Left" Margin="468,34,0,0" VerticalAlignment="Top"/>
@@ -21,6 +23,7 @@
         <TextBox x:Name="tbEmpleado" HorizontalAlignment="Left" Height="23" Margin="110,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="bAceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="426,291,0,0" VerticalAlignment="Top" Width="75" Click="bAceptar_Click"/>
         <Button x:Name="bCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="526,291,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy_Click"/>
+        <Button x:Name="bComprobar" Content="Comprobar" HorizontalAlignment="Left" Margin="241,32,0,0" VerticalAlignment="Top" Width="75" Click="buscarUsuarioPorDni"/>
 
     </Grid>
 </Window>

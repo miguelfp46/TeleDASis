@@ -87,32 +87,36 @@ namespace TeleDASis
         }
 
         //TODO
-        //public bool showUser(String dni)
-        //{
-        //    try
-        //    {
+        public Usuario showUser(String dni)
+        {
+            Usuario usuario = new Usuario();
+            try
+            {
                 
-        //        string sql = "SELECT nombre FROM usuarios WHERE dni = @dni";
-        //        MySqlCommand cmd = new MySqlCommand(sql, connection);
-        //        cmd.Parameters.AddWithValue("@dni", dni);
+                string sql = "SELECT nombre, apellido, apellido2 FROM usuarios WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@dni", dni);
 
-        //        MySqlDataReader reader = cmd.ExecuteReader();
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-        //        if (reader.Read())
-        //        {
-        //            n.Text = Convert.ToString(reader("nombrecampo1"));
-        //            Textbox1.Text = Convert.ToString(reader("nombrecampo2"));
-        //        }
+                    if (reader.Read())
+                {
 
-        //        reader.Close();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.ToString());
-        //        return false;
-        //    }
-        //}
+                    usuario.nombre = Convert.ToString(reader["nombre"]);
+                    usuario.primerApellido = Convert.ToString(reader["apellido"]);
+                    usuario.segundoApellido = Convert.ToString(reader["apellido2"]);
+                }
+
+                reader.Close();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                usuario.nombre = null;
+                return usuario;
+            }
+        }
 
         //public User checkUser(string username, string password)
         //{

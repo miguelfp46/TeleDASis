@@ -10,7 +10,8 @@ namespace TeleDASis
     {
         public int id { get; set; }
         public String nombre { get; set; }
-        public String apellidos { get; set; }
+        public String primerApellido { get; set; }
+        public String segundoApellido { get; set; }
         public int telefono { get; set; }
         public int telefonofamiliar { get; set; }
         public int tlfmovil { get; set; }

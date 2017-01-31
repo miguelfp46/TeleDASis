@@ -34,9 +34,23 @@ namespace TeleDASis
         private void bAceptar_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            tbDni.Text = dni;
-
-          //  databaseConnector.instance.showUser(dni);
+              
         }
+        public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
+        {
+            dni = tbDni.Text;
+            Usuario usuario = databaseConnector.instance.showUser(dni);
+            if (usuario.nombre == null)
+            {
+                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + dni + ".\nVerifica que sea correcto.", "DNI INCORRECTO", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                tbNombre.Text = usuario.nombre;
+                tbPrimerApellido.Text = usuario.primerApellido;
+                tbSegundoApellido.Text = usuario.segundoApellido;
+            }
+        }
+
     }
 }
