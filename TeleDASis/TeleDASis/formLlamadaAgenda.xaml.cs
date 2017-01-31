@@ -29,7 +29,7 @@ namespace TeleDASis
         private void button1_Click_1(object sender, RoutedEventArgs e)
         {
 
-            Close();
+            this.Close();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
