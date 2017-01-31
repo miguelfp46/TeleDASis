@@ -8,7 +8,6 @@
         Title="Alta" Height="300" Width="674.419">
     <Grid Margin="0,0,2,4">
         <Grid.ColumnDefinitions>
-
             <ColumnDefinition Width="35*" />
             <ColumnDefinition Width="210*" />
             <ColumnDefinition Width="215*" />
