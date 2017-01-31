@@ -54,6 +54,7 @@ namespace TeleDASis
             vivienda = int.Parse(tbVivienda.Text);
             databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
                 nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda);
+            this.Close();
         }
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
