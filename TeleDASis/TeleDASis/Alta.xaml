@@ -28,7 +28,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
             <Label x:Name="lDni" Content="Dni:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbDni" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbDni" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" TextChanged="tbDni_TextChanged"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="lNombre" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>

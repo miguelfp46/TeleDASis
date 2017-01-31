@@ -74,5 +74,10 @@ namespace TeleDASis
         {
             this.Close();
         }
+
+        private void tbDni_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
