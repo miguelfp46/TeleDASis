@@ -55,7 +55,7 @@ namespace TeleDASis
             databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
                 nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda);
         }
-        private void DatePicker_SelectedDateChanged(object sender, SelectedCellsChangedEventArgs e)
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             var picker = sender as DatePicker;
             DateTime? date = picker.SelectedDate;
