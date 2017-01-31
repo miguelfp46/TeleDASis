@@ -37,6 +37,7 @@ namespace TeleDASis
             InitializeComponent();
             tbFechaDeAlta.SelectedDate = DateTime.Today;   
         }
+        
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
@@ -53,6 +54,20 @@ namespace TeleDASis
             vivienda = int.Parse(tbVivienda.Text);
             databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
                 nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda);
+        }
+        private void DatePicker_SelectedDateChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            var picker = sender as DatePicker;
+            DateTime? date = picker.SelectedDate;
+
+            if (date == null)
+            {
+                this.Title = "No date";
+            }
+            else
+            {
+                this.Title = date.Value.ToShortDateString();
+            }
         }
 
         private void btCancel_Click(object sender, RoutedEventArgs e)
