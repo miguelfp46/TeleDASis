@@ -54,5 +54,10 @@ namespace TeleDASis
             databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
                 nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda);
         }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

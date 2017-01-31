@@ -64,7 +64,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "4" Orientation = "Horizontal">
             <Button x:Name="btAccept" Content="Aceptar" Margin="20,0,45,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click"/>
-            <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+            <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btCancel_Click"/>
         </StackPanel>
 
 
