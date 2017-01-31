@@ -72,7 +72,10 @@ namespace TeleDASis
 
         private void btCancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBox.Show("Estas seguro que quieres cancelar esta operación?", "Alta",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+           // this.Close();
         }
 
         private void tbDni_TextChanged(object sender, TextChangedEventArgs e)

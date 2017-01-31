@@ -24,6 +24,7 @@ namespace TeleDASis
         public Baja()
         {
             InitializeComponent();
+            FechaBaja.SelectedDate = DateTime.Today;
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
