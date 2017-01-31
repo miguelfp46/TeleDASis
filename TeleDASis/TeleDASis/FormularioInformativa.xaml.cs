@@ -22,6 +22,7 @@ namespace TeleDASis
         public FormularioInformativa()
         {
             InitializeComponent();
+            Fecha.SelectedDate = DateTime.Today;
         }
 
         

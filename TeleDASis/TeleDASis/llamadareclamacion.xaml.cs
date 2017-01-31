@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,6 +23,10 @@ namespace TeleDASis
         public llamadareclamacion()
         {
             InitializeComponent();
+            Fecha.SelectedDate = DateTime.Today;
+            Hora.SelectedDateFormat = DatePickerFormat.Short;
+           
+          
         }
 
         private void button1_Click_1(object sender, RoutedEventArgs e)
