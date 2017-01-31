@@ -22,6 +22,7 @@ namespace TeleDASis
         public formularioEmergencia1()
         {
             InitializeComponent();
+            Fecha.SelectedDate = DateTime.Today;
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,6 +45,11 @@ namespace TeleDASis
         private void Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Guardar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -22,6 +22,7 @@ namespace TeleDASis
         public formLlamadaAgenda()
         {
             InitializeComponent();
+            Fecha.SelectedDate = DateTime.Today;
         }
 
         

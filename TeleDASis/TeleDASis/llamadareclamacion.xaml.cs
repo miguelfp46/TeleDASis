@@ -22,6 +22,7 @@ namespace TeleDASis
         public llamadareclamacion()
         {
             InitializeComponent();
+            Fecha.SelectedDate = DateTime.Today;
         }
 
         private void button1_Click_1(object sender, RoutedEventArgs e)
