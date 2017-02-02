@@ -118,6 +118,24 @@ namespace TeleDASis
             }
         }
 
+        //public bool delUser(String nombre, String dni)
+        //{
+        //    try
+        //    {
+
+        //        string sql = "DELETE FROM usuarios WHERE dni=@dni and nombre = @nombre";
+        //        MySqlCommand cmd = new MySqlCommand(sql, connection);
+                
+  
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.ToString());
+               
+        //    }
+        //    return true;
+        //}
+
         //public User checkUser(string username, string password)
         //{
         //    // If user exists returns user from database
