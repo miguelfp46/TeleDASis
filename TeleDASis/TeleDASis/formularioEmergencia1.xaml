@@ -64,7 +64,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" >
             <Label x:Name="label9" Content="Servicios:" VerticalAlignment = "Center" Width = "100"/>
-            <ComboBox x:Name="CMB" Width="120" SelectionChanged="comboBox_SelectionChanged" DropDownClosed =" CMB_DropDownClosed">
+            <ComboBox x:Name="CMB" Width="120" SelectionChanged="comboBox_SelectionChanged">
                 <ComboBoxItem Content="Ambulancia" HorizontalAlignment="Left" Width="118"/>
                 <ComboBoxItem Content="Policia" HorizontalAlignment="Left" Width="118"/>
                 <ComboBoxItem Content="Bomberos" HorizontalAlignment="Left" Width="118"/>

@@ -28,10 +28,10 @@ namespace TeleDASis
         // ATTRIBUTES
         protected string connStr;
         protected MySqlConnection connection = null;
-        protected string serverName = "127.0.0.1";
+        protected string serverName = "172.16.10.20";
         protected string serverUser = "root";
         protected string database = "mydb";
-        protected string password = "olakase";
+        protected string password = "admin2";
 
         protected uint serverPort = 3306;
 
