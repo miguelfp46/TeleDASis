@@ -51,5 +51,23 @@ namespace TeleDASis
         {
 
         }
+
+       // private void CMB_DropDownClosed(object sender, EventArgs e)
+      //  {
+      //      if (handle) Handler();
+      //      handle = true;
+      //  }
+
+      //  private void combocomboBox_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
+      //  {
+       //     ComboBox cmb = sender as ComboBox;
+      //      handle = !cmb.IsDropDownOpen;
+       //     handle();
+      //  }
+
+      //  private void Handle()
+      //  {
+       //     switch(CMB.SelectedItem.ToString().Split(new string[] {":" }, StringSplitOptions.None))
+        //}
     }
 }
