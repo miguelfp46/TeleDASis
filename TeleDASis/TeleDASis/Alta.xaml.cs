@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -81,8 +82,22 @@ namespace TeleDASis
 
         private void tbDni_TextChanged(object sender, TextChangedEventArgs e)
         {
-          
-    }
+            private enum TiposCodigosEnum { NIF, NIE, CIF}
+        // numero tal cual lo introduce el usuario
+        private string numero;
+        private TiposCodigosEnum tipo;
+
+        //parte de nif : en caso de ser un nif intracomunitario, permite obtener el codigo del pais
+        public string CodigoIntracomunitario { get; internal set; }
+        internal bool esIntraComunitario { get; set; }
+        // parte de nif : Letra inicial del Nif, en caso de tenerla
+        public string LetraInicial { get; internal set; }
+        //parte de nif Bloque númerico del nif , en el caso de un nif de persona física = DNI
+        public int Numero { get; internal set; }
+        //digito de control 
+        public string DigitoControl { get; internal set; }
+        // valor que representa si el nif introducido es correcto
+        public bool esCorrecto { get; internal set; }
         }
     }
-
+}
