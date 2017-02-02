@@ -86,7 +86,7 @@ namespace TeleDASis
             }
         }
 
-        //TODO
+        
         public Usuario showUser(String dni)
         {
             Usuario usuario = new Usuario();
