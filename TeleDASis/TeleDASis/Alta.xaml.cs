@@ -81,7 +81,7 @@ namespace TeleDASis
 
         private void tbDni_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //8
+
           
     }
         }

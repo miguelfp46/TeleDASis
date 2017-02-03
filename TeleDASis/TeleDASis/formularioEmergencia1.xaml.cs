@@ -19,6 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class formularioEmergencia1 : Window
     {
+        private bool handle = true;
+
         public formularioEmergencia1()
         {
             InitializeComponent();
@@ -29,17 +31,6 @@ namespace TeleDASis
         {
            
 
-            if (CMB.Text == "Ambulancia")
-            {
-                //perfil = 1;
-            }else if (CMB.Text == "Policia")
-            {
-
-            }
-            else
-            {
-
-            }
         }
 
         private void Salir_Click(object sender, RoutedEventArgs e)
@@ -52,22 +43,44 @@ namespace TeleDASis
 
         }
 
-       // private void CMB_DropDownClosed(object sender, EventArgs e)
-      //  {
-      //      if (handle) Handler();
-      //      handle = true;
-      //  }
+       private void CMB_DropDownClosed(object sender, EventArgs e)
+       {
+           if (handle) Handle();
+           handle = true;
+       }
 
-      //  private void combocomboBox_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
-      //  {
-       //     ComboBox cmb = sender as ComboBox;
-      //      handle = !cmb.IsDropDownOpen;
-       //     handle();
-      //  }
+       private void combocomboBox_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
+      {
+           ComboBox cmb = sender as ComboBox;
+           handle = !cmb.IsDropDownOpen;
+           Handle();
+       }
 
-      //  private void Handle()
-      //  {
-       //     switch(CMB.SelectedItem.ToString().Split(new string[] {":" }, StringSplitOptions.None))
-        //}
+       private void Handle()
+       {
+            switch(CMB.SelectedItem.ToString().Split(new string[] {":" }, StringSplitOptions.None).Last())
+            {
+                case "Ambulancia":
+                    servicio = "1";
+                    break;
+                case "Policia":
+                    servicio = "2";
+                    break;
+                case "Bomberos":
+                    servicio = "3";
+                    break;
+                case "Mossos d'escuadra":
+                    servicio = "4";
+                    break;
+                case "Mas de uno":
+                    servicio = "5";
+                    break;
+                case "Ninguno":
+                    servicio = "6";
+                    break;
+
+
+            }
+       }
     }
 }
