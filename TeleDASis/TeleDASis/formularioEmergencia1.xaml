@@ -64,11 +64,13 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" >
             <Label x:Name="label9" Content="Servicios:" VerticalAlignment = "Center" Width = "100"/>
-            <ComboBox x:Name="CMB" Width="120" SelectionChanged="comboBox_SelectionChanged">
+            <ComboBox x:Name="CMB" Width="120" SelectionChanged="comboBox_SelectionChanged" Height="28" VerticalAlignment="Bottom" DropDownClosed="CMB_DropDownClosed">
                 <ComboBoxItem Content="Ambulancia" HorizontalAlignment="Left" Width="118"/>
                 <ComboBoxItem Content="Policia" HorizontalAlignment="Left" Width="118"/>
                 <ComboBoxItem Content="Bomberos" HorizontalAlignment="Left" Width="118"/>
-                <ComboBoxItem Content="Todos" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="Mossos d'escuadra" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="Mas de uno" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="Ninguno" HorizontalAlignment="Left" Width="118"/>
             </ComboBox>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "7" Orientation = "Horizontal" >
@@ -80,7 +82,7 @@
             <TextBox x:Name="Solucion"  VerticalAlignment = "Center" Width = "546" Margin="0,3,0,2" Height="34"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "9" Orientation = "Horizontal" >
-            <Button x:Name="Salir" Content="Salir" Grid.Column="2" HorizontalAlignment="Left" Margin="100,10,0,0" Grid.Row="9" VerticalAlignment="Top" Width="75" Click="Salir_Click"/>
+            <Button x:Name="Salir" Content="Salir" Grid.Column="2" HorizontalAlignment="Left" Margin="100,0,0,10" Grid.Row="9" VerticalAlignment="Bottom" Width="75" Click="Salir_Click"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "9" Orientation = "Horizontal" >
             <Button x:Name="Guardar" Content="Guardar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="9" VerticalAlignment="Top" Width="75" Click="Guardar_Click"/>
