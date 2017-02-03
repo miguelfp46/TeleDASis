@@ -52,6 +52,10 @@ namespace TeleDASis
                 tbSegundoApellido.Text = usuario.segundoApellido;
             }
         }
+        //public string comprobarDni()
+        //{
+
+        //}
 
     }
 }
