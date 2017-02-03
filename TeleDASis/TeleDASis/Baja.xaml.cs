@@ -34,8 +34,13 @@ namespace TeleDASis
 
         private void bAceptar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-              
+            //cuando se llame a este metodo, se lanzara un messagebox advirtiendo que si queremos borrar el usuario.
+            MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (prueba == MessageBoxResult.Yes)
+            {
+                databaseConnector.instance.delUser(nombre, dni);
+            }
+            
         }
         public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
         {
@@ -43,7 +48,7 @@ namespace TeleDASis
             Usuario usuario = databaseConnector.instance.showUser(dni);
             if (usuario.nombre == null)
             {
-                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + dni + ".\nVerifica que sea correcto.", "DNI INCORRECTO", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
