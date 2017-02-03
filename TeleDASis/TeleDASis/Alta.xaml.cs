@@ -41,7 +41,15 @@ namespace TeleDASis
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
-            VerificarDni(dni);
+            if (VerificarDni(dni) == true)
+            {
+                MessageBox.Show("Okey");
+
+            } else
+            {
+                MessageBox.Show("Algo no rula bien.");
+            }
+            
             //nombre = tbNombre.Text;
             //apellido = tbApellido.Text;
             //apellido2 = tbApellido2.Text;
