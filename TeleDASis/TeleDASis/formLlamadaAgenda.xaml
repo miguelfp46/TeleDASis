@@ -38,7 +38,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label3" Content="Nombre::" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="nombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <Label x:Name="nombre"  VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
             <Label x:Name="label4" Content="Motivo:" VerticalAlignment = "Center" Width = "100"/>

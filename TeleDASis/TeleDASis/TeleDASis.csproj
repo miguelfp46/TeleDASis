@@ -74,6 +74,7 @@
       <DependentUpon>ConsultasUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="DNI.cs" />
     <Compile Include="formLlamadaAgenda.xaml.cs">
       <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
     </Compile>
