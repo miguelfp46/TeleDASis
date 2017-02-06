@@ -33,5 +33,12 @@ namespace TeleDASis
         {
             this.Close();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
