@@ -22,6 +22,12 @@ namespace TeleDASis
         public ModificacionesUsuarios()
         {
             InitializeComponent();
+            Fecha.SelectedDate = DateTime.Today;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
