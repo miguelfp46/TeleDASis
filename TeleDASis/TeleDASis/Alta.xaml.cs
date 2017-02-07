@@ -98,9 +98,10 @@ namespace TeleDASis
 
             // this.Close();
         }
-        public Boolean VerificarDni(string dni)
+        public bool VerificarDni(string dni)
         {
             String aux = null;
+            
             dni = dni.ToUpper();
 
             //ponemos la letra en mayuscula
