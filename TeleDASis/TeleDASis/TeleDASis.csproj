@@ -105,6 +105,7 @@
     <Compile Include="Eliminar.xaml.cs">
       <DependentUpon>Eliminar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <Page Include="Alta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
