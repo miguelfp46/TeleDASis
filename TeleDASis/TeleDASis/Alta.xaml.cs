@@ -19,15 +19,15 @@ namespace TeleDASis
     /// </summary>
     public partial class Alta : Window
     {
-        String nombre;
-        String apellido;
-        String apellido2;
-        String dni;
-        String nTelefono;
-        String nTelefonoFamiliar;
-        String movil;
-        String targetaSanitaria;
-        String fechaDeAlta;
+        string nombre;
+        string apellido;
+        string apellido2;
+        string dni;
+        string nTelefono;
+        string nTelefonoFamiliar;
+        string movil;
+        string targetaSanitaria;
+        string fechaDeAlta;
         int vivienda = 0;
 
 
@@ -40,41 +40,48 @@ namespace TeleDASis
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
-            //nombre = tbNombre.Text;
-            //apellido = tbApellido.Text;
-            //apellido2 = tbApellido2.Text;
-            //dni = tbDni.Text;
-            //nTelefono = tbTelefono.Text;
-            //nTelefonoFamiliar = tbFamiliar.Text;
-            //movil = tbMovil.Text;
-            //targetaSanitaria = tbTargetaSanitaria.Text;
-            //DateTime dt = tbFechaDeAlta.DisplayDate;
-            //fechaDeAlta = dt.ToString("yyyy/MM/dd");
-            //vivienda = int.Parse(tbVivienda.Text);
-            //if (nombre == "" || apellido == "" || apellido2 == "" || dni == "" ||
-            //    nTelefono == "" || nTelefonoFamiliar == "" || movil == "" || targetaSanitaria == ""
-            //    || vivienda == 0)
-            //{
-            //    MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
-            //else
-            //{
-            //    if (databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
-            //    nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda) == true)
-            //    {
-            //        MessageBox.Show("Se ha introducido a " + nombre + " con éxito", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
-            //        this.Close();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    }
-            //}
-            dni = "";
-            MessageBox.Show(Validaciones.validarNIF(dni)?"1":"0");
-            
-            
-            
+            nombre = tbNombre.Text;
+            apellido = tbApellido.Text;
+            apellido2 = tbApellido2.Text;
+            dni = tbDni.Text;
+            nTelefono = tbTelefono.Text;
+            nTelefonoFamiliar = tbFamiliar.Text;
+            movil = tbMovil.Text;
+            targetaSanitaria = tbTargetaSanitaria.Text;
+            DateTime dt = tbFechaDeAlta.DisplayDate;
+            fechaDeAlta = dt.ToString("yyyy/MM/dd");
+            if(tbVivienda.Text == "")
+            {
+                tbVivienda.Text = "0";
+            }
+            vivienda = int.Parse(tbVivienda.Text);
+
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(apellido2) || string.IsNullOrEmpty(dni) ||
+                string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria)
+                || string.IsNullOrEmpty(Convert.ToString(vivienda)))
+            {
+                MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
+                nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda) == true)
+                {
+                    if (Validaciones.validarNIF(dni) == false)
+                    {
+                        MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se ha introducido a " + nombre + " con éxito", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }    
         }
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
