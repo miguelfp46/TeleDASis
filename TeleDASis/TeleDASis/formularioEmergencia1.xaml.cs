@@ -19,8 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class formularioEmergencia1 : Window
     {
-        private bool handle = true;
-        string servicio = null;
+       private bool handle = true;
+       string servicio = null;
 
         public formularioEmergencia1()
         {
@@ -44,44 +44,44 @@ namespace TeleDASis
 
         }
 
-       //private void CMB_DropDownClosed(object sender, EventArgs e)
-       //{
-       //    if (handle) Handle();
-       //    handle = true;
-       //}
+       private void CMB_DropDownClosed(object sender, EventArgs e)
+      {
+           if (handle) Handle();
+           handle = true;
+      }
 
-      // private void combocomboBox_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
-      //{
-      //     ComboBox cmb = sender as ComboBox;
-      //     handle = !cmb.IsDropDownOpen;
-      //     Handle();
-      // }
+      private void combocomboBox_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
+     {
+          ComboBox cmb = sender as ComboBox;
+          handle = !cmb.IsDropDownOpen;
+           Handle();
+       }
 
-       //private void Handle()
-       //{
-       //     switch(CMB.SelectedItem.ToString().Split(new string[] {":" }, StringSplitOptions.None).Last())
-       //     {
-       //         case "Ambulancia":
-       //             servicio = "1";
-       //             break;
-       //         case "Policia":
-       //             servicio = "2";
-       //             break;
-       //         case "Bomberos":
-       //             servicio = "3";
-       //             break;
-       //         case "Mossos d'escuadra":
-       //             servicio = "4";
-       //             break;
-       //         case "Mas de uno":
-       //             servicio = "5";
-       //             break;
-       //         case "Ninguno":
-       //             servicio = "6";
-       //             break;
+       private void Handle()
+       {
+            switch(CMB.SelectedItem.ToString().Split(new string[] {":" }, StringSplitOptions.None).Last())
+           {
+               case "Ambulancia":
+                   servicio = "1";
+                  break;
+               case "Policia":
+                   servicio = "2";
+                   break;
+               case "Bomberos":
+                   servicio = "3";
+                   break;
+               case "Mossos d'escuadra":
+                   servicio = "4";
+                   break;
+               case "Mas de uno":
+                   servicio = "5";
+                   break;
+               default:
+                  servicio = "6";
+                   break;
 
 
-       //     }
-       //}
+           }
+       }
     }
 }
