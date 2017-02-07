@@ -27,7 +27,11 @@ namespace TeleDASis
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //8
+            this.Close();
+        }
+        private void Guardar(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
