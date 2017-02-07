@@ -12,7 +12,6 @@ namespace TeleDASis
     {
         /// <summary> Tabla de asignación. </summary>
         public const string CORRESPONDENCIA = "TRWAGMYFPDXBNJZSQVHLCKE";
-        
         /// Genera la letra correspondiente a un DNI.
         /// <param name="dni"> DNI a procesar. </param>
         /// <returns> Letra correspondiente al DNI. </returns>
