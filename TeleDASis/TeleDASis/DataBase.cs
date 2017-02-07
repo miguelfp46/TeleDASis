@@ -30,7 +30,7 @@ namespace TeleDASis
         protected MySqlConnection connection = null;
         protected string serverName = "172.16.10.20";
         protected string serverUser = "root";
-        protected string database = "mydb";
+        protected string database = "m18";
         protected string password = "admin2";
 
         protected uint serverPort = 3306;
