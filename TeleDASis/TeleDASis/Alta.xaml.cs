@@ -41,14 +41,7 @@ namespace TeleDASis
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
-            if (VerificarDni(dni) == true)
-            {
-                MessageBox.Show("Okey");
-
-            } else
-            {
-                MessageBox.Show("Algo no rula bien.");
-            }
+          
             
             //nombre = tbNombre.Text;
             //apellido = tbApellido.Text;
@@ -87,72 +80,10 @@ namespace TeleDASis
 
             // this.Close();
         }
-        public bool VerificarDni(string dni)
-        {
-            String aux = null;
-            
-            dni = dni.ToUpper();
-
-            //ponemos la letra en mayuscula
-            aux = dni.Substring(0, dni.Length - 1);
-            //quitamos la letra del NIF
-            if (aux.Length >= 7 && this.CadenaEsNumero(aux))
-                aux = this.CalculaNif(aux);//calculamos la letra del nif para comparar con la que tenemos
-            else
-                return false;
-            //comparamos las letras
-            return (dni != aux);
-        }
-
-        private bool CadenaEsNumero(string aux)
-        {
-            for(int i = 0; i > 10; i++)
-            {
-                if (aux.Contains(i.ToString()))
-                {
-                    return true;
-                }
-                else
-                    return false;
-            }
-            
-            throw new NotImplementedException();
-        }
-
-        private String CalculaNif(String strA)
-        {
-            const String cCADENA = "TRWAGMYFPDXBNJZSQVHLCKE";
-            const String cNUMEROS = "0123456789";
-            Int32 a = 0;
-            Int32 b = 0;
-            Int32 c = 0;
-            Int32 NIF = 0;
-            StringBuilder sb = new StringBuilder();
-
-            strA = strA.Trim();
-            if (strA.Length == 0) return "";
-
-            //dejar sólo los números
-            for (int i = 0; i <= strA.Length - 1; i++)
-                if (cNUMEROS.IndexOf(strA[i]) > -1) sb.Append(strA[i]);
-            strA = sb.ToString();
-            a = 0;
-            NIF = Convert.ToInt32(strA);
-            do
-            {
-                b = Convert.ToInt32((NIF / 24));
-                c = NIF - (24 * b);
-                a = a + c;
-                NIF = b;
-            } while (b != 0);
-
-            b = Convert.ToInt32((a / 23));
-            c = a - (23 * b);
-            return strA.ToString() + cCADENA.Substring(c, 1);
         }
     }
        
-}
+
 
 
         
