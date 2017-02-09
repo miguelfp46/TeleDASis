@@ -62,7 +62,22 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
-}
+
+        public void SoloLetras(TextCompositionEventArgs e)
+        {
+            //se convierte a Ascci del la tecla presionada 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            //verificamos que se encuentre en ese rango que son entre el 0 y el 9 
+            if (ascci >= 65 && ascci <= 90 || ascci>=97 && ascci<=122)
+                e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void tbNom_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            SoloLetras(e);
+        }
+    }
 
     }
-}
+
