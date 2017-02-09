@@ -64,24 +64,22 @@ namespace TeleDASis
             }
             else
             {
-                if (databaseConnector.instance.addUser(nombre, apellido, apellido2, dni, nTelefono,
-                nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda) == true)
+                if (Validaciones.validarNIF(dni) == false)
                 {
-                    if (Validaciones.validarNIF(dni) == false)
-                    {
-                        MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se ha introducido a " + nombre + " con éxito", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
-                        this.Close();
-                    }
+                    MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.");
+                }
+                else if (databaseConnector.instance.addUser(nombre, targetaSanitaria, movil, nTelefono, dni,
+                nTelefonoFamiliar, fechaDeAlta, apellido, apellido2, vivienda) == true)
+                {
+                    MessageBox.Show("Se ha introducido a " + nombre + " con éxito", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-            }    
+
+            }                          
         }
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
