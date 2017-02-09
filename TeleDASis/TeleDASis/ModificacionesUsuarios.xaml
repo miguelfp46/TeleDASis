@@ -44,15 +44,15 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label5" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100" Margin="0,18,0,17"/>
+            <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100" Margin="0,18,0,17" PreviewTextInput="tbMovil_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label6" Content="Tel.Familiar:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTelFamiliar" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbTelFamiliar" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label7" Content="Móvil:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
             <Label x:Name="label8" Content="T.S.:" VerticalAlignment = "Center" Width = "100"/>

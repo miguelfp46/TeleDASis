@@ -62,6 +62,20 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
-      
+        public void SoloNumeros(TextCompositionEventArgs e)
+        {
+            //se convierte a Ascci del la tecla presionada 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            //verificamos que se encuentre en ese rango que son entre el 0 y el 9 
+            if (ascci >= 48 && ascci <= 57)
+                e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void tbMovil_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
     }
 }
