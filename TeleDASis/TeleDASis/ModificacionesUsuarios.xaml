@@ -32,7 +32,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"  PreviewTextInput="tbNom_PreviewTextInput"/>
+            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label3" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
