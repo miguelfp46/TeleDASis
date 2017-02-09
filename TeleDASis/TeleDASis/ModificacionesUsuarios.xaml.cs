@@ -19,19 +19,34 @@ namespace TeleDASis
     /// </summary>
     public partial class ModificacionesUsuarios : Window
     {
+        Usuario user = new Usuario();
+
+        
+
         public ModificacionesUsuarios()
         {
             InitializeComponent();
-            Fecha.SelectedDate = DateTime.Today;
+            tbFecha.SelectedDate = DateTime.Today;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
         private void Guardar(object sender, RoutedEventArgs e)
         {
             this.Close();
+            
+            
+        }
+
+        private void btComprobar_Click(object sender, RoutedEventArgs e)
+        {
+            user.dni = tbDNI.Text;
+            tbNombre.Text = user.nombre;
+            tbApellido.Text = user.primerApellido;
+            tbApellido2.Text = user.segundoApellido;
+            databaseConnector.instance.showUser(user.dni);
         }
     }
 }
