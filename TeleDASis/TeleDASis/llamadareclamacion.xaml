@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
             <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
             <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
