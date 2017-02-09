@@ -119,14 +119,7 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
-        private void tbMovil_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            SoloNumeros(e);
-        }
-        private void tbFamiliar_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            SoloNumeros(e);
-        }
+       
         
     }
        
