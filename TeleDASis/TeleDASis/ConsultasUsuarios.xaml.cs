@@ -28,5 +28,10 @@ namespace TeleDASis
         {
             this.Close();
         }
+
+        private void dtGConsultas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
