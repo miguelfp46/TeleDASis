@@ -22,11 +22,11 @@
 
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
+        <StackPanel Grid.Column = "0" Orientation = "Horizontal">
             <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center" Width = "100"/>
             <TextBox x:Name="DNI" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
             <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
             <Label x:Name="Nombre"  VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
@@ -38,7 +38,7 @@
             <Label x:Name="label4" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
             <Label x:Name="Apellido2" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
+        <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label5" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"/>
             <Label x:Name="Telefono" VerticalAlignment = "Center" Width = "100" Margin="0,18,0,17"/>
         </StackPanel>
@@ -50,7 +50,7 @@
             <Label x:Name="label7" Content="Móvil:" VerticalAlignment = "Center" Width = "100"/>
             <Label x:Name="Movil"  VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
+        <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label8" Content="T.S.:" VerticalAlignment = "Center" Width = "100"/>
             <Label x:Name="TS" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
