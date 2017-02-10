@@ -19,7 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class ModificacionesUsuarios : Window
     {
-        Usuario user = new Usuario();
+        string dni;
+        Usuario usuario = new Usuario();
 
         
 
@@ -35,18 +36,41 @@ namespace TeleDASis
         }
         private void Guardar(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            
+            usuario.nombre = tbNombre.Text;
+            usuario.primerApellido = tbApellido.Text;
+            usuario.segundoApellido = tbApellido2.Text;
+            usuario.tarjetasanitaria = tbTs.Text;
+            usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
+            usuario.telefono = Convert.ToInt32(tbTelefono.Text);
+            usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
+            usuario.vivienda = tbVivienda.Text;
+            if(databaseConnector.instance.updateUser(usuario) == true)
+            {
+                MessageBox.Show("Va to bien");
+            }
             
         }
 
         private void btComprobar_Click(object sender, RoutedEventArgs e)
         {
-            user.dni = tbDNI.Text;
-            tbNombre.Text = user.nombre;
-            tbApellido.Text = user.primerApellido;
-            tbApellido2.Text = user.segundoApellido;
-            databaseConnector.instance.showUser(user.dni);
+            dni = tbDNI.Text;
+            Usuario usuario = databaseConnector.instance.showUserAll(dni);
+            if (usuario.nombre == null)
+            {
+                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + usuario.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                tbNombre.Text = usuario.nombre;
+                tbApellido.Text = usuario.primerApellido;
+                tbApellido2.Text = usuario.segundoApellido;
+                tbTs.Text = usuario.tarjetasanitaria;
+                tbMovil.Text = Convert.ToString(usuario.tlfmovil);
+                tbTelefono.Text = Convert.ToString(usuario.telefono);
+                tbTelFamiliar.Text = Convert.ToString(usuario.telefonofamiliar);
+                tbVivienda.Text = Convert.ToString(usuario.vivienda);
+
+            }
         }
         public void SoloNumeros(TextCompositionEventArgs e)
         {

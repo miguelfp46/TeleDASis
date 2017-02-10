@@ -85,7 +85,7 @@ namespace TeleDASis
             }
         }
 
-        
+        //Mostrar usuario por dni <--- Este metodo lo llama la baja de usuarios.
         public Usuario showUser(String dni)
         {
             Usuario usuario = new Usuario();
@@ -137,6 +137,70 @@ namespace TeleDASis
 
             }
             return true;
+        }
+        //metrodo para mostrar todos los datos de un usuario
+        public Usuario showUserAll(String dni)
+        {
+            Usuario usuario = new Usuario();
+            try
+            {
+
+                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto, vivienda_idVivienda FROM USUARIOS WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    usuario.nombre = Convert.ToString(reader["nombre"]);
+                    usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    usuario.tarjetasanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
+                    usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
+                    usuario.telefono = Convert.ToInt32(reader["telefono"]);
+                    usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
+                    usuario.vivienda = Convert.ToString(reader["vivienda_idVivienda"]);
+                }
+
+                reader.Close();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                usuario.nombre = null;
+                return usuario;
+            }
+        }
+
+        public bool updateUser(Usuario user)
+        {
+            try
+            {
+                string sql = "UPDATE USUARIOS(nombre,tarjetaSanitaria,movil,telefono,tlfPersonaContacto,primerApellido,segundoApellido,vivienda_idVivienda) VALUES(@nombre,@tarjetaSanitaria,@movil,@telefono,@tlfPersonaContacto,@primerApellido,@segundoApellido,@vivienda_idVivienda) WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", user.nombre);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
+                cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
+                cmd.Parameters.AddWithValue("@dni", user.dni);
+                cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
+                cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@vivienda_idVivienda", user.vivienda);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
         }
 
         //public User checkUser(string username, string password)
