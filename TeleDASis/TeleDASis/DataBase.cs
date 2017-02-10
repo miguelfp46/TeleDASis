@@ -175,26 +175,28 @@ namespace TeleDASis
             }
         }
 
+        //MODIFICA EL USUARIO CON TODOS LOS DATOS, SE TIENE QUE TERMINAR
         public bool updateUser(Usuario user)
         {
             try
             {
-                string sql = "UPDATE USUARIOS(nombre,tarjetaSanitaria,movil,telefono,tlfPersonaContacto,primerApellido,segundoApellido,vivienda_idVivienda) VALUES(@nombre,@tarjetaSanitaria,@movil,@telefono,@tlfPersonaContacto,@primerApellido,@segundoApellido,@vivienda_idVivienda) WHERE dni = @dni";
+                string sql = "UPDATE USUARIOS SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido, vivienda_idVivienda = @vivienda_idVivienda WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
-                cmd.Parameters.AddWithValue("@dni", user.dni);
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
                 cmd.Parameters.AddWithValue("@vivienda_idVivienda", user.vivienda);
+                cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
+                 
                 cmd.ExecuteNonQuery();
 
-
                 return true;
+                
             }
             catch (Exception ex)
             {
