@@ -38,7 +38,16 @@ namespace TeleDASis
             MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (prueba == MessageBoxResult.Yes)
             {
-                databaseConnector.instance.delUser(nombre, dni);
+                
+                if (databaseConnector.instance.delUser(dni) == true)
+                {
+                    MessageBox.Show("¡Usuario" + nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
+                    borrarValoresDeTextBox();
+                }
+                else
+                {
+                    MessageBox.Show("El usuario" + nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             
         }
@@ -57,10 +66,15 @@ namespace TeleDASis
                 tbSegundoApellido.Text = usuario.segundoApellido;
             }
         }
-        //public string comprobarDni()
-        //{
-
-        //}
+        public void borrarValoresDeTextBox()
+        {
+            tbNombre.Text = "";
+            tbPrimerApellido.Text = "";
+            tbSegundoApellido.Text = "";
+            tbMotivo.Text = "";
+            tbEmpleado.Text = "";
+            tbDni.Text = "";
+        }
 
     }
 }

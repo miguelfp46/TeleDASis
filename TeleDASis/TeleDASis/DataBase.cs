@@ -54,25 +54,24 @@ namespace TeleDASis
         }
         
 
-        public bool addUser(String nombre,String apellido,String apellido2,String dni,String nTelefono,
-                            String nTelefonoFamiliar, String movil,String targetaSanitaria,
-                            String fechaDeAlta, int vivienda)
+        public bool addUser(string nombre, string tarjetaSanitaria, string movil, string telefono, string dni, string tlfPersonaContacto,
+            string fechaAlta, string primerApellido, string segundoApellido, int vivienda_idVivienda)
         {
             try
             {
-                string sql = "INSERT INTO usuarios (nombre, apellido, apellido2, dni, nTelefono, nTelefonoFamiliar, movil, targetaSanitaria, fechaDeAlta, vivienda) VALUES (@nombre, @apellido, @apellido2, @dni, @nTelefono, @nTelefonoFamiliar, @movil, @targetaSanitaria, @fechaDeAlta, @vivienda)";
+                string sql = "INSERT INTO USUARIOS (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
-                cmd.Parameters.AddWithValue("@apellido", apellido);
-                cmd.Parameters.AddWithValue("@apellido2", apellido2);
-                cmd.Parameters.AddWithValue("@dni", dni);
-                cmd.Parameters.AddWithValue("@nTelefono", nTelefono);
-                cmd.Parameters.AddWithValue("@nTelefonoFamiliar", nTelefonoFamiliar);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", tarjetaSanitaria);
                 cmd.Parameters.AddWithValue("@movil", movil);
+                cmd.Parameters.AddWithValue("@telefono", telefono);
+                cmd.Parameters.AddWithValue("@dni", dni);
+                cmd.Parameters.AddWithValue("@tlfPersonaContacto", tlfPersonaContacto);
+                cmd.Parameters.AddWithValue("@fechaAlta", fechaAlta);
+                cmd.Parameters.AddWithValue("@primerApellido", primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                cmd.Parameters.AddWithValue("@vivienda_idVivienda", vivienda_idVivienda);
                 //cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
-                cmd.Parameters.AddWithValue("@targetaSanitaria", targetaSanitaria);
-                cmd.Parameters.AddWithValue("@fechaDeAlta", fechaDeAlta);
-                cmd.Parameters.AddWithValue("@vivienda", vivienda);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 
@@ -93,7 +92,7 @@ namespace TeleDASis
             try
             {
                 
-                string sql = "SELECT nombre, apellido, apellido2 FROM usuarios WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido FROM USUARIOS WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -103,8 +102,8 @@ namespace TeleDASis
                 {
 
                     usuario.nombre = Convert.ToString(reader["nombre"]);
-                    usuario.primerApellido = Convert.ToString(reader["apellido"]);
-                    usuario.segundoApellido = Convert.ToString(reader["apellido2"]);
+                    usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                 }
 
                 reader.Close();
@@ -118,16 +117,16 @@ namespace TeleDASis
             }
         }
 
-        public bool delUser(String nombre, String dni)
+        public bool delUser(String dni)
         {
             try
             {
 
-                string sql = "DELETE FROM usuarios WHERE dni=@dni and nombre = @nombre";
+                string sql = "DELETE FROM USUARIOS WHERE dni=@dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@dni", dni);
-                cmd.Parameters.AddWithValue("@nombre", nombre);
+                
 
                 cmd.ExecuteNonQuery();
 
