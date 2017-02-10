@@ -32,15 +32,15 @@
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="lNombre" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" />
+            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" />
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="lApellido" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
         </StackPanel>
         <StackPanel Grid.Column = "3" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="lApellido2" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="lTelefono" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"/>
