@@ -68,8 +68,8 @@ namespace TeleDASis
                 {
                     MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.");
                 }
-                else if (databaseConnector.instance.addUser(nombre, targetaSanitaria, movil, nTelefono, dni,
-                nTelefonoFamiliar, fechaDeAlta, apellido, apellido2, vivienda) == true)
+                else if (databaseConnector.instance.addUser(new Usuario(nombre, targetaSanitaria, int.Parse(movil), int.Parse(nTelefono), dni,
+				int.Parse(nTelefonoFamiliar), dt, apellido, apellido2, tbVivienda.Text)) == true)
                 {
                     MessageBox.Show("Se ha introducido a " + nombre + " con éxito", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
