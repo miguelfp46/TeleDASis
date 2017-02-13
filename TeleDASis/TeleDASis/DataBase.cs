@@ -113,7 +113,7 @@ namespace TeleDASis
             {
                 Console.WriteLine(ex.ToString());
                 usuario.nombre = null;
-                return usuario;
+                return null;
             }
         }
 
@@ -128,15 +128,18 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@dni", dni);
                 
 
-                cmd.ExecuteNonQuery();
-
+                if (cmd.ExecuteNonQuery()>=1)
+                {
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-
+                return false;
             }
-            return true;
+          
         }
         //metrodo para mostrar todos los datos de un usuario
         public Usuario showUserAll(String dni)
