@@ -32,35 +32,35 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
+            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label3" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
+            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label4" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
+            <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label5" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100" Margin="0,18,0,17" PreviewTextInput="tbMovil_PreviewTextInput"/>
+            <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100" Margin="0,18,0,17" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label6" Content="Tel.Familiar:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTelFamiliar" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
+            <TextBox x:Name="tbTelFamiliar" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label7" Content="Móvil:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
+            <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
             <Label x:Name="label8" Content="T.S.:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTs" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbTs" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "4" Orientation = "Horizontal">
             <Label x:Name="label9" Content="Vivienda:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbVivienda" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="tbVivienda" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "4" Orientation = "Horizontal" HorizontalAlignment="Right" Width="204" Grid.ColumnSpan="2" Margin="0,51,1,3" Grid.RowSpan="2">
             <Button Width="81" Margin="0,28,0,0" Height="24" VerticalAlignment="Top" Click="cancel" Content="Cancelar"/>
