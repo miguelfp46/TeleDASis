@@ -63,7 +63,7 @@
             <Button Width="121" Margin="0,26,0,1" Click="Button_Click" Content="Terminar"/>
         </StackPanel>
         <DataGrid x:Name="dtGConsultas" HorizontalAlignment="Left" Margin="10,51,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="115" Width="730" Grid.RowSpan="4" SelectionChanged="dtGConsultas_SelectionChanged"/>
-        <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="60,23,0,0" Grid.Row="5" VerticalAlignment="Top" Width="131" Height="23"/>
+        <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="60,23,0,0" Grid.Row="5" VerticalAlignment="Top" Width="131" Height="23" Click="btnBuscar_Click"/>
 
     </Grid>
 </Window>
