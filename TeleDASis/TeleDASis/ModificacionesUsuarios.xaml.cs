@@ -44,7 +44,9 @@ namespace TeleDASis
             usuario.telefono = Convert.ToInt32(tbTelefono.Text);
             usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
             usuario.vivienda = tbVivienda.Text;
-            if(databaseConnector.instance.updateUser(usuario) == true)
+			usuario.dni = tbDNI.Text;
+
+			if (databaseConnector.instance.updateUser(usuario) == true)
             {
                 MessageBox.Show("Va to bien");
             }
