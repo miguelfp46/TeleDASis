@@ -101,7 +101,7 @@ namespace TeleDASis
             MessageBox.Show("Estas seguro que quieres cancelar esta operación?", "Alta",
                 MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            // this.Close();
+             this.Close();
         }
         //metodo para añadir solo numeros
         public void SoloNumeros(TextCompositionEventArgs e)
