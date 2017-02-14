@@ -48,7 +48,11 @@ namespace TeleDASis
 
 			if (databaseConnector.instance.updateUser(usuario) == true)
             {
-                MessageBox.Show("Va to bien");
+                MessageBox.Show("Usuario actualizado correctamente.","Actualizar usuario",MessageBoxButton.OK,MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido actualizar el usuario.", "Fallo al actualizar", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
         }
@@ -100,6 +104,33 @@ namespace TeleDASis
         private void Letras(object sender, TextCompositionEventArgs e)
         {
             SoloLetras(e);
+        }
+
+        private void chboxEditar_Checked(object sender, RoutedEventArgs e)
+        {
+
+            if (chboxEditar.IsChecked == true)
+            {
+                tbNombre.IsEnabled = true;
+                tbApellido.IsEnabled = true;
+                tbApellido2.IsEnabled = true;
+                tbTs.IsEnabled = true;
+                tbMovil.IsEnabled = true;
+                tbTelefono.IsEnabled = true;
+                tbTelFamiliar.IsEnabled = true;
+                tbVivienda.IsEnabled = true;
+            }
+            else if (chboxEditar.IsChecked == false)
+            {
+                tbNombre.Di
+                tbApellido.IsEnabled = false;
+                tbApellido2.IsEnabled = false;
+                tbTs.IsEnabled = false;
+                tbMovil.IsEnabled = false;
+                tbTelefono.IsEnabled = false;
+                tbTelFamiliar.IsEnabled = false;
+                tbVivienda.IsEnabled = false;
+            }
         }
     }
 
