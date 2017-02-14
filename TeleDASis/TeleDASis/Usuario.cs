@@ -9,21 +9,35 @@ namespace TeleDASis
     class Usuario
     {
         public int id { get; set; }
-        public String nombre { get; set; }
-        public String primerApellido { get; set; }
-        public String segundoApellido { get; set; }
+        public string nombre { get; set; }
+        public string primerApellido { get; set; }
+        public string segundoApellido { get; set; }
         public int telefono { get; set; }
         public int telefonofamiliar { get; set; }
         public int tlfmovil { get; set; }
-        public String tarjetasanitaria { get; set; }
-        public String dni { get; set; }
-        public String vivienda { get; set;}
+        public string tarjetasanitaria { get; set; }
+        public string dni { get; set; }
+        public string vivienda { get; set;}
         public DateTime fechaentrada { get; set; }
         public Boolean Baja { get; set; }// Para ver si esta de baja o no
         public DateTime fechabaja { get; set; }
-        public String motivodeBaja { get; set; }
-        public String EmpleadohaceBaja { get; set; }//relacionado con bbdd empleados modificar tipo por objeto
-        
+        public string motivodeBaja { get; set; }
+        public string EmpleadohaceBaja { get; set; }//relacionado con bbdd empleados modificar tipo por objeto
 
+		public Usuario() { }
+		public Usuario(string nombre, string targetaSanitaria, int movil, int nTelefono, string dni,
+				int nTelefonoFamiliar, DateTime fechaDeAlta, string apellido, string apellido2, string vivienda)
+		{
+			this.nombre = nombre;
+			this.tarjetasanitaria = tarjetasanitaria;
+			this.tlfmovil = movil;
+			this.telefono = nTelefono;
+			this.telefonofamiliar = nTelefonoFamiliar;
+			this.dni = dni;
+			this.fechaentrada = fechaDeAlta;
+			this.primerApellido = apellido;
+			this.segundoApellido = apellido2;
+			this.vivienda = vivienda;
+		}
     }
 }

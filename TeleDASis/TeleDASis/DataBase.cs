@@ -52,9 +52,39 @@ namespace TeleDASis
             }
             Console.WriteLine("Done.");
         }
-        
 
-        public bool addUser(string nombre, string tarjetaSanitaria, string movil, string telefono, string dni, string tlfPersonaContacto,
+		public bool addUser(Usuario user)
+		{
+			try
+			{
+				string sql = "INSERT INTO USUARIOS (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
+				MySqlCommand cmd = new MySqlCommand(sql, connection);
+				cmd.Parameters.AddWithValue("@nombre", user.nombre);
+				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
+				cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
+				cmd.Parameters.AddWithValue("@telefono", user.telefono);
+				cmd.Parameters.AddWithValue("@dni", user.dni);
+				cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
+				cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
+				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
+				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+				cmd.Parameters.AddWithValue("@vivienda_idVivienda", user.vivienda);
+				//cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
+				Console.WriteLine(cmd.CommandText);
+				cmd.ExecuteNonQuery();
+
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+				return false;
+			}
+		}
+
+
+		public bool addUser(string nombre, string tarjetaSanitaria, string movil, string telefono, string dni, string tlfPersonaContacto,
             string fechaAlta, string primerApellido, string segundoApellido, int vivienda_idVivienda)
         {
             try
@@ -98,7 +128,7 @@ namespace TeleDASis
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.Read())
+                if (reader.Read())
                 {
 
                     usuario.nombre = Convert.ToString(reader["nombre"]);
@@ -121,30 +151,28 @@ namespace TeleDASis
         {
             try
             {
-
                 string sql = "DELETE FROM USUARIOS WHERE dni=@dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@dni", dni);
                 
-
-                cmd.ExecuteNonQuery();
-
+                if(cmd.ExecuteNonQuery() >= 1)
+					return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
 
             }
-            return true;
+            return false;
         }
+
         //metrodo para mostrar todos los datos de un usuario
         public Usuario showUserAll(String dni)
         {
             Usuario usuario = new Usuario();
             try
             {
-
                 string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto, vivienda_idVivienda FROM USUARIOS WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
@@ -153,7 +181,6 @@ namespace TeleDASis
 
                 if (reader.Read())
                 {
-
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
@@ -175,26 +202,28 @@ namespace TeleDASis
             }
         }
 
+        //MODIFICA EL USUARIO CON TODOS LOS DATOS, SE TIENE QUE TERMINAR
         public bool updateUser(Usuario user)
         {
             try
             {
-                string sql = "UPDATE USUARIOS(nombre,tarjetaSanitaria,movil,telefono,tlfPersonaContacto,primerApellido,segundoApellido,vivienda_idVivienda) VALUES(@nombre,@tarjetaSanitaria,@movil,@telefono,@tlfPersonaContacto,@primerApellido,@segundoApellido,@vivienda_idVivienda) WHERE dni = @dni";
+                string sql = "UPDATE USUARIOS SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido, vivienda_idVivienda = @vivienda_idVivienda WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
-                cmd.Parameters.AddWithValue("@dni", user.dni);
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
                 cmd.Parameters.AddWithValue("@vivienda_idVivienda", user.vivienda);
+                cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
+                 
                 cmd.ExecuteNonQuery();
 
-
                 return true;
+                
             }
             catch (Exception ex)
             {
@@ -203,31 +232,9 @@ namespace TeleDASis
             }
         }
 
-        //public User checkUser(string username, string password)
-        //{
-        //    // If user exists returns user from database
-        //    // TODO
-        //    string sql = "SELECT * from usuarios WHERE dni = @dni";
-        //    MySqlCommand cmd = new MySqlCommand(sql, connection);
-        //    cmd.Parameters.AddWithValue("@dni", username);
-        //    MySqlDataReader rdr = cmd.ExecuteReader();
-        //    if (rdr.Read())
-        //    {
-        //        User dataUser = new User((string)rdr["dni"]);
-        //        dataUser.hashPass = (string)rdr["pass"];
-        //        rdr.Close();
-        //        return dataUser.checkPassword(password) ? dataUser : null;
-        //    }
-        //    rdr.Close();
-        //    return null;
-        //}
-
         public void close()
         {
             connection.Close();
         }
-
     }
-
-   
 }

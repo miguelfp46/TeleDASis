@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="formularioEmergencia1" Height="432" Width="664">
+        Title="formularioEmergencia1" Height="432" Width="713.5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="208*" />
@@ -30,7 +30,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "0" Orientation = "Horizontal">
             <Label x:Name="label12" Content="Categoria:" VerticalAlignment = "Center" Width = "79" Height="31" Margin="0,8,0,2"/>
-            <Label x:Name="Categoria"  VerticalAlignment = "Center" Width = "100" Margin="0"/>
+            <TextBox x:Name="Categoria"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
             <Label x:Name="label1" Content="Hora:" VerticalAlignment = "Center" Width = "100"/>
@@ -42,20 +42,20 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <Label x:Name="Nom"  VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
 
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label5" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <Label x:Name="Apellido"  VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Apellido"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "3" Orientation = "Horizontal">
             <Label x:Name="label6" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <Label x:Name="Apellido2"  VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Apellido2"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label7" Content="Tel.Familiar:" VerticalAlignment = "Center" Width = "100"/>
-            <Label x:Name="Tel_Familiar"  VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="Tel_Familiar"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
 
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal" Grid.ColumnSpan="3" Margin="0,0,4,0" Grid.RowSpan="2">

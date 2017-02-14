@@ -44,7 +44,9 @@ namespace TeleDASis
             usuario.telefono = Convert.ToInt32(tbTelefono.Text);
             usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
             usuario.vivienda = tbVivienda.Text;
-            if(databaseConnector.instance.updateUser(usuario) == true)
+			usuario.dni = tbDNI.Text;
+
+			if (databaseConnector.instance.updateUser(usuario) == true)
             {
                 MessageBox.Show("Va to bien");
             }
@@ -86,7 +88,20 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
-}
+        public void SoloLetras(TextCompositionEventArgs e)
+        {
+            //se convierte a Ascci del la tecla presionada 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            //verificamos que se encuentre en ese rango que son entre el a y el z
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+                e.Handled = false;
+            else e.Handled = true;
+        }
+        private void Letras(object sender, TextCompositionEventArgs e)
+        {
+            SoloLetras(e);
+        }
+    }
 
     
 }
