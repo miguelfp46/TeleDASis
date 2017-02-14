@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
+using System.Data;
+using System.Windows.Forms;
 
 namespace TeleDASis
 {
@@ -165,6 +167,29 @@ namespace TeleDASis
 
             }
             return false;
+        }
+
+        public bool showUserTable(DataGrid dtGConsultas)
+        {
+
+
+            try
+            {
+                string sql = "SELECT * FROM USUARIOS;";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                 cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dtGConsultas.DataSource = dt;
+                return true;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+           
+            
         }
 
         //metrodo para mostrar todos los datos de un usuario
