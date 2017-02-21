@@ -10,22 +10,34 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="500" Margin="132,60,0,0" VerticalAlignment="Top" Width="725">
             <TabItem Header="Llamadas">
                 <Grid Background="#FFE5E5E5" Margin="0,-4,-15,-1">
+
                     <Button x:Name="btn_Informativa" Content="Informativa" Margin="51,48,453,0" VerticalAlignment="Top" Height="121" Click="btn_Informativa_Click"/>
+
+
                     <Button x:Name="btn_emergencia" Content="Emergencia" Margin="435,302,69,0" Click="boton_emergencia_Click" Height="121" VerticalAlignment="Top"/>
                     <Button x:Name="btn_reclamacion" Content="Reclamación" Margin="434,51,72,0" Click="boton_reclamacion_Click" Height="121" VerticalAlignment="Top"/>
                     <Button x:Name="btn_Agenda" Content="Agenda" Margin="52,300,454,0" Click="btn_Agenda_Click" Height="121" VerticalAlignment="Top"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Registro de Usuarios">
-                <Grid Background="#FFE5E5E5" Margin="0,3,0,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,4,0,-3">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="23*"/>
-                        <ColumnDefinition Width="727*"/>
+
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+
+
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnalta" Content="Dar de Alta" HorizontalAlignment="Left" Margin="30,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="botonAlta_Click"/>
-                    <Button x:Name="btnbaja" Content="Dar de Baja" HorizontalAlignment="Left" Margin="364,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="botonBaja_Click"/>
-                    <Button x:Name="btnconsultas" Content="Consultas" HorizontalAlignment="Left" Margin="30,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="botonConsultas_Click"/>
-                    <Button x:Name="btnmodificaciones" Content="Modificaciones" HorizontalAlignment="Left" Margin="364,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="1" Click="botonModificaciones_Click"/>
+
+                    <Button x:Name="btnalta" Content="Dar de Alta" HorizontalAlignment="Left" Margin="2,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="4" Click="botonAlta_Click"/>
+                    <Button x:Name="btnbaja" Content="Dar de Baja" HorizontalAlignment="Left" Margin="2,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="botonBaja_Click" Grid.Column="1"/>
+                    <Button x:Name="btnconsultas" Content="Consultas" HorizontalAlignment="Left" Margin="2,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="4" Click="botonConsultas_Click"/>
+                    <Button x:Name="btnmodificaciones" Content="Modificaciones" HorizontalAlignment="Left" Margin="0,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="botonModificaciones_Click" Grid.Column="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">
