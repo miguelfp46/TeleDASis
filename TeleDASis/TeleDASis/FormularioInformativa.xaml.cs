@@ -25,9 +25,23 @@ namespace TeleDASis
             Fecha.SelectedDate = DateTime.Today;
         }
 
-        
+        public void buscarUsuarioPorTel(object sender, RoutedEventArgs e)
+        {
+            int Tel = int.Parse(tbTel.Text);
+            Usuario usuario = databaseConnector.instance.showUser2(Tel);
+            if (usuario.nombre == null)
+            {
+                MessageBox.Show("No se ha encontrado al usuario con el Telefono: " + Tel + ".\nVerifica que sea correcto.", "¡Tel incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                Nom.Text = usuario.nombre;
+                APELLIDO.Text = usuario.primerApellido;
+                APELLIDO2.Text = usuario.segundoApellido;
+            }
+        }
 
-       
+
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +70,11 @@ namespace TeleDASis
         private void tbMovil_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             SoloNumeros(e);
+        }
+
+        private void Hora_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
