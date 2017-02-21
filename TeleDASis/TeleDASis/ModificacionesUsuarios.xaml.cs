@@ -36,23 +36,32 @@ namespace TeleDASis
         }
         private void Guardar(object sender, RoutedEventArgs e)
         {
-            usuario.nombre = tbNombre.Text;
-            usuario.primerApellido = tbApellido.Text;
-            usuario.segundoApellido = tbApellido2.Text;
-            usuario.tarjetasanitaria = tbTs.Text;
-            usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
-            usuario.telefono = Convert.ToInt32(tbTelefono.Text);
-            usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
-            usuario.vivienda = tbVivienda.Text;
-			usuario.dni = tbDNI.Text;
-
-			if (databaseConnector.instance.updateUser(usuario) == true)
+            if (string.IsNullOrEmpty(usuario.nombre) || string.IsNullOrEmpty(usuario.primerApellido) || string.IsNullOrEmpty(usuario.segundoApellido) || string.IsNullOrEmpty(usuario.dni) ||
+                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetasanitaria)
+                || string.IsNullOrEmpty(Convert.ToString(usuario.vivienda)))
             {
-                MessageBox.Show("Usuario actualizado correctamente.","Actualizar usuario",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                MessageBox.Show("No se ha podido actualizar el usuario.", "Fallo al actualizar", MessageBoxButton.OK, MessageBoxImage.Error);
+                usuario.nombre = tbNombre.Text;
+                usuario.primerApellido = tbApellido.Text;
+                usuario.segundoApellido = tbApellido2.Text;
+                usuario.tarjetasanitaria = tbTs.Text;
+                usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
+                usuario.telefono = Convert.ToInt32(tbTelefono.Text);
+                usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
+                usuario.vivienda = tbVivienda.Text;
+                usuario.dni = tbDNI.Text;
+
+                if (databaseConnector.instance.updateUser(usuario) == true)
+                {
+                    MessageBox.Show("Usuario actualizado correctamente.", "Actualizar usuario", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido actualizar el usuario.", "Fallo al actualizar", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             
         }
@@ -108,11 +117,10 @@ namespace TeleDASis
 
         private void chboxEditar_Checked(object sender, RoutedEventArgs e)
         {
-            if (tbDNI.Text == "")
+            if (tbDNI.Text == "" && chboxEditar.IsChecked == true)
             {
                 MessageBox.Show("Debes buscar a un usuario por DNI antes de activar esta casilla.");
                 chboxEditar.IsChecked = false;
-                
             }
             else {
                 if (chboxEditar.IsChecked == true)
@@ -129,6 +137,7 @@ namespace TeleDASis
             }
              if (chboxEditar.IsChecked == false)
             {
+
                 tbNombre.IsEnabled = false;
                 tbApellido.IsEnabled = false;
                 tbApellido2.IsEnabled = false;
