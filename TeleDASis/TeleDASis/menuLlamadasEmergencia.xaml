@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Menu de llamadas Emergencia" Height="300" Width="300">
+        Title="Menu de llamadas Emergencia" Height="300" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btnemergencia1" Content="Emergencia Leve" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia1_Click" Height="35"/>
         <Button x:Name="btnemergencia2" Content="Emergencia " HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Width="125" Click="btnemergencia2_Click" Height="35"/>

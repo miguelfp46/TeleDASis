@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Informativa " Height="457.959" Width="815.51">
+        Title="Llamada Informativa " Height="457.959" Width="815.51" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,4,4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="208*" />

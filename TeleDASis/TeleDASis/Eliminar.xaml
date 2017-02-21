@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Eliminar Empleado" Height="164.194" Width="504.448">
+        Title="Eliminar Empleado" Height="164.194" Width="504.448" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-1,5">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
