@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="formLlamadaAgenda" Height="679" Width="1164">
+        Title="Llamada Agenda" Height="679" Width="1164">
     <Grid Margin="1,4,3,52">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="341*" />

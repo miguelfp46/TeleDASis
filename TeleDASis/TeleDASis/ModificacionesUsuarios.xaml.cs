@@ -148,7 +148,13 @@ namespace TeleDASis
                 tbVivienda.IsEnabled = false;
             }
         }
+
+
+        private void tbNombre_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 
-    
+
 }

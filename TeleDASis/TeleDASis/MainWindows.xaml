@@ -32,7 +32,6 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="20,45,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Left" Width="106" Margin="14,65,0,0" Height="87" VerticalAlignment="Top"/>
         <Calendar Margin="917,88,10,298" RenderTransformOrigin="0.493,0.803"/>
         <ListBox x:Name="listBox" Margin="919,284,11,10"/>
