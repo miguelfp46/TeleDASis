@@ -26,7 +26,7 @@ namespace TeleDASis
 
 		public Usuario() { }
 		public Usuario(string nombre, string targetaSanitaria, int movil, int nTelefono, string dni,
-				int nTelefonoFamiliar, DateTime fechaDeAlta, string apellido, string apellido2, string vivienda)
+				int nTelefonoFamiliar, DateTime fechaDeAlta, string apellido, string apellido2)
 		{
 			this.nombre = nombre;
 			this.tarjetasanitaria = tarjetasanitaria;
@@ -36,8 +36,7 @@ namespace TeleDASis
 			this.dni = dni;
 			this.fechaentrada = fechaDeAlta;
 			this.primerApellido = apellido;
-			this.segundoApellido = apellido2;
-			this.vivienda = vivienda;
+			this.segundoApellido = apellido2;			
 		}
     }
 }
