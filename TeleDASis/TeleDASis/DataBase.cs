@@ -261,5 +261,36 @@ namespace TeleDASis
         {
             connection.Close();
         }
+
+        public Usuario showUser2(int Tel)
+        {
+            Usuario usuario = new Usuario();
+            try
+            {
+
+                string sql = "SELECT nombre, primerApellido, segundoApellido FROM USUARIOS WHERE tel = @telefono";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@telefono", Tel);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    usuario.nombre = Convert.ToString(reader["nombre"]);
+                    usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                }
+
+                reader.Close();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                usuario.nombre = null;
+                return usuario;
+            }
+        }
     }
 }

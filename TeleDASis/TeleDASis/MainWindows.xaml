@@ -9,11 +9,11 @@
     <Grid Background="#FF3C3CEA" Margin="0,0,0,1">
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="500" Margin="132,60,0,0" VerticalAlignment="Top" Width="725">
             <TabItem Header="Llamadas">
-                <Grid Background="#FFE5E5E5" Margin="0,0,1,-13">
+                <Grid Background="#FFE5E5E5" Margin="0,-4,-15,-1">
                     <Button x:Name="button" Content="Informativa" Margin="51,48,453,0" VerticalAlignment="Top" Height="121" Click="button_Click"/>
                     <Button x:Name="boton_emergencia" Content="Emergencia" Margin="435,302,69,0" Click="boton_emergencia_Click" Height="121" VerticalAlignment="Top"/>
-                    <Button x:Name="boton_reclamacion" Content="Reclamación" HorizontalAlignment="Left" Margin="434,51,0,0" Width="214" Click="boton_reclamacion_Click" Height="121" VerticalAlignment="Top"/>
-                    <Button x:Name="button_Copy2" Content="Agenda" HorizontalAlignment="Left" Margin="52,300,0,0" Width="214" Click="button_Copy2_Click" Height="121" VerticalAlignment="Top"/>
+                    <Button x:Name="boton_reclamacion" Content="Reclamación" Margin="434,51,72,0" Click="boton_reclamacion_Click" Height="121" VerticalAlignment="Top"/>
+                    <Button x:Name="button_Copy2" Content="Agenda" Margin="52,300,454,0" Click="button_Copy2_Click" Height="121" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Registro de Usuarios">
