@@ -59,7 +59,7 @@ namespace TeleDASis
 		{
 			try
 			{
-				string sql = "INSERT INTO USUARIOS (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
+				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
 				MySqlCommand cmd = new MySqlCommand(sql, connection);
 				cmd.Parameters.AddWithValue("@nombre", user.nombre);
 				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -91,7 +91,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO USUARIOS (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
+                string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", tarjetaSanitaria);
@@ -124,7 +124,7 @@ namespace TeleDASis
             try
             {
                 
-                string sql = "SELECT nombre, primerApellido, segundoApellido FROM USUARIOS WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -153,7 +153,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "DELETE FROM USUARIOS WHERE dni=@dni";
+                string sql = "DELETE FROM usuarios WHERE dni=@dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@dni", dni);
@@ -175,7 +175,7 @@ namespace TeleDASis
 
             try
             {
-                string sql = "SELECT * FROM USUARIOS;";
+                string sql = "SELECT * FROM usuarios;";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                  cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
@@ -198,7 +198,7 @@ namespace TeleDASis
             Usuario usuario = new Usuario();
             try
             {
-                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto, vivienda_idVivienda FROM USUARIOS WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto, vivienda_idVivienda FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -232,7 +232,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "UPDATE USUARIOS SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido, vivienda_idVivienda = @vivienda_idVivienda WHERE dni = @dni";
+                string sql = "UPDATE usuarios SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido, vivienda_idVivienda = @vivienda_idVivienda WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
