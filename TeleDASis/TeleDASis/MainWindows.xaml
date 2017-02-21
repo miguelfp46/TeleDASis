@@ -5,48 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="MainWindows" Height="594" Width="1152" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF3C3CEA" Margin="0,0,0,1">
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="500" Margin="132,60,0,0" VerticalAlignment="Top" Width="725">
-            <TabItem Header="Llamadas">
-                <Grid Background="#FFE5E5E5" Margin="0,-4,-15,-1">
-
-                    <Button x:Name="btn_Informativa" Content="Informativa" Margin="51,48,453,0" VerticalAlignment="Top" Height="121" Click="btn_Informativa_Click"/>
-
-
-                    <Button x:Name="btn_emergencia" Content="Emergencia" Margin="435,302,69,0" Click="boton_emergencia_Click" Height="121" VerticalAlignment="Top"/>
-                    <Button x:Name="btn_reclamacion" Content="Reclamación" Margin="434,51,72,0" Click="boton_reclamacion_Click" Height="121" VerticalAlignment="Top"/>
-                    <Button x:Name="btn_Agenda" Content="Agenda" Margin="52,300,454,0" Click="btn_Agenda_Click" Height="121" VerticalAlignment="Top"/>
-
-                </Grid>
-            </TabItem>
-            <TabItem Header="Registro de Usuarios">
-                <Grid Background="#FFE5E5E5" Margin="0,4,0,-3">
-                    <Grid.ColumnDefinitions>
-
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="1*"/>
-
-
-                    </Grid.ColumnDefinitions>
-
-                    <Button x:Name="btnalta" Content="Dar de Alta" HorizontalAlignment="Left" Margin="2,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="4" Click="botonAlta_Click"/>
-                    <Button x:Name="btnbaja" Content="Dar de Baja" HorizontalAlignment="Left" Margin="2,48,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="botonBaja_Click" Grid.Column="1"/>
-                    <Button x:Name="btnconsultas" Content="Consultas" HorizontalAlignment="Left" Margin="2,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Grid.Column="4" Click="botonConsultas_Click"/>
-                    <Button x:Name="btnmodificaciones" Content="Modificaciones" HorizontalAlignment="Left" Margin="0,255,0,0" VerticalAlignment="Top" Width="214" Height="121" Click="botonModificaciones_Click" Grid.Column="1"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-        </TabControl>
-        <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" HorizontalAlignment="Left" Width="106" Margin="14,65,0,0" Height="87" VerticalAlignment="Top"/>
-        <Calendar Margin="917,88,10,298" RenderTransformOrigin="0.493,0.803"/>
-        <ListBox x:Name="listBox" Margin="919,284,11,10"/>
-
+        Title="TeleDASis" Height="595" Width="1150" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF3C3CEA">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image x:Name="image_Copy" Source="Assets/logojpg.jpg" Grid.Column="0" Grid.Row="0" Width="106" Height="87" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+            <TabControl x:Name="tabControl" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="10,20,10,20" >
+                <TabItem Header="Llamadas">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="btn_Informativa" Content="Informativa" Grid.Column="1" Grid.Row="1" Click="btn_Informativa_Click" />
+                        <Button x:Name="btn_emergencia" Content="Emergencia" Grid.Row="1" Grid.Column="4" Click="boton_emergencia_Click" />
+                        <Button x:Name="btn_reclamacion" Content="Reclamación" Grid.Column="1" Grid.Row="4" Click="boton_reclamacion_Click" />
+                        <Button x:Name="btn_Agenda" Content="Agenda" Grid.Column="4" Grid.Row="4" Click="btn_Agenda_Click" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Registro de Usuarios">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="btnalta" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Click"/>
+                        <Button x:Name="btnbaja" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Click"/>
+                        <Button x:Name="btnconsultas" Content="Consultas" Grid.Column="4" Grid.Row="1" Click="botonConsultas_Click"/>
+                        <Button x:Name="btnmodificaciones" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Click"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Calendar Grid.Column="2" Grid.Row="0" VerticalAlignment="Center"/>
+            <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="1" Margin="10,0,20,20"/>
+        </Grid>
     </Grid>
 </Window>
