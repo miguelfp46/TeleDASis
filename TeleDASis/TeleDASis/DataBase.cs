@@ -59,7 +59,7 @@ namespace TeleDASis
 		{
 			try
 			{
-				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
+				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido)";
 				MySqlCommand cmd = new MySqlCommand(sql, connection);
 				cmd.Parameters.AddWithValue("@nombre", user.nombre);
 				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -70,8 +70,6 @@ namespace TeleDASis
 				cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
 				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
 				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
-				cmd.Parameters.AddWithValue("@vivienda_idVivienda", user.vivienda);
-				//cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
 				Console.WriteLine(cmd.CommandText);
 				cmd.ExecuteNonQuery();
 
