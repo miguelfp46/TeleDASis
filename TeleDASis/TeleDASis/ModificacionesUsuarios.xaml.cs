@@ -108,11 +108,10 @@ namespace TeleDASis
 
         private void chboxEditar_Checked(object sender, RoutedEventArgs e)
         {
-            if (tbDNI.Text == "")
+            if (tbDNI.Text == "" && chboxEditar.IsChecked == true)
             {
                 MessageBox.Show("Debes buscar a un usuario por DNI antes de activar esta casilla.");
                 chboxEditar.IsChecked = false;
-                
             }
             else {
                 if (chboxEditar.IsChecked == true)
@@ -129,6 +128,7 @@ namespace TeleDASis
             }
              if (chboxEditar.IsChecked == false)
             {
+
                 tbNombre.IsEnabled = false;
                 tbApellido.IsEnabled = false;
                 tbApellido2.IsEnabled = false;
