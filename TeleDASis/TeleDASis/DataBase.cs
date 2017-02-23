@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 using System.Data;
-using System.Windows.Forms;
+using System.Windows.Controls;
 
 namespace TeleDASis
 {
@@ -169,8 +168,6 @@ namespace TeleDASis
 
         public bool showUserTable(DataGrid dtGConsultas)
         {
-
-
             try
             {
                 string sql = "SELECT * FROM usuarios;";
@@ -179,7 +176,7 @@ namespace TeleDASis
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
-                dtGConsultas.DataSource = dt;
+                dtGConsultas.DataContext = dt;
                 return true;
             }catch(Exception ex)
             {
