@@ -164,7 +164,7 @@ namespace TeleDASis
             Usuario usuario = new Usuario();
             try
             {
-                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto, vivienda_idVivienda FROM usuarios WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -179,7 +179,6 @@ namespace TeleDASis
                     usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
                     usuario.telefono = Convert.ToInt32(reader["telefono"]);
                     usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
-                    usuario.vivienda = Convert.ToString(reader["vivienda_idVivienda"]);
                 }
 
                 reader.Close();
