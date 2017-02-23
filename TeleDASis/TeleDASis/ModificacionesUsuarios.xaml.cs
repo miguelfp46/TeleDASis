@@ -28,35 +28,45 @@ namespace TeleDASis
         {
             InitializeComponent();
             tbFecha.SelectedDate = DateTime.Today;
+            tbNombre.IsEnabled = false;
+            tbApellido.IsEnabled = false;
+            tbApellido2.IsEnabled = false;
+            tbTs.IsEnabled = false;
+            tbMovil.IsEnabled = false;
+            tbTelefono.IsEnabled = false;
+            tbTelFamiliar.IsEnabled = false;
         }
 
         private void cancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBoxResult salir = MessageBox.Show("¿Seguro que quieres salir?", "Salir", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if(salir == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+            
         }
         private void Guardar(object sender, RoutedEventArgs e)
         {
+            usuario.nombre = tbNombre.Text;
+            usuario.primerApellido = tbApellido.Text;
+            usuario.segundoApellido = tbApellido2.Text;
+            usuario.tarjetasanitaria = tbTs.Text;
+            usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
+            usuario.telefono = Convert.ToInt32(tbTelefono.Text);
+            usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
+            usuario.dni = tbDNI.Text;
+
             if (string.IsNullOrEmpty(usuario.nombre) || string.IsNullOrEmpty(usuario.primerApellido) || string.IsNullOrEmpty(usuario.segundoApellido) || string.IsNullOrEmpty(usuario.dni) ||
-                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetasanitaria)
-                || string.IsNullOrEmpty(Convert.ToString(usuario.vivienda)))
+                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetasanitaria))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                usuario.nombre = tbNombre.Text;
-                usuario.primerApellido = tbApellido.Text;
-                usuario.segundoApellido = tbApellido2.Text;
-                usuario.tarjetasanitaria = tbTs.Text;
-                usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
-                usuario.telefono = Convert.ToInt32(tbTelefono.Text);
-                usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
-                usuario.vivienda = tbVivienda.Text;
-                usuario.dni = tbDNI.Text;
-
                 if (databaseConnector.instance.updateUser(usuario) == true)
                 {
-                    MessageBox.Show("Usuario actualizado correctamente.", "Actualizar usuario", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Usuario "+usuario.nombre+ " actualizado correctamente.", "Actualizar usuario", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -76,6 +86,14 @@ namespace TeleDASis
             }
             else
             {
+                tbNombre.IsEnabled = true;
+                tbApellido.IsEnabled = true;
+                tbApellido2.IsEnabled = true;
+                tbTs.IsEnabled = true;
+                tbMovil.IsEnabled = true;
+                tbTelefono.IsEnabled = true;
+                tbTelFamiliar.IsEnabled = true;
+
                 tbNombre.Text = usuario.nombre;
                 tbApellido.Text = usuario.primerApellido;
                 tbApellido2.Text = usuario.segundoApellido;
@@ -83,8 +101,6 @@ namespace TeleDASis
                 tbMovil.Text = Convert.ToString(usuario.tlfmovil);
                 tbTelefono.Text = Convert.ToString(usuario.telefono);
                 tbTelFamiliar.Text = Convert.ToString(usuario.telefonofamiliar);
-                tbVivienda.Text = Convert.ToString(usuario.vivienda);
-
             }
         }
         public void SoloNumeros(TextCompositionEventArgs e)
@@ -115,46 +131,5 @@ namespace TeleDASis
             SoloLetras(e);
         }
 
-        private void chboxEditar_Checked(object sender, RoutedEventArgs e)
-        {
-            if (tbDNI.Text == "" && chboxEditar.IsChecked == true)
-            {
-                MessageBox.Show("Debes buscar a un usuario por DNI antes de activar esta casilla.");
-                chboxEditar.IsChecked = false;
-            }
-            else {
-                if (chboxEditar.IsChecked == true)
-                {
-                    tbNombre.IsEnabled = true;
-                    tbApellido.IsEnabled = true;
-                    tbApellido2.IsEnabled = true;
-                    tbTs.IsEnabled = true;
-                    tbMovil.IsEnabled = true;
-                    tbTelefono.IsEnabled = true;
-                    tbTelFamiliar.IsEnabled = true;
-                    tbVivienda.IsEnabled = true;
-                }
-            }
-             if (chboxEditar.IsChecked == false)
-            {
-
-                tbNombre.IsEnabled = false;
-                tbApellido.IsEnabled = false;
-                tbApellido2.IsEnabled = false;
-                tbTs.IsEnabled = false;
-                tbMovil.IsEnabled = false;
-                tbTelefono.IsEnabled = false;
-                tbTelFamiliar.IsEnabled = false;
-                tbVivienda.IsEnabled = false;
-            }
-        }
-
-
-        private void tbNombre_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
-
-
 }
