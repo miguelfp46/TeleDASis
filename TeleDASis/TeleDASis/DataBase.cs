@@ -83,38 +83,6 @@ namespace TeleDASis
 			}
 		}
 
-
-		public bool addUser(string nombre, string tarjetaSanitaria, string movil, string telefono, string dni, string tlfPersonaContacto,
-            string fechaAlta, string primerApellido, string segundoApellido, int vivienda_idVivienda)
-        {
-            try
-            {
-                string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, vivienda_idVivienda) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @vivienda_idVivienda)";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@nombre", nombre);
-                cmd.Parameters.AddWithValue("@tarjetaSanitaria", tarjetaSanitaria);
-                cmd.Parameters.AddWithValue("@movil", movil);
-                cmd.Parameters.AddWithValue("@telefono", telefono);
-                cmd.Parameters.AddWithValue("@dni", dni);
-                cmd.Parameters.AddWithValue("@tlfPersonaContacto", tlfPersonaContacto);
-                cmd.Parameters.AddWithValue("@fechaAlta", fechaAlta);
-                cmd.Parameters.AddWithValue("@primerApellido", primerApellido);
-                cmd.Parameters.AddWithValue("@segundoApellido", segundoApellido);
-                cmd.Parameters.AddWithValue("@vivienda_idVivienda", vivienda_idVivienda);
-                //cmd.Parameters.AddWithValue("@codigoIdentificacion", codigoIdentificacion);
-                Console.WriteLine(cmd.CommandText);
-                cmd.ExecuteNonQuery();
-                
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return false;
-            }
-        }
-
         //Mostrar usuario por dni <--- Este metodo lo llama la baja de usuarios.
         public Usuario showUser(String dni)
         {
@@ -196,7 +164,7 @@ namespace TeleDASis
             Usuario usuario = new Usuario();
             try
             {
-                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto, vivienda_idVivienda FROM usuarios WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -211,7 +179,6 @@ namespace TeleDASis
                     usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
                     usuario.telefono = Convert.ToInt32(reader["telefono"]);
                     usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
-                    usuario.vivienda = Convert.ToString(reader["vivienda_idVivienda"]);
                 }
 
                 reader.Close();
@@ -230,7 +197,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "UPDATE usuarios SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido, vivienda_idVivienda = @vivienda_idVivienda WHERE dni = @dni";
+                string sql = "UPDATE usuarios SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -239,7 +206,6 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
-                cmd.Parameters.AddWithValue("@vivienda_idVivienda", user.vivienda);
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
                  

@@ -66,17 +66,17 @@ namespace TeleDASis
             {
                 if (Validaciones.validarNIF(dni) == false)
                 {
-                    MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.");
+                    MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.","DNI incorrecto",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
                 else if (databaseConnector.instance.addUser(new Usuario(nombre, targetaSanitaria, int.Parse(movil), int.Parse(nTelefono), dni,
 				int.Parse(nTelefonoFamiliar), dt, apellido, apellido2)) == true)
                 {
-                    MessageBox.Show("Se ha introducido a " + nombre + " con éxito", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("¡Se ha introducido a " + nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
             }                          
