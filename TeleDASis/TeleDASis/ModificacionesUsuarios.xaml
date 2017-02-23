@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="ModificacionesUsuarios" Height="355.32" Width="694.681">
+        Title="ModificacionesUsuarios" Height="355.32" Width="694.681" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,3,2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="208*" />
@@ -32,11 +32,11 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False"/>
+            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False" TextChanged="tbNombre_TextChanged"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label3" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False"/>
+            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" IsEnabled="False" />
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label4" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>

@@ -33,14 +33,14 @@ namespace TeleDASis
             info.Show();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btn_Informativa_Click(object sender, RoutedEventArgs e)
         {
             LlamadaInformativa info = new LlamadaInformativa();
             
             info.Show();
         }
 
-        private void button_Copy2_Click(object sender, RoutedEventArgs e)
+        private void btn_Agenda_Click(object sender, RoutedEventArgs e)
         {
             
 
