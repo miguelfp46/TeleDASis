@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Alta" Height="300" Width="674.419" WindowStartupLocation="CenterScreen">
+        Title="Alta" Height="552" Width="747.919" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,2,4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*" />
-            <ColumnDefinition Width="210*" />
-            <ColumnDefinition Width="215*" />
-            <ColumnDefinition Width="204*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
 
@@ -20,52 +19,64 @@
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column = "1" Grid.Row = "0" Orientation = "Horizontal" Grid.ColumnSpan="2" Margin="0,0,1,0">
-            <Label x:Name="lFecha" Content="Fecha:" VerticalAlignment = "Center" Width = "100"/>
-            <DatePicker x:Name="tbFechaDeAlta" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" />
-        </StackPanel>
-        <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
-            <Label x:Name="lDni" Content="Dni:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbDni" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" MaxLength="9"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
-            <Label x:Name="lNombre" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras" />
-        </StackPanel>
-        <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal">
-            <Label x:Name="lApellido" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "3" Grid.Row = "2" Orientation = "Horizontal">
-            <Label x:Name="lApellido2" Content="Apellido:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="Letras"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
-            <Label x:Name="lTelefono" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100" MaxLength="9" Margin="0" PreviewTextInput="tbTelefono_PreviewTextInput"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "2" Grid.Row = "3" Orientation = "Horizontal">
-            <Label x:Name="lMovil" Content="Móvil:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100" MaxLength="9" Margin="0" PreviewTextInput=" tbTelefono_PreviewTextInput"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "3" Grid.Row = "3" Orientation = "Horizontal">
-            <Label x:Name="lTelFamiliar" Content="Tel. Familiar:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbFamiliar" Text="" VerticalAlignment = "Center" Width = "100"  MaxLength="9" Margin="0" PreviewTextInput=" tbTelefono_PreviewTextInput"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "2" Grid.Row = "1" Orientation = "Horizontal">
-            <Label x:Name="lTargetaSanitaria" Content="T.S.:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbTargetaSanitaria" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "3" Grid.Row = "1" Orientation = "Horizontal">
-            <Label x:Name="lVivienda" Content="Vivienda:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="tbVivienda" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "2" Grid.Row = "4" Orientation = "Horizontal">
-            <Button x:Name="btAccept" Content="Aceptar" Margin="20,0,45,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click"/>
-            <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btCancel_Click"/>
-        </StackPanel>
+
+        <Label x:Name="lFecha" Content="Fecha:" VerticalAlignment = "Center" Grid.Column="1" Grid.Row="0"  Margin="18,7,524,5" Height="27"/>
+        <DatePicker x:Name="tbFechaDeAlta" Text="" VerticalAlignment = "Center" Margin="92,8,400,7" Grid.Column="1" Grid.Row="0" />
+
+
+        <Label x:Name="lDni" Content="Dni:" VerticalAlignment = "Center" Width = "79" Margin="18,7,524,5" Grid.Column = "1" Grid.Row = "1"/>
+        <TextBox x:Name="tbDni" Text="" VerticalAlignment = "Center" Width = "Auto" MaxLength="9" Grid.Column = "1" Grid.Row = "1" Margin="88,11,350,8" />
+
+
+        <Label x:Name="lNombre" Content="Nombre:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "2" Margin="15,10,502,2" Height="28"/>
+        <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "2" Margin="88,10,100,2" />
+
+
+        <Label x:Name="lApellido" Content="1º Apellido:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "3"  Margin="15,10,502,2"/>
+        <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "3" Margin="88,10,100,2" />
+
+
+        <Label x:Name="lApellido2" Content="2º Apellido:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "4" Margin="15,10,502,2"/>
+        <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "4" Margin="88,10,100,2" />
+
+
+        <Label x:Name="lTelefono" Content="Teléfono:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "5" Margin="15,10,502,2"/>
+        <TextBox x:Name="tbTelefono"  Text="" VerticalAlignment = "Center" MaxLength="9" Width = "Auto"  PreviewTextInput="tbTelefono_PreviewTextInput" Grid.Column = "1" Grid.Row = "5" Margin="88,10,350,2" />
+
+        <Label x:Name="lMovil" Content="Móvil:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "6" Margin="15,10,502,2"/>
+        <TextBox x:Name="tbMovil"  Text="" VerticalAlignment = "Center" MaxLength="9" Width = "Auto"  PreviewTextInput="tbTelefono_PreviewTextInput" Grid.Column = "1" Grid.Row = "6" Margin="88,10,350,2" />
+
+
+        <Label x:Name="lTelFamiliar" Content="Tel. Familiar:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "7" Margin="15,10,502,2"/>
+        <TextBox x:Name="tbFamiliar"  Text="" VerticalAlignment = "Center" MaxLength="9" Width = "Auto"  PreviewTextInput="tbTelefono_PreviewTextInput" Grid.Column = "1" Grid.Row = "7" Margin="88,10,350,2" />
+
+
+        <Label x:Name="lTargetaSanitaria" Content="T.S.:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "8"  Margin="15,10,502,2"/>
+        <TextBox x:Name="tbTargetaSanitaria" Text="" VerticalAlignment = "Center" Width = "Auto" Grid.Column = "1" Grid.Row = "8" Margin="88,10,300,2" />
+
+
+        <Label x:Name="lPoblacion" Content="Poblacion:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "9"  Margin="15,10,502,2"/>
+        <TextBox x:Name="tbPoblacion"  Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "9" Margin="88,10,100,2" />
+
+        <Label x:Name="lDireccion" Content="Direccion:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "10"  Margin="15,10,502,2"/>
+        <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "Auto"   Grid.Column = "1" Grid.Row = "10" Margin="88,10,100,2" />
+
+        <Label x:Name="lPuerta" Content="Puerta:" VerticalAlignment = "Center" Width = "100" Grid.Column = "1" Grid.Row = "11"  Margin="15,10,502,2"/>
+        <TextBox x:Name="tbPuerta"  Text="" VerticalAlignment = "Center" Width = "Auto"  Grid.Column = "1" Grid.Row = "11" Margin="88,10,450,2" />
+
+        <Button x:Name="btAccept" Content="Aceptar" Margin="0,0,490,10" HorizontalAlignment="Right" Width="76" Height="20" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "12"/>
+        <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btCancel_Click" Grid.Column = "1" Grid.Row = "12"/>
+
 
 
 
