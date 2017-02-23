@@ -75,6 +75,5 @@ namespace TeleDASis
             tbEmpleado.Text = "";
             tbDni.Text = "";
         }
-
     }
 }

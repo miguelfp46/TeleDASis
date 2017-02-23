@@ -28,7 +28,6 @@ namespace TeleDASis
         string movil;
         string targetaSanitaria;
         string fechaDeAlta;
-        int vivienda = 0;
 
 
         public Alta()
@@ -50,15 +49,9 @@ namespace TeleDASis
             targetaSanitaria = tbTargetaSanitaria.Text;
             DateTime dt = tbFechaDeAlta.DisplayDate;
             fechaDeAlta = dt.ToString("yyyy/MM/dd");
-            if(tbVivienda.Text == "")
-            {
-                tbVivienda.Text = "0";
-            }
-            vivienda = int.Parse(tbVivienda.Text);
 
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(apellido2) || string.IsNullOrEmpty(dni) ||
-                string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria)
-                || string.IsNullOrEmpty(Convert.ToString(vivienda)))
+                string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -68,15 +61,22 @@ namespace TeleDASis
                 {
                     MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.","DNI incorrecto",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
-                else if (databaseConnector.instance.addUser(new Usuario(nombre, targetaSanitaria, int.Parse(movil), int.Parse(nTelefono), dni,
-				int.Parse(nTelefonoFamiliar), dt, apellido, apellido2)) == true)
-                {
-                    MessageBox.Show("¡Se ha introducido a " + nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
-                    this.Close();
-                }
+                //if (databaseConnector.instance.ifExistDontCreateNewUser(dni) == true)
+                //{
+                //    MessageBox.Show("Ya existe un usuario con ese DNI");
+                //}
                 else
-                {
-                    MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                {            
+                if (databaseConnector.instance.addUser(new Usuario(nombre, targetaSanitaria, int.Parse(movil), int.Parse(nTelefono), dni,
+                int.Parse(nTelefonoFamiliar), dt, apellido, apellido2)) == true)
+                    {
+                        MessageBox.Show("¡Se ha introducido a " + nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
 
             }                          
