@@ -64,11 +64,11 @@ namespace TeleDASis
         }
         public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
         {
-            this.user.dni = tbDni.Text;
-            user = databaseConnector.instance.showUser(this.user.dni);
+            user.dni = tbDni.Text;
+            user = databaseConnector.instance.showUser(user.dni);
             if (user.nombre == null)
             {
-                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + this.user.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + user.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
