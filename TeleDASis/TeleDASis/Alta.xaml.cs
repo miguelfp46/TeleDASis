@@ -49,6 +49,8 @@ namespace TeleDASis
             targetaSanitaria = tbTargetaSanitaria.Text;
             DateTime dt = tbFechaDeAlta.DisplayDate;
             fechaDeAlta = dt.ToString("yyyy/MM/dd");
+            
+
 
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(apellido2) || string.IsNullOrEmpty(dni) ||
                 string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria))

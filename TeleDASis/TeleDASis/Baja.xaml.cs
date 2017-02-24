@@ -19,8 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class Baja : Window
     {
-        public String nombre;
-        public String dni;
+        Usuario user = new Usuario();
+        
         public Baja()
         {
             InitializeComponent();
@@ -34,36 +34,48 @@ namespace TeleDASis
 
         private void bAceptar_Click(object sender, RoutedEventArgs e)
         {
+            user.motivodeBaja = tbMotivo.Text;
             //cuando se llame a este metodo, se lanzara un messagebox advirtiendo que si queremos borrar el usuario.
+            if (databaseConnector.instance.addDeletedUserToHistory(user) == true)
+            {
+                MessageBox.Show("Si");
+
+            }
+            else
+            {
+                MessageBox.Show("no");
+            }
             MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (prueba == MessageBoxResult.Yes)
             {
                 
-                if (databaseConnector.instance.delUser(dni) == true)
+
+                if (databaseConnector.instance.delUser(user.dni) == true)
                 {
-                    MessageBox.Show("¡Usuario" + nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("¡Usuario" + user.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
                     borrarValoresDeTextBox();
                 }
                 else
                 {
-                    MessageBox.Show("El usuario" + nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El usuario" + user.nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             
         }
         public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
         {
-            dni = tbDni.Text;
-            Usuario usuario = databaseConnector.instance.showUser(dni);
-            if (usuario.nombre == null)
+            this.user.dni = tbDni.Text;
+            user = databaseConnector.instance.showUser(this.user.dni);
+            if (user.nombre == null)
             {
-                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + this.user.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
-                tbNombre.Text = usuario.nombre;
-                tbPrimerApellido.Text = usuario.primerApellido;
-                tbSegundoApellido.Text = usuario.segundoApellido;
+                tbNombre.Text = user.nombre;
+                tbPrimerApellido.Text = user.primerApellido;
+                tbSegundoApellido.Text = user.segundoApellido;
+                
             }
         }
         public void borrarValoresDeTextBox()

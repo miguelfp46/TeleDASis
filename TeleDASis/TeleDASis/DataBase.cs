@@ -58,7 +58,7 @@ namespace TeleDASis
 		{
 			try
 			{
-				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido)";
+				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, primerApellido, segundoApellido) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @primerApellido, @segundoApellido)";
 				MySqlCommand cmd = new MySqlCommand(sql, connection);
 				cmd.Parameters.AddWithValue("@nombre", user.nombre);
 				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -66,7 +66,6 @@ namespace TeleDASis
 				cmd.Parameters.AddWithValue("@telefono", user.telefono);
 				cmd.Parameters.AddWithValue("@dni", user.dni);
 				cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
-				cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
 				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
 				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
 				Console.WriteLine(cmd.CommandText);
@@ -82,7 +81,7 @@ namespace TeleDASis
 			}
 		}
 
-        //Mostrar usuario por dni <--- Este metodo lo llama la baja de usuarios.
+        //Mostrar usuario por dni y recuperar todo el usuario para luego insertalo en historico <--- Este metodo lo llama la baja de usuarios.
         public Usuario showUser(String dni)
         {
             Usuario usuario = new Usuario();
@@ -259,12 +258,12 @@ namespace TeleDASis
                 return usuario;
             }
         }
-
+        //inserta un usuario en historicobaja antes de que se elimine.
         public bool addDeletedUserToHistory(Usuario user)
         {
             try
             {
-                string sql = "INSERT INTO historicoBaja (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido)";
+                string sql = "INSERT INTO historicoBaja (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, motivoBaja) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @motivoBaja)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -275,10 +274,9 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@motivoBaja", user.motivodeBaja);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
-
-
                 return true;
             }
             catch (Exception ex)
