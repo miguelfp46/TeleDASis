@@ -297,17 +297,23 @@ namespace TeleDASis
 
 
         //TODO si existe el dni que salte un mensaje
-        //public bool ifExistDontCreateNewUser(string dni) {
-        //    bool exists = true;
-        //    if (exists)
-        //    {
-        //        string sql = "SELECT * FROM usuarios WHERE dni = @dni";
-        //        MySqlCommand cmd = new MySqlCommand(sql, connection);
-        //        cmd.Parameters.AddWithValue("@dni", dni);
-        //        cmd.ExecuteNonQuery();
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        public bool ifExistDontCreateNewUser(string dni)
+        {
+            
+                string sql = "SELECT * FROM usuarios WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@dni", dni);
+                
+                if (int.Parse(cmd.ExecuteScalar().ToString())==1)
+                {
+                    return true;
+                }
+                else
+                {
+                     return false;
+                }
+
+            }
+            
+        }
     }
-}

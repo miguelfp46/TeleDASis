@@ -56,10 +56,10 @@ namespace TeleDASis
                 {
                     MessageBox.Show("El DNI " + user.dni + " es incorrecto. Vuelve a introducirlo.","DNI incorrecto",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
-                //if (databaseConnector.instance.ifExistDontCreateNewUser(dni) == true)
-                //{
-                //    MessageBox.Show("Ya existe un usuario con ese DNI");
-                //}
+                if (databaseConnector.instance.ifExistDontCreateNewUser(user.dni) == true)
+                {
+                    MessageBox.Show("Ya existe un usuario con ese DNI");
+                }
                 else
                 {            
                 if (databaseConnector.instance.addUser(user) == true)
