@@ -80,6 +80,7 @@
     <Compile Include="formularioEmergencia1.xaml.cs">
       <DependentUpon>formularioEmergencia1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Llamadas.cs" />
     <Compile Include="menuLlamadasEmergencia.xaml.cs">
       <DependentUpon>menuLlamadasEmergencia.xaml</DependentUpon>
     </Compile>
