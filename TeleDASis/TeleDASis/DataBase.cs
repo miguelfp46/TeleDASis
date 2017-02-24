@@ -58,7 +58,7 @@ namespace TeleDASis
 		{
 			try
 			{
-				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido)";
+				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido,poblacion , direccion, puerta) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido,@poblacion ,@direccion, @puerta)";
 				MySqlCommand cmd = new MySqlCommand(sql, connection);
 				cmd.Parameters.AddWithValue("@nombre", user.nombre);
 				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -69,7 +69,10 @@ namespace TeleDASis
 				cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
 				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
 				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
-				Console.WriteLine(cmd.CommandText);
+                cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
+                cmd.Parameters.AddWithValue("@direccion", user.direccion);
+                cmd.Parameters.AddWithValue("@puerta", user.puerta);
+                Console.WriteLine(cmd.CommandText);
 				cmd.ExecuteNonQuery();
 
 

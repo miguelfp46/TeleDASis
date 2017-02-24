@@ -18,6 +18,9 @@ namespace TeleDASis
         public string tarjetasanitaria { get; set; }
         public string dni { get; set; }
         public string vivienda { get; set;}
+        public string poblacion { get; set; }
+        public string direccion { get; set; }
+        public string puerta { get; set; }
         public DateTime fechaentrada { get; set; }
         public Boolean Baja { get; set; }// Para ver si esta de baja o no
         public DateTime fechabaja { get; set; }
@@ -26,7 +29,7 @@ namespace TeleDASis
 
 		public Usuario() { }
 		public Usuario(string nombre, string targetaSanitaria, int movil, int nTelefono, string dni,
-				int nTelefonoFamiliar, DateTime fechaDeAlta, string apellido, string apellido2)
+				int nTelefonoFamiliar, DateTime fechaDeAlta, string apellido, string apellido2,string poblacion, string direccion,string puerta)
 		{
 			this.nombre = nombre;
 			this.tarjetasanitaria = tarjetasanitaria;
@@ -36,7 +39,10 @@ namespace TeleDASis
 			this.dni = dni;
 			this.fechaentrada = fechaDeAlta;
 			this.primerApellido = apellido;
-			this.segundoApellido = apellido2;			
+			this.segundoApellido = apellido2;
+            this.poblacion = poblacion;
+            this.direccion = direccion;
+            this.puerta = puerta;			
 		}
     }
 }

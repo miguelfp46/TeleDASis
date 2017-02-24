@@ -28,6 +28,9 @@ namespace TeleDASis
         string movil;
         string targetaSanitaria;
         string fechaDeAlta;
+        string poblacion;
+        string direccion;
+        string puerta;
 
 
         public Alta()
@@ -49,9 +52,13 @@ namespace TeleDASis
             targetaSanitaria = tbTargetaSanitaria.Text;
             DateTime dt = tbFechaDeAlta.DisplayDate;
             fechaDeAlta = dt.ToString("yyyy/MM/dd");
+            poblacion = tbPoblacion.Text;
+            direccion = tbDireccion.Text;
+            puerta = tbPuerta.Text;
 
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(apellido2) || string.IsNullOrEmpty(dni) ||
-                string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria))
+                string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria)
+                || string.IsNullOrEmpty(poblacion) || string.IsNullOrEmpty(direccion) || string.IsNullOrEmpty(puerta))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -68,7 +75,7 @@ namespace TeleDASis
                 else
                 {            
                 if (databaseConnector.instance.addUser(new Usuario(nombre, targetaSanitaria, int.Parse(movil), int.Parse(nTelefono), dni,
-                int.Parse(nTelefonoFamiliar), dt, apellido, apellido2)) == true)
+                int.Parse(nTelefonoFamiliar), dt, apellido, apellido2, poblacion,direccion,puerta)) == true)
                     {
                         MessageBox.Show("¡Se ha introducido a " + nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
                         this.Close();
