@@ -24,7 +24,7 @@ namespace TeleDASis
         public Baja()
         {
             InitializeComponent();
-            FechaBaja.SelectedDate = DateTime.Today;
+           
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
@@ -36,20 +36,13 @@ namespace TeleDASis
         {
             user.motivodeBaja = tbMotivo.Text;
             //cuando se llame a este metodo, se lanzara un messagebox advirtiendo que si queremos borrar el usuario.
-            if (databaseConnector.instance.addDeletedUserToHistory(user) == true)
-            {
-                MessageBox.Show("Si");
-
-            }
-            else
-            {
-                MessageBox.Show("no");
-            }
+           
             MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (prueba == MessageBoxResult.Yes)
             {
-                
-
+                //insertar usuario en historicobaja antes de que se borre
+                databaseConnector.instance.addDeletedUserToHistory(user);
+                //borra el usuario de la tabla usuarios
                 if (databaseConnector.instance.delUser(user.dni) == true)
                 {
                     MessageBox.Show("¡Usuario" + user.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
