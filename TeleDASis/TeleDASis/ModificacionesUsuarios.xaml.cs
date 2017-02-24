@@ -35,6 +35,10 @@ namespace TeleDASis
             tbMovil.IsEnabled = false;
             tbTelefono.IsEnabled = false;
             tbTelFamiliar.IsEnabled = false;
+            tbPoblacion.IsEnabled = false;
+            tbDireccion.IsEnabled = false;
+            tbPuerta.IsEnabled = false;
+            
         }
 
         private void cancel(object sender, RoutedEventArgs e)
@@ -55,10 +59,14 @@ namespace TeleDASis
             usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
             usuario.telefono = Convert.ToInt32(tbTelefono.Text);
             usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
+            usuario.poblacion = tbPoblacion.Text;
+            usuario.direccion = tbDireccion.Text;
+            usuario.puerta = tbPuerta.Text;
             usuario.dni = tbDNI.Text;
 
             if (string.IsNullOrEmpty(usuario.nombre) || string.IsNullOrEmpty(usuario.primerApellido) || string.IsNullOrEmpty(usuario.segundoApellido) || string.IsNullOrEmpty(usuario.dni) ||
-                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetasanitaria))
+                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetasanitaria)
+                || string.IsNullOrEmpty(usuario.poblacion) || string.IsNullOrEmpty(usuario.direccion) || string.IsNullOrEmpty(usuario.puerta))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -93,6 +101,9 @@ namespace TeleDASis
                 tbMovil.IsEnabled = true;
                 tbTelefono.IsEnabled = true;
                 tbTelFamiliar.IsEnabled = true;
+                tbPoblacion.IsEnabled = true;
+                tbDireccion.IsEnabled = true;
+                tbPuerta.IsEnabled = true;
 
                 tbNombre.Text = usuario.nombre;
                 tbApellido.Text = usuario.primerApellido;
@@ -101,6 +112,9 @@ namespace TeleDASis
                 tbMovil.Text = Convert.ToString(usuario.tlfmovil);
                 tbTelefono.Text = Convert.ToString(usuario.telefono);
                 tbTelFamiliar.Text = Convert.ToString(usuario.telefonofamiliar);
+                tbPoblacion.Text = usuario.poblacion;
+                tbDireccion.Text = usuario.direccion;
+                tbPuerta.Text = usuario.puerta;
             }
         }
         public void SoloNumeros(TextCompositionEventArgs e)

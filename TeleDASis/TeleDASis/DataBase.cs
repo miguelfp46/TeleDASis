@@ -68,7 +68,10 @@ namespace TeleDASis
 				cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
 				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
 				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
-				Console.WriteLine(cmd.CommandText);
+                cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
+                cmd.Parameters.AddWithValue("@direccion", user.direccion);
+                cmd.Parameters.AddWithValue("@puerta", user.puerta);
+                Console.WriteLine(cmd.CommandText);
 				cmd.ExecuteNonQuery();
 
 
@@ -166,7 +169,7 @@ namespace TeleDASis
             Usuario usuario = new Usuario();
             try
             {
-                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto FROM usuarios WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto ,poblacion,direccion,puertaFROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -181,6 +184,9 @@ namespace TeleDASis
                     usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
                     usuario.telefono = Convert.ToInt32(reader["telefono"]);
                     usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
+                    usuario.poblacion = Convert.ToString(reader["poblacion"]);
+                    usuario.direccion = Convert.ToString(reader["direccion"]);
+                    usuario.puerta = Convert.ToString(reader["puerta"]);
                 }
 
                 reader.Close();
@@ -199,7 +205,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "UPDATE usuarios SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido WHERE dni = @dni";
+                string sql = "UPDATE usuarios SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,poblacion = @poblacion , direccion = @direccion, puerta = @puerta  WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -208,6 +214,9 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
+                cmd.Parameters.AddWithValue("@direccion", user.direccion);
+                cmd.Parameters.AddWithValue("@puerta", user.puerta);
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
                  
