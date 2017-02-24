@@ -58,7 +58,7 @@ namespace TeleDASis
 		{
 			try
 			{
-				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido,poblacion , direccion, puerta) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido,@poblacion ,@direccion, @puerta)";
+				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, primerApellido, segundoApellido) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @primerApellido, @segundoApellido)";
 				MySqlCommand cmd = new MySqlCommand(sql, connection);
 				cmd.Parameters.AddWithValue("@nombre", user.nombre);
 				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -66,7 +66,6 @@ namespace TeleDASis
 				cmd.Parameters.AddWithValue("@telefono", user.telefono);
 				cmd.Parameters.AddWithValue("@dni", user.dni);
 				cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
-				cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
 				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
 				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
                 cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
@@ -85,14 +84,14 @@ namespace TeleDASis
 			}
 		}
 
-        //Mostrar usuario por dni <--- Este metodo lo llama la baja de usuarios.
+        //Mostrar usuario por dni y recuperar todo el usuario para luego insertalo en historico <--- Este metodo lo llama la baja de usuarios.
         public Usuario showUser(String dni)
         {
             Usuario usuario = new Usuario();
             try
             {
                 
-                string sql = "SELECT nombre, primerApellido, segundoApellido FROM usuarios WHERE dni = @dni";
+                string sql = "SELECT * FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -102,8 +101,14 @@ namespace TeleDASis
                 {
 
                     usuario.nombre = Convert.ToString(reader["nombre"]);
+                    usuario.tarjetasanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
+                    usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
+                    usuario.telefono = Convert.ToInt32(reader["telefono"]);
+                    usuario.dni = Convert.ToString(reader["dni"]);
+                    usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
+                    usuario.fechaentrada = Convert.ToDateTime(reader["fechaAlta"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
-                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);        
                 }
 
                 reader.Close();
@@ -262,6 +267,35 @@ namespace TeleDASis
                 return usuario;
             }
         }
+        //inserta un usuario en historicobaja antes de que se elimine.
+        public bool addDeletedUserToHistory(Usuario user)
+        {
+            try
+            {
+                string sql = "INSERT INTO historicoBaja (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, motivoBaja) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @motivoBaja)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", user.nombre);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
+                cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
+                cmd.Parameters.AddWithValue("@dni", user.dni);
+                cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
+                cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
+                cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@motivoBaja", user.motivodeBaja);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+
         //TODO si existe el dni que salte un mensaje
         //public bool ifExistDontCreateNewUser(string dni) {
         //    bool exists = true;
