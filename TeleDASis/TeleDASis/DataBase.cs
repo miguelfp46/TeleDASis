@@ -164,7 +164,7 @@ namespace TeleDASis
             Usuario usuario = new Usuario();
             try
             {
-                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto ,poblacion,direccion,puertaFROM usuarios WHERE dni = @dni";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, tarjetaSanitaria, movil, telefono, tlfPersonaContacto ,poblacion,direccion,puerta FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
