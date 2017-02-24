@@ -42,7 +42,7 @@ namespace TeleDASis
 			this.segundoApellido = apellido2;
             this.poblacion = poblacion;
             this.direccion = direccion;
-            this.puerta = puerta;			
+            this.puerta = puerta;	
 		}
     }
 }
