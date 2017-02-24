@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 using System.Data;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace TeleDASis
 {
@@ -316,7 +317,8 @@ namespace TeleDASis
                 }
                 else
                 {
-                     return false;
+                    MessageBox.Show("Entrada duplicada ya existe el dni insertado");
+                    return false;
                 }
 
             }
