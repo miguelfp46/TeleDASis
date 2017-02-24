@@ -19,18 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class Alta : Window
     {
-        string nombre;
-        string apellido;
-        string apellido2;
-        string dni;
-        string nTelefono;
-        string nTelefonoFamiliar;
-        string movil;
-        string targetaSanitaria;
-        string fechaDeAlta;
-        string poblacion;
-        string direccion;
-        string puerta;
+        Usuario user = new Usuario();
+        
 
 
         public Alta()
@@ -42,31 +32,29 @@ namespace TeleDASis
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
-            nombre = tbNombre.Text;
-            apellido = tbApellido.Text;
-            apellido2 = tbApellido2.Text;
-            dni = tbDni.Text;
-            nTelefono = tbTelefono.Text;
-            nTelefonoFamiliar = tbFamiliar.Text;
-            movil = tbMovil.Text;
-            targetaSanitaria = tbTargetaSanitaria.Text;
-            DateTime dt = tbFechaDeAlta.DisplayDate;
-            fechaDeAlta = dt.ToString("yyyy/MM/dd");
-            poblacion = tbPoblacion.Text;
-            direccion = tbDireccion.Text;
-            puerta = tbPuerta.Text;
+            user.nombre = tbNombre.Text;
+            user.primerApellido = tbApellido.Text;
+            user.segundoApellido = tbApellido2.Text;
+            user.dni = tbDni.Text;
+            user.telefono = int.Parse(tbTelefono.Text);
+            user.telefonofamiliar = int.Parse(tbFamiliar.Text);
+            user.tlfmovil = int.Parse(tbMovil.Text);
+            user.tarjetasanitaria = tbTargetaSanitaria.Text;
+            user.poblacion = tbPoblacion.Text;
+            user.direccion = tbDireccion.Text;
+            user.puerta = tbPuerta.Text;
 
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(apellido2) || string.IsNullOrEmpty(dni) ||
-                string.IsNullOrEmpty(nTelefono) || string.IsNullOrEmpty(nTelefonoFamiliar) || string.IsNullOrEmpty(movil) || string.IsNullOrEmpty(targetaSanitaria)
-                || string.IsNullOrEmpty(poblacion) || string.IsNullOrEmpty(direccion) || string.IsNullOrEmpty(puerta))
+            if (string.IsNullOrEmpty(user.nombre) || string.IsNullOrEmpty(user.primerApellido) || string.IsNullOrEmpty(user.segundoApellido) || string.IsNullOrEmpty(user.dni) ||
+                string.IsNullOrEmpty(user.telefono.ToString()) || string.IsNullOrEmpty(user.telefonofamiliar.ToString()) || string.IsNullOrEmpty(user.tlfmovil.ToString()) || string.IsNullOrEmpty(user.tarjetasanitaria)
+                || string.IsNullOrEmpty(user.poblacion) || string.IsNullOrEmpty(user.direccion) || string.IsNullOrEmpty(user.puerta))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                if (Validaciones.validarNIF(dni) == false)
+                if (Validaciones.validarNIF(user.dni) == false)
                 {
-                    MessageBox.Show("El DNI " + dni + " es incorrecto. Vuelve a introducirlo.","DNI incorrecto",MessageBoxButton.OK,MessageBoxImage.Error);
+                    MessageBox.Show("El DNI " + user.dni + " es incorrecto. Vuelve a introducirlo.","DNI incorrecto",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
                 //if (databaseConnector.instance.ifExistDontCreateNewUser(dni) == true)
                 //{
@@ -74,15 +62,14 @@ namespace TeleDASis
                 //}
                 else
                 {            
-                if (databaseConnector.instance.addUser(new Usuario(nombre, targetaSanitaria, int.Parse(movil), int.Parse(nTelefono), dni,
-                int.Parse(nTelefonoFamiliar), dt, apellido, apellido2, poblacion,direccion,puerta)) == true)
+                if (databaseConnector.instance.addUser(user) == true)
                     {
-                        MessageBox.Show("¡Se ha introducido a " + nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("¡Se ha introducido a " + user.nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("No se ha podido añadir a " + nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("No se ha podido añadir a " + user.nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
 
