@@ -74,7 +74,7 @@
         <Label x:Name="lPuerta" Content="Puerta:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "11"  Margin="15,11,475,4" Height="Auto"/>
         <TextBox x:Name="tbPuerta"  Text="" VerticalAlignment = "Center" Width = "Auto"  Grid.Column = "1" Grid.Row = "11" Margin="88,17,450,8" Height="Auto" />
 
-        <Button x:Name="btAccept" Content="Aceptar" Margin="0,0,120,10" HorizontalAlignment="Right" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "12"/>
+        <Button x:Name="btAccept" Content="Dar de Alta" Margin="0,0,120,10" HorizontalAlignment="Right" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "12"/>
         <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" Click="btCancel_Click" Grid.Column = "1" Grid.Row = "12"/>
 
 
