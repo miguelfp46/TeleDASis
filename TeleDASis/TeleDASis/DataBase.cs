@@ -106,9 +106,12 @@ namespace TeleDASis
                     usuario.telefono = Convert.ToInt32(reader["telefono"]);
                     usuario.dni = Convert.ToString(reader["dni"]);
                     usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
-                    usuario.fechaentrada = Convert.ToDateTime(reader["fechaAlta"]);
+                    usuario.fechaAlta = Convert.ToString(reader["fechaAlta"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
-                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);        
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    usuario.direccion = Convert.ToString(reader["direccion"]);
+                    usuario.puerta = Convert.ToString(reader["puerta"]);
+                    usuario.poblacion = Convert.ToString(reader["poblacion"]);
                 }
 
                 reader.Close();
@@ -272,7 +275,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO historicoBaja (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, motivoBaja) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @motivoBaja)";
+                string sql = "INSERT INTO historicoBaja (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, direccion, puerta, poblacion, motivoBaja) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @direccion, @puerta, @poblacion, @motivoBaja)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
@@ -280,9 +283,12 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
-                cmd.Parameters.AddWithValue("@fechaAlta", user.fechaentrada);
+                cmd.Parameters.AddWithValue("@fechaAlta", user.fechaAlta);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@direccion", user.direccion);
+                cmd.Parameters.AddWithValue("@puerta", user.puerta);
+                cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
                 cmd.Parameters.AddWithValue("@motivoBaja", user.motivodeBaja);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
