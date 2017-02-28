@@ -307,18 +307,20 @@ namespace TeleDASis
         public bool ifExistDontCreateNewUser(string dni)
         {
             
-                string sql = "SELECT * FROM usuarios WHERE dni = @dni";
+                string sql = "SELECT COUNT(*) FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
-                
-                if (int.Parse(cmd.ExecuteScalar().ToString())==1)
+
+            int cont = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (int.Parse(cont.ToString()) == 0)
                 {
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    MessageBox.Show("Entrada duplicada ya existe el dni insertado");
-                    return false;
+                   
+                    return true;
                 }
 
             }

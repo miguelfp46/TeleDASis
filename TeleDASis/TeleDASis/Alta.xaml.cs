@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 namespace TeleDASis
 {
 
@@ -56,22 +57,26 @@ namespace TeleDASis
                 {
                     MessageBox.Show("El DNI " + user.dni + " es incorrecto. Vuelve a introducirlo.","DNI incorrecto",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
-                if (databaseConnector.instance.ifExistDontCreateNewUser(user.dni) == true)
-                {
-                    MessageBox.Show("Ya existe un usuario con ese DNI");
-                }
                 else
-                {            
-                if (databaseConnector.instance.addUser(user) == true)
+                {
+                    if (databaseConnector.instance.ifExistDontCreateNewUser(user.dni))
                     {
-                        MessageBox.Show("¡Se ha introducido a " + user.nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
-                        this.Close();
+                         MessageBox.Show("Ya existe un usuario con ese DNI");
                     }
                     else
-                    {
-                        MessageBox.Show("No se ha podido añadir a " + user.nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                    {            
+                        if (databaseConnector.instance.addUser(user) == true)
+                        {
+                            MessageBox.Show("¡Se ha introducido a " + user.nombre + " con éxito!", "Usuario añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido añadir a " + user.nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
                 }
+                
 
             }                          
         }
@@ -124,8 +129,21 @@ namespace TeleDASis
         {
             SoloLetras(e);
         }
-
-
+      
+        public void Limpiar()
+        {
+            tbApellido.Clear();
+            tbApellido2.Clear();
+            tbDireccion.Clear();
+            tbDni.Clear();
+            tbFamiliar.Clear();
+            tbMovil.Clear();
+            tbNombre.Clear();
+            tbPoblacion.Clear();
+            tbPuerta.Clear();
+            tbTargetaSanitaria.Clear();
+            tbTelefono.Clear();
+        }
     }
        
 }
