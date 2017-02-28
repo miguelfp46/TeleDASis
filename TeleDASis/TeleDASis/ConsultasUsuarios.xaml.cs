@@ -30,7 +30,13 @@ namespace TeleDASis
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            databaseConnector.instance.showUserTable(dataGridTable);
+            Usuario user = new Usuario();
+            user.nombre = txtNombre.Text;
+            user.primerApellido = txtApellido1.Text;
+            user.segundoApellido = txtApellido2.Text;
+            user.tarjetasanitaria = txtTarjetaSanitaria.Text;
+            
+            databaseConnector.instance.showUserTable(dataGridTable,user);
         }  
         public void loadDataTable()
         {

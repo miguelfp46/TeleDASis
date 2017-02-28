@@ -146,13 +146,25 @@ namespace TeleDASis
             return false;
         }
 
-        public bool showUserTable(DataGrid dtGConsultas)
+        public bool showUserTable(DataGrid dtGConsultas, Usuario user)
         {
             try
             {
-                string sql = "SELECT * FROM usuarios;";
+                string sql = "SELECT * FROM usuarios WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido" ;
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                 cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@nombre", "%" + user.nombre + "%");
+                cmd.Parameters.AddWithValue("@primerApellido", "%" + user.primerApellido + "%");
+                cmd.Parameters.AddWithValue("@segundoApellido", "%" + user.segundoApellido + "%");
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", "%" + user.tarjetasanitaria + "%");
+                cmd.Parameters.AddWithValue("@movil", "%" + user.tlfmovil + "%");
+                cmd.Parameters.AddWithValue("@telefono", "%" + user.telefono + "%");
+                cmd.Parameters.AddWithValue("@dni", "%" + user.dni + "%");
+                cmd.Parameters.AddWithValue("@tlfPersonaContacto", "%" + user.telefonofamiliar + "%");
+                cmd.Parameters.AddWithValue("@poblacion", "%" + user.poblacion + "%");
+                cmd.Parameters.AddWithValue("@direccion", "%" + user.direccion + "%");
+                cmd.Parameters.AddWithValue("@puerta", "%" + user.puerta + "%");
+
+                cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);

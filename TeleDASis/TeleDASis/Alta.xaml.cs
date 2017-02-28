@@ -27,7 +27,7 @@ namespace TeleDASis
         public Alta()
         {
             InitializeComponent();
-            tbFechaDeAlta.SelectedDate = DateTime.Today;
+            //tbFechaDeAlta.SelectedDate = DateTime.Today;
         }
 
 
