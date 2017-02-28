@@ -145,5 +145,9 @@ namespace TeleDASis
             SoloLetras(e);
         }
 
+        private void tbNombre_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

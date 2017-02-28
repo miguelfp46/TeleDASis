@@ -72,11 +72,11 @@
         <TextBox x:Name="txtPur" Text="" VerticalAlignment = "Center" Width = "100" Margin="103,17,18,16" Grid.Row="4" Grid.Column="1"/>
         <CheckBox x:Name="pue"  Grid.Column="1" HorizontalAlignment="Left" Margin="12,17,0,0" Grid.Row="4" VerticalAlignment="Top"/>
 
-        <Button x:Name="btnTerminar" Content="Terminar" Width="121"  HorizontalAlignment="Left" Margin="60,7,0,0" Grid.Row="5" Grid.Column="2" VerticalAlignment="Top" Height="23" Click="Button_Click"/>
+        <Button x:Name="btnTerminar" Content="Terminar" Width="121"  HorizontalAlignment="Left" Margin="60,0,0,18" Grid.Row="5" Grid.Column="2" Click="Button_Click" Height="23" VerticalAlignment="Bottom"/>
 
-       
-        <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="60,7,0,0" Grid.Row="5" VerticalAlignment="Top" Width="131" Height="23" Click="btnBuscar_Click"/>
-       
+
+        <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="60,0,0,18" Grid.Row="5" VerticalAlignment="Bottom" Width="131" Height="23" Click="btnBuscar_Click"/>
+
         <GroupBox x:Name="groupBox1" Header="Resultado de la Busqueda:" HorizontalAlignment="Left" Margin="5,36,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="Auto" Height="Auto" Grid.RowSpan="4">
             <DataGrid x:Name="dtGConsultas" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="132" Width="730" Grid.RowSpan="3" SelectionChanged="dtGConsultas_SelectionChanged"/>
         </GroupBox>
