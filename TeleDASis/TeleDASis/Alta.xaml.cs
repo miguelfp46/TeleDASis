@@ -40,13 +40,13 @@ namespace TeleDASis
             user.telefono = int.Parse(tbTelefono.Text);
             user.telefonofamiliar = int.Parse(tbFamiliar.Text);
             user.tlfmovil = int.Parse(tbMovil.Text);
-            user.tarjetasanitaria = tbTargetaSanitaria.Text;
+            user.tarjetaSanitaria = tbTargetaSanitaria.Text;
             user.poblacion = tbPoblacion.Text;
             user.direccion = tbDireccion.Text;
             user.puerta = tbPuerta.Text;
 
             if (string.IsNullOrEmpty(user.nombre) || string.IsNullOrEmpty(user.primerApellido) || string.IsNullOrEmpty(user.segundoApellido) || string.IsNullOrEmpty(user.dni) ||
-                string.IsNullOrEmpty(user.telefono.ToString()) || string.IsNullOrEmpty(user.telefonofamiliar.ToString()) || string.IsNullOrEmpty(user.tlfmovil.ToString()) || string.IsNullOrEmpty(user.tarjetasanitaria)
+                string.IsNullOrEmpty(user.telefono.ToString()) || string.IsNullOrEmpty(user.telefonofamiliar.ToString()) || string.IsNullOrEmpty(user.tlfmovil.ToString()) || string.IsNullOrEmpty(user.tarjetaSanitaria)
                 || string.IsNullOrEmpty(user.poblacion) || string.IsNullOrEmpty(user.direccion) || string.IsNullOrEmpty(user.puerta))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);

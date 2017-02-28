@@ -15,7 +15,7 @@ namespace TeleDASis
         public int telefono { get; set; }
         public int telefonofamiliar { get; set; }
         public int tlfmovil { get; set; }
-        public string tarjetasanitaria { get; set; }
+        public string tarjetaSanitaria { get; set; }
         public string dni { get; set; }
         public string vivienda { get; set;}
         public string poblacion { get; set; }
@@ -32,7 +32,7 @@ namespace TeleDASis
 				int nTelefonoFamiliar, string fechaDeAlta, string apellido, string apellido2,string poblacion, string direccion,string puerta)
 		{
 			this.nombre = nombre;
-			this.tarjetasanitaria = tarjetasanitaria;
+			this.tarjetaSanitaria = tarjetaSanitaria;
 			this.tlfmovil = movil;
 			this.telefono = nTelefono;
 			this.telefonofamiliar = nTelefonoFamiliar;

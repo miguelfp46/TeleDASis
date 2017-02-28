@@ -55,7 +55,7 @@ namespace TeleDASis
             usuario.nombre = tbNombre.Text;
             usuario.primerApellido = tbApellido.Text;
             usuario.segundoApellido = tbApellido2.Text;
-            usuario.tarjetasanitaria = tbTs.Text;
+            usuario.tarjetaSanitaria = tbTs.Text;
             usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
             usuario.telefono = Convert.ToInt32(tbTelefono.Text);
             usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
@@ -65,7 +65,7 @@ namespace TeleDASis
             usuario.dni = tbDNI.Text;
 
             if (string.IsNullOrEmpty(usuario.nombre) || string.IsNullOrEmpty(usuario.primerApellido) || string.IsNullOrEmpty(usuario.segundoApellido) || string.IsNullOrEmpty(usuario.dni) ||
-                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetasanitaria)
+                string.IsNullOrEmpty(Convert.ToString(usuario.telefono)) || string.IsNullOrEmpty(Convert.ToString(usuario.telefonofamiliar)) || string.IsNullOrEmpty(Convert.ToString(usuario.tlfmovil)) || string.IsNullOrEmpty(usuario.tarjetaSanitaria)
                 || string.IsNullOrEmpty(usuario.poblacion) || string.IsNullOrEmpty(usuario.direccion) || string.IsNullOrEmpty(usuario.puerta))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -108,7 +108,7 @@ namespace TeleDASis
                 tbNombre.Text = usuario.nombre;
                 tbApellido.Text = usuario.primerApellido;
                 tbApellido2.Text = usuario.segundoApellido;
-                tbTs.Text = usuario.tarjetasanitaria;
+                tbTs.Text = usuario.tarjetaSanitaria;
                 tbMovil.Text = Convert.ToString(usuario.tlfmovil);
                 tbTelefono.Text = Convert.ToString(usuario.telefono);
                 tbTelFamiliar.Text = Convert.ToString(usuario.telefonofamiliar);

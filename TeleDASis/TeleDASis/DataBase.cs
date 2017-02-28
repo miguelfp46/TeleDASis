@@ -62,7 +62,7 @@ namespace TeleDASis
 				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, primerApellido, segundoApellido, direccion, puerta, poblacion) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @primerApellido, @segundoApellido, @direccion, @puerta, @poblacion)";
 				MySqlCommand cmd = new MySqlCommand(sql, connection);
 				cmd.Parameters.AddWithValue("@nombre", user.nombre);
-				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
+				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetaSanitaria);
 				cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
 				cmd.Parameters.AddWithValue("@telefono", user.telefono);
 				cmd.Parameters.AddWithValue("@dni", user.dni);
@@ -102,7 +102,7 @@ namespace TeleDASis
                 {
 
                     usuario.nombre = Convert.ToString(reader["nombre"]);
-                    usuario.tarjetasanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
+                    usuario.tarjetaSanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
                     usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
                     usuario.telefono = Convert.ToInt32(reader["telefono"]);
                     usuario.dni = Convert.ToString(reader["dni"]);
@@ -150,16 +150,16 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT * FROM usuarios WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido" ;
+                string sql = "SELECT * FROM usuarios WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND tarjetasanitaria LIKE @tarjetasanitaria AND poblacion LIKE @poblacion AND direccion LIKE @direccion AND puerta LIKE @puerta";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", "%" + user.nombre + "%");
                 cmd.Parameters.AddWithValue("@primerApellido", "%" + user.primerApellido + "%");
                 cmd.Parameters.AddWithValue("@segundoApellido", "%" + user.segundoApellido + "%");
-                cmd.Parameters.AddWithValue("@tarjetaSanitaria", "%" + user.tarjetasanitaria + "%");
-                cmd.Parameters.AddWithValue("@movil", "%" + user.tlfmovil + "%");
-                cmd.Parameters.AddWithValue("@telefono", "%" + user.telefono + "%");
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", "%" + user.tarjetaSanitaria + "%");
+                //cmd.Parameters.AddWithValue("@movil", "%" + user.tlfmovil + "%");
+                //cmd.Parameters.AddWithValue("@telefono", "%" + user.telefono + "%");
                 cmd.Parameters.AddWithValue("@dni", "%" + user.dni + "%");
-                cmd.Parameters.AddWithValue("@tlfPersonaContacto", "%" + user.telefonofamiliar + "%");
+                //cmd.Parameters.AddWithValue("@tlfPersonaContacto", "%" + user.telefonofamiliar + "%");
                 cmd.Parameters.AddWithValue("@poblacion", "%" + user.poblacion + "%");
                 cmd.Parameters.AddWithValue("@direccion", "%" + user.direccion + "%");
                 cmd.Parameters.AddWithValue("@puerta", "%" + user.puerta + "%");
@@ -196,7 +196,7 @@ namespace TeleDASis
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
-                    usuario.tarjetasanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
+                    usuario.tarjetaSanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
                     usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
                     usuario.telefono = Convert.ToInt32(reader["telefono"]);
                     usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
@@ -224,7 +224,7 @@ namespace TeleDASis
                 string sql = "UPDATE usuarios SET nombre = @nombre, tarjetaSanitaria = @tarjetaSanitaria, movil = @movil, telefono = @telefono, tlfPersonaContacto = @tlfPersonaContacto, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,poblacion = @poblacion , direccion = @direccion, puerta = @puerta  WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
-                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetaSanitaria);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
@@ -291,7 +291,7 @@ namespace TeleDASis
                 string sql = "INSERT INTO historicoBaja (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, fechaAlta, primerApellido, segundoApellido, direccion, puerta, poblacion, motivoBaja) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @fechaAlta, @primerApellido, @segundoApellido, @direccion, @puerta, @poblacion, @motivoBaja)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
-                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetasanitaria);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetaSanitaria);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
                 cmd.Parameters.AddWithValue("@dni", user.dni);

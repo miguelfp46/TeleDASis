@@ -34,8 +34,16 @@ namespace TeleDASis
             user.nombre = txtNombre.Text;
             user.primerApellido = txtApellido1.Text;
             user.segundoApellido = txtApellido2.Text;
-            user.tarjetasanitaria = txtTarjetaSanitaria.Text;
-            
+            user.tarjetaSanitaria = txtTarjetaSanitaria.Text;
+            //user.tlfmovil = Convert.ToInt32(txtMovil.Text);
+            //user.telefono = Convert.ToInt32(txtTelefono.Text);
+            //user.telefonofamiliar = Convert.ToInt32(txtTelFamiliar.Text);
+            user.dni = txtDni.Text;
+            user.poblacion = txtPoblacion.Text;
+            user.direccion = txtDir.Text;
+            user.puerta = txtPur.Text;
+           
+
             databaseConnector.instance.showUserTable(dataGridTable,user);
         }  
         public void loadDataTable()
