@@ -35,9 +35,15 @@ namespace TeleDASis
             user.primerApellido = txtApellido1.Text;
             user.segundoApellido = txtApellido2.Text;
             user.tarjetaSanitaria = txtTarjetaSanitaria.Text;
-            //user.tlfmovil = Convert.ToInt32(txtMovil.Text);
-            //user.telefono = Convert.ToInt32(txtTelefono.Text);
-            //user.telefonofamiliar = Convert.ToInt32(txtTelFamiliar.Text);
+            string texto = "";
+            int tlfmovil;
+            int telefono;
+            int telefonofamiliar;
+            user.tlfmovil = int.TryParse(texto, out tlfmovil) ? tlfmovil : 0;
+            
+            user.telefono = int.TryParse(texto, out telefono) ? telefono : 0;
+
+            user.telefonofamiliar = int.TryParse(texto, out telefonofamiliar) ? telefonofamiliar : 0;
             user.dni = txtDni.Text;
             user.poblacion = txtPoblacion.Text;
             user.direccion = txtDir.Text;
