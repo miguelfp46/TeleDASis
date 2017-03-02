@@ -48,12 +48,12 @@ namespace TeleDASis
                     //borra el usuario de la tabla usuarios
                     if (databaseConnector.instance.delUser(user.dni) == true)
                     {
-                        MessageBox.Show("¡Usuario" + user.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("¡Usuario " + user.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
                         borrarValoresDeTextBox();
                     }
                     else
                     {
-                        MessageBox.Show("El usuario" + user.nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("El usuario " + user.nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
