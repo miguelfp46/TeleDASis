@@ -20,6 +20,9 @@ namespace TeleDASis
     /// </summary>
     public partial class llamadareclamacion : Window
     {
+        private bool handle = true;
+        int servicio;
+
         public llamadareclamacion()
         {
             InitializeComponent();
@@ -53,7 +56,31 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
+        private void Handle()
+        {
+            switch (CMB.SelectedItem.ToString().Split(new string[] { ":" }, StringSplitOptions.None).Last())
+            {
+                case "Ambulancia":
+                    servicio = 1;
+                    break;
+                case "Policia":
+                    servicio = 2;
+                    break;
+                case "Bomberos":
+                    servicio = 3;
+                    break;
+                case "Mossos d'escuadra":
+                    servicio = 4;
+                    break;
+                case "Mas de uno":
+                    servicio = 5;
+                    break;
+                default:
+                    servicio = 6;
+                    break;
 
 
+            }
+        }
     }
 }

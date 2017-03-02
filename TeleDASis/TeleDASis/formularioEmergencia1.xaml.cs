@@ -20,7 +20,7 @@ namespace TeleDASis
     public partial class formularioEmergencia1 : Window
     {
        private bool handle = true;
-       int servicio;
+       //int servicio;
 
         public formularioEmergencia1()
         {
