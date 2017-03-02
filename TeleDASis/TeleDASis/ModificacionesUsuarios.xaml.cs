@@ -56,9 +56,9 @@ namespace TeleDASis
             usuario.primerApellido = tbApellido.Text;
             usuario.segundoApellido = tbApellido2.Text;
             usuario.tarjetaSanitaria = tbTs.Text;
-            usuario.tlfmovil = Convert.ToInt32(tbMovil.Text);
-            usuario.telefono = Convert.ToInt32(tbTelefono.Text);
-            usuario.telefonofamiliar = Convert.ToInt32(tbTelFamiliar.Text);
+            usuario.tlfmovil = tbMovil.Text;
+            usuario.telefono = tbTelefono.Text;
+            usuario.telefonofamiliar = tbTelFamiliar.Text;
             usuario.poblacion = tbPoblacion.Text;
             usuario.direccion = tbDireccion.Text;
             usuario.puerta = tbPuerta.Text;
@@ -109,9 +109,9 @@ namespace TeleDASis
                 tbApellido.Text = usuario.primerApellido;
                 tbApellido2.Text = usuario.segundoApellido;
                 tbTs.Text = usuario.tarjetaSanitaria;
-                tbMovil.Text = Convert.ToString(usuario.tlfmovil);
-                tbTelefono.Text = Convert.ToString(usuario.telefono);
-                tbTelFamiliar.Text = Convert.ToString(usuario.telefonofamiliar);
+                tbMovil.Text = usuario.tlfmovil;
+                tbTelefono.Text = usuario.telefono;
+                tbTelFamiliar.Text = usuario.telefonofamiliar;
                 tbPoblacion.Text = usuario.poblacion;
                 tbDireccion.Text = usuario.direccion;
                 tbPuerta.Text = usuario.puerta;

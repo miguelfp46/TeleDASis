@@ -12,9 +12,9 @@ namespace TeleDASis
         public string nombre { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
-        public int telefono { get; set; }
-        public int telefonofamiliar { get; set; }
-        public int tlfmovil { get; set; }
+        public string telefono { get; set; }
+        public string telefonofamiliar { get; set; }
+        public string tlfmovil { get; set; }
         public string tarjetaSanitaria { get; set; }
         public string dni { get; set; }
         public string vivienda { get; set;}
@@ -28,8 +28,8 @@ namespace TeleDASis
         public string EmpleadohaceBaja { get; set; }//relacionado con bbdd empleados modificar tipo por objeto
 
 		public Usuario() { }
-		public Usuario(string nombre, string targetaSanitaria, int movil, int nTelefono, string dni,
-				int nTelefonoFamiliar, string fechaDeAlta, string apellido, string apellido2,string poblacion, string direccion,string puerta)
+		public Usuario(string nombre, string targetaSanitaria, string movil, string nTelefono, string dni,
+				string nTelefonoFamiliar, string fechaDeAlta, string apellido, string apellido2,string poblacion, string direccion,string puerta)
 		{
 			this.nombre = nombre;
 			this.tarjetaSanitaria = tarjetaSanitaria;

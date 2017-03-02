@@ -23,8 +23,8 @@ namespace TeleDASis
         public llamadareclamacion()
         {
             InitializeComponent();
-            Fecha.SelectedDate = DateTime.Today;
-            Hora.SelectedDateFormat = DatePickerFormat.Short;
+            //Fecha.SelectedDate = DateTime.Today;
+            //Hora.SelectedDateFormat = DatePickerFormat.Short;
            
           
         }
