@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
             <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
+            <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "100" MaxLength="9" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
             <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
@@ -50,11 +50,11 @@
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">
             <Label x:Name="label7" Content="DNI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-            <TextBox x:Name="dni"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
+            <TextBox x:Name="dni" MaxLength="9"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">
             <Label x:Name="label8" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-            <TextBox x:Name="APELLIDO"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
+            <TextBox x:Name="APELLIDO"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False" />
         </StackPanel>
         <StackPanel Grid.Column = "2" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0">
             <Label x:Name="label9" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>

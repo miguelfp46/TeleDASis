@@ -33,11 +33,11 @@
             <TextBox x:Name="Hora" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
-            <Label x:Name="label2" Content="Telefono::" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="telefono" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
+            <Label x:Name="label2" Content="Telefono:" VerticalAlignment = "Center" Width = "100"/>
+            <TextBox x:Name="telefono" MaxLength="9" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
-            <Label x:Name="label3" Content="Nombre::" VerticalAlignment = "Center" Width = "100"/>
+            <Label x:Name="label3" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
             <TextBox x:Name="nombre"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
