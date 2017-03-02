@@ -37,9 +37,9 @@ namespace TeleDASis
             user.primerApellido = tbApellido.Text;
             user.segundoApellido = tbApellido2.Text;
             user.dni = tbDni.Text;
-            user.telefono = int.Parse(tbTelefono.Text);
-            user.telefonofamiliar = int.Parse(tbFamiliar.Text);
-            user.tlfmovil = int.Parse(tbMovil.Text);
+            user.telefono = tbTelefono.Text;
+            user.telefonofamiliar = tbFamiliar.Text;
+            user.tlfmovil = tbMovil.Text;
             user.tarjetaSanitaria = tbTargetaSanitaria.Text;
             user.poblacion = tbPoblacion.Text;
             user.direccion = tbDireccion.Text;

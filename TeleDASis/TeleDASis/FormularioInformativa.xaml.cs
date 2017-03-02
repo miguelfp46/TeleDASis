@@ -22,7 +22,7 @@ namespace TeleDASis
         public FormularioInformativa()
         {
             InitializeComponent();
-            Fecha.SelectedDate = DateTime.Today;
+            
         }
 
         public void buscarUsuarioPorTel(object sender, RoutedEventArgs e)

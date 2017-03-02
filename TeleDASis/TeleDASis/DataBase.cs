@@ -103,10 +103,10 @@ namespace TeleDASis
 
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.tarjetaSanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
-                    usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
-                    usuario.telefono = Convert.ToInt32(reader["telefono"]);
+                    usuario.tlfmovil = Convert.ToString(reader["movil"]);
+                    usuario.telefono = Convert.ToString(reader["telefono"]);
                     usuario.dni = Convert.ToString(reader["dni"]);
-                    usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
+                    usuario.telefonofamiliar = Convert.ToString(reader["tlfPersonaContacto"]);
                     usuario.fechaAlta = Convert.ToString(reader["fechaAlta"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
@@ -150,7 +150,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT * FROM usuarios WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND tarjetaSanitaria LIKE @tarjetaSanitaria AND movil LIKE @movil AND telefono LIKE @telefono AND tlfPersonaContacto  LIKE @tlfPersonaContacto AND poblacion LIKE @poblacion AND direccion LIKE @direccion AND puerta LIKE @puerta";
+                string sql = "SELECT * FROM usuarios WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND tarjetaSanitaria LIKE @tarjetaSanitaria AND movil LIKE @movil AND telefono LIKE @telefono AND tlfPersonaContacto  LIKE @tlfPersonaContacto  AND poblacion LIKE @poblacion AND direccion LIKE @direccion AND puerta LIKE @puerta";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", "%" + user.nombre + "%");
                 cmd.Parameters.AddWithValue("@primerApellido", "%" + user.primerApellido + "%");
@@ -197,9 +197,9 @@ namespace TeleDASis
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     usuario.tarjetaSanitaria = Convert.ToString(reader["tarjetaSanitaria"]);
-                    usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
-                    usuario.telefono = Convert.ToInt32(reader["telefono"]);
-                    usuario.telefonofamiliar = Convert.ToInt32(reader["tlfPersonaContacto"]);
+                    usuario.tlfmovil = Convert.ToString(reader["movil"]);
+                    usuario.telefono = Convert.ToString(reader["telefono"]);
+                    usuario.telefonofamiliar = Convert.ToString(reader["tlfPersonaContacto"]);
                     usuario.poblacion = Convert.ToString(reader["poblacion"]);
                     usuario.direccion = Convert.ToString(reader["direccion"]);
                     usuario.puerta = Convert.ToString(reader["puerta"]);
