@@ -23,14 +23,8 @@
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal">
-            <Label x:Name="label" Content="Fecha:" VerticalAlignment = "Center" Width = "100"/>
-            <DatePicker x:Name="Fecha" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
-            <Label x:Name="label1" Content="Hora:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="Hora" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" TextChanged="Hora_TextChanged"/>
-        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal"/>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal"/>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
             <TextBox x:Name="Tel" MaxLength="9" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
@@ -59,10 +53,7 @@
             <Label x:Name="label9" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
             <TextBox x:Name="APELLIDO2"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
-        <StackPanel Grid.Column = "2" Grid.Row = "0" Orientation = "Horizontal" Margin="0,0,1,0">
-            <Label x:Name="label10" Content="CI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-            <TextBox x:Name="ci" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
+        <StackPanel Grid.Column = "2" Grid.Row = "0" Orientation = "Horizontal" Margin="0,0,1,0"/>
         <StackPanel Grid.Column = "2" Grid.Row = "9" Orientation = "Horizontal" Margin="0,0,1,0">
             <Button x:Name="button" Content="Aceptar"  Margin="0,0,0,0" VerticalAlignment="Center" Width="75" Click="button_Click"/>
             <Button x:Name="button1" Content="Salir"  Margin="30,6,0,5" VerticalAlignment="Center" Width="75" Click="button1_Click_1"/>

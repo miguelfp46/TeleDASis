@@ -24,18 +24,12 @@
             <RowDefinition Height = "39*"/>
             <RowDefinition Height = "40*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal">
-            <Label x:Name="label" Content="Fecha:" VerticalAlignment = "Center" Width = "100"/>
-            <DatePicker x:Name="Fecha" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal"/>
         <StackPanel Grid.Column = "2" Grid.Row = "0" Orientation = "Horizontal">
             <Label x:Name="label12" Content="Categoria:" VerticalAlignment = "Center" Width = "79" Height="31" Margin="0,8,0,2"/>
             <TextBox x:Name="Categoria"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
-            <Label x:Name="label1" Content="Hora:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="Hora" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal"/>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
             <TextBox x:Name="Tel" MaxLength="9" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
@@ -59,7 +53,7 @@
 
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal" Grid.ColumnSpan="3" Margin="0,0,4,0" Grid.RowSpan="2">
-            <Label x:Name="label8" Content="Problema:" VerticalAlignment = "Center" Width = "100"/>
+            <Label x:Name="label8" Content="Problema:" VerticalAlignment = "Center" Width = "100" Margin="0,16,0,56"/>
             <TextBox x:Name="Problema" Text="" VerticalAlignment = "Center" Width = "547" Margin="0,12,0,2" Height="78"/>
         </StackPanel>
         <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" >

@@ -24,14 +24,8 @@
             <RowDefinition Height = "*"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal">
-            <Label x:Name="label" Content="Fecha:" VerticalAlignment = "Center" Width = "100" Margin="0,13"/>
-            <DatePicker x:Name="Fecha" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
-            <Label x:Name="label1" Content="Hora:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="Hora" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
+        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal"/>
+        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal"/>
         <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
             <Label x:Name="label2" Content="Telefono:" VerticalAlignment = "Center" Width = "100"/>
             <TextBox x:Name="telefono" MaxLength="9" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
