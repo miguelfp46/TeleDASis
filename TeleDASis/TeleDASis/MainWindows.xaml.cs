@@ -35,24 +35,24 @@ namespace TeleDASis
 
         private void btn_Informativa_Click(object sender, RoutedEventArgs e)
         {
-            LlamadaInformativa info = new LlamadaInformativa();
-            
+            llamadareclamacion info = new llamadareclamacion();
+
             info.Show();
         }
 
         private void btn_Agenda_Click(object sender, RoutedEventArgs e)
         {
-            
 
-           formLlamadaAgenda agenda = new formLlamadaAgenda();
+            llamadareclamacion info = new llamadareclamacion();
 
-            agenda.Show();
+            info.Show();
         }
 
         private void boton_emergencia_Click(object sender, RoutedEventArgs e)
         {
-            menuLlamadaEmergencia nuevaventana = new menuLlamadaEmergencia();
-            nuevaventana.Show();
+            llamadareclamacion info = new llamadareclamacion();
+
+            info.Show();
         }
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)

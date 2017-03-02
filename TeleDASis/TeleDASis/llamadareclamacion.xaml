@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Reclamacion" Height="920.171" Width="778.544" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,1">
+        Title="Llamada Reclamacion" Height="761.171" Width="778.544" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,1" d:IsLocked="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
@@ -60,7 +60,7 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox2" Header="Tipo Llamada" HorizontalAlignment="Left" Margin="51,54,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4" Height="204" Width="673">
+        <GroupBox x:Name="groupBox2" Header="Tipo Llamada" HorizontalAlignment="Left" Margin="51,40,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="3" Height="204" Width="673">
             <Grid Margin="0,-4,0,4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -89,7 +89,7 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox1" Header="Descripción" HorizontalAlignment="Left" Margin="51,41,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4" Height="266" Width="673">
+        <GroupBox x:Name="groupBox1" Header="Descripción" HorizontalAlignment="Left" Margin="51,11,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4" Height="266" Width="673">
             <Grid Margin="0,0,0,-1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -108,7 +108,7 @@
 
                 <TextBox x:Name="Motivo" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1"/>
                 <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="478,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-                <Label x:Name="label2" Content="Aviso:" Grid.Column="1" HorizontalAlignment="Left" Margin="432,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Label x:Name="label2" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="416,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 
             </Grid>
         </GroupBox>
@@ -120,7 +120,6 @@
             <Button x:Name="button" Content="Aceptar"  Margin="0,40,0,21" VerticalAlignment="Center" Width="75" Click="button_Click" Height="19"/>
             <Button x:Name="button1" Content="Salir"  Margin="30,40,0,22" VerticalAlignment="Center" Width="75" Click="button1_Click_1" Height="19"/>
         </StackPanel>
-        <Label x:Name="label10" Content="Label" Grid.Column="4" HorizontalAlignment="Left" Margin="172,79,-175,0" Grid.Row="7" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 
