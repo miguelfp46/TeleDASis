@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Reclamacion" Height="458.171" Width="778.544" WindowStartupLocation="CenterScreen">
+        Title="Llamada Reclamacion" Height="707.171" Width="778.544" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -43,11 +43,11 @@
                 </StackPanel>
                 <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
                     <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
+                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" Margin="0,18" IsEnabled="False"/>
                 </StackPanel>
-                <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">
+                <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
                     <Label x:Name="label7" Content="DNI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-                    <TextBox x:Name="dni" MaxLength="9"  VerticalAlignment = "Center" Width = "100" Margin="0,16,0,17" IsEnabled="False"/>
+                    <TextBox x:Name="dni" MaxLength="9"  VerticalAlignment = "Center" Width = "100" Margin="16,17,0,16" IsEnabled="False"/>
                 </StackPanel>
                 <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="2">
                     <Label x:Name="label8" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
@@ -60,7 +60,36 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox1" Header="Descripción" HorizontalAlignment="Left" Margin="51,43,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="6" Height="204" Width="673">
+        <GroupBox x:Name="groupBox2" Header="Tipo Llamada" HorizontalAlignment="Left" Margin="51,54,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4" Height="204" Width="673">
+            <Grid Margin="0,-4,0,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="7*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="label" Content="Tipo de Llamada" Grid.Column="1" HorizontalAlignment="Left" Margin="18,16,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="CMB" Width="120" SelectionChanged="comboBox_SelectionChanged" Grid.Column="1" Margin="132,15,277,12">
+                    <ComboBoxItem Content="Informativa" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Reclamación" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Agenda" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Emergencias" HorizontalAlignment="Left" Width="118"/>
+                </ComboBox>
+                <Label x:Name="label1" Content="Servicios:" Grid.Column="1" Grid.Row = "1" HorizontalAlignment="Left" Margin="18,16,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="checkBox" Content="Ambulancia" Grid.Column="1" HorizontalAlignment="Left" Margin="51,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <CheckBox x:Name="checkBox_Copy" Content="Ninguno" Grid.Column="1" HorizontalAlignment="Left" Margin="157,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <CheckBox x:Name="checkBox_Copy3" Content="Otros" Grid.Column="1" HorizontalAlignment="Left" Margin="247,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <CheckBox x:Name="checkBox_Copy1" Content="Bomberos" Grid.Column="1" HorizontalAlignment="Left" Margin="51,91,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <CheckBox x:Name="checkBox_Copy2" Content="Policia" Grid.Column="1" HorizontalAlignment="Left" Margin="157,53,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Descripción" HorizontalAlignment="Left" Margin="51,41,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4" Height="204" Width="673">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -81,14 +110,14 @@
             </Grid>
         </GroupBox>
 
-     
-       
-       
+
+
+
         <StackPanel Grid.Column = "2" Grid.Row = "9" Orientation = "Horizontal" Margin="0,0,1,0">
             <Button x:Name="button" Content="Aceptar"  Margin="0,0,0,0" VerticalAlignment="Center" Width="75" Click="button_Click"/>
             <Button x:Name="button1" Content="Salir"  Margin="30,6,0,5" VerticalAlignment="Center" Width="75" Click="button1_Click_1"/>
         </StackPanel>
 
     </Grid>
-    
+
 </Window>
