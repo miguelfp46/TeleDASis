@@ -36,7 +36,7 @@
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Button x:Name="btLlamadas" Content="Llamadas Entrantes" Grid.Column="1" Grid.Row="2" Click="btn_Informativa_Click" />
+                        <Button x:Name="btLlamadas" Content="Llamadas Entrantes" Grid.Column="1" Grid.Row="2" Click="btLlamadas" />
                         <Button x:Name="btn_Agenda" Content="Agenda" Grid.Column="4" Grid.Row="2" Click="btn_Agenda_Click" />
                     </Grid>
                 </TabItem>
