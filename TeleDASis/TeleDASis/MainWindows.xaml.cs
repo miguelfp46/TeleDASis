@@ -23,23 +23,22 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
-
-        private void btLlamadas(object sender, RoutedEventArgs e)
+        
+        private void btLlamadas_Click(object sender, RoutedEventArgs e)
         {
             llamadareclamacion info = new llamadareclamacion();
 
             info.Show();
         }
 
-        //private void btn_Agenda_Click(object sender, RoutedEventArgs e)
-        //{
+        private void btn_Agenda_Click(object sender, RoutedEventArgs e)
+        {
+            formLlamadaAgenda info = new formLlamadaAgenda();
 
-        //    //llamadareclamacion info = new llamadareclamacion();
+            info.Show();
+        }
 
-        //    //info.Show();
-        //}
-
-
+       
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)
         {
