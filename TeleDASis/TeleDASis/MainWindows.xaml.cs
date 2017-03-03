@@ -24,7 +24,7 @@ namespace TeleDASis
             InitializeComponent();
         }
         
-        private void btLlamadas(object sender, RoutedEventArgs e)
+        private void btLlamadas_Click(object sender, RoutedEventArgs e)
         {
             llamadareclamacion info = new llamadareclamacion();
 
