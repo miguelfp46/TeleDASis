@@ -78,21 +78,12 @@
     <Compile Include="formLlamadaAgenda.xaml.cs">
       <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="formularioEmergencia1.xaml.cs">
-      <DependentUpon>formularioEmergencia1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Llamadas.cs" />
     <Compile Include="menuLlamadasEmergencia.xaml.cs">
       <DependentUpon>menuLlamadasEmergencia.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LlamadaInformativa.xaml.cs">
-      <DependentUpon>LlamadaInformativa.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="llamadasreclamacion.xaml.cs">
-      <DependentUpon>llamadasreclamacion.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioInformativa.xaml.cs">
-      <DependentUpon>FormularioInformativa.xaml</DependentUpon>
+    <Compile Include="llamadareclamacion.xaml.cs">
+      <DependentUpon>llamadareclamacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
@@ -124,23 +115,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="formularioEmergencia1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="menuLlamadasEmergencia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LlamadaInformativa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="llamadasreclamacion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FormularioInformativa.xaml">
+    <Page Include="llamadareclamacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
