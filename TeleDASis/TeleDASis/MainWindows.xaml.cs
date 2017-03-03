@@ -33,8 +33,7 @@ namespace TeleDASis
 
         private void btn_Agenda_Click(object sender, RoutedEventArgs e)
         {
-
-            llamadareclamacion info = new llamadareclamacion();
+            formLlamadaAgenda info = new formLlamadaAgenda();
 
             info.Show();
         }
