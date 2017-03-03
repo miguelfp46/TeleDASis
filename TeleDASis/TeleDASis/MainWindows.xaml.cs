@@ -24,16 +24,7 @@ namespace TeleDASis
             InitializeComponent();
         }
         
-     
-
-        private void boton_reclamacion_Click(object sender, RoutedEventArgs e)
-        {
-            llamadareclamacion info = new llamadareclamacion();
-
-            info.Show();
-        }
-
-        private void btn_Informativa_Click(object sender, RoutedEventArgs e)
+        private void btLlamadas(object sender, RoutedEventArgs e)
         {
             llamadareclamacion info = new llamadareclamacion();
 
@@ -48,12 +39,7 @@ namespace TeleDASis
             info.Show();
         }
 
-        private void boton_emergencia_Click(object sender, RoutedEventArgs e)
-        {
-            llamadareclamacion info = new llamadareclamacion();
-
-            info.Show();
-        }
+       
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)
         {

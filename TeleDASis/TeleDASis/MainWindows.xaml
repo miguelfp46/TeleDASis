@@ -31,16 +31,13 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*" />
-                            <RowDefinition Height="3*" />
                             <RowDefinition Height="1*" />
+                            <RowDefinition Height="2*" />
                             <RowDefinition Height="1*" />
-                            <RowDefinition Height="3*" />
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Button x:Name="btn_Informativa" Content="Informativa" Grid.Column="1" Grid.Row="1" Click="btn_Informativa_Click" />
-                        <Button x:Name="btn_emergencia" Content="Emergencia" Grid.Row="1" Grid.Column="4" Click="boton_emergencia_Click" />
-                        <Button x:Name="btn_reclamacion" Content="Reclamación" Grid.Column="1" Grid.Row="4" Click="boton_reclamacion_Click" />
-                        <Button x:Name="btn_Agenda" Content="Agenda" Grid.Column="4" Grid.Row="4" Click="btn_Agenda_Click" />
+                        <Button x:Name="btLlamadas" Content="Llamadas Entrantes" Grid.Column="1" Grid.Row="2" Click="btn_Informativa_Click" />
+                        <Button x:Name="btn_Agenda" Content="Agenda" Grid.Column="4" Grid.Row="2" Click="btn_Agenda_Click" />
                     </Grid>
                 </TabItem>
                 <TabItem Header="Registro de Usuarios">
