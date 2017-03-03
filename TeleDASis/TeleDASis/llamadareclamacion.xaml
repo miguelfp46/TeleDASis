@@ -72,7 +72,7 @@
                     <RowDefinition Height="7*" />
                 </Grid.RowDefinitions>
                 <Label x:Name="label" Content="Tipo de Llamada" Grid.Column="1" HorizontalAlignment="Left" Margin="18,16,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="CMB" Width="120" SelectionChanged="comboBox_SelectionChanged" Grid.Column="1" Margin="132,15,277,12">
+                <ComboBox x:Name="CMB" Width="120" Grid.Column="1" Margin="132,15,277,12">
                     <ComboBoxItem Content="Informativa" HorizontalAlignment="Left" Width="118"/>
                     <ComboBoxItem Content="Reclamación" HorizontalAlignment="Left" Width="118"/>
                     <ComboBoxItem Content="Agenda" HorizontalAlignment="Left" Width="118"/>
