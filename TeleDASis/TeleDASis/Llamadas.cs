@@ -15,13 +15,14 @@ namespace TeleDASis
         public int empleado_idEmpleado { get; set; }
         public int usuarios_idUsuario { get; set; }
         public int motivo_idMotivo { get; set; }
+        public int servicio { get; set; }
         public string descripcion { get; set; }
 
         public Llamadas() { }
 
         public Llamadas(int telefonoUsuario,DateTime fechayHora , string solucion,
                         int empleado_idEmpleado,int usuarios_idUsuario,int motivo_idMotivo,
-                        string descripcion)
+                        string descripcion, int servicio)
         {
             this.telefonoUsuario = telefonoUsuario;
             this.fechayHora = fechayHora;
@@ -30,6 +31,7 @@ namespace TeleDASis
             this.usuarios_idUsuario = usuarios_idUsuario;
             this.motivo_idMotivo = motivo_idMotivo;
             this.descripcion = descripcion;
+            this.servicio = servicio;
         }
 
     }
