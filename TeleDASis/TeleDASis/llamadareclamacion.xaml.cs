@@ -59,7 +59,7 @@ namespace TeleDASis
         }
         private void Handle()
         {
-            switch (CMB.SelectedItem.ToString().Split(new string[] { ":" }, StringSplitOptions.None).Last())
+            switch (cbTipoLlamada.SelectedItem.ToString().Split(new string[] { ":" }, StringSplitOptions.None).Last())
             {
                 case "Policia":
                     llamada.servicio = 1;
@@ -76,6 +76,12 @@ namespace TeleDASis
 
 
             }
+        }
+
+        private void CMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Dispatcher.BeginInvoke((Action)(() => tcTipoLLamada.SelectedIndex = cbTipoLlamada.SelectedIndex));
+            tcTipoLLamada.Visibility = Visibility.Visible;
         }
     }
 }
