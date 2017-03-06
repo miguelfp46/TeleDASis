@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Consultas Usuarios" Height="517.064" Width="794.629" WindowStartupLocation="CenterScreen">
+        Title="Consultas Usuarios" Height="517.064" Width="794.629" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="0,0,3,2">
 
         <Grid.ColumnDefinitions>

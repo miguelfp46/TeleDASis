@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="TeleDASis" Height="595" Width="1150" WindowStartupLocation="CenterScreen">
+        Title="TeleDASis" Height="595" Width="1150" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FF3C3CEA">
         <Grid>
             <Grid.ColumnDefinitions>
