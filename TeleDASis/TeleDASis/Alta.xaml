@@ -66,10 +66,10 @@
         <TextBox x:Name="tbPoblacion"  Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "9" Margin="88,15,100,7" Height="Auto" />
 
         <Label x:Name="lDireccion" Content="Dirección:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "10"  Margin="15,13,475,3" Height="Auto"/>
-        <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "Auto"   Grid.Column = "1" Grid.Row = "10" Margin="88,17,100,9" Height="Auto" />
+        <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "Auto"   Grid.Column = "1" Grid.Row = "10" Margin="88,17,100,8" Height="18" />
 
         <Label x:Name="lPuerta" Content="Puerta:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "11"  Margin="15,11,475,4" Height="Auto"/>
-        <TextBox x:Name="tbPuerta"  Text="" VerticalAlignment = "Center" Width = "Auto"  Grid.Column = "1" Grid.Row = "11" Margin="88,17,450,8" Height="Auto" />
+        <TextBox x:Name="tbPuerta"  Text="" VerticalAlignment = "Center" Width = "Auto"  Grid.Column = "1" Grid.Row = "11" Margin="88,17,450,7" Height="19" />
 
         <Button x:Name="btAccept" Content="Dar de Alta" Margin="0,0,120,10" HorizontalAlignment="Right" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "12"/>
         <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" Click="btCancel_Click" Grid.Column = "1" Grid.Row = "12"/>

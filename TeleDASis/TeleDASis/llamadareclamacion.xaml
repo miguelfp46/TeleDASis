@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Reclamacion" Height="761.171" Width="778.544" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,1" d:IsLocked="True">
+        Title="Llamada Reclamacion" Height="744" Width="779" WindowStartupLocation="CenterScreen">
+    <Grid d:IsLocked="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
@@ -43,7 +43,7 @@
                 </StackPanel>
                 <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
                     <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" Margin="0,18" IsEnabled="False"/>
+                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" Margin="0,18" IsEnabled="False" Height="18"/>
                 </StackPanel>
                 <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
                     <Label x:Name="label7" Content="DNI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
@@ -108,7 +108,7 @@
 
                 <TextBox x:Name="Motivo" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1"/>
                 <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="478,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-                <Label x:Name="label2" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="416,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Margin="390,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 
             </Grid>
         </GroupBox>
