@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Reclamacion" Height="744" Width="779" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Llamada Reclamacion" Height="712" Width="779" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
@@ -15,53 +15,52 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "0.4*"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "auto"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "1*"/>
         </Grid.RowDefinitions>
-        <GroupBox x:Name="groupBox" Header="Buscar por Teléfono" HorizontalAlignment="Left" Margin="50,9,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="179" Grid.RowSpan="4" Width="674">
-            <Grid Margin="0,0,0,3">
+        <GroupBox x:Name="groupBox" Header="Buscar por Teléfono" HorizontalAlignment="Left" Margin="50,9,0,0" VerticalAlignment="Top" Grid.ColumnSpan="5"  Grid.RowSpan="4" Width="674">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="51*" />
-                    <RowDefinition Height="54*" />
-                    <RowDefinition Height="49*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
-                    <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
-                    <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "100" MaxLength="9" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
+                    <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "64" Margin="0,12,0,13"/>
+                    <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "130" MaxLength="9" Margin="0,16,0,17" PreviewTextInput="tbMovil_PreviewTextInput"/>
                 </StackPanel>
-                <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
-                    <Label x:Name="label4" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" Margin="0,18" IsEnabled="False" Height="18"/>
+                <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
+                    <Label x:Name="lNombre" VerticalAlignment="Center" Content="Nombre:"  Width="93" />
+                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
+                    <Label x:Name="lDNI" Content="DNI:" VerticalAlignment = "Center" Width = "108"/>
+                    <TextBox x:Name="dni" MaxLength="9"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
                 </StackPanel>
                 <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
-                    <Label x:Name="label7" Content="DNI:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-                    <TextBox x:Name="dni" MaxLength="9"  VerticalAlignment = "Center" Width = "100" Margin="16,17,0,16" IsEnabled="False"/>
+                    <Label x:Name="lPrimerApellido" Content="Primer apellido:" VerticalAlignment = "Center" Width = "93" Margin="0,0,0,3"/>
+                    <TextBox x:Name="tbPrimerApellido"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False" />
                 </StackPanel>
-                <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,2,0">
-                    <Label x:Name="label8" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-                    <TextBox x:Name="APELLIDO"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False" />
-                </StackPanel>
-                <StackPanel Grid.Column = "2" Grid.Row = "1" Orientation = "Horizontal" Margin="0,0,1,0" d:IsLocked="True">
-                    <Label x:Name="label9" Content="Apellido:" VerticalAlignment = "Center" Width = "84" Margin="0,2"/>
-                    <TextBox x:Name="APELLIDO2"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
+                <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
+                    <Label x:Name="lSegundoApellido" Content="Segundo apellido:" VerticalAlignment = "Center" Width = "108" Margin="0,2"/>
+                    <TextBox x:Name="tbSegundoApellido"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
                 </StackPanel>
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox2" Header="Tipo Llamada" HorizontalAlignment="Left" Margin="51,40,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="3" Height="204" Width="673" Padding="0,10,0,0">
-            <Grid Margin="0,-4,0,4">
+        <GroupBox x:Name="groupBox2" Header="Tipo Llamada" HorizontalAlignment="Left" Margin="51,5,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="3" Height="204" Width="673">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="auto"/>
@@ -83,11 +82,26 @@
                     <ComboBoxItem Content="Emergencia grave" HorizontalAlignment="Left" Width="118"/>
                     <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left" Width="118"/>
                 </ComboBox>
-                <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" Margin="0" BorderThickness="0" Grid.ColumnSpan="2">
+                <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2">
                     <TabItem Header="Informativa" Height="0"></TabItem>
                     <TabItem Header="Reclamación" Height="0"></TabItem>
                     <TabItem Header="Sugerencia" Height="0"></TabItem>
-                    <TabItem Header="Agenda" Height="0"></TabItem>
+                    <TabItem Header="Agenda" Height="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                
+                            </Grid.RowDefinitions>
+                            <DatePicker Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top"/>
+                            <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                        </Grid>
+                    </TabItem>
                     <TabItem Header="Emergencia leve" Height="0"></TabItem>
                     <TabItem Header="Emergencia media" Height="0"></TabItem>
                     <TabItem Header="Emergencia grave" Height="0">
@@ -120,16 +134,16 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox1" Header="Descripción" HorizontalAlignment="Left" Margin="51,11,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4" Height="266" Width="673">
-            <Grid Margin="0,0,0,-1">
+        <GroupBox x:Name="groupBox1" Header="Descripción" HorizontalAlignment="Left" Margin="51,5,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Grid.RowSpan="4"  Width="674">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="9*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="120*" />
-                    <RowDefinition Height="120*" />
-                    <RowDefinition Height="43*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
 
                 <Label x:Name="label5" Content="Motivo:" VerticalAlignment = "Center" Margin="0,-2,513,50" Grid.Column = "0" Grid.Row = "0" Grid.ColumnSpan="2" Height="34"/>
@@ -138,18 +152,15 @@
                 <Label x:Name="label6" Content="Solucion:" VerticalAlignment = "Center" Margin="0,12,513,60" Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="2" Height="32"/>
 
                 <TextBox x:Name="Motivo" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1"/>
-                <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="478,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-                <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Margin="390,7,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-
             </Grid>
         </GroupBox>
 
 
 
 
-        <StackPanel Grid.Column = "2" Grid.Row = "9" Orientation = "Horizontal" Margin="0,0,1,0">
-            <Button x:Name="button" Content="Aceptar"  Margin="0,40,0,21" VerticalAlignment="Center" Width="75" Click="button_Click" Height="19"/>
-            <Button x:Name="button1" Content="Salir"  Margin="30,40,0,22" VerticalAlignment="Center" Width="75" Click="button1_Click_1" Height="19"/>
+        <StackPanel Grid.Column = "3" Grid.Row = "7" Grid.ColumnSpan="2" Orientation = "Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btCancelar" Content="Cancelar" Width="75" Click="button1_Click_1" Height="19"/>
+            <Button x:Name="btEnviar" Content="Enviar" Width="75" Click="button_Click" Height="19"  Margin="10,0,40,0"/>
         </StackPanel>
 
     </Grid>
