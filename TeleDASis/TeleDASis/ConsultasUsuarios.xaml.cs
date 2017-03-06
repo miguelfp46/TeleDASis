@@ -15,7 +15,9 @@ namespace TeleDASis
         public ConsultasUsuarios()
         {
             InitializeComponent();
-            loadDataTable();
+            dataGridTable = dtGConsultas;
+            databaseConnector.instance.showUserTable(dataGridTable, user);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,7 +32,6 @@ namespace TeleDASis
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            Usuario user = new Usuario();
             user.nombre = txtNombre.Text;
             user.primerApellido = txtApellido1.Text;
             user.segundoApellido = txtApellido2.Text;
@@ -42,16 +43,9 @@ namespace TeleDASis
             user.poblacion = txtPoblacion.Text;
             user.direccion = txtDir.Text;
             user.puerta = txtPur.Text;
-           
-
             databaseConnector.instance.showUserTable(dataGridTable,user);
         }  
-        public void loadDataTable()
-        {
-            dataGridTable = dtGConsultas;
-            
-            //databaseConnector.instance.showUserTable();
-        }
+
         public void SoloLetras(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 

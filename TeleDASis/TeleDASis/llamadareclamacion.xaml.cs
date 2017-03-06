@@ -20,8 +20,7 @@ namespace TeleDASis
     /// </summary>
     public partial class llamadareclamacion : Window
     {
-        private bool handle = true;
-        int servicio;
+        Llamadas llamada = new Llamadas();
 
         public llamadareclamacion()
         {
@@ -60,29 +59,29 @@ namespace TeleDASis
         }
         private void Handle()
         {
-            switch (CMB.SelectedItem.ToString().Split(new string[] { ":" }, StringSplitOptions.None).Last())
+            switch (cbTipoLlamada.SelectedItem.ToString().Split(new string[] { ":" }, StringSplitOptions.None).Last())
             {
-                case "Ambulancia":
-                    servicio = 1;
-                    break;
                 case "Policia":
-                    servicio = 2;
+                    llamada.servicio = 1;
+                    break;
+                case "Ambulancia":
+                    llamada.servicio = 2;
                     break;
                 case "Bomberos":
-                    servicio = 3;
-                    break;
-                case "Mossos d'escuadra":
-                    servicio = 4;
-                    break;
-                case "Mas de uno":
-                    servicio = 5;
+                    llamada.servicio = 3;
                     break;
                 default:
-                    servicio = 6;
+                    llamada.servicio = 4;
                     break;
 
 
             }
+        }
+
+        private void CMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Dispatcher.BeginInvoke((Action)(() => tcTipoLLamada.SelectedIndex = cbTipoLlamada.SelectedIndex));
+            tcTipoLLamada.Visibility = Visibility.Visible;
         }
     }
 }
