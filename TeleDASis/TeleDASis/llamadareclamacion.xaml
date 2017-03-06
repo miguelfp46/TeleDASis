@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Llamada Reclamacion" Height="744" Width="779" WindowStartupLocation="CenterScreen">
-    <Grid d:IsLocked="True">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
@@ -33,9 +33,9 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="51*" />
+                    <RowDefinition Height="54*" />
+                    <RowDefinition Height="49*" />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
                     <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "100"/>
@@ -95,7 +95,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="4*"/>
-                                
+
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -114,7 +114,7 @@
                     </TabItem>
                     <TabItem Header="Llamada saliente" Height="0"></TabItem>
                 </TabControl>
-                
+
 
 
 
