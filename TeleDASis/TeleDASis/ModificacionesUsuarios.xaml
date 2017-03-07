@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="ModificacionesUsuarios" Height="500.82" Width="712.681" WindowStartupLocation="CenterScreen">
+        Title="ModificacionesUsuarios" Height="479.82" Width="712.681" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,3,2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*" />
@@ -39,11 +39,11 @@
 
 
         <Label x:Name="label3" Content="Apellido:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "100" Grid.Column = "2" Grid.Row = "2"/>
-        <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "2" Grid.Row = "2" />
+        <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "100"  Margin="75,25,17,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "2" Grid.Row = "2" />
 
 
         <Label x:Name="label4" Content="Apellido:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "100" Grid.Column = "3" Grid.Row = "2"/>
-        <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "3" Grid.Row = "2"/>
+        <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "3" Grid.Row = "2"/>
 
 
         <Label x:Name="label5" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"   Margin="4,20,83,18" Grid.Column="1" Grid.Row="3"/>
@@ -51,21 +51,21 @@
 
 
         <Label x:Name="label6" Content="Tel.Famil.:"   Margin="4,20,83,18" VerticalAlignment = "Center" Width = "100" Grid.Column="2" Grid.Row="3"/>
-        <TextBox x:Name="tbTelFamiliar" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="2" Grid.Row="3"/>
+        <TextBox x:Name="tbTelFamiliar" Text="" VerticalAlignment = "Center" Width = "100"  Margin="75,25,17,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="2" Grid.Row="3"/>
 
 
         <Label x:Name="label7" Content="Móvil:"  Margin="4,20,83,18" VerticalAlignment = "Center" Width = "100" Grid.Column="3" Grid.Row="3"/>
-        <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="3" Grid.Row="3"/>
+        <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="3" Grid.Row="3"/>
 
 
         <Label x:Name="label8"  Margin="4,20,83,18" Content="T.S.:" VerticalAlignment = "Center" Width = "100" Grid.Column="1" Grid.Row="4"/>
         <TextBox x:Name="tbTs" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" IsEnabled="False" Grid.Column="1" Grid.Row="4"/>
 
         <Label x:Name="label10" Content="Poblacion:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "Auto" Grid.Column = "2" Grid.Row = "4"/>
-        <TextBox x:Name="tbPoblacion" Text="" VerticalAlignment = "Center" Width = "Auto"  Margin="64,25,23,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "2" Grid.Row = "4"/>
+        <TextBox x:Name="tbPoblacion" Text="" VerticalAlignment = "Center" Width = "Auto"  Margin="70,25,17,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "2" Grid.Row = "4"/>
 
         <Label x:Name="label11" Content="Dirección:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "Auto" Grid.Column = "3" Grid.Row = "4"/>
-        <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "Auto"  Margin="64,25,23,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "3" Grid.Row = "4"/>
+        <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "Auto"  Margin="70,25,17,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "3" Grid.Row = "4"/>
 
         <Label x:Name="label12" Content="Puerta:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "Auto" Grid.Column = "1" Grid.Row = "5"/>
         <TextBox x:Name="tbPuerta" Text="" VerticalAlignment = "Center" Width = "Auto"  Margin="64,25,23,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "1" Grid.Row = "5"/>

@@ -5,53 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Agenda" Height="679" Width="1164" WindowStartupLocation="CenterScreen">
-    <Grid Margin="1,4,3,52">
+        Title="Llamada Agenda" Height="508" Width="924" WindowStartupLocation="CenterScreen">
+    <Grid Margin="1,4,2,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="341*" />
-            <ColumnDefinition Width="235*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="9*" />
+            <ColumnDefinition Width="1*" />
+
 
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
-            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "1*"/>
+            <RowDefinition Height = "9*"/>
+            <RowDefinition Height = "1*"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal"/>
-        <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal"/>
-        <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
-            <Label x:Name="label2" Content="Telefono:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="telefono" MaxLength="9" Text="" VerticalAlignment = "Center" Width = "100" Margin="0" PreviewTextInput="tbMovil_PreviewTextInput"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
-            <Label x:Name="label3" Content="Nombre:" VerticalAlignment = "Center" Width = "100"/>
-            <TextBox x:Name="nombre"  VerticalAlignment = "Center" Width = "100" Margin="0" IsEnabled="False"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
-            <Label x:Name="label4" Content="Motivo:" VerticalAlignment = "Center" Width = "100"/>
+        <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" >
+            <GroupBox x:Name="groupBox" Header="Agenda" Width="744" Margin="0,6,0,5" FontSize="14">
+                <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="2,16,-2,0" VerticalAlignment="Top" Height="297" Width="732"/>
 
+            </GroupBox>
         </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "5" Orientation = "Horizontal">
-            <TextBox x:Name="motivo" HorizontalAlignment="Left" Height="55" Margin="36,-2,0,-1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="530"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal">
-            <Label x:Name="label5" Content="Fecha de alarma:" VerticalAlignment = "Center" Width = "100"/>
-            <DatePicker x:Name="alarma" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
-        <StackPanel Grid.Column = "0" Grid.Row = "6" Orientation = "Horizontal" Margin="0,79,12,0" Grid.RowSpan="2">
-            <Label x:Name="label6" Content="Hora de alarma:" VerticalAlignment = "Center" Width = "100"/>
-            <DatePicker x:Name="hora_alarma" Text="" VerticalAlignment = "Center" Width = "100" Margin="0"/>
-        </StackPanel>
-
-        <Button x:Name="button" Content="Aceptar" Grid.Column="1" Margin="0,88,322,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="76" Click="button_Click"/>
-        <Button x:Name="button1" Content="Cancelar" Grid.Column="1" Margin="0,88,52,-34" Grid.Row="7" VerticalAlignment="Top" Height="20" Click="button1_Click_1" HorizontalAlignment="Right" Width="74"/>
-
+        <Label x:Name="label" Content="Llamar a las siguientes persona: " Grid.Column="1" HorizontalAlignment="Left" Margin="5,3,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
     </Grid>
 </Window>
