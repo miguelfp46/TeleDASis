@@ -121,9 +121,10 @@
                             </Grid.RowDefinitions>
                             <Label x:Name="label1" Content="Servicios:" Grid.Column="0" Grid.Row = "0" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
                             <CheckBox x:Name="checkBox" Content="Ambulancia" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox_Copy" Content="Ninguno" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox_Copy1" Content="Bomberos" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox_Copy2" Content="Policia" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="4" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="checkBox_Copy1" Content="Bomberos" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="checkBox_Copy2" Content="Policia" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="3" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="checkBox_Copy" Content="Ninguno" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top"/>
+
                         </Grid>
                     </TabItem>
                     <TabItem Header="Llamada saliente" Height="0"></TabItem>
