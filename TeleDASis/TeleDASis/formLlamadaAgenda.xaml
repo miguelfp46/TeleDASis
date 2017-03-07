@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Agenda" Height="508" Width="924" WindowStartupLocation="CenterScreen">
+        Title="Llamada Agenda" Height="508" Width="924" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="1,4,2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" >
             <GroupBox x:Name="groupBox" Header="Agenda" Width="744" Margin="0,6,0,5" FontSize="14">
-                <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="2,16,-2,0" VerticalAlignment="Top" Height="297" Width="732"/>
+                <DataGrid x:Name="dataGrid" Margin="2,16,-2,5"/>
 
             </GroupBox>
         </StackPanel>
