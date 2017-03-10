@@ -38,15 +38,16 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Column = "0" Grid.Row = "0" Orientation = "Horizontal" Margin="0,0,1,0" Grid.ColumnSpan="3">
                     <Label x:Name="label3" Content="Telèfono:" VerticalAlignment = "Center" Width = "64" Margin="0,12,0,13"/>
-                    <TextBox x:Name="Tel" Text="" VerticalAlignment = "Center" Width = "130" MaxLength="9" Margin="0,16,0,17" PreviewTextInput="tbMovil_PreviewTextInput"/>
+                    <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "130" MaxLength="9" Margin="0,16,0,17" PreviewTextInput="tbMovil_PreviewTextInput"/>
+                    <Button x:Name="btBuscar" Content="Buscar" Width="80" Margin="20,16,0,17" Click="btBuscar_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
                     <Label x:Name="lNombre" VerticalAlignment="Center" Content="Nombre:"  Width="93" />
-                    <TextBox x:Name="Nom"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
+                    <TextBox x:Name="tbNombre"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
                 </StackPanel>
                 <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
                     <Label x:Name="lDNI" Content="DNI:" VerticalAlignment = "Center" Width = "108"/>
-                    <TextBox x:Name="dni" MaxLength="9"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
+                    <TextBox x:Name="tbDNI" MaxLength="9"  VerticalAlignment = "Center" Width = "100" IsEnabled="False"/>
                 </StackPanel>
                 <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
                     <Label x:Name="lPrimerApellido" Content="Primer apellido:" VerticalAlignment = "Center" Width = "93" Margin="0,0,0,3"/>
@@ -114,7 +115,7 @@
 
 
                             </Grid.RowDefinitions>
-                           
+
                         </Grid>
                     </TabItem>
                     <TabItem Header="Emergencia n2" Height="0">
@@ -158,7 +159,7 @@
 
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Llamada saliente" Height="0"></TabItem>
+
                 </TabControl>
 
 
