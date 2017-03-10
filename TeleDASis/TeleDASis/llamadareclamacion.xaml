@@ -73,19 +73,18 @@
                     <RowDefinition Height="7*" />
                 </Grid.RowDefinitions>
                 <Label x:Name="label" Content="Tipo de Llamada" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cbTipoLlamada" Width="150" Grid.Column="2" SelectionChanged="CMB_SelectionChanged" HorizontalAlignment="Left" Margin="5,2,0,148" Grid.RowSpan="2">
-                    <ComboBoxItem Content="Informativa" HorizontalAlignment="Left" Width="118"/>
-                    <ComboBoxItem Content="Reclamación\Sugerencia" HorizontalAlignment="Left" Width="118"/>
-                    <ComboBoxItem Content="Agenda" HorizontalAlignment="Left" Width="118"/>
-                    <ComboBoxItem Content="Emergencia n1" HorizontalAlignment="Left" Width="118"/>
-                    <ComboBoxItem Content="Emergencia n2" HorizontalAlignment="Left" Width="118"/>
-                    <ComboBoxItem Content="Emergencia n3" HorizontalAlignment="Left" Width="118"/>
-                    <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left" Width="118"/>
+                <ComboBox x:Name="cbTipoLlamada" Width="190" Grid.Column="2" SelectionChanged="CMB_SelectionChanged" HorizontalAlignment="Left" Margin="5,2,0,148" Grid.RowSpan="2">
+                    <ComboBoxItem Content="Informativa" HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="Reclamación\Sugerencia" HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="Agenda" HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="Emergencia n1" HorizontalAlignment="Left"/>
+                    <ComboBoxItem Content="Emergencia n2" HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="Emergencia n3" HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left"/>
                 </ComboBox>
                 <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2" SelectionChanged="tcTipoLLamada_SelectionChanged">
                     <TabItem Header="Informativa" Height="0"></TabItem>
-                    <TabItem Header="Reclamación" Height="0"></TabItem>
-                    <TabItem Header="Sugerencia" Height="0"></TabItem>
+                    <TabItem Header="Reclamación\Sugerencia" Height="0"></TabItem>
                     <TabItem Header="Agenda" Height="0">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -159,7 +158,7 @@
 
                         </Grid>
                     </TabItem>
-
+                    <TabItem Header="Llamada salientes" Height="0"></TabItem>
                 </TabControl>
 
 

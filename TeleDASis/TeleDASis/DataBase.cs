@@ -259,10 +259,10 @@ namespace TeleDASis
             try
             {
 
-                string sql = "SELECT nombre, primerApellido, segundoApellido, dni FROM usuarios WHERE tel = @telefono";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, dni FROM usuarios WHERE telefono = @telefono";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
-
+                cmd.ExecuteNonQuery();
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
@@ -271,7 +271,7 @@ namespace TeleDASis
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
-                    usuario.telefono = Convert.ToString(reader["telefono"]);
+                    usuario.dni = Convert.ToString(reader["dni"]);
                 }
 
                 reader.Close();
