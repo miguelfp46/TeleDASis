@@ -84,11 +84,6 @@ namespace TeleDASis
             tcTipoLLamada.Visibility = Visibility.Visible;
         }
 
-        private void dtGConsultas_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void tcTipoLLamada_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
