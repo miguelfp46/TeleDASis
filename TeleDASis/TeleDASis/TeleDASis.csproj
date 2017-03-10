@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{66F3D81F-E320-4261-A426-DCDAA630B65D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TeleDASis</RootNamespace>
     <AssemblyName>TeleDASis</AssemblyName>
@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Agenda.cs" />
     <Compile Include="Alta.xaml.cs">
       <DependentUpon>Alta.xaml</DependentUpon>
     </Compile>

@@ -19,9 +19,14 @@ namespace TeleDASis
     /// </summary>
     public partial class formLlamadaAgenda : Window
     {
+        Agenda ag = new Agenda();
+        System.Windows.Controls.DataGrid dataGridTable;
         public formLlamadaAgenda()
         {
             InitializeComponent();
+            dataGridTable = dtGAgenda;
+
+            databaseConnector.instance.showAgendaTable(dataGridTable,ag);
             
         }
 
@@ -50,6 +55,11 @@ namespace TeleDASis
         private void tbMovil_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             SoloNumeros(e);
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -337,5 +337,28 @@ namespace TeleDASis
                 }
 
             }
+
+        public bool showAgendaTable(DataGrid dtGAgenda,Agenda ag)
+        {
+            try
+            {
+                string sql = "SELECT * FROM agenda";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@id",ag.idAgenda);
+                cmd.Parameters.AddWithValue("@idLlamadas",ag.idLlamada);
+                cmd.Parameters.AddWithValue("@idusuarios", ag.idUsuarios);
+                cmd.Parameters.AddWithValue("@fechaAgenda",ag.fechaAgenda);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dtGAgenda.DataContext = dt;
+                    return true;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
     }
     }

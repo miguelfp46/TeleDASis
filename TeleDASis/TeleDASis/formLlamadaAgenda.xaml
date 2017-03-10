@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" >
             <GroupBox x:Name="groupBox" Header="Agenda" Width="744" Margin="0,6,0,5" FontSize="14">
-                <DataGrid x:Name="dataGrid" Margin="2,16,-2,5"/>
+                <DataGrid x:Name="dtGAgenda" Margin="2,24,-2,5" ItemsSource= "{Binding }" SelectionChanged="dataGrid_SelectionChanged"/>
 
             </GroupBox>
         </StackPanel>
