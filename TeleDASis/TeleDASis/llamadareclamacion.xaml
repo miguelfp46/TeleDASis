@@ -158,7 +158,7 @@
 
                         </Grid>
                     </TabItem>
-                    
+                    <TabItem Header="Llamada saliente" Height="0"></TabItem>
                 </TabControl>
 
 
