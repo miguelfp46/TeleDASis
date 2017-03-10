@@ -83,5 +83,10 @@ namespace TeleDASis
             Dispatcher.BeginInvoke((Action)(() => tcTipoLLamada.SelectedIndex = cbTipoLlamada.SelectedIndex));
             tcTipoLLamada.Visibility = Visibility.Visible;
         }
+
+        private void tcTipoLLamada_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
