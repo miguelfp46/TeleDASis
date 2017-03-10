@@ -82,7 +82,7 @@
                     <ComboBoxItem Content="Emergencia n3" HorizontalAlignment="Left" Width="118"/>
                     <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left" Width="118"/>
                 </ComboBox>
-                <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2">
+                <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2" SelectionChanged="tcTipoLLamada_SelectionChanged">
                     <TabItem Header="Informativa" Height="0"></TabItem>
                     <TabItem Header="Reclamación" Height="0"></TabItem>
                     <TabItem Header="Sugerencia" Height="0"></TabItem>
