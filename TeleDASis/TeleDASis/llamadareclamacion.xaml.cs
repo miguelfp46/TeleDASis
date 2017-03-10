@@ -21,6 +21,7 @@ namespace TeleDASis
     public partial class llamadareclamacion : Window
     {
         Llamadas llamada = new Llamadas();
+        Usuario usuario = new Usuario();
 
         public llamadareclamacion()
         {
@@ -85,6 +86,22 @@ namespace TeleDASis
         }
 
         private void tcTipoLLamada_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            //buscamos a un usuario por telefono y lo cargamos.
+            usuario.telefono = tbTelefono.Text;
+            databaseConnector.instance.searchUserByPhone(usuario);
+            tbNombre.Text = usuario.nombre;
+            tbPrimerApellido.Text = usuario.primerApellido;
+            tbSegundoApellido.Text = usuario.segundoApellido;
+            tbDNI.Text = usuario.dni;
+        }
+
+        private void dtGConsultas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
