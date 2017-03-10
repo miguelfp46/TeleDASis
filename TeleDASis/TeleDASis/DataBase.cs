@@ -253,15 +253,15 @@ namespace TeleDASis
             connection.Close();
         }
 
-        public Usuario showUser2(int Tel)
+        public Usuario searchUserByPhone(Usuario user)
         {
             Usuario usuario = new Usuario();
             try
             {
 
-                string sql = "SELECT nombre, primerApellido, segundoApellido FROM USUARIOS WHERE tel = @telefono";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, dni FROM USUARIOS WHERE tel = @telefono";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@telefono", Tel);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -271,6 +271,7 @@ namespace TeleDASis
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    usuario.telefono = Convert.ToString(reader["telefono"]);
                 }
 
                 reader.Close();
@@ -336,6 +337,5 @@ namespace TeleDASis
                 }
 
             }
-            
-        }
+    }
     }
