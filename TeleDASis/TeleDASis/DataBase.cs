@@ -259,7 +259,7 @@ namespace TeleDASis
             try
             {
 
-                string sql = "SELECT nombre, primerApellido, segundoApellido, dni FROM USUARIOS WHERE tel = @telefono";
+                string sql = "SELECT nombre, primerApellido, segundoApellido, dni FROM usuarios WHERE tel = @telefono";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
 
