@@ -94,6 +94,8 @@ namespace TeleDASis
         {
             //buscamos a un usuario por telefono y lo cargamos.
             usuario.telefono = tbTelefono.Text;
+            usuario.tlfmovil = tbTelefono.Text;
+            usuario.telefonofamiliar = tbTelefono.Text;
             usuario = databaseConnector.instance.searchUserByPhone(usuario);
             tbNombre.Text = usuario.nombre;
             tbPrimerApellido.Text = usuario.primerApellido;
