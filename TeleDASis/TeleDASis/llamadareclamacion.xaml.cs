@@ -26,6 +26,7 @@ namespace TeleDASis
         public llamadareclamacion()
         {
             InitializeComponent();
+
             //Fecha.SelectedDate = DateTime.Today;
             //Hora.SelectedDateFormat = DatePickerFormat.Short;
            
@@ -97,6 +98,7 @@ namespace TeleDASis
             usuario.tlfmovil = tbTelefono.Text;
             usuario.telefonofamiliar = tbTelefono.Text;
             usuario = databaseConnector.instance.searchUserByPhone(usuario);
+            databaseConnector.instance.showPhoneNumber(dtGConsultas,usuario);
             tbNombre.Text = usuario.nombre;
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
