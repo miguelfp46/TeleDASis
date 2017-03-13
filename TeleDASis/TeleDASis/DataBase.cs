@@ -362,5 +362,26 @@ namespace TeleDASis
                 return false;
             }
         }
+
+        public DataGrid showPhoneNumber(DataGrid dataGrid, Usuario user)
+        {
+            try
+            {
+                string sql = "SELECT tlfPersonaContacto FROM usuarios WHERE telefono = @telefono";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGrid.DataContext = dt;
+                return dataGrid;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return dataGrid;
+            }
+        }
     }
     }
