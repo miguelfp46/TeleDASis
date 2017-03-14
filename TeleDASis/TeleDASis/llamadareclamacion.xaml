@@ -97,7 +97,7 @@
                                 <RowDefinition Height="140" />
 
                             </Grid.RowDefinitions>
-                            <DatePicker Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top"/>
+                            <DatePicker x:Name="dpDate" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top"/>
                             <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
                         </Grid>
                     </TabItem>
