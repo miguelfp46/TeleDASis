@@ -384,5 +384,26 @@ namespace TeleDASis
                 return dataGrid;
             }
         }
+        public bool insertCall(Llamadas llamada)
+        {
+            try
+            {
+                string sql = "INSERT INTO llamadas (tipoLlamada, usuarios_idUsuario, telefonoUsuario, descripcion, solucion) VALUES (@tipoLlamada, @usuarios_idUsuario, @telefonoUsuario, @descripcion, @solucion)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@tipoLlamada", llamada.tipoLlamada);
+                cmd.Parameters.AddWithValue("@usuarios_idUsuario", llamada.usuarios_idUsuario);
+                cmd.Parameters.AddWithValue("@telefonoUsuario", llamada.telefonoUsuario);
+                cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
+                cmd.Parameters.AddWithValue("@solucion", llamada.solucion);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
     }
     }

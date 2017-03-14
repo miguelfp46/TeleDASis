@@ -22,6 +22,8 @@ namespace TeleDASis
     {
         Llamadas llamada = new Llamadas();
         Usuario usuario = new Usuario();
+        List<LlamadaServicio> serviciosList = new List<LlamadaServicio>();
+        LlamadaServicio servicio;
 
         public llamadareclamacion()
         {
@@ -51,6 +53,26 @@ namespace TeleDASis
                     break;
                 case "Emergencia nivel 3":
                     llamada.tipoLlamada = 3;
+                    if (cbAmbulancia.IsChecked == true)
+                    {
+                        servicio = new LlamadaServicio(llamada.idLlamadas, 2);
+                        serviciosList.Add(servicio);
+                    }
+                    if (cbBomberos.IsChecked == true)
+                    {
+                        servicio = new LlamadaServicio(llamada.idLlamadas, 3);
+                        serviciosList.Add(servicio);
+                    }
+                    if (cbPolicia.IsChecked == true)
+                    {
+                        servicio = new LlamadaServicio(llamada.idLlamadas, 1);
+                        serviciosList.Add(servicio);
+                    }
+                    if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
+                    {
+                        servicio = new LlamadaServicio(llamada.idLlamadas, 4);
+                        serviciosList.Add(servicio);
+                    }
                     break;
                 case "Informativa":
                     llamada.tipoLlamada = 4;
@@ -60,6 +82,7 @@ namespace TeleDASis
                     break;
                 case "Agenda":
                     llamada.tipoLlamada = 6;
+                    llamada.fechayHora =  DateTime.Parse(dpDate.Text);
                     break;
                 case "Llamada saliente":
                     llamada.tipoLlamada = 1;
@@ -68,11 +91,9 @@ namespace TeleDASis
             llamada.telefonoUsuario = int.Parse(usuario.telefono);
             llamada.descripcion = tbMotivo.Text;
             llamada.solucion = tbSolucion.Text;
-            //if ()
-            //{
-
-            //}
-
+            databaseConnector.instance.insertCall(llamada);
+            
+            
         }
 
         public void SoloNumeros(TextCompositionEventArgs e)
