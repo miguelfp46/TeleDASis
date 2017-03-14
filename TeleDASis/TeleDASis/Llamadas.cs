@@ -9,7 +9,7 @@ namespace TeleDASis
     class Llamadas
     {
         public int idLlamadas { get; set; }
-        public int telefonoUsuario { get; set; }
+        public string telefonoUsuario { get; set; }
         public DateTime fechayHora { get; set; }
         public string solucion { get; set; }
         public int empleado_idEmpleado { get; set; }
@@ -22,7 +22,7 @@ namespace TeleDASis
 
         public Llamadas() { }
 
-        public Llamadas(int telefonoUsuario,DateTime fechayHora , string solucion,
+        public Llamadas(string telefonoUsuario,DateTime fechayHora , string solucion,
                         int empleado_idEmpleado,int usuarios_idUsuario,int motivo_idMotivo,
                         string descripcion, int servicio, int tipoLlamada)
         {

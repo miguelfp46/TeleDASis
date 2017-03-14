@@ -88,12 +88,11 @@ namespace TeleDASis
                     llamada.tipoLlamada = 1;
                     break;
             }
-            llamada.telefonoUsuario = int.Parse(usuario.telefono);
+            //llamada.telefonoUsuario = usuario.telefono;
             llamada.descripcion = tbMotivo.Text;
             llamada.solucion = tbSolucion.Text;
             databaseConnector.instance.insertCall(llamada);
-            
-            
+                
         }
 
         public void SoloNumeros(TextCompositionEventArgs e)
@@ -156,6 +155,8 @@ namespace TeleDASis
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             tbDNI.Text = usuario.dni;
+            llamada.telefonoUsuario = usuario.telefono;
+
             //System.Windows.MessageBox.Show(Convert.ToString(usuario.id));
         }
 
