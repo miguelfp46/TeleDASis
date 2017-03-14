@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:TeleDASis"
       mc:Ignorable="d" 
       
-      Title="HistoricoBaja" Height="300" Width="500" WindowStartupLocation="CenterScreen">
+      Title="HistoricoBaja" Height="300" Width="749" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="dtGTabla" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top" Height="185" Width="430" SelectionChanged="dtGTabla_SelectionChanged"/>
+        <DataGrid x:Name="dtGTabla" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top" Height="185" Width="685" SelectionChanged="dtGTabla_SelectionChanged"/>
 
     </Grid>
 </Window>

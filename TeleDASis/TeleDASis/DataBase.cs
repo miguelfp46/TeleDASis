@@ -338,6 +338,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@puerta", user.puerta);
                 cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
                 cmd.Parameters.AddWithValue("@motivoBaja", user.motivodeBaja);
+                cmd.Parameters.AddWithValue("@fechaBaja", user.fechaBaja);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
