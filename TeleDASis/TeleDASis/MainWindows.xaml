@@ -82,10 +82,10 @@
                             <RowDefinition Height="3*" />
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Button x:Name="btnAltaEmpleado" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Click"/>
-                        <Button x:Name="btnBajaEmpleado" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Click"/>
-                        <Button x:Name="btnConsultasEmpleado" Content="Consultas" Grid.Column="4" Grid.Row="1" Click="botonConsultas_Click"/>
-                        <Button x:Name="btnModificacionesEmpleado" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Click"/>
+                        <Button x:Name="btnAltaEmpleadoEmp" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Emp"/>
+                        <Button x:Name="btnBajaEmpleadoEmp" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Emp"/>
+                        <Button x:Name="btnConsultasEmpleadoEmp" Content="Consultas" Grid.Column="4" Grid.Row="1" Click="botonConsultas_Emp"/>
+                        <Button x:Name="btnModificacionesEmpleadoEmp" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonConsultas_Emp"/>
                     </Grid>
                 </TabItem>
             </TabControl>
