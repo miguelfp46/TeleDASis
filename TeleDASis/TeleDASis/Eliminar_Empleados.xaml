@@ -1,0 +1,28 @@
+﻿<Window x:Class="TeleDASis.Eliminar_Empleados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeleDASis"
+        mc:Ignorable="d"
+        Title="Eliminar Empleados" Height="387.234" Width="627.66">
+    <Grid Margin="5,0,0,3">
+        <Label x:Name="lDni" Content="DNI:" HorizontalAlignment="Left" Margin="41,33,0,0" VerticalAlignment="Top" Width="34"/>
+        <Label x:Name="lName" Content="Nombre:" HorizontalAlignment="Left" Margin="41,97,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="lPrimerApellido" Content="1ºApellido:" HorizontalAlignment="Left" Margin="252,95,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lSegundoApellido" Content="2ºApellido:" HorizontalAlignment="Left" Margin="252,120,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="110,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tbPrimerApellido" HorizontalAlignment="Left" Height="23" Margin="329,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tbSegundoApellido" HorizontalAlignment="Left" Height="23" Margin="329,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="tbDni" HorizontalAlignment="Left" Height="23" Margin="110,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="9"/>
+        <Label x:Name="lMotivo" Content="Motivo:" HorizontalAlignment="Left" Margin="41,132,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="tbMotivo" HorizontalAlignment="Left" Height="96" Margin="47,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="398"/>
+        <Label x:Name="lEmpleado" Content="Empleado:" HorizontalAlignment="Left" Margin="41,268,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="tbEmpleado" HorizontalAlignment="Left" Height="23" Margin="110,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="bAceptar" Content="Dar de Baja" HorizontalAlignment="Left" Margin="426,321,0,0" VerticalAlignment="Top" Width="75" Click="bAceptar_Click"/>
+        <Button x:Name="bCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="526,321,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy_Click"/>
+        <Button x:Name="bComprobar" Content="Comprobar" HorizontalAlignment="Left" Margin="241,32,0,0" VerticalAlignment="Top" Width="75" Click="buscarUsuarioPorDni"/>
+        <GroupBox x:Name="groupBox" Header="Buscar Usuario por DNI" HorizontalAlignment="Left" Margin="13,14,0,0" VerticalAlignment="Top" Height="52" Width="585"/>
+        <GroupBox x:Name="groupBox2" Header="Datos de Empleado" HorizontalAlignment="Left" Margin="16,64,0,0" VerticalAlignment="Top" Height="244" Width="583"/>
+    </Grid>
+</Window>
