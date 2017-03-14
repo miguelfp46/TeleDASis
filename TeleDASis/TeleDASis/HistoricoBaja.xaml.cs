@@ -10,33 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TeleDASis
 {
     /// <summary>
-    /// Interaction logic for Eliminar_Empleados.xaml
+    /// Interaction logic for HistoricoBaja.xaml
     /// </summary>
-    public partial class Eliminar_Empleados : Window
+    public partial class HistoricoBaja : Window
     {
-        public Eliminar_Empleados()
+        public HistoricoBaja()
         {
             InitializeComponent();
         }
 
-        private void bAceptar_Click(object sender, RoutedEventArgs e)
+        private void dtGTabla_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-  
 
-        }
-
-        public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void button_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

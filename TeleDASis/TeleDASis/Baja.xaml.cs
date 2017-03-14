@@ -59,6 +59,11 @@ namespace TeleDASis
             }
             
         }
+        public void botonHistorico_Click(object sender, RoutedEventArgs e)
+        {
+            HistoricoBaja history = new HistoricoBaja();
+             history.Show();
+        }
         public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
         {
             user.dni = tbDni.Text;
