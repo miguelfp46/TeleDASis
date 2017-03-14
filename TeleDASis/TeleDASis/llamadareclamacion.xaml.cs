@@ -38,8 +38,40 @@ namespace TeleDASis
             this.Close();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btEnviar_Click(object sender, RoutedEventArgs e)
         {
+            llamada.usuarios_idUsuario = usuario.id;
+            switch (cbTipoLlamada.Text)
+            {
+                case "Emergencia nivel 1":
+                    llamada.tipoLlamada = 1;
+                    break;
+                case "Emergencia nivel 2":
+                    llamada.tipoLlamada = 2;
+                    break;
+                case "Emergencia nivel 3":
+                    llamada.tipoLlamada = 3;
+                    break;
+                case "Informativa":
+                    llamada.tipoLlamada = 4;
+                    break;
+                case "Reclamacion/Sugerencia":
+                    llamada.tipoLlamada = 5;
+                    break;
+                case "Agenda":
+                    llamada.tipoLlamada = 6;
+                    break;
+                case "Llamada saliente":
+                    llamada.tipoLlamada = 1;
+                    break;
+            }
+            llamada.telefonoUsuario = int.Parse(usuario.telefono);
+            llamada.descripcion = tbMotivo.Text;
+            llamada.solucion = tbSolucion.Text;
+            //if ()
+            //{
+
+            //}
 
         }
 
@@ -98,11 +130,12 @@ namespace TeleDASis
             usuario.tlfmovil = tbTelefono.Text;
             usuario.telefonofamiliar = tbTelefono.Text;
             usuario = databaseConnector.instance.searchUserByPhone(usuario);
-            databaseConnector.instance.showPhoneNumber(dtGConsultas,usuario);
+            //databaseConnector.instance.showPhoneNumber(dtGConsultas,usuario);
             tbNombre.Text = usuario.nombre;
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             tbDNI.Text = usuario.dni;
+            //System.Windows.MessageBox.Show(Convert.ToString(usuario.id));
         }
 
         private void dtGConsultas_SelectionChanged(object sender, SelectionChangedEventArgs e)

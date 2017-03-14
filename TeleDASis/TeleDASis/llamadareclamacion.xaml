@@ -73,14 +73,14 @@
                     <RowDefinition Height="7*" />
                 </Grid.RowDefinitions>
                 <Label x:Name="label" Content="Tipo de Llamada" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cbTipoLlamada" Width="190" Grid.Column="2" SelectionChanged="CMB_SelectionChanged" HorizontalAlignment="Left" Margin="5,2,0,148" Grid.RowSpan="2">
-                    <ComboBoxItem Content="Informativa" HorizontalAlignment="Left" />
-                    <ComboBoxItem Content="Reclamación\Sugerencia" HorizontalAlignment="Left" />
-                    <ComboBoxItem Content="Agenda" HorizontalAlignment="Left" />
-                    <ComboBoxItem Content="Emergencia n1" HorizontalAlignment="Left"/>
-                    <ComboBoxItem Content="Emergencia n2" HorizontalAlignment="Left" />
-                    <ComboBoxItem Content="Emergencia n3" HorizontalAlignment="Left" />
-                    <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="cbTipoLlamada" Width="161"  Grid.Column="2" SelectionChanged="CMB_SelectionChanged" HorizontalAlignment="Left" Margin="5,2,0,6">
+                    <ComboBoxItem Content="Informativa" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161" />
+                    <ComboBoxItem Content="Reclamación/Sugerencia" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161" />
+                    <ComboBoxItem Content="Agenda" HorizontalAlignment="Left" Width="161" Margin="0,0,-2,0" />
+                    <ComboBoxItem Content="Emergencia nivel 1" HorizontalAlignment="Left" Width="161" Margin="0,0,-2,0"/>
+                    <ComboBoxItem Content="Emergencia nivel 2" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161" />
+                    <ComboBoxItem Content="Emergencia nivel 3" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161" />
+                    <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161"/>
                 </ComboBox>
                 <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2" SelectionChanged="tcTipoLLamada_SelectionChanged">
                     <TabItem Header="Informativa" Height="0"></TabItem>
@@ -150,12 +150,10 @@
                                 <RowDefinition Height="*" />
 
                             </Grid.RowDefinitions>
-                            <Label x:Name="label1" Content="Servicios:" Grid.Column="0" Grid.Row = "0" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox" Content="Ambulancia" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox_Copy1" Content="Bomberos" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox_Copy2" Content="Policia" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="3" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="checkBox_Copy" Content="Ninguno" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top"/>
-
+                            <Label x:Name="lServicios" Content="Servicios:" Grid.Column="0" Grid.Row = "0" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                            <CheckBox x:Name="cbAmbulancia" Content="Ambulancia" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="cbBomberos" Content="Bomberos" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="cbPolicia" Content="Policia" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="3" VerticalAlignment="Top"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Llamada salientes" Height="0"></TabItem>
@@ -178,12 +176,12 @@
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
 
-                <Label x:Name="label5" Content="Motivo:" VerticalAlignment = "Center" Margin="0,-2,513,50" Grid.Column = "0" Grid.Row = "0" Grid.ColumnSpan="2" Height="34"/>
-                <TextBox x:Name="SoR" Text="" VerticalAlignment = "Center" Margin="16,17,17,21" Height="66" Grid.Column = "1" Grid.Row = "0"/>
+                <Label x:Name="lMotivo" Content="Motivo:" VerticalAlignment = "Center" Margin="0,-2,513,50" Grid.Column = "0" Grid.Row = "0" Grid.ColumnSpan="2" Height="34"/>
+                <TextBox x:Name="tbMotivo" Text="" VerticalAlignment = "Center" Margin="16,17,17,21" Height="66" Grid.Column = "1" Grid.Row = "0"/>
 
-                <Label x:Name="label6" Content="Solucion:" VerticalAlignment = "Center" Margin="0,12,513,60" Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="2" Height="32"/>
+                <Label x:Name="lSolucion" Content="Solucion:" VerticalAlignment = "Center" Margin="0,12,513,60" Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="2" Height="32"/>
 
-                <TextBox x:Name="Motivo" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1"/>
+                <TextBox x:Name="tbSolucion" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1"/>
             </Grid>
         </GroupBox>
 
@@ -192,7 +190,7 @@
 
         <StackPanel Grid.Column = "3" Grid.Row = "7" Grid.ColumnSpan="2" Orientation = "Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btCancelar" Content="Cancelar" Width="75" Click="button1_Click_1" Height="19"/>
-            <Button x:Name="btEnviar" Content="Enviar" Width="75" Click="button_Click" Height="19"  Margin="10,0,40,0"/>
+            <Button x:Name="btEnviar" Content="Enviar" Width="75" Click="btEnviar_Click" Height="19"  Margin="10,0,40,0"/>
         </StackPanel>
 
     </Grid>
