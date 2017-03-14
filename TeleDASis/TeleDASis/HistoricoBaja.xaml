@@ -1,0 +1,14 @@
+﻿<Window x:Class="TeleDASis.HistoricoBaja"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeleDASis"
+      mc:Ignorable="d" 
+      
+      Title="HistoricoBaja" Height="300" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="dtGTabla" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top" Height="185" Width="430" SelectionChanged="dtGTabla_SelectionChanged"/>
+
+    </Grid>
+</Window>

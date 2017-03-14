@@ -85,6 +85,9 @@
     <Compile Include="formLlamadaAgenda.xaml.cs">
       <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HistoricoBaja.xaml.cs">
+      <DependentUpon>HistoricoBaja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Llamadas.cs" />
     <Compile Include="llamadareclamacion.xaml.cs">
       <DependentUpon>llamadareclamacion.xaml</DependentUpon>
@@ -130,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="formLlamadaAgenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HistoricoBaja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
