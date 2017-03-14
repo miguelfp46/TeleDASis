@@ -47,9 +47,24 @@ namespace TeleDASis
 
         }
 
+        private void botonModificaciones_Emp(object sender, RoutedEventArgs e)
+        {
+            Modificación_Empleados modificar = new Modificación_Empleados();
+            modificar.Show();
+
+        }
+
         private void botonAlta_Click(object sender, RoutedEventArgs e)
         {
             Alta info = new Alta();
+
+            info.Show();
+
+        }
+
+        private void botonAlta_Emp(object sender, RoutedEventArgs e)
+        {
+            Window3 info = new Window3();
 
             info.Show();
 
@@ -62,9 +77,23 @@ namespace TeleDASis
             info.Show();
         }
 
+        private void botonBaja_Emp(object sender, RoutedEventArgs e)
+        {
+            Eliminar_Empleados info = new Eliminar_Empleados();
+
+            info.Show();
+        }
+
         private void botonConsultas_Click(object sender, RoutedEventArgs e)
         {
             ConsultasUsuarios consultas = new ConsultasUsuarios();
+
+            consultas.Show();
+        }
+
+        private void botonConsultas_Emp(object sender, RoutedEventArgs e)
+        {
+            Consultas_Empleado consultas = new Consultas_Empleado();
 
             consultas.Show();
         }
