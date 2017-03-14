@@ -20,9 +20,14 @@ namespace TeleDASis
     /// </summary>
     public partial class HistoricoBaja : Window
     {
+        Usuario user = new Usuario();
+        System.Windows.Controls.DataGrid dataGridTable;
         public HistoricoBaja()
         {
+           
             InitializeComponent();
+            dataGridTable = dtGTabla;
+            databaseConnector.instance.showBajas(dataGridTable, user);
         }
 
         private void dtGTabla_SelectionChanged(object sender, SelectionChangedEventArgs e)

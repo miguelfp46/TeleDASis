@@ -318,6 +318,40 @@ namespace TeleDASis
             }
         }
 
+        //tabla de historicobajas
+        public bool showBajas(DataGrid dtGTabla,Usuario user)
+        {
+            try
+            {
+                string sql = "SELECT * FROM historicoBaja ";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", user.nombre);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetaSanitaria);
+                cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
+                cmd.Parameters.AddWithValue("@dni", user.dni);
+                cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
+                cmd.Parameters.AddWithValue("@fechaAlta", user.fechaAlta);
+                cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@direccion", user.direccion);
+                cmd.Parameters.AddWithValue("@puerta", user.puerta);
+                cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
+                cmd.Parameters.AddWithValue("@motivoBaja", user.motivodeBaja);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dtGTabla.DataContext = dt;
+
+                return true;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
 
         //TODO si existe el dni que salte un mensaje
         public bool ifExistDontCreateNewUser(string dni)
