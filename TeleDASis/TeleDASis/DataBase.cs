@@ -126,6 +126,43 @@ namespace TeleDASis
             }
         }
 
+        public Empleados showEmp(String dni)
+        {
+            Empleados emp = new Empleados();
+            try
+            {
+
+                string sql = "SELECT * FROM empleados WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    emp.nombre = Convert.ToString(reader["nombre"]);
+                    emp.tlfmovil = Convert.ToInt32(reader["movil"]);
+                    emp.dni = Convert.ToString(reader["dni"]);
+                    emp.fechaAlta = Convert.ToString(reader["fechaAlta"]);
+                    emp.primerApellido = Convert.ToString(reader["primerApellido"]);
+                    emp.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    emp.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
+                    emp.nombreUsuario = Convert.ToString(reader["password"]);
+                  
+                }
+
+                reader.Close();
+                return emp;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                emp.nombre = null;
+                return emp;
+            }
+        }
+
         public bool delUser(String dni)
         {
             try
@@ -465,7 +502,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO empleados (nombre, movil, dni, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                string sql = "INSERT INTO empleados (nombre, movil, dni, primerApellido, segundoApellido, nombreUsuario, password) VALUES (@nombre, @movil, @dni, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", emple.nombre);
                 cmd.Parameters.AddWithValue("@movil", emple.tlfmovil);

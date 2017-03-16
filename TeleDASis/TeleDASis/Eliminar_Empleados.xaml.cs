@@ -58,8 +58,21 @@ namespace TeleDASis
 
         }
 
-        public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
+        public void buscarEmpPorDni(object sender, RoutedEventArgs e)
         {
+            emp.dni = tbDni.Text;
+            emp = databaseConnector.instance.showEmp(emp.dni);
+            if (emp.nombre == null)
+            {
+                MessageBox.Show("No se ha encontrado al empleado con el DNI: " + emp.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                tbNombre.Text = emp.nombre;
+                tbPrimerApellido.Text = emp.primerApellido;
+                tbSegundoApellido.Text = emp.segundoApellido;
+
+            }
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
