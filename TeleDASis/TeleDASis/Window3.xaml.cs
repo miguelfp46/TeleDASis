@@ -42,17 +42,17 @@ namespace TeleDASis
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
-            {
+            {//llamada al metodo de validar dni del empleado , si no es real mensaje de error , si es autentico sigue leyendo
                 if (Validaciones.validarNIF(emp.dni) == false)
                 {
                     MessageBox.Show("El DNI " + emp.dni + " es incorrecto. Vuelve a introducirlo.", "DNI incorrecto", MessageBoxButton.OK, MessageBoxImage.Error);
                 }else
-                {
+                {//si el dni del empleado ya existe , salta mensaje de error 
                     if (databaseConnector.instance.ifExistDontCreateNewEmpleado(emp.dni))
                     {
                         MessageBox.Show("Ya existe un empleado con ese DNI");
                     }else
-                    {
+                    {//añadimos el empleado si la condicion es cierta , sino salta mensaje de error
                         if(databaseConnector.instance.addEmple(emp) == true)
                         {
                             MessageBox.Show("¡Se ha introducido a " + emp.nombre + " con éxito!", "Empleado añadido", MessageBoxButton.OK, MessageBoxImage.Information);

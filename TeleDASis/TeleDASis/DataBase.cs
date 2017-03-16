@@ -148,7 +148,7 @@ namespace TeleDASis
                     emp.primerApellido = Convert.ToString(reader["primerApellido"]);
                     emp.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     emp.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
-                    emp.nombreUsuario = Convert.ToString(reader["password"]);
+                    emp.password = Convert.ToString(reader["password"]);
                   
                 }
 
