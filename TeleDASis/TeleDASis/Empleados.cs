@@ -33,6 +33,8 @@ namespace TeleDASis
 
         }
 
-        
+        public Empleados()
+        {
+        }
     }
 }

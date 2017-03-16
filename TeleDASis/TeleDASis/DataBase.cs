@@ -510,5 +510,25 @@ namespace TeleDASis
                 return false;
             }
         }
+        public bool ifExistDontCreateNewEmpleado(string dni)
+        {
+
+            string sql = "SELECT COUNT(*) FROM empleados WHERE dni = @dni";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            int cont = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (int.Parse(cont.ToString()) == 0)
+            {
+                return false;
+            }
+            else
+            {
+
+                return true;
+            }
+
+        }
     }
     }
