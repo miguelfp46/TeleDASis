@@ -146,6 +146,26 @@ namespace TeleDASis
             return false;
         }
 
+        public bool delEmp(String dni)
+        {
+            try
+            {
+                string sql = "DELETE FROM empleados WHERE dni=@dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                Console.WriteLine(cmd.CommandText);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                if (cmd.ExecuteNonQuery() >= 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+            return false;
+        }
+
         public bool showUserTable(DataGrid dtGConsultas, Usuario user)
         {
             try

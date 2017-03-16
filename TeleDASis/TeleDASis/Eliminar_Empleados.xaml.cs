@@ -43,7 +43,7 @@ namespace TeleDASis
                     //insertar usuario en historicobaja antes de que se borre
                     databaseConnector.instance.addDeletedEmpToHistory(emp);
                     //borra el usuario de la tabla usuarios
-                    if (databaseConnector.instance.delUser(emp.dni) == true)
+                    if (databaseConnector.instance.delEmp(emp.dni) == true)
                     {
                         MessageBox.Show("¡Usuario " + emp.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
                         borrarValoresDeTextBox();
