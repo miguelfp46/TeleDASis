@@ -465,7 +465,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO empleados (nombre, movil, dni, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                string sql = "INSERT INTO empleados (nombre, movil, dni, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", emple.nombre);
                 cmd.Parameters.AddWithValue("@movil", emple.tlfmovil);
