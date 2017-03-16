@@ -440,5 +440,30 @@ namespace TeleDASis
                 return false;
             }
         }
+        //eliminar empleado por acabar
+        public bool addEmple(Empleados emple)
+        {
+            try
+            {
+                string sql = "INSERT INTO empleados (nombre, movil, dni, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", emple.nombre);
+                cmd.Parameters.AddWithValue("@movil", emple.tlfmovil);
+                cmd.Parameters.AddWithValue("@dni", emple.dni);
+                cmd.Parameters.AddWithValue("@primerApellido", emple.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", emple.segundoApellido);
+                cmd.Parameters.AddWithValue("@nombreUsuario", emple.nombreUsuario);
+                cmd.Parameters.AddWithValue("@puerta", emple.password);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
     }
     }
