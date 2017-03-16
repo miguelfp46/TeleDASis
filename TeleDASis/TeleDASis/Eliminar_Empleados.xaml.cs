@@ -19,6 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class Eliminar_Empleados : Window
     {
+        Empleados emp = new Empleados();
+
         public Eliminar_Empleados()
         {
             InitializeComponent();
@@ -26,7 +28,33 @@ namespace TeleDASis
 
         private void bAceptar_Click(object sender, RoutedEventArgs e)
         {
-  
+
+            emp.motivodeBaja = tbMotivo.Text;
+            //cuando se llame a este metodo, se lanzara un messagebox advirtiendo que si queremos borrar el usuario.
+            if (string.IsNullOrEmpty(tbDni.Text))
+            {
+                MessageBox.Show("Introduce un DNI para poder dar de baja al usuario", "Campo DNI vacío", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (prueba == MessageBoxResult.Yes)
+                {
+                    //insertar usuario en historicobaja antes de que se borre
+                    databaseConnector.instance.addDeletedEmpToHistory(emp);
+                    //borra el usuario de la tabla usuarios
+                    if (databaseConnector.instance.delUser(emp.dni) == true)
+                    {
+                        MessageBox.Show("¡Usuario " + emp.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
+                        borrarValoresDeTextBox();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario " + emp.nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+
 
         }
 
@@ -37,6 +65,16 @@ namespace TeleDASis
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public void borrarValoresDeTextBox()
+        {
+            tbNombre.Text = "";
+            tbPrimerApellido.Text = "";
+            tbSegundoApellido.Text = "";
+            tbMotivo.Text = "";
+            tbEmpleado.Text = "";
+            tbDni.Text = "";
         }
     }
 }

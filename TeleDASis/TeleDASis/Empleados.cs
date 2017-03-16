@@ -19,6 +19,7 @@ namespace TeleDASis
         public string fechaAlta { get; set; }
         public string fechaBaja { get; set; }
         public string motivodeBaja { get; set; }
+
         public Empleados(string nombre, string nombreUsuario, string password, int movil, string dni, string fechaDeAlta, string apellido, string apellido2)
         {
             this.nombre = nombre;
@@ -31,5 +32,7 @@ namespace TeleDASis
             this.segundoApellido = apellido2;
 
         }
+
+        
     }
 }

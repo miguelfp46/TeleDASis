@@ -453,10 +453,35 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@primerApellido", emple.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", emple.segundoApellido);
                 cmd.Parameters.AddWithValue("@nombreUsuario", emple.nombreUsuario);
-                cmd.Parameters.AddWithValue("@puerta", emple.password);
+                cmd.Parameters.AddWithValue("@passwd", emple.password);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool addDeletedEmpToHistory(Empleados emp)
+        {
+            try
+            {
+                string sql = "INSERT INTO historicoBaja (nombre, movil, dni, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", emp.nombre);
+                cmd.Parameters.AddWithValue("@movil", emp.tlfmovil);
+                cmd.Parameters.AddWithValue("@dni", emp.dni);
+                cmd.Parameters.AddWithValue("@primerApellido", emp.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", emp.segundoApellido);
+                cmd.Parameters.AddWithValue("@nombreUsuario", emp.nombreUsuario);
+                cmd.Parameters.AddWithValue("@passwd", emp.password);
+
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)
