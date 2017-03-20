@@ -355,7 +355,7 @@ namespace TeleDASis
         }
 
         //TODO si existe el dni que salte un mensaje
-        public bool ifExistDontCreateNewUser(string dni)
+          public bool ifExistDontCreateNewUser(string dni)
         {
             
                 string sql = "SELECT COUNT(*) FROM usuarios WHERE dni = @dni";
