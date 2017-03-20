@@ -93,6 +93,12 @@ namespace TeleDASis
             llamada.solucion = tbSolucion.Text;
             llamada.telefonoUsuario = usuario.telefono;
             databaseConnector.instance.insertCall(llamada);
+            if (llamada.tipoLlamada == 6)
+            {
+                //hay que mirar el id de llamadas haber como lo ponemos.
+                llamada.idLlamadas = 1;
+                databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
+            }
                 
         }
 

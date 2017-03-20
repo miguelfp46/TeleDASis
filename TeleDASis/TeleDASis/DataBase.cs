@@ -500,12 +500,10 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT * FROM agenda";
+                string sql = "SELECT usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.idLlamadas, agenda.fechaAgenda, llamadas.descripcion FROM usuarios,agenda,llamadas WHERE agenda.idusuarios = usuarios.idUsuario AND agenda.idusuarios = llamadas.usuarios_idUsuario AND llamadas.tipoLlamada = 6";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@id",ag.idAgenda);
-                cmd.Parameters.AddWithValue("@idLlamadas",ag.idLlamada);
-                cmd.Parameters.AddWithValue("@idusuarios", ag.idUsuarios);
-                cmd.Parameters.AddWithValue("@fechaAgenda",ag.fechaAgenda);
+               
+                
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -550,6 +548,25 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@telefonoUsuario", llamada.telefonoUsuario);
                 cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
                 cmd.Parameters.AddWithValue("@solucion", llamada.solucion);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+        public bool siEsLlamadaAgendaInsertaFechaEnAgenda(Llamadas llamada)
+        {
+            try
+            {
+                string sql = "INSERT INTO agenda (idLlamadas, idUsuarios, fechaAgenda) VALUES (@idLlamadas, @idUsuarios, @fechaAgenda)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@idLlamadas", llamada.idLlamadas);
+                cmd.Parameters.AddWithValue("@idUsuarios", llamada.usuarios_idUsuario);
+                cmd.Parameters.AddWithValue("@fechaAgenda", llamada.fechayHora);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 return true;
