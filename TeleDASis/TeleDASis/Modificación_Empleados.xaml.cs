@@ -19,13 +19,53 @@ namespace TeleDASis
     /// </summary>
     public partial class Modificación_Empleados : Window
     {
+
+        string dni;
+        Empleados emp = new Empleados();
+
         public Modificación_Empleados()
         {
             InitializeComponent();
+            tbFecha.SelectedDate = DateTime.Today;
+            tbNombre.IsEnabled = false;
+            tbApellido.IsEnabled = false;
+            tbApellido2.IsEnabled = false;
+            tbMovil.IsEnabled = false;
+            tbTelefono.IsEnabled = false;
+            tbpaswd.IsEnabled = false;
+            tbUser.IsEnabled = false;
+          
         }
 
         private void btComprobar_Click(object sender, RoutedEventArgs e)
         {
+            dni = tbDNI.Text;
+            Empleados emp = databaseConnector.instance.showEmpAll(dni);
+            if (emp.nombre == null)
+            {
+                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + emp.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                tbNombre.IsEnabled = true;
+                tbApellido.IsEnabled = true;
+                tbApellido2.IsEnabled = true;
+                tbMovil.IsEnabled = true;
+                tbTelefono.IsEnabled = true;
+                tbpaswd.IsEnabled = true;
+                tbUser.IsEnabled = true;
+               
+
+                tbNombre.Text = emp.nombre;
+                tbApellido.Text = emp.primerApellido;
+                tbApellido2.Text = emp.segundoApellido;
+               
+                tbMovil.Text = emp.tlfmovil;
+                tbTelefono.Text = emp.telefono;
+                tbpaswd.Text = emp.password;
+                tbUser.Text = emp.nombreUsuario;
+                
+            }
 
         }
 
@@ -69,6 +109,31 @@ namespace TeleDASis
 
         private void Guardar(object sender, RoutedEventArgs e)
         {
+            emp.nombre = tbNombre.Text;
+            emp.primerApellido = tbApellido.Text;
+            emp.segundoApellido = tbApellido2.Text;   
+            emp.tlfmovil = tbMovil.Text;
+            emp.telefono = tbTelefono.Text;        
+            emp.password = tbpaswd.Text;
+            emp.nombreUsuario = tbUser.Text;
+            emp.dni = tbDNI.Text;
+
+            if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.primerApellido) || string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.dni) ||
+                string.IsNullOrEmpty(Convert.ToString(emp.telefono)) || string.IsNullOrEmpty(Convert.ToString(emp.tlfmovil)) || string.IsNullOrEmpty(emp.password) || string.IsNullOrEmpty(emp.nombreUsuario))
+            {
+                MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (databaseConnector.instance.updateEmp(emp) == true)
+                {
+                    MessageBox.Show("Empleado " + emp.nombre + " actualizado correctamente.", "Actualizar usuario", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido actualizar el usuario.", "Fallo al actualizar", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         }

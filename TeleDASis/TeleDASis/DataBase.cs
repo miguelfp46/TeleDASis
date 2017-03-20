@@ -273,6 +273,41 @@ namespace TeleDASis
             }
         }
 
+        public Empleados showEmpAll(String dni)
+        {
+            Empleados usuario = new Empleados();
+            try
+            {
+                string sql = "SELECT nombre, primerApellido, segundoApellido, movil, telefono, password, nombreUsuario FROM empleaods WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    usuario.nombre = Convert.ToString(reader["nombre"]);
+                    usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    
+                    usuario.tlfmovil = Convert.ToString(reader["movil"]);
+                    usuario.telefono = Convert.ToString(reader["telefono"]);
+                    usuario.password = Convert.ToString(reader["password"]);
+                    usuario.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
+                  
+                }
+
+                reader.Close();
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                usuario.nombre = null;
+                return usuario;
+            }
+        }
+
         //MODIFICA EL USUARIO CON TODOS LOS DATOS, SE TIENE QUE TERMINAR
         public bool updateUser(Usuario user)
         {
@@ -297,6 +332,34 @@ namespace TeleDASis
 
                 return true;
                 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool updateEmp(Empleados user)
+        {
+            try
+            {
+                string sql = "UPDATE empelados SET nombre = @nombre, movil = @movil, telefono = @telefono, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,password = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", user.nombre);            
+                cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
+                cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+                cmd.Parameters.AddWithValue("@passwd", user.password);
+                cmd.Parameters.AddWithValue("@usuariio", user.nombreUsuario);         
+                cmd.Parameters.AddWithValue("@dni", user.dni);
+                Console.WriteLine(cmd.CommandText);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+
             }
             catch (Exception ex)
             {
