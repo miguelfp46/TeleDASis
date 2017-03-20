@@ -126,6 +126,43 @@ namespace TeleDASis
             }
         }
 
+        public Empleados showEmp(String dni)
+        {
+            Empleados emp = new Empleados();
+            try
+            {
+
+                string sql = "SELECT * FROM empleados WHERE dni = @dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    emp.nombre = Convert.ToString(reader["nombre"]);
+                    emp.tlfmovil = Convert.ToInt32(reader["movil"]);
+                    emp.dni = Convert.ToString(reader["dni"]);
+                    emp.fechaAlta = Convert.ToString(reader["fechaAlta"]);
+                    emp.primerApellido = Convert.ToString(reader["primerApellido"]);
+                    emp.segundoApellido = Convert.ToString(reader["segundoApellido"]);
+                    emp.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
+                    emp.password = Convert.ToString(reader["password"]);
+                  
+                }
+
+                reader.Close();
+                return emp;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                emp.nombre = null;
+                return emp;
+            }
+        }
+
         public bool delUser(String dni)
         {
             try
@@ -137,6 +174,26 @@ namespace TeleDASis
                 
                 if(cmd.ExecuteNonQuery() >= 1)
 					return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+            return false;
+        }
+
+        public bool delEmp(String dni)
+        {
+            try
+            {
+                string sql = "DELETE FROM empleados WHERE dni=@dni";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                Console.WriteLine(cmd.CommandText);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                if (cmd.ExecuteNonQuery() >= 1)
+                    return true;
             }
             catch (Exception ex)
             {
@@ -439,6 +496,76 @@ namespace TeleDASis
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+        //eliminar empleado por acabar
+        public bool addEmple(Empleados emple)
+        {
+            try
+            {
+                string sql = "INSERT INTO empleados (nombre, movil, dni, primerApellido, segundoApellido, nombreUsuario, password) VALUES (@nombre, @movil, @dni, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", emple.nombre);
+                cmd.Parameters.AddWithValue("@movil", emple.tlfmovil);
+                cmd.Parameters.AddWithValue("@dni", emple.dni);
+                cmd.Parameters.AddWithValue("@primerApellido", emple.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", emple.segundoApellido);
+                cmd.Parameters.AddWithValue("@nombreUsuario", emple.nombreUsuario);
+                cmd.Parameters.AddWithValue("@passwd", emple.password);
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool addDeletedEmpToHistory(Empleados emp)
+        {
+            try
+            {
+                string sql = "INSERT INTO historicoBaja (nombre, movil, dni, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", emp.nombre);
+                cmd.Parameters.AddWithValue("@movil", emp.tlfmovil);
+                cmd.Parameters.AddWithValue("@dni", emp.dni);
+                cmd.Parameters.AddWithValue("@primerApellido", emp.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", emp.segundoApellido);
+                cmd.Parameters.AddWithValue("@nombreUsuario", emp.nombreUsuario);
+                cmd.Parameters.AddWithValue("@passwd", emp.password);
+
+                Console.WriteLine(cmd.CommandText);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+        public bool ifExistDontCreateNewEmpleado(string dni)
+        {
+
+            string sql = "SELECT COUNT(*) FROM empleados WHERE dni = @dni";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            int cont = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (int.Parse(cont.ToString()) == 0)
+            {
+                return false;
+            }
+            else
+            {
+
+                return true;
+            }
+
         }
     }
     }

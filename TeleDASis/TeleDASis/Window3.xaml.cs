@@ -19,6 +19,7 @@ namespace TeleDASis
     /// </summary>
     public partial class Window3 : Window
     {
+        Empleados emp = new Empleados();
         public Window3()
         {
             InitializeComponent();
@@ -26,7 +27,42 @@ namespace TeleDASis
 
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
+            emp.nombre = tbNombre.Text;
+            emp.tlfmovil = Convert.ToInt32(tbMovil.Text);
+            emp.dni = tbDni.Text;
+            emp.primerApellido = tbApellido.Text;
+            emp.segundoApellido = tbApellido2.Text;
+            emp.nombreUsuario = tbuser.Text;
+            emp.password = tbpasswd.Text;
 
+            if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.tlfmovil.ToString()) || string.IsNullOrEmpty(emp.dni) || string.IsNullOrEmpty(emp.primerApellido) ||
+                string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.nombreUsuario)
+                || string.IsNullOrEmpty(emp.password))
+            {
+                MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {//llamada al metodo de validar dni del empleado , si no es real mensaje de error , si es autentico sigue leyendo
+                if (Validaciones.validarNIF(emp.dni) == false)
+                {
+                    MessageBox.Show("El DNI " + emp.dni + " es incorrecto. Vuelve a introducirlo.", "DNI incorrecto", MessageBoxButton.OK, MessageBoxImage.Error);
+                }else
+                {//si el dni del empleado ya existe , salta mensaje de error 
+                    if (databaseConnector.instance.ifExistDontCreateNewEmpleado(emp.dni))
+                    {
+                        MessageBox.Show("Ya existe un empleado con ese DNI");
+                    }else
+                    {//añadimos el empleado si la condicion es cierta , sino salta mensaje de error
+                        if(databaseConnector.instance.addEmple(emp) == true)
+                        {
+                            MessageBox.Show("¡Se ha introducido a " + emp.nombre + " con éxito!", "Empleado añadido", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }else
+                        {
+                            MessageBox.Show("No se ha podido añadir a " + emp.nombre + " correctamente, comprueba todos los campos.", "Fallo al añadir empleado", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+            }
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
