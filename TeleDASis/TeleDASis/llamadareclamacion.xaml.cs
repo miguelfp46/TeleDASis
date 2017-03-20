@@ -77,7 +77,7 @@ namespace TeleDASis
                 case "Informativa":
                     llamada.tipoLlamada = 4;
                     break;
-                case "Reclamacion/Sugerencia":
+                case "Reclamación/Sugerencia":
                     llamada.tipoLlamada = 5;
                     break;
                 case "Agenda":
@@ -91,6 +91,7 @@ namespace TeleDASis
             //llamada.telefonoUsuario = usuario.telefono;
             llamada.descripcion = tbMotivo.Text;
             llamada.solucion = tbSolucion.Text;
+            llamada.telefonoUsuario = usuario.telefono;
             databaseConnector.instance.insertCall(llamada);
                 
         }
@@ -155,7 +156,7 @@ namespace TeleDASis
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             tbDNI.Text = usuario.dni;
-            llamada.telefonoUsuario = usuario.telefono;
+            usuario.telefono = tbTelefono.Text;
 
             //System.Windows.MessageBox.Show(Convert.ToString(usuario.id));
         }
