@@ -60,8 +60,8 @@ namespace TeleDASis
                 tbApellido.Text = emp.primerApellido;
                 tbApellido2.Text = emp.segundoApellido;
                
-                tbMovil.Text = emp.tlfmovil;
-                tbTelefono.Text = emp.telefono;
+                tbMovil.Text = Convert.ToString(emp.tlfmovil);
+                tbTelefono.Text = Convert.ToString(emp.telefono);
                 tbpaswd.Text = emp.password;
                 tbUser.Text = emp.nombreUsuario;
                 
@@ -112,8 +112,8 @@ namespace TeleDASis
             emp.nombre = tbNombre.Text;
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;   
-            emp.tlfmovil = tbMovil.Text;
-            emp.telefono = tbTelefono.Text;        
+            emp.tlfmovil = Convert.ToInt32(tbMovil.Text);
+            emp.telefono = Convert.ToInt32(tbTelefono.Text);        
             emp.password = tbpaswd.Text;
             emp.nombreUsuario = tbUser.Text;
             emp.dni = tbDNI.Text;
