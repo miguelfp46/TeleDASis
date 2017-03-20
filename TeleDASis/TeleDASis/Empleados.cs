@@ -15,7 +15,7 @@ namespace TeleDASis
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
         public int tlfmovil { get; set; }
-        public int telefono { get; set}
+        public int telefono { get; set; }
         public string dni { get; set; }
         public string fechaAlta { get; set; }
         public string fechaBaja { get; set; }
