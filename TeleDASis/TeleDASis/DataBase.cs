@@ -553,7 +553,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT tlfPersonaContacto FROM usuarios WHERE telefono = @telefono";
+                string sql = "SELECT tlfPersonaContacto AS 'Telefono familiar' FROM usuarios WHERE telefono = @telefono";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
                 cmd.ExecuteNonQuery();

@@ -42,73 +42,79 @@ namespace TeleDASis
 
         private void btEnviar_Click(object sender, RoutedEventArgs e)
         {
-            llamada.usuarios_idUsuario = usuario.id;
-            switch (cbTipoLlamada.Text)
+            if (string.IsNullOrEmpty(tbTelefono.Text) || string.IsNullOrEmpty(tbSolucion.Text) || string.IsNullOrEmpty(tbMotivo.Text))
             {
-                case "Emergencia nivel 1":
-                    llamada.tipoLlamada = 1;
-                    break;
-                case "Emergencia nivel 2":
-                    llamada.tipoLlamada = 2;
-                    break;
-                case "Emergencia nivel 3":
-                    llamada.tipoLlamada = 3;
-                    if (cbAmbulancia.IsChecked == true)
-                    {
-                        servicio = new LlamadaServicio(llamada.idLlamadas, 2);
-                        serviciosList.Add(servicio);
-                    }
-                    if (cbBomberos.IsChecked == true)
-                    {
-                        servicio = new LlamadaServicio(llamada.idLlamadas, 3);
-                        serviciosList.Add(servicio);
-                    }
-                    if (cbPolicia.IsChecked == true)
-                    {
-                        servicio = new LlamadaServicio(llamada.idLlamadas, 1);
-                        serviciosList.Add(servicio);
-                    }
-                    if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
-                    {
-                        servicio = new LlamadaServicio(llamada.idLlamadas, 4);
-                        serviciosList.Add(servicio);
-                    }
-                    break;
-                case "Informativa":
-                    llamada.tipoLlamada = 4;
-                    break;
-                case "Reclamación/Sugerencia":
-                    llamada.tipoLlamada = 5;
-                    break;
-                case "Agenda":
-                    llamada.tipoLlamada = 6;
-                    llamada.fechayHora =  DateTime.Parse(dpDate.Text);
-                    break;
-                case "Llamada saliente":
-                    llamada.tipoLlamada = 1;
-                    break;
+                System.Windows.MessageBox.Show("Debes rellenar todos los campos","Campos vacíos",MessageBoxButton.OK,MessageBoxImage.Information);
             }
-            //llamada.telefonoUsuario = usuario.telefono;
-            llamada.descripcion = tbMotivo.Text;
-            llamada.solucion = tbSolucion.Text;
-            llamada.telefonoUsuario = usuario.telefono;
-            MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada " + llamada.idLlamadas +
-                ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
-                + "Teléfono: " + usuario.telefono + "\n"
-                + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
-                + "Motivo de llamada: " + llamada.descripcion + "\n"
-                + "Solución: " + llamada.solucion, "Comprobar datos",MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if(resultado == MessageBoxResult.Yes)
+            else
             {
-                databaseConnector.instance.insertCall(llamada);
+                llamada.usuarios_idUsuario = usuario.id;
+                switch (cbTipoLlamada.Text)
+                {
+                    case "Emergencia nivel 1":
+                        llamada.tipoLlamada = 1;
+                        break;
+                    case "Emergencia nivel 2":
+                        llamada.tipoLlamada = 2;
+                        break;
+                    case "Emergencia nivel 3":
+                        llamada.tipoLlamada = 3;
+                        if (cbAmbulancia.IsChecked == true)
+                        {
+                            servicio = new LlamadaServicio(llamada.idLlamadas, 2);
+                            serviciosList.Add(servicio);
+                        }
+                        if (cbBomberos.IsChecked == true)
+                        {
+                            servicio = new LlamadaServicio(llamada.idLlamadas, 3);
+                            serviciosList.Add(servicio);
+                        }
+                        if (cbPolicia.IsChecked == true)
+                        {
+                            servicio = new LlamadaServicio(llamada.idLlamadas, 1);
+                            serviciosList.Add(servicio);
+                        }
+                        if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
+                        {
+                            servicio = new LlamadaServicio(llamada.idLlamadas, 4);
+                            serviciosList.Add(servicio);
+                        }
+                        break;
+                    case "Informativa":
+                        llamada.tipoLlamada = 4;
+                        break;
+                    case "Reclamación/Sugerencia":
+                        llamada.tipoLlamada = 5;
+                        break;
+                    case "Agenda":
+                        llamada.tipoLlamada = 6;
+                        llamada.fechayHora = DateTime.Parse(dpDate.Text);
+                        break;
+                    case "Llamada saliente":
+                        llamada.tipoLlamada = 1;
+                        break;
+                }
+                //llamada.telefonoUsuario = usuario.telefono;
+                llamada.descripcion = tbMotivo.Text;
+                llamada.solucion = tbSolucion.Text;
+                llamada.telefonoUsuario = usuario.telefono;
+                MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
+                    ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
+                    + "Teléfono: " + usuario.telefono + "\n"
+                    + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
+                    + "Motivo de llamada: " + llamada.descripcion + "\n"
+                    + "Solución: " + llamada.solucion, "Comprobar datos", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (resultado == MessageBoxResult.Yes)
+                {
+                    databaseConnector.instance.insertCall(llamada);
+                }
+                if (llamada.tipoLlamada == 6)
+                {
+                    //hay que mirar el id de llamadas haber como lo ponemos.
+                    llamada.idLlamadas = 1;
+                    databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
+                }
             }
-            if (llamada.tipoLlamada == 6)
-            {
-                //hay que mirar el id de llamadas haber como lo ponemos.
-                llamada.idLlamadas = 1;
-                databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
-            }
-                
         }
 
         public void SoloNumeros(TextCompositionEventArgs e)
@@ -166,18 +172,12 @@ namespace TeleDASis
             usuario.tlfmovil = tbTelefono.Text;
             usuario.telefonofamiliar = tbTelefono.Text;
             usuario = databaseConnector.instance.searchUserByPhone(usuario);
-            //databaseConnector.instance.showPhoneNumber(dtGConsultas,usuario);
             tbNombre.Text = usuario.nombre;
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             tbDNI.Text = usuario.dni;
             usuario.telefono = tbTelefono.Text;
-
-            //System.Windows.MessageBox.Show(Convert.ToString(usuario.id));
-        }
-
-        private void dtGConsultas_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+            databaseConnector.instance.showPhoneNumber(dtgConsultas, usuario);
 
         }
     }

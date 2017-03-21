@@ -26,7 +26,7 @@ namespace TeleDASis
             InitializeComponent();
             dataGridTable = dtGAgenda;
 
-            databaseConnector.instance.showAgendaTable(dataGridTable,ag);
+            databaseConnector.instance.showAgendaTable(dtGAgenda,ag);
             
         }
 
