@@ -92,7 +92,16 @@ namespace TeleDASis
             llamada.descripcion = tbMotivo.Text;
             llamada.solucion = tbSolucion.Text;
             llamada.telefonoUsuario = usuario.telefono;
-            databaseConnector.instance.insertCall(llamada);
+            MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada " + llamada.idLlamadas +
+                ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
+                + "Teléfono: " + usuario.telefono + "\n"
+                + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
+                + "Motivo de llamada: " + llamada.descripcion + "\n"
+                + "Solución: " + llamada.solucion, "Comprobar datos",MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if(resultado == MessageBoxResult.Yes)
+            {
+                databaseConnector.instance.insertCall(llamada);
+            }
             if (llamada.tipoLlamada == 6)
             {
                 //hay que mirar el id de llamadas haber como lo ponemos.
