@@ -236,6 +236,38 @@ namespace TeleDASis
             
         }
 
+        public bool showEmpTable(DataGrid dtGConsultas, Empleados user)
+        {
+            try
+            {
+                string sql = "SELECT * FROM empleados WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND movil LIKE @movil AND telefono LIKE @telefono AND password  LIKE @password  AND user LIKE @nombre Usuario";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", "%" + user.nombre + "%");
+                cmd.Parameters.AddWithValue("@primerApellido", "%" + user.primerApellido + "%");
+                cmd.Parameters.AddWithValue("@segundoApellido", "%" + user.segundoApellido + "%");
+                cmd.Parameters.AddWithValue("@movil", "%" + user.tlfmovil + "%");
+                cmd.Parameters.AddWithValue("@telefono", "%" + user.telefono + "%");
+                cmd.Parameters.AddWithValue("@dni", "%" + user.dni + "%");
+                cmd.Parameters.AddWithValue("@password", "%" + user.password + "%");
+                cmd.Parameters.AddWithValue("@user", "%" + user.nombreUsuario + "%");
+         
+
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dtGConsultas.DataContext = dt;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+
+
+        }
+
         //metrodo para mostrar todos los datos de un usuario
         public Usuario showUserAll(String dni)
         {

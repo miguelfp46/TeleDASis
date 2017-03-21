@@ -37,7 +37,7 @@ namespace TeleDASis
             }
             else
             {
-                MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este usuario?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult prueba = MessageBox.Show("Esta seguro que desea dar de baja a este empleado?", "Baja", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (prueba == MessageBoxResult.Yes)
                 {
                     //insertar usuario en historicobaja antes de que se borre
@@ -45,12 +45,12 @@ namespace TeleDASis
                     //borra el usuario de la tabla usuarios
                     if (databaseConnector.instance.delEmp(emp.dni) == true)
                     {
-                        MessageBox.Show("¡Usuario " + emp.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("¡Empelado" + emp.nombre + " eliminado con éxito!", "Usuario eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
                         borrarValoresDeTextBox();
                     }
                     else
                     {
-                        MessageBox.Show("El usuario " + emp.nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("El Empleado " + emp.nombre + " no se ha podido eliminar. Intentalo de nuevo.", "Fallo al eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }

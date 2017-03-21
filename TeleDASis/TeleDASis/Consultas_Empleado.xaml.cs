@@ -19,6 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class Consultas_Empleado : Window
     {
+        Empleados user = new Empleados();
+        System.Windows.Controls.DataGrid dataGridTable;
         public Consultas_Empleado()
         {
             InitializeComponent();
@@ -36,6 +38,16 @@ namespace TeleDASis
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
+            user.nombre = txtNombre.Text;
+            user.primerApellido = txtApellido1.Text;
+            user.segundoApellido = txtApellido2.Text;         
+            user.tlfmovil = Convert.ToInt32(txtMovil.Text);
+            user.telefono = Convert.ToInt32(txtTelefono.Text);     
+            user.dni = txtDni.Text;
+            user.password = txtPasswd.Text;
+            user.nombreUsuario = txtUser.Text;
+            
+            databaseConnector.instance.showEmpTable(dataGridTable, user);
 
         }
 
