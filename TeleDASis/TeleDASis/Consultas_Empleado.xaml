@@ -16,31 +16,38 @@
             <ColumnDefinition Width="36*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height = "55*"/>
             <RowDefinition Height = "54*"/>
-            <RowDefinition Height = "54*"/>
-            <RowDefinition Height = "54*"/>
+            <RowDefinition Height = "55*"/>
             <RowDefinition Height = "57*"/>
             <RowDefinition Height = "51*"/>
             <RowDefinition Height = "54*"/>
-            <RowDefinition Height = "53*"/>
+            <RowDefinition Height = "37*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height = "55*"/>
             <RowDefinition Height = "54*"/>
-            <RowDefinition Height = "53*"/>
 
         </Grid.RowDefinitions>
         <GroupBox x:Name="groupBox" Header="Buscar por:" Margin="12,21,10,0" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="246" Grid.RowSpan="5"/>
         <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center"  Grid.Row="1" Grid.Column="1"  Height="26" Margin="20,16,101,12"/>
-        <TextBox x:Name="txtDni" Height="20" Text="" VerticalAlignment = "Center" Margin="102,17,32,17" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="txtDni" Height="20" Text="" VerticalAlignment = "Center" Margin="100,17,34,17" Grid.Row="1" Grid.Column="1"/>
         <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Bottom" Grid.Row="2" Grid.Column="1" Height="26" Margin="20,0,146,11"/>
-        <TextBox x:Name="txtNombre" Height="19" Text="" VerticalAlignment = "Bottom"  Margin="102,0,32,14" PreviewTextInput="Letras" Grid.Row="2" Grid.Column="1" />
-        <Label x:Name="label3" Margin="20,16,106,12" Content="1º Apellido:" VerticalAlignment = "Center" Grid.Row="2" Grid.Column="2" Height="26"/>
+        <TextBox x:Name="txtNombre" Height="19" Text="" VerticalAlignment = "Bottom"  Margin="100,0,34,14" PreviewTextInput="Letras" Grid.Row="2" Grid.Column="1" />
+        <Label x:Name="label3" Margin="20,17,106,12" Content="1º Apellido:" VerticalAlignment = "Center" Grid.Row="2" Grid.Column="2" Height="26"/>
         <TextBox x:Name="txtApellido1" Height="19" Text="" VerticalAlignment = "Bottom"  Margin="105,0,26,14" PreviewTextInput="Letras" Grid.Row="2" Grid.Column="2"/>
-        <Label x:Name="label4" Margin="20,16,107,10" Content="2º Apellido:" VerticalAlignment = "Center" Grid.Row="2" Grid.Column="3" Height="28"/>
+        <Label x:Name="label4" Margin="20,17,107,10" Content="2º Apellido:" VerticalAlignment = "Center" Grid.Row="2" Grid.Column="3" Height="28"/>
         <TextBox x:Name="txtApellido2" Height="19" Text="" VerticalAlignment = "Bottom"  Margin="102,0,34,14" PreviewTextInput="Letras" Grid.Row="2" Grid.Column="3"/>
-        <Label x:Name="label5" Margin="20,16,152,11"  Content="Teléfono:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="1" Height="30"/>
-        <TextBox x:Name="txtTelefono" Height="18" Text="" VerticalAlignment = "Center" Margin="102,20,32,19" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="label5" Margin="20,9,152,12"  Content="Teléfono:" VerticalAlignment = "Center" Grid.Row="4" Grid.Column="1" Height="30"/>
+        <TextBox x:Name="txtTelefono" Height="18" Text="" VerticalAlignment = "Center" Margin="100,13,34,20" Grid.Row="4" Grid.Column="1"/>
 
-        <Label x:Name="label7" Margin="20,18,108,9" Content="Móvil:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="3" Height="30"/>
-        <TextBox x:Name="txtMovil" Text="" Height="19" VerticalAlignment = "Top" Margin="102,22,34,0" Grid.Row="3" Grid.Column="3"/>
+        <Label x:Name="label7" Margin="20,11,108,10" Content="Móvil:" VerticalAlignment = "Center" Grid.Row="4" Grid.Column="3" Height="30"/>
+        <TextBox x:Name="txtMovil" Text="" Height="19" VerticalAlignment = "Top" Margin="102,18,34,0" Grid.Row="4" Grid.Column="3"/>
+
+        <Label x:Name="label8" Margin="20,11,108,10" Content="Password:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="3" Height="30"/>
+        <TextBox x:Name="txtPasswd" Text="" Height="19" VerticalAlignment = "Top" Margin="102,18,34,0" Grid.Row="3" Grid.Column="3"/>
+
+        <Label x:Name="label9" Margin="20,11,108,10" Content="Usuario:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="1" Height="30"/>
+        <TextBox x:Name="txtUser" Text="" Height="19" VerticalAlignment = "Top" Margin="101,18,34,0" Grid.Row="3" Grid.Column="1"/>
 
 
 
@@ -50,7 +57,7 @@
 
         <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="60,0,0,18" Grid.Row="5" VerticalAlignment="Bottom" Width="131" Height="23" Click="btnBuscar_Click"/>
 
-        <GroupBox x:Name="groupBox1" Header="Resultado de la Busqueda:" HorizontalAlignment="Left" Margin="5,36,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="767" Height="158" Grid.RowSpan="4">
+        <GroupBox x:Name="groupBox1" Header="Resultado de la Busqueda:" HorizontalAlignment="Left" Margin="5,36,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="767" Height="158" Grid.RowSpan="5">
             <DataGrid  x:Name="dtGConsultas" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="132" Width="745" Grid.RowSpan="3" SelectionChanged="dtGConsultas_SelectionChanged"/>
         </GroupBox>
 
