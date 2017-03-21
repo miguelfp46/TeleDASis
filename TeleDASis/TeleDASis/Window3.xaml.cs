@@ -33,7 +33,7 @@ namespace TeleDASis
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;
             emp.nombreUsuario = tbuser.Text;
-            emp.password = tbpasswd.Text;
+            emp.password = passwordBox.Password;
 
             if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.tlfmovil.ToString()) || string.IsNullOrEmpty(emp.dni) || string.IsNullOrEmpty(emp.primerApellido) ||
                 string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.nombreUsuario)

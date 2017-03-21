@@ -40,11 +40,11 @@
         <Label x:Name="label5" Margin="20,9,152,12"  Content="Teléfono:" VerticalAlignment = "Center" Grid.Row="4" Grid.Column="1" Height="30"/>
         <TextBox x:Name="txtTelefono" Height="18" Text="" VerticalAlignment = "Center" Margin="100,13,34,20" Grid.Row="4" Grid.Column="1"/>
 
-        <Label x:Name="label7" Margin="20,11,108,10" Content="Móvil:" VerticalAlignment = "Center" Grid.Row="4" Grid.Column="3" Height="30"/>
-        <TextBox x:Name="txtMovil" Text="" Height="19" VerticalAlignment = "Top" Margin="102,18,34,0" Grid.Row="4" Grid.Column="3"/>
+        <Label x:Name="label7" Margin="20,11,108,10" Content="Móvil:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="3" Height="30"/>
+        <TextBox x:Name="txtMovil" Text="" Height="19" VerticalAlignment = "Top" Margin="102,18,34,0" Grid.Row="3" Grid.Column="3"/>
 
-        <Label x:Name="label8" Margin="20,11,108,10" Content="Password:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="3" Height="30"/>
-        <TextBox x:Name="txtPasswd" Text="" Height="19" VerticalAlignment = "Top" Margin="102,18,34,0" Grid.Row="3" Grid.Column="3"/>
+        <Label x:Name="label8" Margin="20,11,108,10" Content="Password:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="2" Height="30"/>
+        <PasswordBox  x:Name="txtPasswd" Height="19" VerticalAlignment = "Top" Margin="102,18,34,0" Grid.Row="3" Grid.Column="2"/>
 
         <Label x:Name="label9" Margin="20,11,108,10" Content="Usuario:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="1" Height="30"/>
         <TextBox x:Name="txtUser" Text="" Height="19" VerticalAlignment = "Top" Margin="101,18,34,0" Grid.Row="3" Grid.Column="1"/>

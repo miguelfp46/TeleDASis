@@ -44,7 +44,7 @@ namespace TeleDASis
             user.tlfmovil = Convert.ToInt32(txtMovil.Text);
             user.telefono = Convert.ToInt32(txtTelefono.Text);     
             user.dni = txtDni.Text;
-            user.password = txtPasswd.Text;
+            user.password = txtPasswd.Password;
             user.nombreUsuario = txtUser.Text;
             
             databaseConnector.instance.showEmpTable(dataGridTable, user);
