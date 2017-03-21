@@ -43,7 +43,7 @@ namespace TeleDASis
             Empleados emp = databaseConnector.instance.showEmpAll(dni);
             if (emp.nombre == null)
             {
-                MessageBox.Show("No se ha encontrado al usuario con el DNI: " + emp.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("No se ha encontrado al empleado con el DNI: " + emp.dni + ".\nVerifica que sea correcto.", "¡DNI incorrecto!", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -62,7 +62,7 @@ namespace TeleDASis
                
                 tbMovil.Text = Convert.ToString(emp.tlfmovil);
                 tbTelefono.Text = Convert.ToString(emp.telefono);
-                tbpaswd.Text = emp.password;
+                tbpaswd.Password = emp.password;
                 tbUser.Text = emp.nombreUsuario;
                 
             }
