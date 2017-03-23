@@ -62,21 +62,27 @@ namespace TeleDASis
                         if (cbAmbulancia.IsChecked == true)
                         {
                             servicio = new LlamadaServicio(llamada.idLlamadas, 2);
+                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
                             serviciosList.Add(servicio);
                         }
                         if (cbBomberos.IsChecked == true)
                         {
                             servicio = new LlamadaServicio(llamada.idLlamadas, 3);
+                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
                             serviciosList.Add(servicio);
+
                         }
                         if (cbPolicia.IsChecked == true)
                         {
                             servicio = new LlamadaServicio(llamada.idLlamadas, 1);
+                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
                             serviciosList.Add(servicio);
+
                         }
                         if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
                         {
                             servicio = new LlamadaServicio(llamada.idLlamadas, 4);
+                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
                             serviciosList.Add(servicio);
                         }
                         break;
@@ -108,6 +114,7 @@ namespace TeleDASis
                 {
                     databaseConnector.instance.insertCall(llamada);
                 }
+
                 if (llamada.tipoLlamada == 6)
                 {
                     //hay que mirar el id de llamadas haber como lo ponemos.

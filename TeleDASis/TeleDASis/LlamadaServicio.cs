@@ -8,8 +8,8 @@ namespace TeleDASis
 {
     class LlamadaServicio
     {
-        int idLlamada;
-        int idServicios;
+        public int idLlamada;
+        public int idServicios;
 
         public LlamadaServicio(int idLlamada, int idServicios)
         {
