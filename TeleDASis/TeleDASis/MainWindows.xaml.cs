@@ -144,5 +144,13 @@ namespace TeleDASis
 
             consultas.Show();
         }
+
+
+        private void btn_Rllamadas_Click(object sender, RoutedEventArgs e)
+        {
+            FormularioRLlamadas info = new FormularioRLlamadas();
+
+            info.Show();
+        }
     }
 }
