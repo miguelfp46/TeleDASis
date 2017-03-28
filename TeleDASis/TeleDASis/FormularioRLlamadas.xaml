@@ -1,0 +1,15 @@
+﻿<Window x:Class="TeleDASis.FormularioRLlamadas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeleDASis"
+        mc:Ignorable="d"
+        Title="FormularioRLlamadas" Height="302" Width="514">
+    <Grid Margin="0,0,2,2">
+        <Button x:Name="btRegistroLlamadas" Content="Registro de Llamadas" Click="btRegistroLlamadas_Click" Margin="24,50,266,53" />
+        <Button x:Name="btAgenda" Content="Agenda" Click="btAgenda_Click" Margin="269,50,21,53" />
+        <Button x:Name="btVolver" Content="Volver" HorizontalAlignment="Left" Margin="408,239,0,0" VerticalAlignment="Top" Width="75" Click="btVolver_Click"/>
+
+    </Grid>
+</Window>

@@ -85,6 +85,9 @@
     <Compile Include="formLlamadaAgenda.xaml.cs">
       <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormularioRLlamadas.xaml.cs">
+      <DependentUpon>FormularioRLlamadas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HistoricoBaja.xaml.cs">
       <DependentUpon>HistoricoBaja.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,9 @@
     </Compile>
     <Compile Include="Modificación_Empleados.xaml.cs">
       <DependentUpon>Modificación_Empleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrodeTodasLasLlamadas.xaml.cs">
+      <DependentUpon>RegistrodeTodasLasLlamadas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Empleados.xaml.cs">
@@ -134,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="formLlamadaAgenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormularioRLlamadas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modificación_Empleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrodeTodasLasLlamadas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
