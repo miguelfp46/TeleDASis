@@ -9,7 +9,7 @@
     <Grid Margin="0,0,2,2">
         <Button x:Name="btRegistroLlamadas" Content="Registro de Llamadas" Click="btRegistroLlamadas_Click" Margin="24,50,266,53" />
         <Button x:Name="btAgenda" Content="Agenda" Click="btAgenda_Click" Margin="269,50,21,53" />
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="408,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btVolver" Content="Volver" HorizontalAlignment="Left" Margin="408,239,0,0" VerticalAlignment="Top" Width="75" Click="btVolver_Click"/>
 
     </Grid>
 </Window>

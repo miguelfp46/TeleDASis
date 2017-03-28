@@ -36,5 +36,10 @@ namespace TeleDASis
 
             info.Show();
         }
+
+        private void btVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
