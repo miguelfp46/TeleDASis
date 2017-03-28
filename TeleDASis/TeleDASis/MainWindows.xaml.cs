@@ -23,6 +23,10 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Este metodo te envian al menu de llamadas
+        /// </summary>
+        /// <param name="info">Valor que le asignamos la ventana de llamadas</param>
         
         private void btLlamadas_Click(object sender, RoutedEventArgs e)
         {
@@ -31,6 +35,11 @@ namespace TeleDASis
             info.Show();
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu de Agenda
+        /// </summary>
+        /// <param name="info">Valor que le asignamos la ventana de Agenda</param>
+
         private void btn_Agenda_Click(object sender, RoutedEventArgs e)
         {
             formLlamadaAgenda info = new formLlamadaAgenda();
@@ -38,7 +47,10 @@ namespace TeleDASis
             info.Show();
         }
 
-       
+        /// <summary>
+        /// Este metodo te envian al menu de modificar de Usuarios
+        /// </summary>
+        /// <param name="modificar">Valor que le asignamos la ventana de modificar</param>
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)
         {
@@ -47,12 +59,22 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu de modificar de Empleados
+        /// </summary>
+        /// <param name="modificar">Valor que le asignamos la ventana de modificar</param>
+
         private void botonModificaciones_Emp(object sender, RoutedEventArgs e)
         {
             Modificación_Empleados modificar = new Modificación_Empleados();
             modificar.Show();
 
         }
+
+        /// <summary>
+        /// Este metodo te envian al menu de alta de Usuarios
+        /// </summary>
+        /// <param name="info">Valor que le asignamos la ventana de alta</param>
 
         private void botonAlta_Click(object sender, RoutedEventArgs e)
         {
@@ -62,6 +84,11 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu de alta de Empleados
+        /// </summary>
+        /// <param name="info">Valor que le asignamos la ventana de alta</param>
+        /// 
         private void botonAlta_Emp(object sender, RoutedEventArgs e)
         {
             Window3 info = new Window3();
@@ -70,12 +97,22 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu de Baja de Usuarios
+        /// </summary>
+        /// <param name="info">Valor que le asignamos la ventana de baja</param>
+
         private void botonBaja_Click(object sender, RoutedEventArgs e)
         {
             Baja info = new Baja();
 
             info.Show();
         }
+
+        /// <summary>
+        /// Este metodo te envian al menu de Baja de Empleados
+        /// </summary>
+        /// <param name="info">Valor que le asignamos la ventana de baja</param>
 
         private void botonBaja_Emp(object sender, RoutedEventArgs e)
         {
@@ -84,12 +121,22 @@ namespace TeleDASis
             info.Show();
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu de Consuktas de Usuarios
+        /// </summary>
+        /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
+
         private void botonConsultas_Click(object sender, RoutedEventArgs e)
         {
             ConsultasUsuarios consultas = new ConsultasUsuarios();
 
             consultas.Show();
         }
+
+        /// <summary>
+        /// Este metodo te envian al menu de Consuktas de Empleados
+        /// </summary>
+        /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
 
         private void botonConsultas_Emp(object sender, RoutedEventArgs e)
         {
