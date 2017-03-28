@@ -706,7 +706,7 @@ namespace TeleDASis
             try
             {
 
-                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuario";
+                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuarios";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@telefono", llamada.telefonoUsuario);
                 cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
