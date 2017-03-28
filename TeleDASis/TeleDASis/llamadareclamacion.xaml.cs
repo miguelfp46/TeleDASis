@@ -113,6 +113,8 @@ namespace TeleDASis
                 if (resultado == MessageBoxResult.Yes)
                 {
                     databaseConnector.instance.insertCall(llamada);
+                    llamada = databaseConnector.instance.recuperaridLlamada(llamada);
+                    System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
                 }
 
                 if (llamada.tipoLlamada == 6)

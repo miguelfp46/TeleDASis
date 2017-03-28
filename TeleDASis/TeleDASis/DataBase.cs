@@ -699,6 +699,38 @@ namespace TeleDASis
                 return false;
             }
         }
+
+        public Llamadas recuperaridLlamada(Llamadas llamada)
+        {
+            
+            try
+            {
+
+                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuarios";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@telefono", llamada.telefonoUsuario);
+                cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
+                cmd.Parameters.AddWithValue("@solucion", llamada.solucion);
+                cmd.Parameters.AddWithValue("@usuarios_idUsuario", llamada.usuarios_idUsuario);
+
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    llamada.idLlamadas = Convert.ToInt32(reader["idLlamadas"]);
+                }
+
+                reader.Close();
+                return llamada;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return llamada;
+            }
+        }
         //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
         //{
 
