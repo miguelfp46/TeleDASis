@@ -30,14 +30,7 @@ namespace TeleDASis
 
             info.Show();
         }
-
-        private void btn_Agenda_Click(object sender, RoutedEventArgs e)
-        {
-            formLlamadaAgenda info = new formLlamadaAgenda();
-
-            info.Show();
-        }
-
+        
        
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)
@@ -96,6 +89,13 @@ namespace TeleDASis
             Consultas_Empleado consultas = new Consultas_Empleado();
 
             consultas.Show();
+        }
+
+        private void btn_Rllamadas_Click(object sender, RoutedEventArgs e)
+        {
+            FormularioRLlamadas info = new FormularioRLlamadas();
+
+            info.Show();
         }
     }
 }

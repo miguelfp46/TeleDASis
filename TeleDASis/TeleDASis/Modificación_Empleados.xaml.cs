@@ -106,7 +106,7 @@ namespace TeleDASis
         {
             SoloLetras(e);
         }
-
+        //metodo guardar
         private void Guardar(object sender, RoutedEventArgs e)
         {
             emp.nombre = tbNombre.Text;
