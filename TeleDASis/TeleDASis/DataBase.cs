@@ -700,13 +700,13 @@ namespace TeleDASis
             }
         }
 
-        public Llamadas recuperaridLlamada(Llamadas llamada)
+        public int recuperaridLlamada(Llamadas llamada)
         {
             
             try
             {
 
-                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuarios";
+                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuario";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@telefono", llamada.telefonoUsuario);
                 cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
@@ -723,12 +723,12 @@ namespace TeleDASis
                 }
 
                 reader.Close();
-                return llamada;
+                return llamada.idLlamadas;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return llamada;
+                return llamada.idLlamadas;
             }
         }
         //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
