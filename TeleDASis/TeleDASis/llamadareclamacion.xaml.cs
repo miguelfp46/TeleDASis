@@ -49,6 +49,9 @@ namespace TeleDASis
             else
             {
                 llamada.usuarios_idUsuario = usuario.id;
+                llamada.descripcion = tbMotivo.Text;
+                llamada.solucion = tbSolucion.Text;
+                llamada.telefonoUsuario = usuario.telefono;
                 switch (cbTipoLlamada.Text)
                 {
                     case "Emergencia nivel 1":
@@ -59,32 +62,6 @@ namespace TeleDASis
                         break;
                     case "Emergencia nivel 3":
                         llamada.tipoLlamada = 3;
-                        if (cbAmbulancia.IsChecked == true)
-                        {
-                            servicio = new LlamadaServicio(llamada.idLlamadas, 2);
-                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
-                            serviciosList.Add(servicio);
-                        }
-                        if (cbBomberos.IsChecked == true)
-                        {
-                            servicio = new LlamadaServicio(llamada.idLlamadas, 3);
-                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
-                            serviciosList.Add(servicio);
-
-                        }
-                        if (cbPolicia.IsChecked == true)
-                        {
-                            servicio = new LlamadaServicio(llamada.idLlamadas, 1);
-                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
-                            serviciosList.Add(servicio);
-
-                        }
-                        if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
-                        {
-                            servicio = new LlamadaServicio(llamada.idLlamadas, 4);
-                            databaseConnector.instance.insertarServiciosEnLlamadas(servicio);
-                            serviciosList.Add(servicio);
-                        }
                         break;
                     case "Informativa":
                         llamada.tipoLlamada = 4;
@@ -100,10 +77,6 @@ namespace TeleDASis
                         llamada.tipoLlamada = 1;
                         break;
                 }
-                //llamada.telefonoUsuario = usuario.telefono;
-                llamada.descripcion = tbMotivo.Text;
-                llamada.solucion = tbSolucion.Text;
-                llamada.telefonoUsuario = usuario.telefono;
                 MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
                     ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
                     + "Teléfono: " + usuario.telefono + "\n"
@@ -117,6 +90,22 @@ namespace TeleDASis
                 }
                 llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
                 System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
+                if (cbAmbulancia.IsChecked == true)
+                {
+                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
+                }
+                if (cbBomberos.IsChecked == true)
+                {
+                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 3);
+                }
+                if (cbPolicia.IsChecked == true)
+                {
+                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 1);
+                }
+                if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
+                {
+                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 4);                  
+                }
                 if (llamada.tipoLlamada == 6)
                 {
                     //hay que mirar el id de llamadas haber como lo ponemos.
