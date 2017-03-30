@@ -19,12 +19,19 @@ namespace TeleDASis
     /// </summary>
     public partial class Eliminar_Empleados : Window
     {
+        /// <param name="emp">Valor que utilizaremos comom enlace al campo de empleados de la base de datos</param>
         Empleados emp = new Empleados();
 
         public Eliminar_Empleados()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Al hacer click en el boton aceptar este metodo se pone en funcionamiento. Antes de borrar te lanzara un mensaje de advertencia
+        /// </summary>
+        /// <param name="tbMotivo">Valor que le asignamos para obtener el motivo de la baja</param>
+        /// <param name="tbDni">Valor que le asignamos para obtener el dni del empleado a borrar</param>
 
         private void bAceptar_Click(object sender, RoutedEventArgs e)
         {
@@ -58,6 +65,14 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// Busca al empleado y te lo muesta si en DNI es correcto
+        /// </summary>
+        /// <param name="tbNombre">Valor que le asignamos para obtener el nombre del Empleado</param>
+        /// <param name="tbPrimerApellido">Valor que le asignamos para obtener el primer apellido del empleado</param>
+        /// <param name="tbSegundoApellido">Valor que le asignamos para obtener el segundo apellido del empleado</param>
+        /// <param name="tbDni">Valor que le asignamos para obtener el dni del empleado a borrar</param>
+
         public void buscarEmpPorDni(object sender, RoutedEventArgs e)
         {
             emp.dni = tbDni.Text;
@@ -75,10 +90,23 @@ namespace TeleDASis
             }
         }
 
+        /// <summary>
+        /// Este metodo cierra la ventana
+        /// </summary>
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Borrar al empleado seleccionado
+        /// </summary>
+        /// <param name="tbNombre">Valor que le asignamos para obtener el nombre del Empleado</param>
+        /// <param name="tbPrimerApellido">Valor que le asignamos para obtener el primer apellido del empleado</param>
+        /// <param name="tbSegundoApellido">Valor que le asignamos para obtener el segundo apellido del empleado</param>
+        /// <param name="tbMotivo">Valor que le asignamos para obtener el motivo de la baja</param>
+        /// <param name="tbEmpleado">Valor que le asignamos para obtener el id del empleado que ha tramitado la baja</param>
+        /// <param name="tbDni">Valor que le asignamos para obtener el dni del empleado a borrar</param>
 
         public void borrarValoresDeTextBox()
         {

@@ -19,6 +19,8 @@ namespace TeleDASis
     /// </summary>
     public partial class Baja : Window
     {
+
+        /// <param name="user">Valor que utilizaremos comom enlace al campo de usuarios de la base de datos</param>
         Usuario user = new Usuario();
         
         public Baja()
@@ -27,11 +29,19 @@ namespace TeleDASis
            
         }
 
+        /// <summary>
+        /// Este metodo cierra la ventana
+        /// </summary>
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Al hacer click en el boton aceptar este metodo se pone en funcionamiento. Antes de borrar te lanzara un mensaje de advertencia
+        /// </summary>
+        /// <param name="tbMotivo">Valor que le asignamos para obtener el motivo de la baja</param>
+        /// <param name="tbDni">Valor que le asignamos para obtener el dni del usuario a borrar</param>
         private void bAceptar_Click(object sender, RoutedEventArgs e)
         {
             user.motivodeBaja = tbMotivo.Text;
@@ -59,11 +69,25 @@ namespace TeleDASis
             }
             
         }
+
+        /// <summary>
+        /// Guarda a los empleados en un historico
+        /// </summary>
+        /// <param name="history">nos lleva a la ventana de historico</param>
+
         public void botonHistorico_Click(object sender, RoutedEventArgs e)
         {
             HistoricoBaja history = new HistoricoBaja();
              history.Show();
         }
+
+        /// <summary>
+        /// Busca al usuario y te lo muesta si en DNI es correcto
+        /// </summary>
+        /// <param name="tbNombre">Valor que le asignamos para obtener el nombre del usuario</param>
+        /// <param name="tbPrimerApellido">Valor que le asignamos para obtener el primer apellido del usuario</param>
+        /// <param name="tbSegundoApellido">Valor que le asignamos para obtener el segundo apellido del usuario</param>
+        /// <param name="tbDni">Valor que le asignamos para obtener el dni del usuario a borrar</param>
         public void buscarUsuarioPorDni(object sender, RoutedEventArgs e)
         {
             user.dni = tbDni.Text;
@@ -80,6 +104,16 @@ namespace TeleDASis
                 
             }
         }
+
+        /// <summary>
+        /// Borrar al usuario seleccionado
+        /// </summary>
+        /// <param name="tbNombre">Valor que le asignamos para obtener el nombre del usuario</param>
+        /// <param name="tbPrimerApellido">Valor que le asignamos para obtener el primer apellido del usuario</param>
+        /// <param name="tbSegundoApellido">Valor que le asignamos para obtener el segundo apellido del usuario</param>
+        /// <param name="tbMotivo">Valor que le asignamos para obtener el motivo de la baja</param>
+        /// <param name="tbEmpleado">Valor que le asignamos para obtener el id del empleado que ha tramitado la baja</param>
+        /// <param name="tbDni">Valor que le asignamos para obtener el dni del usuario a borrar</param>
         public void borrarValoresDeTextBox()
         {
             tbNombre.Text = "";
