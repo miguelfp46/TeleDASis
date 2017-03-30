@@ -110,6 +110,9 @@ namespace TeleDASis
                 {
                     //hay que mirar el id de llamadas haber como lo ponemos.
                     databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
+                } else if (llamada.tipoLlamada == 7)
+                {
+
                 }
             }
         }
