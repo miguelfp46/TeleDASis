@@ -122,7 +122,7 @@ namespace TeleDASis
         }
 
         /// <summary>
-        /// Este metodo te envian al menu de Consuktas de Usuarios
+        /// Este metodo te envian al menu de Consultas de Usuarios
         /// </summary>
         /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
 
@@ -134,7 +134,7 @@ namespace TeleDASis
         }
 
         /// <summary>
-        /// Este metodo te envian al menu de Consuktas de Empleados
+        /// Este metodo te envian al menu de Consultas de Empleados
         /// </summary>
         /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
 
@@ -145,6 +145,10 @@ namespace TeleDASis
             consultas.Show();
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu el cual te da a elegir 'registro de llamadas' y 'agenda'
+        /// </summary>
+        /// <param name="consultas">Valor que le asignamos la ventana </param>
 
         private void btn_Rllamadas_Click(object sender, RoutedEventArgs e)
         {
