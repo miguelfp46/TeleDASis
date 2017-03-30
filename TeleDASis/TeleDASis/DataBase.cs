@@ -548,6 +548,25 @@ namespace TeleDASis
                 return false;
             }
         }
+        public bool showLlamadas(DataGrid dataGrid, Llamadas lla)
+        {
+            try
+            {
+                string sql = "SELECT usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.idLlamadas, llamadas.fechaYHora, llamadas.descripcion, llamadas.solucion FROM usuarios, agenda, llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGrid.DataContext = dt;
+                return true;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
 
         public DataGrid showPhoneNumber(DataGrid dataGrid, Usuario user)
         {

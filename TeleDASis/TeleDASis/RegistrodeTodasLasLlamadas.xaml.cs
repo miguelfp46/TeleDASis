@@ -19,6 +19,7 @@ namespace TeleDASis
     /// </summary>
     public partial class RegistrodeTodasLasLlamadas : Window
     {
+        Llamadas lla = new Llamadas();
         System.Windows.Controls.DataGrid dataGridTable;
 
         public RegistrodeTodasLasLlamadas()
@@ -26,7 +27,7 @@ namespace TeleDASis
             InitializeComponent();
             dataGridTable = dataGrid;
 
-           // databaseConnector.instance.showLLamadas();
+           databaseConnector.instance.showLlamadas(dataGrid, lla);
         }
 
         private void btVolver_Click(object sender, RoutedEventArgs e)
