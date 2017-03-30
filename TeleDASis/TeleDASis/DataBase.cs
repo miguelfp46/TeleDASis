@@ -532,7 +532,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.idLlamadas, agenda.fechaAgenda, llamadas.descripcion FROM usuarios,agenda,llamadas WHERE agenda.idusuarios = usuarios.idUsuario AND agenda.idusuarios = llamadas.usuarios_idUsuario AND llamadas.tipoLlamada = 6";
+                string sql = "SELECT agenda.idLlamadas, usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.fechaAgenda, llamadas.descripcion, llamadas.solucion FROM usuarios,agenda,llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario AND llamadas.tipoLlamada = 6";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                
                 
@@ -698,14 +698,14 @@ namespace TeleDASis
             }
         }
 
-        public bool insertarServiciosEnLlamadas(LlamadaServicio servicios)
+        public bool insertarServiciosEnLlamadas(Llamadas llamada, int servicio)
         {
             try
             {
                 string sql = "INSERT INTO llamadaServicios VALUES(@idLlamada,@idServicios)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@idLlamada", servicios.idLlamada);
-                cmd.Parameters.AddWithValue("@idServicios", servicios.idServicios);
+                cmd.Parameters.AddWithValue("@idLlamada", llamada.idLlamadas);
+                cmd.Parameters.AddWithValue("@idServicios", servicio);
                
 
                 Console.WriteLine(cmd.CommandText);
@@ -725,7 +725,7 @@ namespace TeleDASis
             try
             {
 
-                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuarios";
+                string sql = "SELECT * FROM llamadas WHERE telefonoUsuario = @telefono AND descripcion = @descripcion AND solucion = @solucion AND usuarios_idUsuario = @usuarios_idUsuario";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@telefono", llamada.telefonoUsuario);
                 cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);

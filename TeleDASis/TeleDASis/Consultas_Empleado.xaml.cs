@@ -46,9 +46,17 @@ namespace TeleDASis
 
         }
         /// <summary>
-        /// Este metodo te envian al menu de Consuktas de Empleados
+        /// Busca al empleado y te lo muesta si en DNI es correcto
         /// </summary>
-        /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
+        /// <param name="nombre">Valor que le asignamos para obtener el nombre del empleado</param>
+        /// <param name="primerApellido">Valor que le asignamos para obtener el primer apellido del empleado</param>
+        /// <param name="segundoApellido">Valor que le asignamos para obtener el segundo apellido del empleado</param>
+        /// <param name="tlfmovil">Valor que le asignamos para obtener el movil del empleado</param>
+        /// <param name="telefono">Valor que le asignamos para obtener el telefono del empleado</param>
+        /// <param name="dni">Valor que le asignamos para obtener el dni del empleado</param>
+        /// <param name="password">Valor que le asignamos para obtener el password del empleado</param>
+        /// <param name="nombreUsuario">Valor que le asignamos para obtener el nombre de usuario del empleado</param>
+
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             user.nombre = txtNombre.Text;
@@ -65,9 +73,9 @@ namespace TeleDASis
         }
 
         /// <summary>
-        /// Este metodo te envian al menu de Consuktas de Empleados
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir letas
         /// </summary>
-        /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
         public void SoloLetras(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
