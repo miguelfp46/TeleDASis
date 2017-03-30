@@ -19,13 +19,23 @@ namespace TeleDASis
     /// </summary>
     public partial class Consultas_Empleado : Window
     {
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="user">Valor que utilizaremos comom enlace al campo de empleados de la base de datos</param>
         Empleados user = new Empleados();
+
         System.Windows.Controls.DataGrid dataGridTable;
+
         public Consultas_Empleado()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Este metodo cierra la ventana
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -35,7 +45,10 @@ namespace TeleDASis
         {
 
         }
-
+        /// <summary>
+        /// Este metodo te envian al menu de Consuktas de Empleados
+        /// </summary>
+        /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             user.nombre = txtNombre.Text;
@@ -51,6 +64,10 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// Este metodo te envian al menu de Consuktas de Empleados
+        /// </summary>
+        /// <param name="consultas">Valor que le asignamos la ventana de consultas</param>
         public void SoloLetras(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
