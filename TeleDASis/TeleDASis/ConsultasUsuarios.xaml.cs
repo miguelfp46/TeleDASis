@@ -48,7 +48,7 @@ namespace TeleDASis
         /// <param name="dni">Valor que le asignamos para obtener el dni del usuario</param>
         /// <param name="poblacion">Valor que le asignamos para obtener la poblacion del usuario</param>
         /// <param name="direccion">Valor que le asignamos para obtener la direccion del usuario </param>
-        /// /// <param name="puerta">Valor que le asignamos para obtener la puerta del usuario</param>
+        ///  <param name="puerta">Valor que le asignamos para obtener la puerta del usuario</param>
         /// 
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
