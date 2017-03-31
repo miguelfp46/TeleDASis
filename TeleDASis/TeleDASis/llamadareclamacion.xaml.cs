@@ -89,7 +89,7 @@ namespace TeleDASis
                     
                 }
                 llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
-                System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
+                //System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
                 if (cbAmbulancia.IsChecked == true)
                 {
                     databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
