@@ -426,7 +426,7 @@ namespace TeleDASis
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     usuario.dni = Convert.ToString(reader["dni"]);
-                    usuario.id = Convert.ToInt32(reader["idUsuario"]);
+                    usuario.id = Convert.ToInt32(reader["idUsuario"]);               
                 }
 
                 reader.Close();
