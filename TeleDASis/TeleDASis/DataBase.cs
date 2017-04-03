@@ -776,7 +776,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "DELETE FROM agenda WHERE idLlamadas = @idLlamadas AND ";
+                string sql = "DELETE FROM agenda WHERE idLlamadas = @idLlamadas ";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@id", llamada.idLlamadas);
