@@ -30,9 +30,24 @@ namespace TeleDASis
             InitializeComponent();
 
             //Fecha.SelectedDate = DateTime.Today;
-            //Hora.SelectedDateFormat = DatePickerFormat.Short;
-           
-          
+            //Hora.SelectedDateFormat = DatePickerFormat.Short;   
+        }
+        public llamadareclamacion(string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion)
+        {
+            InitializeComponent();
+            this.llamada.telefonoUsuario = telefono;
+            this.usuario.nombre = nombre;
+            this.usuario.primerApellido = primerApellido;
+            this.usuario.segundoApellido = segundoApellido;
+            this.llamada.descripcion = motivo;
+            this.llamada.solucion = solucion;
+            tbTelefono.Text = llamada.telefonoUsuario;
+            tbNombre.Text = usuario.nombre;
+            tbPrimerApellido.Text = usuario.primerApellido;
+            tbSegundoApellido.Text = usuario.segundoApellido;
+            cbTipoLlamada.Text = "Llamada saliente";
+            tbMotivo.Text = llamada.descripcion;
+            tbSolucion.Text = llamada.solucion;
         }
 
         private void button1_Click_1(object sender, RoutedEventArgs e)
