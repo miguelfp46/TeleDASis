@@ -98,6 +98,7 @@ namespace TeleDASis
                 }
                 if (llamada.tipoLlamada == 7) {
                     databaseConnector.instance.siEsLlamadaSalienteAñadeEnLlamadas(llamada);
+                    databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(llamada);
                 }
                 else {
                     MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
