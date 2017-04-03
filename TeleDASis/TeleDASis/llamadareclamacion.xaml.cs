@@ -103,11 +103,19 @@ namespace TeleDASis
                         break;
                 }
                 if (llamada.tipoLlamada == 7) {
-                    databaseConnector.instance.insertCall(llamada);
-                    llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
-                    agenda.idLlamada = llamada.idLlamadas;
-                    databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(agenda);
-                    
+                    MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desear llamar a" + usuario.nombre + " " + usuario.primerApellido + "?", "Llamar a usuario",MessageBoxButton.YesNo,MessageBoxImage.Information);
+                    if(resultado == MessageBoxResult.Yes)
+                    {
+                        MessageBoxResult resultado2 = System.Windows.MessageBox.Show("Llamando...", "Llamar a usuario", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
+                        databaseConnector.instance.insertCall(llamada);
+                        agenda.idLlamada = llamada.idLlamadas;
+                        databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(agenda);
+                        if(resultado2 == MessageBoxResult.OK)
+                        {
+                            this.Close();
+                        }
+                    }          
                 }
                 else {
                     MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +

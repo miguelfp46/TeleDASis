@@ -27,19 +27,12 @@ namespace TeleDASis
         {
             InitializeComponent();
             dataGridTable = dtGAgenda;
-
-            databaseConnector.instance.showAgendaTable(dtGAgenda,ag);
-            
-        }
-
-        
-
+            databaseConnector.instance.showAgendaTable(dtGAgenda,ag);            
+        }       
         private void button1_Click_1(object sender, RoutedEventArgs e)
         {
-
             this.Close();
         }
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
