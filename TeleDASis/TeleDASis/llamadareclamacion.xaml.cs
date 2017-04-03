@@ -32,17 +32,21 @@ namespace TeleDASis
             //Fecha.SelectedDate = DateTime.Today;
             //Hora.SelectedDateFormat = DatePickerFormat.Short;   
         }
-        public llamadareclamacion(string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion)
+        public llamadareclamacion(string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion, DateTime fecha)
         {
             InitializeComponent();
             this.llamada.telefonoUsuario = telefono;
+            this.usuario.dni = DNI;
             this.usuario.nombre = nombre;
             this.usuario.primerApellido = primerApellido;
             this.usuario.segundoApellido = segundoApellido;
             this.llamada.descripcion = motivo;
             this.llamada.solucion = solucion;
+            this.llamada.fechayHora = fecha;
+            dpDate.Text = fecha.ToString();
             tbTelefono.Text = llamada.telefonoUsuario;
             tbNombre.Text = usuario.nombre;
+            tbDNI.Text = usuario.dni;
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             cbTipoLlamada.Text = "Llamada saliente";

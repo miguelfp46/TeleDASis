@@ -68,10 +68,11 @@ namespace TeleDASis
             usuario.primerApellido = (dtGAgenda.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
             usuario.segundoApellido = (dtGAgenda.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
             llamada.telefonoUsuario = (dtGAgenda.SelectedCells[5].Column.GetCellContent(item) as TextBlock).Text;
+            llamada.fechayHora = DateTime.Parse((dtGAgenda.SelectedCells[6].Column.GetCellContent(item) as TextBlock).Text);
             llamada.descripcion = (dtGAgenda.SelectedCells[7].Column.GetCellContent(item) as TextBlock).Text;
             llamada.solucion = (dtGAgenda.SelectedCells[8].Column.GetCellContent(item) as TextBlock).Text;
             llamadareclamacion llamadareclamacion = new llamadareclamacion(llamada.telefonoUsuario, usuario.nombre, usuario.primerApellido
-                , usuario.segundoApellido, usuario.dni, llamada.descripcion, llamada.solucion);
+                , usuario.segundoApellido, usuario.dni, llamada.descripcion, llamada.solucion, llamada.fechayHora);
             llamadareclamacion.Show();
         }
     }
