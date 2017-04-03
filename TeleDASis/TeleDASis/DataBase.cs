@@ -750,12 +750,33 @@ namespace TeleDASis
                 return llamada.idLlamadas;
             }
         }
+        public bool siEsLlamadaSalienteAñadeEnLlamadas(Llamadas llamada)
+        {
+            try
+            {
+                string sql = "INSERT INTO llamadas (tipoLlamada, usuarios_idUsuario, telefonoUsuario, descripcion, solucion) VALUES (@tipoLlamada, @usuarios_idUsuario, @telefonoUsuario, @descripcion, @solucion)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@tipoLlamada", llamada.tipoLlamada);
+                cmd.Parameters.AddWithValue("@usuarios_idUsuario", llamada.usuarios_idUsuario);
+                cmd.Parameters.AddWithValue("@telefonoUsuario", llamada.telefonoUsuario);
+                cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
+                cmd.Parameters.AddWithValue("@solucion", llamada.solucion);
 
+                if (cmd.ExecuteNonQuery() >= 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+            return false;
+        }
         public bool siEsLlamadaSalienteEliminaDeAgenda(Llamadas llamada)
         {
             try
             {
-                string sql = "DELETE FROM agenda WHERE idLlamadas IN (SELECT idUsuario FROM usuarios WHERE user_connected = 0) and room_target_user_id in (select user_id from users where user_connected = 0";
+                string sql = "DELETE FROM agenda WHERE idLlamadas = @idLlamadas AND ";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@id", llamada.idLlamadas);

@@ -59,7 +59,7 @@ namespace TeleDASis
         {
             if (string.IsNullOrEmpty(tbTelefono.Text) || string.IsNullOrEmpty(tbSolucion.Text) || string.IsNullOrEmpty(tbMotivo.Text))
             {
-                System.Windows.MessageBox.Show("Debes rellenar todos los campos","Campos vacíos",MessageBoxButton.OK,MessageBoxImage.Information);
+                System.Windows.MessageBox.Show("Debes rellenar todos los campos", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
@@ -89,48 +89,49 @@ namespace TeleDASis
                         llamada.fechayHora = DateTime.Parse(dpDate.Text);
                         break;
                     case "Llamada saliente":
-                        llamada.tipoLlamada = 1;
+                        llamada.tipoLlamada = 7;
                         break;
                 }
-                MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
-                    ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
-                    + "Teléfono: " + usuario.telefono + "\n"
-                    + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
-                    + "Motivo de llamada: " + llamada.descripcion + "\n"
-                    + "Solución: " + llamada.solucion, "Comprobar datos", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (resultado == MessageBoxResult.Yes)
-                {
-                    databaseConnector.instance.insertCall(llamada);
-                    
+                if (llamada.tipoLlamada == 7) {
+                    databaseConnector.instance.siEsLlamadaSalienteAñadeEnLlamadas(llamada);
                 }
-                llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
-                //System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
-                if (cbAmbulancia.IsChecked == true)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
-                }
-                if (cbBomberos.IsChecked == true)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 3);
-                }
-                if (cbPolicia.IsChecked == true)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 1);
-                }
-                if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 4);                  
-                }
-                if (llamada.tipoLlamada == 6)
-                {
-                    //hay que mirar el id de llamadas haber como lo ponemos.
-                    databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
-                } else if (llamada.tipoLlamada == 7)
-                {
+                else {
+                    MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
+                        ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
+                        + "Teléfono: " + usuario.telefono + "\n"
+                        + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
+                        + "Motivo de llamada: " + llamada.descripcion + "\n"
+                        + "Solución: " + llamada.solucion, "Comprobar datos", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        databaseConnector.instance.insertCall(llamada);
 
+                    }
+                    llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
+                    //System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
+                    if (cbAmbulancia.IsChecked == true)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
+                    }
+                    if (cbBomberos.IsChecked == true)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 3);
+                    }
+                    if (cbPolicia.IsChecked == true)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 1);
+                    }
+                    if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 4);
+                    }
+                    if (llamada.tipoLlamada == 6)
+                    {
+                        //hay que mirar el id de llamadas haber como lo ponemos.
+                        databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
+                    }
                 }
-            }
-        }
+            } }
 
         public void SoloNumeros(TextCompositionEventArgs e)
         {
