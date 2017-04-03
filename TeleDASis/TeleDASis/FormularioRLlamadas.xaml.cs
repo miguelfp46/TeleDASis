@@ -23,13 +23,21 @@ namespace TeleDASis
         {
             InitializeComponent();
         }
-        
+
+        /// <summary>
+        /// Abre el registro de llamadas
+        /// </summary>
+        /// <param name="rllamadas">variable que utilizamos para enlazar las ventanas</param>
         private void btRegistroLlamadas_Click(object sender, RoutedEventArgs e)
         {
             RegistrodeTodasLasLlamadas rllamadas = new RegistrodeTodasLasLlamadas();
             rllamadas.Show();
         }
 
+        /// <summary>
+        /// Abre el registro de llamadas de Agenda
+        /// </summary>
+        /// <param name="info">variable que utilizamos para enlazar las ventanas</param>
         private void btAgenda_Click(object sender, RoutedEventArgs e)
         {
             formLlamadaAgenda info = new formLlamadaAgenda();
@@ -37,6 +45,10 @@ namespace TeleDASis
             info.Show();
         }
 
+        /// <summary>
+        /// Cierra la ventana
+        /// </summary>
+        
         private void btVolver_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
