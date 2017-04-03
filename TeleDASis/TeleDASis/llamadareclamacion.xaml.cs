@@ -89,7 +89,7 @@ namespace TeleDASis
                     
                 }
                 llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
-                System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
+                //System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
                 if (cbAmbulancia.IsChecked == true)
                 {
                     databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
@@ -110,6 +110,9 @@ namespace TeleDASis
                 {
                     //hay que mirar el id de llamadas haber como lo ponemos.
                     databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
+                } else if (llamada.tipoLlamada == 7)
+                {
+
                 }
             }
         }

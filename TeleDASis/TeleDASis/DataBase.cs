@@ -552,7 +552,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT * FROM  llamadas ";
+                string sql = "SELECT usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, llamadas.fechaYHora, llamadas.descripcion, llamadas.solucion FROM usuarios, llamadas WHERE usuarios.idUsuario = llamadas.usuarios_idUsuario";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
 
                 cmd.ExecuteNonQuery();
@@ -750,6 +750,29 @@ namespace TeleDASis
                 return llamada.idLlamadas;
             }
         }
+
+        public bool siEsLlamadaSalienteEliminaDeAgenda(Llamadas llamada)
+        {
+            try
+            {
+                string sql = "DELETE FROM agenda WHERE ";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                Console.WriteLine(cmd.CommandText);
+                cmd.Parameters.AddWithValue("@id", llamada.idLlamadas);
+
+                if (cmd.ExecuteNonQuery() >= 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+            return false;
+        }
+
+
+
         //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
         //{
 
@@ -775,4 +798,4 @@ namespace TeleDASis
         //    }
         //}
     }
-    }
+}

@@ -20,9 +20,7 @@ namespace TeleDASis
     public partial class Consultas_Empleado : Window
     {
 
-        /// <summary>
-        ///
-        /// </summary>
+    
         /// <param name="user">Valor que utilizaremos comom enlace al campo de empleados de la base de datos</param>
         Empleados user = new Empleados();
 

@@ -25,6 +25,17 @@ namespace TeleDASis
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Este metodo dara de alta a los empleados
+        /// </summary>
+        /// <param name="nombre">Valor que le asignamos para obtener el nombre del empleado</param>
+        /// <param name="primerApellido">Valor que le asignamos para obtener el primer apellido del empleado</param>
+        /// <param name="segundoApellido">Valor que le asignamos para obtener el segundo apellido del empleado</param>
+        /// <param name="tlfmovil">Valor que le asignamos para obtener el movil del empleado</param>
+        /// <param name="telefono">Valor que le asignamos para obtener el telefono del empleado</param>
+        /// <param name="dni">Valor que le asignamos para obtener el dni del empleado</param>
+        /// <param name="nombreUsuario">Valor que le asignamos para obtener el nombre de usuario del empleado</param>
+        /// <param name="password">Valor que le asignamos para obtener la pasword del empleado</param>
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
             emp.nombre = tbNombre.Text;
@@ -65,6 +76,9 @@ namespace TeleDASis
             }
         }
 
+        /// <summary>
+        /// Este metodo te muestra la fecha actual
+        /// </summary>
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             var picker = sender as DatePicker;
@@ -80,6 +94,9 @@ namespace TeleDASis
             }
         }
 
+        /// <summary>
+        /// Al hacer click en el boton CANCELAR te saltara un aviso antes de poder cerrar la ventana
+        /// </summary>
         private void btCancel_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Estas seguro que quieres cancelar esta operación?", "Alta",
@@ -87,7 +104,13 @@ namespace TeleDASis
 
             this.Close();
         }
-        //metodo para añadir solo numeros
+
+        /// <summary>
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir numeros
+        /// </summary>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
+
+       
         public void SoloNumeros(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
@@ -101,6 +124,11 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
+        /// <summary>
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir letas
+        /// </summary>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
+
         public void SoloLetras(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
@@ -114,5 +142,7 @@ namespace TeleDASis
         {
             SoloLetras(e);
         }
+
+
     }
 }
