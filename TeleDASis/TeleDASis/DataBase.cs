@@ -426,7 +426,7 @@ namespace TeleDASis
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     usuario.dni = Convert.ToString(reader["dni"]);
-                    usuario.id = Convert.ToInt32(reader["idUsuario"]);
+                    usuario.id = Convert.ToInt32(reader["idUsuario"]);               
                 }
 
                 reader.Close();
@@ -532,7 +532,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT agenda.idLlamadas, usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.fechaAgenda, llamadas.descripcion, llamadas.solucion FROM usuarios,agenda,llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario AND llamadas.tipoLlamada = 6";
+                string sql = "SELECT agenda.idLlamadas, usuarios.dni, usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido,usuarios.telefono, agenda.fechaAgenda, llamadas.descripcion, llamadas.solucion FROM usuarios,agenda,llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario AND llamadas.tipoLlamada = 6";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                
                 
@@ -750,15 +750,36 @@ namespace TeleDASis
                 return llamada.idLlamadas;
             }
         }
-
-        public bool siEsLlamadaSalienteEliminaDeAgenda(Llamadas llamada)
+        public bool siEsLlamadaSalienteAñadeEnLlamadas(Llamadas llamada)
         {
             try
             {
-                string sql = "DELETE FROM agenda WHERE ";
+                string sql = "INSERT INTO llamadas (tipoLlamada, usuarios_idUsuario, telefonoUsuario, descripcion, solucion) VALUES (@tipoLlamada, @usuarios_idUsuario, @telefonoUsuario, @descripcion, @solucion)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@tipoLlamada", llamada.tipoLlamada);
+                cmd.Parameters.AddWithValue("@usuarios_idUsuario", llamada.usuarios_idUsuario);
+                cmd.Parameters.AddWithValue("@telefonoUsuario", llamada.telefonoUsuario);
+                cmd.Parameters.AddWithValue("@descripcion", llamada.descripcion);
+                cmd.Parameters.AddWithValue("@solucion", llamada.solucion);
+
+                if (cmd.ExecuteNonQuery() >= 1)
+                    return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+            return false;
+        }
+        public bool siEsLlamadaSalienteEliminaDeAgenda(Agenda llamada)
+        {
+            try
+            {
+                string sql = "DELETE FROM agenda WHERE idLlamadas = @id";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
-                cmd.Parameters.AddWithValue("@id", llamada.idLlamadas);
+                cmd.Parameters.AddWithValue("@id", llamada.idLlamada);
 
                 if (cmd.ExecuteNonQuery() >= 1)
                     return true;

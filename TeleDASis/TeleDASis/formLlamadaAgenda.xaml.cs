@@ -20,6 +20,8 @@ namespace TeleDASis
     public partial class formLlamadaAgenda : Window
     {
         Agenda ag = new Agenda();
+        Llamadas llamada = new Llamadas();
+        Usuario usuario = new Usuario();
         System.Windows.Controls.DataGrid dataGridTable;
         public formLlamadaAgenda()
         {
@@ -56,10 +58,22 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
+        
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            object item = dtGAgenda.SelectedItem;
+            usuario.dni = (dtGAgenda.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+            usuario.nombre = (dtGAgenda.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            usuario.primerApellido = (dtGAgenda.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
+            usuario.segundoApellido = (dtGAgenda.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
+            llamada.telefonoUsuario = (dtGAgenda.SelectedCells[5].Column.GetCellContent(item) as TextBlock).Text;
+            llamada.fechayHora = DateTime.Parse((dtGAgenda.SelectedCells[6].Column.GetCellContent(item) as TextBlock).Text);
+            llamada.descripcion = (dtGAgenda.SelectedCells[7].Column.GetCellContent(item) as TextBlock).Text;
+            llamada.solucion = (dtGAgenda.SelectedCells[8].Column.GetCellContent(item) as TextBlock).Text;
+            llamadareclamacion llamadareclamacion = new llamadareclamacion(llamada.telefonoUsuario, usuario.nombre, usuario.primerApellido
+                , usuario.segundoApellido, usuario.dni, llamada.descripcion, llamada.solucion, llamada.fechayHora);
+            llamadareclamacion.Show();
         }
     }
 }

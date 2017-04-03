@@ -22,6 +22,7 @@ namespace TeleDASis
     {
         Llamadas llamada = new Llamadas();
         Usuario usuario = new Usuario();
+        Agenda agenda = new Agenda();
         List<LlamadaServicio> serviciosList = new List<LlamadaServicio>();
         LlamadaServicio servicio;
 
@@ -30,9 +31,32 @@ namespace TeleDASis
             InitializeComponent();
 
             //Fecha.SelectedDate = DateTime.Today;
-            //Hora.SelectedDateFormat = DatePickerFormat.Short;
-           
-          
+            //Hora.SelectedDateFormat = DatePickerFormat.Short;   
+        }
+        public llamadareclamacion(string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion, DateTime fecha)
+        {
+            InitializeComponent();
+            this.llamada.telefonoUsuario = telefono;
+            this.usuario.dni = DNI;
+            this.usuario.nombre = nombre;
+            this.usuario.primerApellido = primerApellido;
+            this.usuario.segundoApellido = segundoApellido;
+            this.llamada.descripcion = motivo;
+            this.llamada.solucion = solucion;
+            this.llamada.fechayHora = fecha;
+            dpDate.Text = fecha.ToString();
+            tbTelefono.Text = llamada.telefonoUsuario;
+            tbNombre.Text = usuario.nombre;
+            tbDNI.Text = usuario.dni;
+            tbPrimerApellido.Text = usuario.primerApellido;
+            tbSegundoApellido.Text = usuario.segundoApellido;
+            cbTipoLlamada.Text = "Llamada saliente";
+            tbMotivo.Text = llamada.descripcion;
+            tbSolucion.Text = llamada.solucion;
+            usuario.telefono = llamada.telefonoUsuario;
+            usuario = databaseConnector.instance.searchUserByPhone(usuario);
+            usuario.telefono = llamada.telefonoUsuario;
+
         }
 
         private void button1_Click_1(object sender, RoutedEventArgs e)
@@ -44,10 +68,11 @@ namespace TeleDASis
         {
             if (string.IsNullOrEmpty(tbTelefono.Text) || string.IsNullOrEmpty(tbSolucion.Text) || string.IsNullOrEmpty(tbMotivo.Text))
             {
-                System.Windows.MessageBox.Show("Debes rellenar todos los campos","Campos vacíos",MessageBoxButton.OK,MessageBoxImage.Information);
+                System.Windows.MessageBox.Show("Debes rellenar todos los campos", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
+                
                 llamada.usuarios_idUsuario = usuario.id;
                 llamada.descripcion = tbMotivo.Text;
                 llamada.solucion = tbSolucion.Text;
@@ -74,48 +99,53 @@ namespace TeleDASis
                         llamada.fechayHora = DateTime.Parse(dpDate.Text);
                         break;
                     case "Llamada saliente":
-                        llamada.tipoLlamada = 1;
+                        llamada.tipoLlamada = 7;
                         break;
                 }
-                MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
-                    ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
-                    + "Teléfono: " + usuario.telefono + "\n"
-                    + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
-                    + "Motivo de llamada: " + llamada.descripcion + "\n"
-                    + "Solución: " + llamada.solucion, "Comprobar datos", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (resultado == MessageBoxResult.Yes)
-                {
+                if (llamada.tipoLlamada == 7) {
                     databaseConnector.instance.insertCall(llamada);
+                    llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
+                    agenda.idLlamada = llamada.idLlamadas;
+                    databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(agenda);
                     
                 }
-                llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
-                //System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
-                if (cbAmbulancia.IsChecked == true)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
-                }
-                if (cbBomberos.IsChecked == true)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 3);
-                }
-                if (cbPolicia.IsChecked == true)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 1);
-                }
-                if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
-                {
-                    databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 4);                  
-                }
-                if (llamada.tipoLlamada == 6)
-                {
-                    //hay que mirar el id de llamadas haber como lo ponemos.
-                    databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
-                } else if (llamada.tipoLlamada == 7)
-                {
+                else {
+                    MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
+                        ":\nUsuario: " + usuario.nombre + " " + usuario.primerApellido + " " + usuario.segundoApellido + "\n"
+                        + "Teléfono: " + usuario.telefono + "\n"
+                        + "Tipo de llamada: " + cbTipoLlamada.Text + "\n"
+                        + "Motivo de llamada: " + llamada.descripcion + "\n"
+                        + "Solución: " + llamada.solucion, "Comprobar datos", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (resultado == MessageBoxResult.Yes)
+                    {
+                        databaseConnector.instance.insertCall(llamada);
 
+                    }
+                    llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
+                    //System.Windows.MessageBox.Show(Convert.ToString(llamada.idLlamadas));
+                    if (cbAmbulancia.IsChecked == true)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 2);
+                    }
+                    if (cbBomberos.IsChecked == true)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 3);
+                    }
+                    if (cbPolicia.IsChecked == true)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 1);
+                    }
+                    if (cbAmbulancia.IsChecked == false && cbBomberos.IsChecked == false && cbPolicia.IsChecked == false)
+                    {
+                        databaseConnector.instance.insertarServiciosEnLlamadas(llamada, 4);
+                    }
+                    if (llamada.tipoLlamada == 6)
+                    {
+                        //hay que mirar el id de llamadas haber como lo ponemos.
+                        databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
+                    }
                 }
-            }
-        }
+            } }
 
         public void SoloNumeros(TextCompositionEventArgs e)
         {
