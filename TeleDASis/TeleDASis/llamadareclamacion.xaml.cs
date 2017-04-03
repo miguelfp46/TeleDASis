@@ -104,6 +104,7 @@ namespace TeleDASis
                 if (llamada.tipoLlamada == 7) {
                     
                     databaseConnector.instance.insertCall(llamada);
+                    llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
                 }
                 else {
                     MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
