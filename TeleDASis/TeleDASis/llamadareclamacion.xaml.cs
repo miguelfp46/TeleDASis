@@ -54,6 +54,7 @@ namespace TeleDASis
             tbSolucion.Text = llamada.solucion;
             usuario.telefono = llamada.telefonoUsuario;
             usuario = databaseConnector.instance.searchUserByPhone(usuario);
+            usuario.telefono = llamada.telefonoUsuario;
 
         }
 
