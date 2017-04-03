@@ -52,6 +52,9 @@ namespace TeleDASis
             cbTipoLlamada.Text = "Llamada saliente";
             tbMotivo.Text = llamada.descripcion;
             tbSolucion.Text = llamada.solucion;
+            usuario.telefono = llamada.telefonoUsuario;
+            usuario = databaseConnector.instance.searchUserByPhone(usuario);
+
         }
 
         private void button1_Click_1(object sender, RoutedEventArgs e)
@@ -67,6 +70,7 @@ namespace TeleDASis
             }
             else
             {
+                
                 llamada.usuarios_idUsuario = usuario.id;
                 llamada.descripcion = tbMotivo.Text;
                 llamada.solucion = tbSolucion.Text;
@@ -97,8 +101,8 @@ namespace TeleDASis
                         break;
                 }
                 if (llamada.tipoLlamada == 7) {
-                    databaseConnector.instance.siEsLlamadaSalienteAñadeEnLlamadas(llamada);
-                    databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(llamada);
+                    
+                    databaseConnector.instance.insertCall(llamada);
                 }
                 else {
                     MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
