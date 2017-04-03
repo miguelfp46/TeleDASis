@@ -532,7 +532,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT agenda.idLlamadas, usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.fechaAgenda, llamadas.descripcion, llamadas.solucion FROM usuarios,agenda,llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario AND llamadas.tipoLlamada = 6";
+                string sql = "SELECT agenda.idLlamadas, usuarios.dni, usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido,usuarios.telefono, agenda.fechaAgenda, llamadas.descripcion, llamadas.solucion FROM usuarios,agenda,llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario AND llamadas.tipoLlamada = 6";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                
                 
