@@ -22,6 +22,7 @@ namespace TeleDASis
     {
         Llamadas llamada = new Llamadas();
         Usuario usuario = new Usuario();
+        Agenda agenda = new Agenda();
         List<LlamadaServicio> serviciosList = new List<LlamadaServicio>();
         LlamadaServicio servicio;
 
@@ -102,9 +103,11 @@ namespace TeleDASis
                         break;
                 }
                 if (llamada.tipoLlamada == 7) {
-                    
                     databaseConnector.instance.insertCall(llamada);
                     llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
+                    agenda.idLlamada = llamada.idLlamadas;
+                    databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(agenda);
+                    
                 }
                 else {
                     MessageBoxResult resultado = System.Windows.MessageBox.Show("Registrar llamada: " +
