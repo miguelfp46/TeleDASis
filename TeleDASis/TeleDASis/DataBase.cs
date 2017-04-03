@@ -552,7 +552,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido, agenda.idLlamadas, llamadas.fechaYHora, llamadas.descripcion, llamadas.solucion FROM usuarios, agenda, llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario";
+                string sql = "SELECT * FROM  llamadas ";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
 
                 cmd.ExecuteNonQuery();
