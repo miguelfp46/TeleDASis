@@ -772,14 +772,14 @@ namespace TeleDASis
             }
             return false;
         }
-        public bool siEsLlamadaSalienteEliminaDeAgenda(Llamadas llamada)
+        public bool siEsLlamadaSalienteEliminaDeAgenda(Agenda ag)
         {
             try
             {
                 string sql = "DELETE FROM agenda WHERE idLlamadas = @idLlamadas ";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
-                cmd.Parameters.AddWithValue("@id", llamada.idLlamadas);
+                cmd.Parameters.AddWithValue("@idLlamadas", ag.idLlamada);
 
                 if (cmd.ExecuteNonQuery() >= 1)
                     return true;
