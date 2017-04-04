@@ -39,6 +39,7 @@ namespace TeleDASis
                 MainWindows info = new MainWindows();
                 this.Hide();
                 info.Show();
+                this.Close();
             }
             else
             {
