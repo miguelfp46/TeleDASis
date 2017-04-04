@@ -32,9 +32,9 @@ namespace TeleDASis
         {
             string nombre = loginName.Text;
             string password = passwd.Password;
-           
 
-            if (nombre == emp.nombre && password == emp.password)
+
+            if (databaseConnector.instance.login(nombre, password)== 1)
             {
                 MainWindow info = new MainWindow();
                 this.Hide();
