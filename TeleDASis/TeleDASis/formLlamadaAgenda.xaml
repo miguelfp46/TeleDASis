@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Agenda" Height="508" Width="924" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Margin="1,4,2,0">
+        Title="Llamada Agenda" Height="492" Width="1164" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="1,4,-326,4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="9*" />
@@ -23,8 +23,8 @@
 
         </Grid.RowDefinitions>
         <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" >
-            <GroupBox x:Name="groupBox" Header="Agenda" Width="744" Margin="0,6,0,5" FontSize="14">
-                <DataGrid x:Name="dtGAgenda" Margin="2,24,-2,5" ItemsSource= "{Binding }" SelectionChanged="dataGrid_SelectionChanged"/>
+            <GroupBox x:Name="groupBox" Header="Agenda" Width="812" Margin="0,6,0,5" FontSize="14">
+                <DataGrid x:Name="dtGAgenda" Margin="2,24,-2,5" ItemsSource= "{Binding ''}" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged"/>
 
             </GroupBox>
         </StackPanel>
