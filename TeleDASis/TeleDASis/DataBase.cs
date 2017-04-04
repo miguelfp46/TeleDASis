@@ -807,13 +807,13 @@ namespace TeleDASis
                 {
                     if(reader.IsDBNull(0)== true)
                     {
-                        cmd.Connection.Close();
+                        
                         reader.Dispose();
                         cmd.Dispose();
                         return false;
                     }else
                     {
-                        cmd.Connection.Close();
+                        
                         reader.Dispose();
                         cmd.Dispose();
                         return true;
