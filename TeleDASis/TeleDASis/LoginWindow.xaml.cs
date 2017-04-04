@@ -34,9 +34,9 @@ namespace TeleDASis
             string password = passwd.Password;
 
 
-            if (databaseConnector.instance.login(nombre, password)== 1)
+            if (databaseConnector.instance.login(nombre, password)== true)
             {
-                MainWindow info = new MainWindow();
+                MainWindows info = new MainWindows();
 
                 info.Show();
             }
