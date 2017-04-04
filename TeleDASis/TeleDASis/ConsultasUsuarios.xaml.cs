@@ -16,7 +16,7 @@ namespace TeleDASis
         public ConsultasUsuarios()
         {
             InitializeComponent();
-            dataGridTable = dtGConsultas;
+            dataGridTable = dtGConsultass;
             databaseConnector.instance.showUserTable(dataGridTable, user);
 
         }
