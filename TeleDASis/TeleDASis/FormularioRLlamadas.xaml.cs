@@ -31,6 +31,7 @@ namespace TeleDASis
         private void btRegistroLlamadas_Click(object sender, RoutedEventArgs e)
         {
             RegistrodeTodasLasLlamadas rllamadas = new RegistrodeTodasLasLlamadas();
+            this.Hide();
             rllamadas.Show();
         }
 
@@ -41,7 +42,7 @@ namespace TeleDASis
         private void btAgenda_Click(object sender, RoutedEventArgs e)
         {
             formLlamadaAgenda info = new formLlamadaAgenda();
-
+            this.Hide();
             info.Show();
         }
 

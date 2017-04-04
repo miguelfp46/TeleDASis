@@ -14,14 +14,14 @@ namespace TeleDASis
         public string password { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
-        public int tlfmovil { get; set; }
-        public int telefono { get; set; }
+        public string tlfmovil { get; set; }
+        public string telefono { get; set; }
         public string dni { get; set; }
         public string fechaAlta { get; set; }
         public string fechaBaja { get; set; }
         public string motivodeBaja { get; set; }
 
-        public Empleados(string nombre, string nombreUsuario, string password, int movil, int telefono, string dni, string fechaDeAlta, string apellido, string apellido2)
+        public Empleados(string nombre, string nombreUsuario, string password, string movil, string telefono, string dni, string fechaDeAlta, string apellido, string apellido2)
         {
             this.nombre = nombre;
             this.nombreUsuario = nombreUsuario;

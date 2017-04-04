@@ -39,7 +39,7 @@ namespace TeleDASis
         private void btAccept_Click(object sender, RoutedEventArgs e)
         {
             emp.nombre = tbNombre.Text;
-            emp.tlfmovil = Convert.ToInt32(tbMovil.Text);
+            emp.tlfmovil = tbMovil.Text;
             emp.dni = tbDni.Text;
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;

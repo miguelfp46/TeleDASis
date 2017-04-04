@@ -29,6 +29,8 @@ namespace TeleDASis
         public Consultas_Empleado()
         {
             InitializeComponent();
+            dataGridTable = dtGConsultas;
+            databaseConnector.instance.showEmpTable(dataGridTable, user);
         }
 
         /// <summary>
@@ -59,9 +61,9 @@ namespace TeleDASis
         {
             user.nombre = txtNombre.Text;
             user.primerApellido = txtApellido1.Text;
-            user.segundoApellido = txtApellido2.Text;         
-            user.tlfmovil = Convert.ToInt32(txtMovil.Text);
-            user.telefono = Convert.ToInt32(txtTelefono.Text);     
+            user.segundoApellido = txtApellido2.Text;
+            user.tlfmovil = txtMovil.Text;
+            user.telefono = txtTelefono.Text;
             user.dni = txtDni.Text;
             user.password = txtPasswd.Password;
             user.nombreUsuario = txtUser.Text;
