@@ -32,7 +32,7 @@ namespace TeleDASis
         {
             string nombre = loginName.Text;
             string password = passwd.Password;
-            int intentos = 0;
+           
 
             if (nombre == emp.nombre && password == emp.password)
             {
@@ -47,9 +47,8 @@ namespace TeleDASis
                 
                     loginName.Text = "";
                     passwd.Password = "";
-                    intentos++;
+                   
                 }
             }
         }
     }
-}
