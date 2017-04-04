@@ -33,9 +33,10 @@ namespace TeleDASis
             //Fecha.SelectedDate = DateTime.Today;
             //Hora.SelectedDateFormat = DatePickerFormat.Short;   
         }
-        public llamadareclamacion(string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion, DateTime fecha)
+        public llamadareclamacion(int idLlamada, string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion)
         {
             InitializeComponent();
+            this.llamada.idLlamadas = idLlamada;
             this.llamada.telefonoUsuario = telefono;
             this.usuario.dni = DNI;
             this.usuario.nombre = nombre;
@@ -43,8 +44,6 @@ namespace TeleDASis
             this.usuario.segundoApellido = segundoApellido;
             this.llamada.descripcion = motivo;
             this.llamada.solucion = solucion;
-            this.llamada.fechayHora = fecha;
-            dpDate.Text = fecha.ToString();
             tbTelefono.Text = llamada.telefonoUsuario;
             tbNombre.Text = usuario.nombre;
             tbDNI.Text = usuario.dni;
@@ -102,18 +101,23 @@ namespace TeleDASis
                         llamada.tipoLlamada = 7;
                         break;
                 }
+                
                 if (llamada.tipoLlamada == 7) {
-                    MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desear llamar a" + usuario.nombre + " " + usuario.primerApellido + "?", "Llamar a usuario",MessageBoxButton.YesNo,MessageBoxImage.Information);
+                    
+                    MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desear llamar a " + usuario.nombre + " " + usuario.primerApellido + "?", "Llamar a usuario",MessageBoxButton.YesNo,MessageBoxImage.Information);
                     if(resultado == MessageBoxResult.Yes)
                     {
-                        MessageBoxResult resultado2 = System.Windows.MessageBox.Show("Llamando...", "Llamar a usuario", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                        llamada.idLlamadas = databaseConnector.instance.recuperaridLlamada(llamada);
                         databaseConnector.instance.insertCall(llamada);
+                        
                         agenda.idLlamada = llamada.idLlamadas;
                         databaseConnector.instance.siEsLlamadaSalienteEliminaDeAgenda(agenda);
+                        MessageBoxResult resultado2 = System.Windows.MessageBox.Show("Llamando...", "Llamar a usuario", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        
                         if(resultado2 == MessageBoxResult.OK)
                         {
                             this.Close();
+                            formLlamadaAgenda agenda = new formLlamadaAgenda();
+                            agenda.Show();
                         }
                     }          
                 }
@@ -152,6 +156,7 @@ namespace TeleDASis
                         //hay que mirar el id de llamadas haber como lo ponemos.
                         databaseConnector.instance.siEsLlamadaAgendaInsertaFechaEnAgenda(llamada);
                     }
+                    this.Close();
                 }
             } }
 
