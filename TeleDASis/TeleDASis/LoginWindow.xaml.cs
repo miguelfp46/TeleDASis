@@ -37,7 +37,7 @@ namespace TeleDASis
             if (nombre == emp.nombre && password == emp.password)
             {
                 MainWindow info = new MainWindow();
-
+                this.Hide();
                 info.Show();
             }
             else
