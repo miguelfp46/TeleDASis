@@ -792,25 +792,25 @@ namespace TeleDASis
             return false;
         }
 
-        public bool login(string passwd, string nombreUsuario)
+        public int login(string nombreUsuario,string passwd)
         {
             try
             {
-                string sql = "select * FROM empleados WHERE nombreUsuario=@nombreUsuario and  passwd=@passwd";
+                string sql = "SELECT * FROM empleados WHERE nombreUsuario = @nombreUsuario and  passwd = @passwd";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
-                cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-                cmd.Parameters.AddWithValue("@passwd", passwd);
+                cmd.Parameters.AddWithValue("@nombreUsuario",  nombreUsuario );
+                cmd.Parameters.AddWithValue("@passwd", passwd );
+                cmd.ExecuteNonQuery();
 
-                if (cmd.ExecuteNonQuery() >= 1)
-                    return true;
+                return 1;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             
             }
-            return false;
+            return 0;
         }
 
 
