@@ -142,7 +142,7 @@ namespace TeleDASis
                 {
 
                     emp.nombre = Convert.ToString(reader["nombre"]);
-                    emp.tlfmovil = Convert.ToInt32(reader["movil"]);
+                    emp.tlfmovil = Convert.ToString(reader["movil"]);
                     emp.dni = Convert.ToString(reader["dni"]);
                     emp.fechaAlta = Convert.ToString(reader["fechaAlta"]);
                     emp.primerApellido = Convert.ToString(reader["primerApellido"]);
@@ -322,8 +322,8 @@ namespace TeleDASis
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     
-                    usuario.tlfmovil = Convert.ToInt32(reader["movil"]);
-                    usuario.telefono = Convert.ToInt32(reader["telefono"]);
+                    usuario.tlfmovil = Convert.ToString(reader["movil"]);
+                    usuario.telefono = Convert.ToString(reader["telefono"]);
                     usuario.password = Convert.ToString(reader["password"]);
                     usuario.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
                   
@@ -807,13 +807,13 @@ namespace TeleDASis
                 {
                     if(reader.IsDBNull(0)== true)
                     {
-                        cmd.Connection.Close();
+                        
                         reader.Dispose();
                         cmd.Dispose();
                         return false;
                     }else
                     {
-                        cmd.Connection.Close();
+                        
                         reader.Dispose();
                         cmd.Dispose();
                         return true;

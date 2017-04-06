@@ -37,8 +37,9 @@ namespace TeleDASis
             if (databaseConnector.instance.login(nombre, password)== true)
             {
                 MainWindows info = new MainWindows();
-
+                this.Hide();
                 info.Show();
+                this.Close();
             }
             else
             {
