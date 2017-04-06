@@ -148,8 +148,9 @@ namespace TeleDASis
                     emp.primerApellido = Convert.ToString(reader["primerApellido"]);
                     emp.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     emp.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
-                    emp.password = Convert.ToString(reader["password"]);
-                  
+                    emp.passwd = Convert.ToString(reader["passwd"]);
+                    emp.rol = Convert.ToString(reader["rol"]);
+
                 }
 
                 reader.Close();
@@ -240,15 +241,15 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT * FROM empleados WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND movil LIKE @movil AND password  LIKE @password  AND user LIKE @nombre Usuario";
+                string sql = "SELECT * FROM empleados WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND movil LIKE @movil AND rol LIKE @rol AND password  LIKE @password  AND user LIKE @nombre Usuario";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", "%" + user.nombre + "%");
                 cmd.Parameters.AddWithValue("@primerApellido", "%" + user.primerApellido + "%");
                 cmd.Parameters.AddWithValue("@segundoApellido", "%" + user.segundoApellido + "%");
                 cmd.Parameters.AddWithValue("@movil", "%" + user.tlfmovil + "%");
-               
+                cmd.Parameters.AddWithValue("@rol", "%" + user.rol + "%");
                 cmd.Parameters.AddWithValue("@dni", "%" + user.dni + "%");
-                cmd.Parameters.AddWithValue("@password", "%" + user.password + "%");
+                cmd.Parameters.AddWithValue("@password", "%" + user.passwd + "%");
                 cmd.Parameters.AddWithValue("@user", "%" + user.nombreUsuario + "%");
       
 
@@ -310,7 +311,7 @@ namespace TeleDASis
             Empleados usuario = new Empleados();
             try
             {
-                string sql = "SELECT nombre, primerApellido, segundoApellido, movil, password, nombreUsuario FROM empleados WHERE dni = @dni";
+                string sql = "SELECT * FROM empleados WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
@@ -320,11 +321,10 @@ namespace TeleDASis
                 {
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
-                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
-                    
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);                 
                     usuario.tlfmovil = Convert.ToString(reader["movil"]);
-                   
-                    usuario.password = Convert.ToString(reader["password"]);
+                    usuario.rol = Convert.ToString(reader["rol"]);
+                    usuario.passwd = Convert.ToString(reader["password"]);
                     usuario.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
                   
                 }
@@ -376,14 +376,14 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "UPDATE empelados SET nombre = @nombre, movil = @movil, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,password = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
+                string sql = "UPDATE empelados SET nombre = @nombre, movil = @movil, rol = @rol, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,password = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);            
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
-               
+                cmd.Parameters.AddWithValue("@rol", user.rol);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
-                cmd.Parameters.AddWithValue("@passwd", user.password);
+                cmd.Parameters.AddWithValue("@passwd", user.passwd);
                 cmd.Parameters.AddWithValue("@usuariio", user.nombreUsuario);         
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
@@ -633,15 +633,16 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO empleados (nombre, movil, dni, primerApellido, segundoApellido, nombreUsuario, password) VALUES (@nombre, @movil, @dni, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                string sql = "INSERT INTO empleados (nombre, movil, dni, rol, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @rol, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", emple.nombre);
                 cmd.Parameters.AddWithValue("@movil", emple.tlfmovil);
                 cmd.Parameters.AddWithValue("@dni", emple.dni);
+                cmd.Parameters.AddWithValue("@rol", emple.rol);
                 cmd.Parameters.AddWithValue("@primerApellido", emple.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", emple.segundoApellido);
                 cmd.Parameters.AddWithValue("@nombreUsuario", emple.nombreUsuario);
-                cmd.Parameters.AddWithValue("@passwd", emple.password);
+                cmd.Parameters.AddWithValue("@passwd", emple.passwd);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 
@@ -658,15 +659,16 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO historicoBaja (nombre, movil, dni, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                string sql = "INSERT INTO historicoBaja (nombre, movil, dni, rol, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @rol, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", emp.nombre);
                 cmd.Parameters.AddWithValue("@movil", emp.tlfmovil);
                 cmd.Parameters.AddWithValue("@dni", emp.dni);
+                cmd.Parameters.AddWithValue("@rol", emp.rol);
                 cmd.Parameters.AddWithValue("@primerApellido", emp.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", emp.segundoApellido);
                 cmd.Parameters.AddWithValue("@nombreUsuario", emp.nombreUsuario);
-                cmd.Parameters.AddWithValue("@passwd", emp.password);
+                cmd.Parameters.AddWithValue("@passwd", emp.passwd);
 
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();

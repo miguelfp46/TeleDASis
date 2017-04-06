@@ -44,11 +44,12 @@ namespace TeleDASis
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;
             emp.nombreUsuario = tbuser.Text;
-            emp.password = passwordBox.Password;
+            emp.passwd = passwordBox.Password;
+            emp.rol = tbuser_Copy.Text;
 
             if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.tlfmovil.ToString()) || string.IsNullOrEmpty(emp.dni) || string.IsNullOrEmpty(emp.primerApellido) ||
                 string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.nombreUsuario)
-                || string.IsNullOrEmpty(emp.password))
+                || string.IsNullOrEmpty(emp.passwd))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }

@@ -37,7 +37,7 @@
         <TextBox x:Name="txtApellido1" Height="19" Text="" VerticalAlignment = "Bottom"  Margin="105,0,26,14" PreviewTextInput="Letras" Grid.Row="2" Grid.Column="2"/>
         <Label x:Name="label4" Margin="20,17,107,10" Content="2º Apellido:" VerticalAlignment = "Center" Grid.Row="2" Grid.Column="3" Height="28"/>
         <TextBox x:Name="txtApellido2" Height="19" Text="" VerticalAlignment = "Bottom"  Margin="102,0,34,14" PreviewTextInput="Letras" Grid.Row="2" Grid.Column="3"/>
-        <Label x:Name="label5" Margin="20,9,152,12"  Content="Teléfono:" VerticalAlignment = "Center" Grid.Row="4" Grid.Column="1" Height="30"/>
+        <Label x:Name="label5" Margin="20,9,152,12"  Content="Rol:" VerticalAlignment = "Center" Grid.Row="4" Grid.Column="1" Height="30"/>
         <TextBox x:Name="txtTelefono" Height="18" Text="" VerticalAlignment = "Center" Margin="100,13,34,20" Grid.Row="4" Grid.Column="1"/>
 
         <Label x:Name="label7" Margin="20,11,108,10" Content="Móvil:" VerticalAlignment = "Center" Grid.Row="3" Grid.Column="3" Height="30"/>

@@ -52,7 +52,7 @@ namespace TeleDASis
         /// <param name="primerApellido">Valor que le asignamos para obtener el primer apellido del empleado</param>
         /// <param name="segundoApellido">Valor que le asignamos para obtener el segundo apellido del empleado</param>
         /// <param name="tlfmovil">Valor que le asignamos para obtener el movil del empleado</param>
-        /// <param name="telefono">Valor que le asignamos para obtener el telefono del empleado</param>
+        /// <param name="rol">Valor que le asignamos para obtener el rol del empleado</param>
         /// <param name="dni">Valor que le asignamos para obtener el dni del empleado</param>
         /// <param name="password">Valor que le asignamos para obtener el password del empleado</param>
         /// <param name="nombreUsuario">Valor que le asignamos para obtener el nombre de usuario del empleado</param>
@@ -63,9 +63,9 @@ namespace TeleDASis
             user.primerApellido = txtApellido1.Text;
             user.segundoApellido = txtApellido2.Text;
             user.tlfmovil = txtMovil.Text;
-            user.telefono = txtTelefono.Text;
+            user.rol = txtTelefono.Text;
             user.dni = txtDni.Text;
-            user.password = txtPasswd.Password;
+            user.passwd = txtPasswd.Password;
             user.nombreUsuario = txtUser.Text;
             
             databaseConnector.instance.showEmpTable(dataGridTable, user);

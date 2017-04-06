@@ -22,8 +22,8 @@
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "*"/>
-         
-            
+
+
 
         </Grid.RowDefinitions>
 
@@ -48,11 +48,13 @@
 
         <Label x:Name="lMovil" Content="Móvil:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "6" Margin="15,11,475,3" Height="Auto"/>
         <TextBox x:Name="tbMovil"  Text="" VerticalAlignment = "Center" MaxLength="9" Width = "Auto"  PreviewTextInput="tbTelefono_PreviewTextInput" Grid.Column = "1" Grid.Row = "6" Margin="88,15,350,7" Height="Auto" />
-     
+
 
         <Button x:Name="btAccept" Content="Dar de Alta" Margin="0,0,120,10" HorizontalAlignment="Right" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "7"/>
         <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" Click="btCancel_Click" Grid.Column = "1" Grid.Row = "7"/>
-       
+        <Label x:Name="luser_Copy" Content="Rol:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "4" Margin="309,28,239,20" Height="Auto"/>
+        <TextBox x:Name="tbuser_Copy"  Text="" VerticalAlignment = "Center"  Width = "Auto"  Grid.Column = "1" Grid.Row = "4" Margin="352,32,196,24" Height="Auto" />
+
 
 
 

@@ -46,7 +46,7 @@
         <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "3" Grid.Row = "2"/>
 
 
-        <Label x:Name="label5" Content="Teléfono:" VerticalAlignment = "Center" Width = "100"   Margin="4,20,83,18" Grid.Column="1" Grid.Row="3"/>
+        <Label x:Name="label5" Content="Rol:" VerticalAlignment = "Center" Width = "100"   Margin="4,20,83,18" Grid.Column="1" Grid.Row="3"/>
         <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="1" Grid.Row="3"/>
 
 

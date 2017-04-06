@@ -60,9 +60,9 @@ namespace TeleDASis
                 tbApellido.Text = emp.primerApellido;
                 tbApellido2.Text = emp.segundoApellido;
                
-                tbMovil.Text = Convert.ToString(emp.tlfmovil);
-                tbTelefono.Text = Convert.ToString(emp.telefono);
-                tbpaswd.Password = emp.password;
+                tbMovil.Text = emp.tlfmovil;
+                tbTelefono.Text = emp.rol;
+                tbpaswd.Password = emp.passwd;
                 tbUser.Text = emp.nombreUsuario;
                 
             }
@@ -113,13 +113,13 @@ namespace TeleDASis
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;   
             emp.tlfmovil =tbMovil.Text;
-            emp.telefono = tbTelefono.Text;        
-            emp.password = tbpaswd.Password;
+            emp.rol = tbTelefono.Text;        
+            emp.passwd = tbpaswd.Password;
             emp.nombreUsuario = tbUser.Text;
             emp.dni = tbDNI.Text;
 
             if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.primerApellido) || string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.dni) ||
-                string.IsNullOrEmpty(Convert.ToString(emp.telefono)) || string.IsNullOrEmpty(Convert.ToString(emp.tlfmovil)) || string.IsNullOrEmpty(emp.password) || string.IsNullOrEmpty(emp.nombreUsuario))
+                string.IsNullOrEmpty(Convert.ToString(emp.rol)) || string.IsNullOrEmpty(Convert.ToString(emp.tlfmovil)) || string.IsNullOrEmpty(emp.passwd) || string.IsNullOrEmpty(emp.nombreUsuario))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
