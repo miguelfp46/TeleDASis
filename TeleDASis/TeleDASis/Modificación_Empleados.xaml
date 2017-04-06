@@ -47,7 +47,7 @@
 
 
         <Label x:Name="label5" Content="Rol:" VerticalAlignment = "Center" Width = "100"   Margin="4,20,83,18" Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="tbTelefono" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="rol" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="1" Grid.Row="3"/>
 
 
        
@@ -69,7 +69,7 @@
 
 
 
-        <Button Width="Auto" Margin="60,32,60,0" Height="Auto" VerticalAlignment="Top" Click="cancel" Content="Salir" Grid.Column = "3" Grid.Row = "5"/>
+        <Button Width="Auto" Margin="60,40,60,0" Height="Auto" VerticalAlignment="Top" Click="cancel" Content="Salir" Grid.Column = "3" Grid.Row = "5"/>
         <Button Width="Auto" Margin="60,0,60,27" Height="Auto" VerticalAlignment="Bottom" Click="Guardar" Content="Guardar" Grid.Column = "2" Grid.Row = "5"/>
 
 
