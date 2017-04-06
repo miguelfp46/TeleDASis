@@ -140,7 +140,7 @@ namespace TeleDASis
 
         private void botonConsultas_Emp(object sender, RoutedEventArgs e)
         {
-            Consultas_Empleado consultas = new Consultas_Empleado();
+            Modificación_Empleados consultas = new Modificación_Empleados();
 
             consultas.Show();
         }
