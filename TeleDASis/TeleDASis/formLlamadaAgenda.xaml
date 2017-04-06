@@ -22,12 +22,29 @@
             <RowDefinition Height = "1*"/>
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal" >
-            <GroupBox x:Name="groupBox" Header="Agenda" Width="812" Margin="0,6,0,5" FontSize="14">
-                <DataGrid x:Name="dtGAgenda" Margin="2,24,-2,5" ItemsSource= "{Binding ''}" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged"/>
+        <StackPanel Grid.Row = "1" Orientation = "Horizontal" Grid.ColumnSpan="2" Margin="5,11,203,10" Grid.RowSpan="3" >
+            <GroupBox x:Name="groupBox" Header="Agenda" Width="1145" Margin="0,6,0,25" FontSize="14" RenderTransformOrigin="0.5,0.5">
+                <GroupBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.141"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.998"/>
+                    </TransformGroup>
+                </GroupBox.RenderTransform>
+                <DataGrid x:Name="dtGAgenda" HorizontalAlignment="Left" Margin="30,13,0,-4" VerticalAlignment="Top" Height="330" Width="1080" ItemsSource= "{Binding ''}" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+                    <DataGrid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-0.46"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-0.864"/>
+                        </TransformGroup>
+                    </DataGrid.RenderTransform>
+                </DataGrid>
 
             </GroupBox>
         </StackPanel>
-        <Label x:Name="label" Content="Llamar a las siguientes persona: " Grid.Column="1" HorizontalAlignment="Left" Margin="5,3,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="label" Content="Haz click en una fila para llamar a una persona: " HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
     </Grid>
 </Window>
