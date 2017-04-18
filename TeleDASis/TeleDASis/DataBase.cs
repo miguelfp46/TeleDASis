@@ -794,15 +794,15 @@ namespace TeleDASis
             return false;
         }
 
-        public bool login(string nombreUsuario,string passwd)
+        public bool login(Empleados emp)
         {
             try
             {
                 string sql = "SELECT * FROM empleados WHERE nombreUsuario = @nombreUsuario and  passwd = @passwd";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
-                cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-                cmd.Parameters.AddWithValue("@passwd", passwd);
+                cmd.Parameters.AddWithValue("@nombreUsuario", emp.nombreUsuario);
+                cmd.Parameters.AddWithValue("@passwd", emp.passwd);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read() != false)
