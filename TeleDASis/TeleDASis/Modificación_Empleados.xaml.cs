@@ -54,7 +54,7 @@ namespace TeleDASis
                 rol.IsEnabled = true;
                 tbpaswd.IsEnabled = true;
                 tbUser.IsEnabled = true;
-               
+               //ybvt4cre
 
                 tbNombre.Text = emp.nombre;
                 tbApellido.Text = emp.primerApellido;

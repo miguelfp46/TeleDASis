@@ -85,7 +85,7 @@
                         <Button x:Name="btnAltaEmpleadoEmp" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Emp"/>
                         <Button x:Name="btnBajaEmpleadoEmp" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Emp"/>
                         <Button x:Name="btnConsultasEmpleadoEmp" Content="Consultas" Grid.Column="4" Grid.Row="1" Click="botonConsultas_Emp"/>
-                        <Button x:Name="btnModificacionesEmpleadoEmp" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonConsultas_Emp"/>
+                        <Button x:Name="btnModificacionesEmpleadoEmp" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Click"/>
                     </Grid>
                 </TabItem>
             </TabControl>

@@ -140,11 +140,12 @@ namespace TeleDASis
 
         private void botonConsultas_Emp(object sender, RoutedEventArgs e)
         {
-            Modificación_Empleados consultas = new Modificación_Empleados();
+           Consultas_Empleado  consultas = new Consultas_Empleado();
 
             consultas.Show();
         }
 
+       
         /// <summary>
         /// Este metodo te envian al menu el cual te da a elegir 'registro de llamadas' y 'agenda'
         /// </summary>

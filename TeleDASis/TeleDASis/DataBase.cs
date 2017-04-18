@@ -324,7 +324,7 @@ namespace TeleDASis
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);                 
                     usuario.tlfmovil = Convert.ToString(reader["movil"]);
                     usuario.rol = Convert.ToString(reader["rol"]);
-                    usuario.passwd = Convert.ToString(reader["password"]);
+                    usuario.passwd = Convert.ToString(reader["passwd"]);
                     usuario.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
                   
                 }
@@ -376,7 +376,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "UPDATE empelados SET nombre = @nombre, movil = @movil, rol = @rol, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,password = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
+                string sql = "UPDATE empleados SET nombre = @nombre, movil = @movil, rol = @rol, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,passwd = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);            
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
@@ -384,7 +384,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
                 cmd.Parameters.AddWithValue("@passwd", user.passwd);
-                cmd.Parameters.AddWithValue("@usuariio", user.nombreUsuario);         
+                cmd.Parameters.AddWithValue("@usuario", user.nombreUsuario);         
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
 
