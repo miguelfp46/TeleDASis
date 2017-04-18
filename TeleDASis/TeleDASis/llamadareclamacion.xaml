@@ -131,7 +131,7 @@
 
                             </Grid.RowDefinitions>
                             <Label x:Name="label7" Content="Teléfono Contacto :" HorizontalAlignment="Left" Margin="6,2,0,103" Width="118" Grid.RowSpan="2"/>
-                            <DataGrid  x:Name="dtgConsultas" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="96" Width="499"/>
+                            <DataGrid  x:Name="dtgConsultas" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="96" Width="499" CanUserAddRows="False"/>
 
                         </Grid>
                     </TabItem>
@@ -158,9 +158,6 @@
                     </TabItem>
                     <TabItem Header="Llamada salientes" Height="0"></TabItem>
                 </TabControl>
-
-
-
 
             </Grid>
         </GroupBox>

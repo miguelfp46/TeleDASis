@@ -6,24 +6,10 @@
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
         Title="Llamada Agenda" Height="492" Width="1164" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Margin="1,4,-326,4">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="9*" />
-            <ColumnDefinition Width="1*" />
 
-
-
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height = "1*"/>
-            <RowDefinition Height = "1*"/>
-            <RowDefinition Height = "9*"/>
-            <RowDefinition Height = "1*"/>
-
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row = "1" Orientation = "Horizontal" Grid.ColumnSpan="2" Margin="5,11,203,10" Grid.RowSpan="3" >
-            <GroupBox x:Name="groupBox" Header="Agenda" Width="1145" Margin="0,6,0,25" FontSize="14" RenderTransformOrigin="0.5,0.5">
+    <Grid>
+        <StackPanel Orientation = "Horizontal" Margin="5,11,0,0" >
+            <GroupBox x:Name="groupBox" Header="Agenda" FontSize="14" Width="1140" Height="410" VerticalAlignment="Bottom" Margin="0,0,0,8">
                 <GroupBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -32,7 +18,7 @@
                         <TranslateTransform Y="0.998"/>
                     </TransformGroup>
                 </GroupBox.RenderTransform>
-                <DataGrid x:Name="dtGAgenda" HorizontalAlignment="Left" Margin="30,13,0,-4" VerticalAlignment="Top" Height="330" Width="1080" ItemsSource= "{Binding ''}" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+                <DataGrid x:Name="dtGAgenda" ItemsSource= "{Binding ''}" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" RenderTransformOrigin="0.5,0.5" CanUserAddRows="False">
                     <DataGrid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -45,6 +31,7 @@
 
             </GroupBox>
         </StackPanel>
-        <Label x:Name="label" Content="Haz click en una fila para llamar a una persona: " HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label x:Name="label" Content="Haz click en una fila para llamar a una persona: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="387"/>
     </Grid>
+
 </Window>
