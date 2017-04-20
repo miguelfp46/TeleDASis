@@ -47,6 +47,7 @@ namespace TeleDASis
             tbTelefono.Text = llamada.telefonoUsuario;
             tbNombre.Text = usuario.nombre;
             tbDNI.Text = usuario.dni;
+            
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             cbTipoLlamada.Text = "Llamada saliente";
@@ -95,7 +96,9 @@ namespace TeleDASis
                         break;
                     case "Agenda":
                         llamada.tipoLlamada = 6;
-                        llamada.fechayHora = DateTime.Parse(dpDate.Text);
+                        
+                        string horas = dpDate.Text + " " + hora.Text;
+                        llamada.fechayHora = DateTime.Parse(horas);
                         break;
                     case "Llamada saliente":
                         llamada.tipoLlamada = 7;

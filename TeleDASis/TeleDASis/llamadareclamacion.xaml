@@ -102,7 +102,7 @@
                             <DatePicker x:Name="dpDate" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Top"/>
                             <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top"/>
                             <Label x:Name="labelhora" Content="Hora" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Width="36" Margin="247,0,0,0"/>
-                            <xctk:TimePicker Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Height="24"/>
+                            <xctk:TimePicker x:Name="hora" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Height="24"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Emergencia n1" Height="0">
