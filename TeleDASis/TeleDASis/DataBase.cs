@@ -241,7 +241,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "SELECT * FROM empleados WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND movil LIKE @movil AND rol LIKE @rol AND password  LIKE @password  AND user LIKE @nombre Usuario";
+                string sql = "SELECT * FROM empleados WHERE nombre LIKE  @nombre AND primerApellido LIKE @primerApellido AND segundoApellido LIKE @segundoApellido AND movil LIKE @movil AND rol LIKE @rol AND password  LIKE @passwd  AND user LIKE @nombreUsuario";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", "%" + user.nombre + "%");
                 cmd.Parameters.AddWithValue("@primerApellido", "%" + user.primerApellido + "%");
@@ -673,7 +673,7 @@ namespace TeleDASis
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 return true;
-                //y5tvgfd
+                
             }
             catch (Exception ex)
             {
