@@ -58,7 +58,7 @@
         <Button x:Name="btnBuscar" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="60,0,0,18" Grid.Row="5" VerticalAlignment="Bottom" Width="131" Height="23" Click="btnBuscar_Click"/>
 
         <GroupBox x:Name="groupBox1" Header="Resultado de la Busqueda:" HorizontalAlignment="Left" Margin="5,36,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5" Width="767" Height="158" Grid.RowSpan="4">
-            <DataGrid  x:Name="dtGConsultass" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="132" Width="745" Grid.RowSpan="3" SelectionChanged="dtGConsultas_SelectionChanged"/>
+            <DataGrid  x:Name="dtGConsultass" CanUserAddRows="False" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="132" Width="745" Grid.RowSpan="3" SelectionChanged="dtGConsultas_SelectionChanged"/>
         </GroupBox>
 
 

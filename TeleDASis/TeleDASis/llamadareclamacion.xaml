@@ -1,9 +1,10 @@
-﻿<Window x:Class="TeleDASis.llamadareclamacion"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="TeleDASis.llamadareclamacion"
         mc:Ignorable="d"
         Title="Llamada Reclamacion" Height="712" Width="779" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="0,0,0,-1">
@@ -82,9 +83,9 @@
                     <ComboBoxItem Content="Emergencia nivel 3" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161" />
                     <ComboBoxItem Content="Llamada saliente" HorizontalAlignment="Left" Margin="0,0,-2,0" Width="161"/>
                 </ComboBox>
-                <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Grid.Row="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2" SelectionChanged="tcTipoLLamada_SelectionChanged">
-                    <TabItem Header="Informativa" Height="0"></TabItem>
-                    <TabItem Header="Reclamación\Sugerencia" Height="0"></TabItem>
+                <TabControl x:Name="tcTipoLLamada" Grid.Column="1" Visibility="Visible" BorderThickness="0" Grid.ColumnSpan="2" SelectionChanged="tcTipoLLamada_SelectionChanged" Margin="0,31,0,1" Grid.RowSpan="2">
+                    <TabItem Header="Informativa" Height="0"/>
+                    <TabItem Header="Reclamación\Sugerencia" Height="0"/>
                     <TabItem Header="Agenda" Height="0">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -94,11 +95,14 @@
 
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="140" />
 
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="140" />
                             </Grid.RowDefinitions>
-                            <DatePicker x:Name="dpDate" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top"/>
-                            <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                            <DatePicker x:Name="dpDate" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Top"/>
+                            <Label x:Name="label2" Content="Fecha Agenda" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top"/>
+                            <Label x:Name="labelhora" Content="Hora" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Width="36" Margin="247,0,0,0"/>
+                            <xctk:TimePicker Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Height="24"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Emergencia n1" Height="0">
@@ -131,7 +135,7 @@
 
                             </Grid.RowDefinitions>
                             <Label x:Name="label7" Content="Teléfono Contacto :" HorizontalAlignment="Left" Margin="6,2,0,103" Width="118" Grid.RowSpan="2"/>
-                            <DataGrid  x:Name="dtgConsultas" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="96" Width="499"/>
+                            <DataGrid  x:Name="dtgConsultas" ItemsSource= "{Binding ''}" HorizontalAlignment="Left" Margin="10,3,0,0" Grid.Row="1" VerticalAlignment="Top" Height="96" Width="499" CanUserAddRows="False"/>
 
                         </Grid>
                     </TabItem>
@@ -156,11 +160,8 @@
                             <CheckBox x:Name="cbPolicia" Content="Policia" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="3" VerticalAlignment="Top"/>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Llamada salientes" Height="0"></TabItem>
+                    <TabItem Header="Llamada salientes" Height="0"/>
                 </TabControl>
-
-
-
 
             </Grid>
         </GroupBox>

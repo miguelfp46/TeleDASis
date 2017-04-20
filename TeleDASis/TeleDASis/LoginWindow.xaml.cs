@@ -30,11 +30,11 @@ namespace TeleDASis
 
         private void botonEntrar_Click(object sender, RoutedEventArgs e)
         {
-            string nombre = loginName.Text;
-            string password = passwd.Password;
+            emp.nombreUsuario = loginName.Text;
+            emp.passwd = passwd.Password;
 
 
-            if (databaseConnector.instance.login(nombre, password)== true)
+            if (databaseConnector.instance.login(emp)== true)
             {
                 MainWindows info = new MainWindows();
                 this.Hide();
