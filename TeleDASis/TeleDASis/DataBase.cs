@@ -659,7 +659,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "INSERT INTO historicoBaja (nombre, movil, dni, rol, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @rol, @fechaAlta @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
+                string sql = "INSERT INTO historicoBaja (nombre, movil, dni, rol, fechaAlta, primerApellido, segundoApellido, nombreUsuario, passwd) VALUES (@nombre, @movil, @dni, @rol, @fechaAlta, @primerApellido, @segundoApellido, @nombreUsuario, @passwd)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", emp.nombre);
                 cmd.Parameters.AddWithValue("@movil", emp.tlfmovil);
@@ -673,6 +673,7 @@ namespace TeleDASis
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 return true;
+                //y5tvgfd
             }
             catch (Exception ex)
             {
