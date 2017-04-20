@@ -21,11 +21,11 @@ namespace TeleDASis
         public string fechaBaja { get; set; }
         public string motivodeBaja { get; set; }
 
-        public Empleados(string nombre, string nombreUsuario, string password, string movil, string rol, string dni, string fechaDeAlta, string apellido, string apellido2)
+        public Empleados(string nombre, string nombreUsuario, string passwd, string movil, string rol, string dni, string fechaDeAlta, string apellido, string apellido2)
         {
             this.nombre = nombre;
             this.nombreUsuario = nombreUsuario;
-            this.passwd = password;
+            this.passwd = passwd;
             this.tlfmovil = movil;
             this.rol = rol;
             this.dni = dni;
