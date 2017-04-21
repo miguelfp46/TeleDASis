@@ -64,7 +64,7 @@
                         <Button x:Name="btnmodificaciones" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Click"/>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Registro de Empleados">
+                <TabItem Header="Registro de Empleados" Height="22" VerticalAlignment="Bottom">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
