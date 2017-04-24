@@ -52,8 +52,8 @@ namespace TeleDASis
                
                     MessageBox.Show("Contraseña incorrecta", "Introduzca una contraseña valida", MessageBoxButton.OK, MessageBoxImage.Error);
                 
-                    loginName.Text = "";
-                    passwd.Password = "";
+                    loginName.Text = string.Empty;
+                    passwd.Password = string.Empty;
                    
                 }
             }
