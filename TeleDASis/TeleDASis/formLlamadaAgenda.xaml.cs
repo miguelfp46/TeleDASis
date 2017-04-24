@@ -28,15 +28,20 @@ namespace TeleDASis
             InitializeComponent();
             dataGridTable = dtGAgenda;
             databaseConnector.instance.showAgendaTable(dtGAgenda,ag);            
-        }       
+        }
+
+        // <summary>
+        ///Cierra la ventana
+        /// </summary>      
         private void button1_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+        /// <summary>
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir numeros
+        /// </summary>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
         public void SoloNumeros(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
@@ -52,7 +57,10 @@ namespace TeleDASis
             SoloNumeros(e);
         }
         
-
+        /// <summary>
+        /// Este metodo te muestra en el datagrid las llamadas de agendas que se han introducido en la base de datos.
+        /// </summary>
+        
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             object item = dtGAgenda.SelectedItem;
