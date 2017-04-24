@@ -28,6 +28,10 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// El metodo siguiente es sobre
+        /// </summary>
+        
         private void botonEntrar_Click(object sender, RoutedEventArgs e)
         {
             emp.nombreUsuario = loginName.Text;
