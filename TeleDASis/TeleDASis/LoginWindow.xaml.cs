@@ -37,10 +37,11 @@ namespace TeleDASis
             emp.nombreUsuario = loginName.Text;
             emp.passwd = passwd.Password;
 
-
-            if (databaseConnector.instance.login(emp)== true)
+            string rol;
+            if (databaseConnector.instance.login(emp,out rol )== true)
             {
-                MainWindows info = new MainWindows();
+                
+                MainWindows info = new MainWindows(rol);
                 this.Hide();
                 info.Show();
                 this.Close();
