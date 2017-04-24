@@ -19,9 +19,20 @@ namespace TeleDASis
     /// </summary>
     public partial class MainWindows : Window
     {
-        public MainWindows()
+        public string rol { get; set; }
+
+        public MainWindows(string _rol)
         {
+            rol = _rol;
             InitializeComponent();
+            if(rol == "2")
+            {
+                tabControl.SelectedIndex = 2;
+                (tabControl.SelectedItem as TabItem).Visibility = Visibility.Hidden;
+                tabControl.SelectedIndex = 0;
+                
+                
+            }
         }
         /// <summary>
         /// Este metodo te envian al menu de llamadas

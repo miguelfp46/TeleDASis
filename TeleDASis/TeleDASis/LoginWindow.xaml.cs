@@ -28,15 +28,21 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// En metodo siguiente recibira el usuario y la contraseña del Empleado,
+        /// si es correcto lo dejara pasar en cambio si no lo es le saltara un mensaje de error.
+        /// </summary>
+        
         private void botonEntrar_Click(object sender, RoutedEventArgs e)
         {
             emp.nombreUsuario = loginName.Text;
             emp.passwd = passwd.Password;
 
-
-            if (databaseConnector.instance.login(emp)== true)
+            string rol;
+            if (databaseConnector.instance.login(emp,out rol )== true)
             {
-                MainWindows info = new MainWindows();
+                
+                MainWindows info = new MainWindows(rol);
                 this.Hide();
                 info.Show();
                 this.Close();
@@ -46,8 +52,8 @@ namespace TeleDASis
                
                     MessageBox.Show("Contraseña incorrecta", "Introduzca una contraseña valida", MessageBoxButton.OK, MessageBoxImage.Error);
                 
-                    loginName.Text = "";
-                    passwd.Password = "";
+                    loginName.Text = string.Empty;
+                    passwd.Password = string.Empty;
                    
                 }
             }

@@ -33,6 +33,18 @@ namespace TeleDASis
             //Fecha.SelectedDate = DateTime.Today;
             //Hora.SelectedDateFormat = DatePickerFormat.Short;   
         }
+
+        /// <summary>
+        /// Este metodo es donde guardaremos los datos
+        /// </summary>
+        /// <param name="idLlamada">Guardara la id de la llamada</param>
+        /// <param name="telefono">Guardara el numero de telefono</param>
+        /// <param name="nombre">Guardara el nombre</param>
+        /// <param name="primerApellido">Guardara el primer apellido</param>
+        /// <param name="segundoApellido">Guardara el segundo apellido</param>
+        /// <param name="DNI">Guardara el DNI</param>
+        /// <param name="motivo">Guardara el motivo, si es que lo hay</param>
+        /// <param name="solucion">Guardara la solucion</param>
         public llamadareclamacion(int idLlamada, string telefono , string nombre, string primerApellido, string segundoApellido, string DNI, string motivo, string solucion)
         {
             InitializeComponent();
@@ -60,11 +72,18 @@ namespace TeleDASis
 
         }
 
+        /// <summary>
+        /// Cierra la ventana
+        /// </summary>
         private void button1_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Este metodo enviara a la base de datos que se han introducido
+        /// </summary>
+       
         private void btEnviar_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(tbTelefono.Text) || string.IsNullOrEmpty(tbSolucion.Text) || string.IsNullOrEmpty(tbMotivo.Text))
@@ -164,6 +183,11 @@ namespace TeleDASis
                 }
             } }
 
+
+        /// <summary>
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir numeros
+        /// </summary>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
         public void SoloNumeros(TextCompositionEventArgs e)
         {
             
@@ -180,6 +204,10 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
+
+        /// <summary>
+        /// El Siguiente metodo muestra las opciones que habra en el combobox de la pagina.
+        /// </summary>
         private void Handle()
         {
             switch (cbTipoLlamada.SelectedItem.ToString().Split(new string[] { ":" }, StringSplitOptions.None).Last())
@@ -201,6 +229,7 @@ namespace TeleDASis
             }
         }
 
+
         private void CMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Dispatcher.BeginInvoke((Action)(() => tcTipoLLamada.SelectedIndex = cbTipoLlamada.SelectedIndex));
@@ -211,7 +240,17 @@ namespace TeleDASis
         {
 
         }
-
+        /// <summary>
+        /// Busca al empleado y te lo muesta si en DNI es correcto
+        /// </summary>
+        /// <param name="nombre">Valor que le asignamos para obtener el nombre del usuario</param>
+        /// <param name="primerApellido">Valor que le asignamos para obtener el primer apellido del usuario</param>
+        /// <param name="segundoApellido">Valor que le asignamos para obtener el segundo apellido del usuario</param>
+        /// <param name="telefonofamiliar">Valor que le asignamos para obtener el telefono familiar del usuario</param>
+        /// <param name="tlfmovil">Valor que le asignamos para obtener el movil del usuario</param>
+        /// <param name="telefono">Valor que le asignamos para obtener el telefono del usuario</param>
+        /// <param name="dni">Valor que le asignamos para obtener el dni del usuario</param>
+        /// 
         private void btBuscar_Click(object sender, RoutedEventArgs e)
         {
             //buscamos a un usuario por telefono y lo cargamos.
@@ -223,7 +262,7 @@ namespace TeleDASis
             tbPrimerApellido.Text = usuario.primerApellido;
             tbSegundoApellido.Text = usuario.segundoApellido;
             tbDNI.Text = usuario.dni;
-            usuario.telefono = tbTelefono.Text;
+            
             databaseConnector.instance.showPhoneNumber(dtgConsultas, usuario);
 
         }

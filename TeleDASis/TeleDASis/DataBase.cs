@@ -795,8 +795,9 @@ namespace TeleDASis
             return false;
         }
 
-        public bool login(Empleados emp)
+        public bool login(Empleados emp , out string rol)
         {
+            rol = "";
             try
             {
                 string sql = "SELECT * FROM empleados WHERE nombreUsuario = @nombreUsuario and  passwd = @passwd";
@@ -813,10 +814,11 @@ namespace TeleDASis
                         
                         reader.Dispose();
                         cmd.Dispose();
+                        
                         return false;
                     }else
                     {
-                        
+                        rol = Convert.ToString(reader["rol"]);
                         reader.Dispose();
                         cmd.Dispose();
                         return true;
@@ -824,6 +826,7 @@ namespace TeleDASis
                 }
                 else
                 {
+                    
                     return false;
                 }
                 
@@ -833,6 +836,7 @@ namespace TeleDASis
                 Console.WriteLine(ex.ToString());
             
             }
+            
             return false;
         }
 

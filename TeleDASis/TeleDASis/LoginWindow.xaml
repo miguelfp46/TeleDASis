@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Login" Height="417" Width="914" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Login" Height="344" Width="933" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid VerticalAlignment="Center">
         <!-- Tabla situada al fondo para hacer la ventana que sea responsive -->
         <StackPanel Width="180" Margin="363,0,363,12">
