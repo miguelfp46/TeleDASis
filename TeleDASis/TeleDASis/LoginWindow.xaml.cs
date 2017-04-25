@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-
+using TeleDASis;
 
 namespace TeleDASis
 {
@@ -36,7 +36,7 @@ namespace TeleDASis
         private void botonEntrar_Click(object sender, RoutedEventArgs e)
         {
             emp.nombreUsuario = loginName.Text;
-            emp.passwd = passwd.Password;
+            emp.passwd = databaseConnector.instance.sha256(passwd.Password);
 
             string rol;
             if (databaseConnector.instance.login(emp,out rol)== true)
