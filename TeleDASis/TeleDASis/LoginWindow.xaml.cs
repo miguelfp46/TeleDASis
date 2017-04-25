@@ -59,5 +59,13 @@ namespace TeleDASis
 
             }
             }
+
+        private void passwd_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if(e.Key == System.Windows.Input.Key.Enter)
+            {
+                botonEntrar_Click(sender, e);
+            }
         }
+    }
     }
