@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="RegistrodeTodasLasLlamadas" Height="492" Width="1164" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Registrode de Llamadas" Height="492" Width="1164" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btVolver" Content="Volver" HorizontalAlignment="Left" Margin="1055,435,0,0" VerticalAlignment="Top" Width="75" Click="btVolver_Click"/>
         <DataGrid x:Name="dataGrid" ItemsSource= "{Binding }" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Height="400" Width="1110" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged"/>

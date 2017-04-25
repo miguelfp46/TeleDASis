@@ -29,7 +29,8 @@ namespace TeleDASis
         }
 
         /// <summary>
-        /// El metodo siguiente es sobre
+        /// En metodo siguiente recibira el usuario y la contraseña del Empleado,
+        /// si es correcto lo dejara pasar en cambio si no lo es le saltara un mensaje de error.
         /// </summary>
         
         private void botonEntrar_Click(object sender, RoutedEventArgs e)
@@ -45,6 +46,7 @@ namespace TeleDASis
                 this.Hide();
                 info.Show();
                 this.Close();
+
             }
             else
             {
@@ -53,8 +55,9 @@ namespace TeleDASis
                 
                     loginName.Text = string.Empty;
                     passwd.Password = string.Empty;
-                   
-                }
+                    
+
+            }
             }
         }
     }

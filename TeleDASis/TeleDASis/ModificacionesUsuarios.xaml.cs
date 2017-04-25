@@ -41,6 +41,10 @@ namespace TeleDASis
             
         }
 
+        /// <summary>
+        /// Este metodo se pondra en marcha cuando se haga click en el boton cancelar,
+        /// lanzara un mensaje de precaucion.
+        /// </summary>
         private void cancel(object sender, RoutedEventArgs e)
         {
             MessageBoxResult salir = MessageBox.Show("¿Seguro que quieres salir?", "Salir", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -50,6 +54,10 @@ namespace TeleDASis
             }
             
         }
+
+        /// <summary>
+        /// Este metodo guardara los datos que hayan sido modificados
+        /// </summary>
         private void Guardar(object sender, RoutedEventArgs e)
         {
             usuario.nombre = tbNombre.Text;
@@ -84,6 +92,9 @@ namespace TeleDASis
             
         }
 
+        /// <summary>
+        /// Este metodo se encarga de comprobar si los datos introducidos son correctos, de no serlo lanzara un mensaje de aviso
+        /// </summary>
         private void btComprobar_Click(object sender, RoutedEventArgs e)
         {
             dni = tbDNI.Text;
@@ -117,6 +128,11 @@ namespace TeleDASis
                 tbPuerta.Text = usuario.puerta;
             }
         }
+
+        /// <summary>
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir numeros
+        /// </summary>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
         public void SoloNumeros(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
@@ -131,6 +147,11 @@ namespace TeleDASis
         {
             SoloNumeros(e);
         }
+
+        /// <summary>
+        /// Este metodo restringe que tipo de caracteres puedes escribir, en este caso solo puedes escribir letas
+        /// </summary>
+        /// <param name="ascci">Valor que le asignamos para obtener un int</param>
         public void SoloLetras(TextCompositionEventArgs e)
         {
             //se convierte a Ascci del la tecla presionada 
