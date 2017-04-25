@@ -55,35 +55,35 @@ namespace TeleDASis
             Console.WriteLine("Done.");
         }
 
-		public bool addUser(Usuario user)
-		{
-			try
-			{
-				string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, primerApellido, segundoApellido, direccion, puerta, poblacion) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @primerApellido, @segundoApellido, @direccion, @puerta, @poblacion)";
-				MySqlCommand cmd = new MySqlCommand(sql, connection);
-				cmd.Parameters.AddWithValue("@nombre", user.nombre);
-				cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetaSanitaria);
-				cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
-				cmd.Parameters.AddWithValue("@telefono", user.telefono);
-				cmd.Parameters.AddWithValue("@dni", user.dni);
-				cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
-				cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
-				cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
+        public bool addUser(Usuario user)
+        {
+            try
+            {
+                string sql = "INSERT INTO usuarios (nombre, tarjetaSanitaria, movil, telefono, dni, tlfPersonaContacto, primerApellido, segundoApellido, direccion, puerta, poblacion) VALUES (@nombre, @tarjetaSanitaria, @movil, @telefono, @dni, @tlfPersonaContacto, @primerApellido, @segundoApellido, @direccion, @puerta, @poblacion)";
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@nombre", user.nombre);
+                cmd.Parameters.AddWithValue("@tarjetaSanitaria", user.tarjetaSanitaria);
+                cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
+                cmd.Parameters.AddWithValue("@telefono", user.telefono);
+                cmd.Parameters.AddWithValue("@dni", user.dni);
+                cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
+                cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
+                cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
                 cmd.Parameters.AddWithValue("@poblacion", user.poblacion);
                 cmd.Parameters.AddWithValue("@direccion", user.direccion);
                 cmd.Parameters.AddWithValue("@puerta", user.puerta);
                 Console.WriteLine(cmd.CommandText);
-				cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
 
-				return true;
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
-				return false;
-			}
-		}
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
 
         //Mostrar usuario por dni y recuperar todo el usuario para luego insertalo en historico <--- Este metodo lo llama la baja de usuarios.
         public Usuario showUser(String dni)
@@ -91,7 +91,7 @@ namespace TeleDASis
             Usuario usuario = new Usuario();
             try
             {
-                
+
                 string sql = "SELECT * FROM usuarios WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
@@ -172,9 +172,9 @@ namespace TeleDASis
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@dni", dni);
-                
-                if(cmd.ExecuteNonQuery() >= 1)
-					return true;
+
+                if (cmd.ExecuteNonQuery() >= 1)
+                    return true;
             }
             catch (Exception ex)
             {
@@ -228,13 +228,13 @@ namespace TeleDASis
                 da.Fill(dt);
                 dtGConsultas.DataContext = dt;
                 return true;
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
             }
-           
-            
+
+
         }
 
         public bool showEmpTable(DataGrid dtGConsultas, Empleados user)
@@ -251,7 +251,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@dni", "%" + user.dni + "%");
                 cmd.Parameters.AddWithValue("@passwd", "%" + user.passwd + "%");
                 cmd.Parameters.AddWithValue("@nombreUsuario", "%" + user.nombreUsuario + "%");
-      
+
 
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
@@ -321,12 +321,12 @@ namespace TeleDASis
                 {
                     usuario.nombre = Convert.ToString(reader["nombre"]);
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
-                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);                 
+                    usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     usuario.tlfmovil = Convert.ToString(reader["movil"]);
                     usuario.rol = Convert.ToString(reader["rol"]);
                     usuario.passwd = Convert.ToString(reader["passwd"]);
                     usuario.nombreUsuario = Convert.ToString(reader["nombreUsuario"]);
-                  
+
                 }
 
                 reader.Close();
@@ -359,11 +359,11 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@puerta", user.puerta);
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
-                 
+
                 cmd.ExecuteNonQuery();
 
                 return true;
-                
+
             }
             catch (Exception ex)
             {
@@ -378,13 +378,13 @@ namespace TeleDASis
             {
                 string sql = "UPDATE empleados SET nombre = @nombre, movil = @movil, rol = @rol, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,passwd = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@nombre", user.nombre);            
+                cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
                 cmd.Parameters.AddWithValue("@rol", user.rol);
                 cmd.Parameters.AddWithValue("@primerApellido", user.primerApellido);
                 cmd.Parameters.AddWithValue("@segundoApellido", user.segundoApellido);
                 cmd.Parameters.AddWithValue("@passwd", user.passwd);
-                cmd.Parameters.AddWithValue("@usuario", user.nombreUsuario);         
+                cmd.Parameters.AddWithValue("@usuario", user.nombreUsuario);
                 cmd.Parameters.AddWithValue("@dni", user.dni);
                 Console.WriteLine(cmd.CommandText);
 
@@ -416,7 +416,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@telefono", user.telefono);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
                 cmd.Parameters.AddWithValue("@tlfPersonaContacto", user.telefonofamiliar);
-              
+
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
@@ -426,7 +426,7 @@ namespace TeleDASis
                     usuario.primerApellido = Convert.ToString(reader["primerApellido"]);
                     usuario.segundoApellido = Convert.ToString(reader["segundoApellido"]);
                     usuario.dni = Convert.ToString(reader["dni"]);
-                    usuario.id = Convert.ToInt32(reader["idUsuario"]);               
+                    usuario.id = Convert.ToInt32(reader["idUsuario"]);
                 }
 
                 reader.Close();
@@ -471,7 +471,7 @@ namespace TeleDASis
         }
 
         //tabla de historicobajas
-        public bool showBajas(DataGrid dtGTabla,Usuario user)
+        public bool showBajas(DataGrid dtGTabla, Usuario user)
         {
             try
             {
@@ -499,7 +499,7 @@ namespace TeleDASis
                 dtGTabla.DataContext = dt;
 
                 return true;
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
@@ -507,42 +507,42 @@ namespace TeleDASis
         }
 
         //TODO si existe el dni que salte un mensaje
-          public bool ifExistDontCreateNewUser(string dni)
+        public bool ifExistDontCreateNewUser(string dni)
         {
-            
-                string sql = "SELECT COUNT(*) FROM usuarios WHERE dni = @dni";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@dni", dni);
+
+            string sql = "SELECT COUNT(*) FROM usuarios WHERE dni = @dni";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@dni", dni);
 
             int cont = Convert.ToInt32(cmd.ExecuteScalar());
 
-                if (int.Parse(cont.ToString()) == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                   
-                    return true;
-                }
+            if (int.Parse(cont.ToString()) == 0)
+            {
+                return false;
+            }
+            else
+            {
 
+                return true;
             }
 
-        public bool showAgendaTable(DataGrid dtGAgenda,Agenda ag)
+        }
+
+        public bool showAgendaTable(DataGrid dtGAgenda, Agenda ag)
         {
             try
             {
                 string sql = "SELECT agenda.idLlamadas, usuarios.dni, usuarios.nombre, usuarios.primerApellido, usuarios.segundoApellido,usuarios.telefono, agenda.fechaAgenda, llamadas.descripcion, llamadas.solucion FROM usuarios,agenda,llamadas WHERE agenda.idLlamadas = llamadas.idLlamadas AND llamadas.usuarios_idUsuario = usuarios.idUsuario AND llamadas.tipoLlamada = 6 ORDER BY agenda.fechaAgenda ASC";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-               
-                
+
+
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
                 dtGAgenda.DataContext = dt;
-                    return true;
-            }catch(Exception ex)
+                return true;
+            } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
@@ -561,7 +561,7 @@ namespace TeleDASis
                 da.Fill(dt);
                 dataGrid.DataContext = dt;
                 return true;
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
@@ -645,7 +645,7 @@ namespace TeleDASis
                 cmd.Parameters.AddWithValue("@passwd", emple.passwd);
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -673,7 +673,7 @@ namespace TeleDASis
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
                 return true;
-                
+
             }
             catch (Exception ex)
             {
@@ -709,7 +709,7 @@ namespace TeleDASis
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@idLlamada", llamada.idLlamadas);
                 cmd.Parameters.AddWithValue("@idServicios", servicio);
-               
+
 
                 Console.WriteLine(cmd.CommandText);
                 cmd.ExecuteNonQuery();
@@ -724,7 +724,7 @@ namespace TeleDASis
 
         public int recuperaridLlamada(Llamadas llamada)
         {
-            
+
             try
             {
 
@@ -795,51 +795,45 @@ namespace TeleDASis
             return false;
         }
 
-        public bool login(Empleados emp , out string rol)
+        public bool login(Empleados emp, out string rol)
         {
             rol = "";
             try
             {
-                string sql = "SELECT * FROM empleados WHERE nombreUsuario = @nombreUsuario and  passwd = @passwd";
+                string sql = "SELECT rol FROM empleados WHERE nombreUsuario = @nombreUsuario and passwd = @passwd";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@nombreUsuario", emp.nombreUsuario);
                 cmd.Parameters.AddWithValue("@passwd", emp.passwd);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read() != false)
+                while (reader.Read() != false)
                 {
-                    if(reader.IsDBNull(0)== true)
+                    if (reader.IsDBNull(0) == true)
                     {
-                        
                         reader.Dispose();
                         cmd.Dispose();
-                        
                         return false;
-                    }else
+                    }
+                    else
                     {
                         rol = Convert.ToString(reader["rol"]);
                         reader.Dispose();
+                        reader.Close();
                         cmd.Dispose();
                         return true;
-                    }
+                    }       
                 }
-                else
-                {
-                    
-                    return false;
-                }
-                
+                reader.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-            
+
             }
-            
             return false;
         }
-
+    
 
         //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
         //{
