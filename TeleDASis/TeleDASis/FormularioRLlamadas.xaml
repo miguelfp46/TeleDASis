@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="FormularioRLlamadas" Height="302" Width="514" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Formularios Llamadas" Height="302" Width="514" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,2,2">
         <Button x:Name="btRegistroLlamadas" Content="Registro de Llamadas" Click="btRegistroLlamadas_Click" Margin="24,50,266,53" />
         <Button x:Name="btAgenda" Content="Agenda" Click="btAgenda_Click" Margin="269,50,21,53" />

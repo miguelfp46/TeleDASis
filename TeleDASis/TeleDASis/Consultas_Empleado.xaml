@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Consultas_Empleado" Height="521.224" Width="793.489">
+        Title="Consultas Empleado" Height="521.224" Width="793.489">
     <Grid Margin="0,0,3,2">
 
         <Grid.ColumnDefinitions>

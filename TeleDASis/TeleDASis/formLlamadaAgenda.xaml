@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Llamada Agenda" Height="492" Width="1164" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Llamadas Agenda" Height="492" Width="1164" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid>
         <StackPanel Orientation = "Horizontal" Margin="5,11,0,0" >
