@@ -50,7 +50,7 @@
                     </Style>
                 </TextBox.Style>
             </TextBox>
-            <PasswordBox x:Name="passwd" Height="23" Width="180"  />
+            <PasswordBox x:Name="passwd" Height="23" Width="180" Margin="0,4,0,4" />
             <Button x:Name="botonEntrar"  Content="Entrar" Height="23" HorizontalAlignment="Right" Width="100" Click="botonEntrar_Click"/>
 
 

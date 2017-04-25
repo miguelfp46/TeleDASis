@@ -123,11 +123,11 @@
     <Compile Include="MainWindows.xaml.cs">
       <DependentUpon>MainWindows.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModificacionesUsuarios.xaml.cs">
-      <DependentUpon>ModificacionesUsuarios.xaml</DependentUpon>
+    <Compile Include="ModificaciónUsuarios.xaml.cs">
+      <DependentUpon>ModificaciónUsuarios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modificación_Empleados.xaml.cs">
-      <DependentUpon>Modificación_Empleados.xaml</DependentUpon>
+    <Compile Include="ModificaciónEmpleados.xaml.cs">
+      <DependentUpon>ModificaciónEmpleados.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrodeTodasLasLlamadas.xaml.cs">
       <DependentUpon>RegistrodeTodasLasLlamadas.xaml</DependentUpon>
@@ -196,11 +196,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModificacionesUsuarios.xaml">
+    <Page Include="ModificaciónUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modificación_Empleados.xaml">
+    <Page Include="ModificaciónEmpleados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

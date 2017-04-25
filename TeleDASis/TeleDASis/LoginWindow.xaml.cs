@@ -39,7 +39,7 @@ namespace TeleDASis
             emp.passwd = databaseConnector.instance.sha256(passwd.Password);
 
             string rol;
-            if (databaseConnector.instance.login(emp,out rol )== true)
+            if (databaseConnector.instance.login(emp,out rol)== true)
             {
                 
                 MainWindows info = new MainWindows(rol);

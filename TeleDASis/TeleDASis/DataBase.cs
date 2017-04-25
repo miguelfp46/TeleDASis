@@ -805,28 +805,27 @@ namespace TeleDASis
             }
             return hash.ToString();
         }
-        public bool login(Empleados emp , out string rol)
+        public bool login(Empleados emp, out string rol)
         {
             rol = "";
             try
             {
-                string sql = "SELECT * FROM empleados WHERE nombreUsuario = @nombreUsuario and  passwd = @passwd";
+                string sql = "SELECT rol FROM empleados WHERE nombreUsuario = @nombreUsuario and passwd = @passwd";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 Console.WriteLine(cmd.CommandText);
                 cmd.Parameters.AddWithValue("@nombreUsuario", emp.nombreUsuario);
                 cmd.Parameters.AddWithValue("@passwd", emp.passwd);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read() != false)
+                while (reader.Read() != false)
                 {
-                    if(reader.IsDBNull(0)== true)
+                    if (reader.IsDBNull(0) == true)
                     {
-                        
                         reader.Dispose();
                         cmd.Dispose();
-                        
                         return false;
-                    }else
+                    }
+                    else
                     {
                         rol = Convert.ToString(reader["rol"]);
                         reader.Dispose();
@@ -834,46 +833,30 @@ namespace TeleDASis
                         return true;
                     }
                 }
-                else
-                {
-                    
-                    return false;
-                }
-                
+                reader.Close();
+                //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
+                //{
+
+                //    try
+                //    {
+                //        string sql = "INSERT INTO llamadaServicios VALUES(@idLlamada,@idServicios)";
+                //        MySqlCommand cmd = new MySqlCommand(sql, connection);
+
+                //        foreach (LlamadaServicio servicios in llamada)
+                //        {
+                //            cmd.Parameters.AddWithValue("@idLlamada", llamada);
+                //            cmd.Parameters.AddWithValue("@idServicios", llamada);
+                //            cmd.ExecuteNonQuery();
+                //        }
+                //        Console.WriteLine(cmd.CommandText);
+                //        cmd.ExecuteNonQuery();
+                //        return true;
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        Console.WriteLine(ex.ToString());
+                //        return false;
+                //    }
+                //}
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            
-            }
-            
-            return false;
-        }
-
-
-        //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
-        //{
-
-        //    try
-        //    {
-        //        string sql = "INSERT INTO llamadaServicios VALUES(@idLlamada,@idServicios)";
-        //        MySqlCommand cmd = new MySqlCommand(sql, connection);
-
-        //        foreach (LlamadaServicio servicios in llamada)
-        //        {
-        //            cmd.Parameters.AddWithValue("@idLlamada", llamada);
-        //            cmd.Parameters.AddWithValue("@idServicios", llamada);
-        //            cmd.ExecuteNonQuery();
-        //        }
-        //        Console.WriteLine(cmd.CommandText);
-        //        cmd.ExecuteNonQuery();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.ToString());
-        //        return false;
-        //    }
-        //}
-    }
 }
