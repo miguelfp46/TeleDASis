@@ -46,6 +46,7 @@ namespace TeleDASis
                 this.Hide();
                 info.Show();
                 this.Close();
+
             }
             else
             {
@@ -54,8 +55,9 @@ namespace TeleDASis
                 
                     loginName.Text = string.Empty;
                     passwd.Password = string.Empty;
-                   
-                }
+                    
+
+            }
             }
         }
     }
