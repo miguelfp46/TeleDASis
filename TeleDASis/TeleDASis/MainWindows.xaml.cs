@@ -152,7 +152,7 @@ namespace TeleDASis
         private void botonConsultas_Emp(object sender, RoutedEventArgs e)
         {
            Consultas_Empleado  consultas = new Consultas_Empleado();
-
+            
             consultas.Show();
         }
 
@@ -165,8 +165,14 @@ namespace TeleDASis
         private void btn_Rllamadas_Click(object sender, RoutedEventArgs e)
         {
             FormularioRLlamadas info = new FormularioRLlamadas();
-
             info.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            this.Close();
+            login.Show();
         }
     }
 }

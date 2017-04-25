@@ -9,13 +9,13 @@ namespace TeleDASis
     /// </summary>
 
 
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
         // Load data base
         databaseConnector ddbb = null;
         Empleados emp = new Empleados();
 
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
 
