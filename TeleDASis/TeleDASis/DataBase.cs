@@ -819,7 +819,6 @@ namespace TeleDASis
                     {
                         rol = Convert.ToString(reader["rol"]);
                         reader.Dispose();
-                        reader.Close();
                         cmd.Dispose();
                         return true;
                     }       
