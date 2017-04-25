@@ -14,7 +14,7 @@ namespace TeleDASis
 {
     class databaseConnector
     {
-        // Singletone
+        // Singleton
         protected static databaseConnector _instance = null;
 
         public static databaseConnector instance
@@ -794,7 +794,7 @@ namespace TeleDASis
             }
             return false;
         }
-        static string sha256(string password)
+        public string sha256(string password)
         {
             SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
             StringBuilder hash = new System.Text.StringBuilder();

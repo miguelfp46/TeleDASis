@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeleDASis;
 
 namespace TeleDASis
 {
@@ -44,7 +45,7 @@ namespace TeleDASis
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;
             emp.nombreUsuario = tbuser.Text;
-            emp.passwd = passwordBox.Password;
+            emp.passwd = databaseConnector.instance.sha256(passwordBox.Password);
             emp.rol = tbuser_Copy.Text;
 
             if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.tlfmovil.ToString()) || string.IsNullOrEmpty(emp.dni) || string.IsNullOrEmpty(emp.primerApellido) ||
