@@ -89,11 +89,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Agenda.cs" />
-    <Compile Include="Alta.xaml.cs">
-      <DependentUpon>Alta.xaml</DependentUpon>
+    <Compile Include="RegistroUsuarios.xaml.cs">
+      <DependentUpon>RegistroUsuarios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Baja.xaml.cs">
-      <DependentUpon>Baja.xaml</DependentUpon>
+    <Compile Include="Eliminar_Usuario.xaml.cs">
+      <DependentUpon>Eliminar_Usuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="ConsultasUsuarios.xaml.cs">
       <DependentUpon>ConsultasUsuarios.xaml</DependentUpon>
@@ -106,18 +106,18 @@
       <DependentUpon>Eliminar_Empleados.xaml</DependentUpon>
     </Compile>
     <Compile Include="Empleados.cs" />
-    <Compile Include="formLlamadaAgenda.xaml.cs">
-      <DependentUpon>formLlamadaAgenda.xaml</DependentUpon>
+    <Compile Include="LlamadaAgenda.xaml.cs">
+      <DependentUpon>LlamadaAgenda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormularioRLlamadas.xaml.cs">
-      <DependentUpon>FormularioRLlamadas.xaml</DependentUpon>
+    <Compile Include="TipoLlamadas.xaml.cs">
+      <DependentUpon>TipoLlamadas.xaml</DependentUpon>
     </Compile>
     <Compile Include="HistoricoBaja.xaml.cs">
       <DependentUpon>HistoricoBaja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Llamadas.cs" />
-    <Compile Include="llamadareclamacion.xaml.cs">
-      <DependentUpon>llamadareclamacion.xaml</DependentUpon>
+    <Compile Include="LlamadaReclamacion.xaml.cs">
+      <DependentUpon>LlamadaReclamacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="LlamadaServicio.cs" />
     <Compile Include="MainWindows.xaml.cs">
@@ -140,11 +140,11 @@
     <Compile Include="RegistroEmpleados.xaml.cs">
       <DependentUpon>RegistroEmpleados.xaml</DependentUpon>
     </Compile>
-    <Page Include="Alta.xaml">
+    <Page Include="RegistroUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Baja.xaml">
+    <Page Include="Eliminar_Usuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,11 +160,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="formLlamadaAgenda.xaml">
+    <Page Include="LlamadaAgenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FormularioRLlamadas.xaml">
+    <Page Include="TipoLlamadas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,7 +172,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="llamadareclamacion.xaml">
+    <Page Include="LlamadaReclamacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
