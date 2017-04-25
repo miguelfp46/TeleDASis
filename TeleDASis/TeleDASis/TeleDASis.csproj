@@ -137,8 +137,8 @@
       <DependentUpon>Eliminar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validaciones.cs" />
-    <Compile Include="Window3.xaml.cs">
-      <DependentUpon>Window3.xaml</DependentUpon>
+    <Compile Include="RegistroEmpleados.xaml.cs">
+      <DependentUpon>RegistroEmpleados.xaml</DependentUpon>
     </Compile>
     <Page Include="Alta.xaml">
       <SubType>Designer</SubType>
@@ -208,7 +208,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window3.xaml">
+    <Page Include="RegistroEmpleados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
