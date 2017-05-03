@@ -31,7 +31,7 @@
 
         <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center" Width = "100" Grid.Column="3" Grid.Row="0"  Margin="26,20,61,18"/>
         <TextBox x:Name="tbDNI" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" Grid.Column="3" Grid.Row="0"/>
-        <Button x:Name="btComprobar" Content="Comprobar" Width="75" Height="25" Margin="118,63,52,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="3"/>
+        <Button x:Name="btComprobar" Content="Comprobar" Width="75" Height="25" Margin="102,63,68,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="3"/>
 
 
         <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "100" Grid.Column = "1" Grid.Row = "2"/>
@@ -57,12 +57,8 @@
         <TextBox x:Name="tbMovil" Text="" VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="2" Grid.Row="3"/>
 
 
-        <Label x:Name="label8" Content="Password:"  Margin="4,20,83,18" VerticalAlignment = "Center" Width = "100" Grid.Column="2" Grid.Row="4"/>
-        <PasswordBox x:Name="tbpaswd"  VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21"  IsEnabled="False" Grid.Column="2" Grid.Row="4"/>
-
-
-        <Label x:Name="label9" Content="Usuario:"  Margin="4,20,83,18" VerticalAlignment = "Center" Width = "100" Grid.Column="1" Grid.Row="4"/>
-        <TextBox x:Name="tbUser" Text="" VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="1" Grid.Row="4"/>
+        <Label x:Name="label9" Content="Usuario:"  Margin="4,20,83,18" VerticalAlignment = "Center" Width = "100" Grid.Column="3" Grid.Row="3"/>
+        <TextBox x:Name="tbUser" Text="" VerticalAlignment = "Center" Width = "100"  Margin="74,25,17,21" PreviewTextInput="tbMovil_PreviewTextInput" IsEnabled="False" Grid.Column="3" Grid.Row="3"/>
 
 
 
