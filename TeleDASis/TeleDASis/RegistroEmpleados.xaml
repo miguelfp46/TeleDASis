@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeleDASis"
         mc:Ignorable="d"
-        Title="Registro de Empleados" Height="631.731" Width="737.019">
+        Title="Registro de Empleados" Height="631.731" Width="737.019" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="0,0,2,4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
