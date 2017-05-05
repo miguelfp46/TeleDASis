@@ -59,7 +59,7 @@
 
 
         <Label x:Name="lTargetaSanitaria" Content="T.S.:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "8"  Margin="15,10,475,3" Height="Auto"/>
-        <TextBox x:Name="tbTargetaSanitaria" Text="" VerticalAlignment = "Center" Width = "Auto" Grid.Column = "1" Grid.Row = "8" Margin="88,15,300,7" Height="Auto" />
+        <TextBox x:Name="tbTargetaSanitaria" Text="" VerticalAlignment = "Center" Width = "Auto" Grid.Column = "1" Grid.Row = "8" Margin="88,17,350,9" Height="Auto" MaxLength="14" />
 
 
         <Label x:Name="lPoblacion" Content="Población:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "9"  Margin="15,11,475,3" Height="Auto"/>
