@@ -43,12 +43,13 @@
                 <TabItem Header="Registro de Usuarios">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="3*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="3*" />
-                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="83*" />
+                            <ColumnDefinition Width="198*" />
+                            <ColumnDefinition Width="52*"/>
+                            <ColumnDefinition Width="83*" />
+                            <ColumnDefinition Width="84*" />
+                            <ColumnDefinition Width="249*" />
+                            <ColumnDefinition Width="83*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*" />
@@ -58,10 +59,10 @@
                             <RowDefinition Height="3*" />
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Button x:Name="btnalta" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Click"/>
-                        <Button x:Name="btnbaja" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Click"/>
-                        <Button x:Name="btnconsultas" Content="Consultas" Grid.Column="4" Grid.Row="1" Click="botonConsultas_Click"/>
-                        <Button x:Name="btnmodificaciones" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Click"/>
+                        <Button x:Name="btnalta" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Click" Grid.ColumnSpan="2"/>
+                        <Button x:Name="btnbaja" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Click" Grid.ColumnSpan="2"/>
+                        <Button x:Name="btnconsultas" Content="Consultas" Grid.Column="5" Grid.Row="1" Click="botonConsultas_Click"/>
+                        <Button x:Name="btnmodificaciones" Content="Modificaciones" Grid.Column="5" Grid.Row="4"  Click="botonModificaciones_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Registro de Empleados" Height="22" VerticalAlignment="Bottom">
@@ -85,7 +86,7 @@
                         <Button x:Name="btnAltaEmpleadoEmp" Content="Dar de Alta" Grid.Column="1" Grid.Row="1" Click="botonAlta_Emp"/>
                         <Button x:Name="btnBajaEmpleadoEmp" Content="Dar de Baja" Grid.Column="1" Grid.Row="4" Click="botonBaja_Emp"/>
                         <Button x:Name="btnConsultasEmpleadoEmp" Content="Consultas" Grid.Column="4" Grid.Row="1" Click="botonConsultas_Emp"/>
-                        <Button x:Name="btnModificacionesEmpleadoEmp" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Click"/>
+                        <Button x:Name="btnModificacionesEmpleadoEmp" Content="Modificaciones" Grid.Column="4" Grid.Row="4"  Click="botonModificaciones_Emp"/>
                     </Grid>
                 </TabItem>
             </TabControl>
