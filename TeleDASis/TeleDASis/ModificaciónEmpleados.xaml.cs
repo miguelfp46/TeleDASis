@@ -33,9 +33,7 @@ namespace TeleDASis
             tbApellido2.IsEnabled = false;
             tbMovil.IsEnabled = false;
             cbRol.IsEnabled = false;
-           
-            tbUser.IsEnabled = false;
-          
+            tbUser.IsEnabled = false; 
         }
 
         /// <summary>
@@ -63,12 +61,20 @@ namespace TeleDASis
                 tbNombre.Text = emp.nombre;
                 tbApellido.Text = emp.primerApellido;
                 tbApellido2.Text = emp.segundoApellido;
-               
                 tbMovil.Text = emp.tlfmovil;
-                cbRol.Text = emp.rol;
-                
-                tbUser.Text = emp.nombreUsuario;
-                
+                switch (emp.rol)
+                {
+                    case "1":
+                        cbRol.SelectedIndex = 0;
+                        break;
+                    case "2":
+                        cbRol.SelectedIndex = 1;
+                        break;
+                    default:
+                        cbRol.SelectedIndex = 1;
+                        break;
+                }
+                tbUser.Text = emp.nombreUsuario;     
             }
 
         }
