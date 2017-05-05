@@ -53,13 +53,9 @@
         <Button x:Name="btAccept" Content="Dar de Alta" Margin="0,0,120,10" HorizontalAlignment="Right" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "7"/>
         <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" Click="btCancel_Click" Grid.Column = "1" Grid.Row = "7"/>
         <Label x:Name="luser_Copy" Content="Rol:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "4" Margin="309,28,239,20" Height="Auto"/>
-        <TextBox x:Name="tbuser_Copy"  Text="" VerticalAlignment = "Center"  Width = "Auto"  Grid.Column = "1" Grid.Row = "4" Margin="352,32,196,24" Height="Auto" />
-
-
-
-
-
-
-
+        <ComboBox x:Name="cbRol"  Text="" VerticalAlignment = "Center"  Width = "Auto"  Grid.Column = "1" Grid.Row = "4" Margin="343,33,129,20" Height="22">
+            <ComboBoxItem>Administrador</ComboBoxItem>
+            <ComboBoxItem>Teleoperador</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

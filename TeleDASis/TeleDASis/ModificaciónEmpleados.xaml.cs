@@ -32,7 +32,7 @@ namespace TeleDASis
             tbApellido.IsEnabled = false;
             tbApellido2.IsEnabled = false;
             tbMovil.IsEnabled = false;
-            rol.IsEnabled = false;
+            cbRol.IsEnabled = false;
            
             tbUser.IsEnabled = false;
           
@@ -55,7 +55,7 @@ namespace TeleDASis
                 tbApellido.IsEnabled = true;
                 tbApellido2.IsEnabled = true;
                 tbMovil.IsEnabled = true;
-                rol.IsEnabled = true;
+                cbRol.IsEnabled = true;
                 
                 tbUser.IsEnabled = true;
                //ybvt4cre
@@ -65,7 +65,7 @@ namespace TeleDASis
                 tbApellido2.Text = emp.segundoApellido;
                
                 tbMovil.Text = emp.tlfmovil;
-                rol.Text = emp.rol;
+                cbRol.Text = emp.rol;
                 
                 tbUser.Text = emp.nombreUsuario;
                 
@@ -136,8 +136,19 @@ namespace TeleDASis
             emp.primerApellido = tbApellido.Text;
             emp.segundoApellido = tbApellido2.Text;   
             emp.tlfmovil =tbMovil.Text;
-            emp.rol = rol.Text;        
-            
+            switch (cbRol.Text)
+            {
+                case "Administrador":
+                    emp.rol = "1";
+                    break;
+                case "Teleoperador":
+                    emp.rol = "2";
+                    break;
+                default:
+                    emp.rol = "2";
+                    break;
+            }
+
             emp.nombreUsuario = tbUser.Text;
             emp.dni = tbDNI.Text;
 

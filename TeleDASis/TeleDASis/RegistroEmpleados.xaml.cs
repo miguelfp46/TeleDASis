@@ -46,7 +46,18 @@ namespace TeleDASis
             emp.segundoApellido = tbApellido2.Text;
             emp.nombreUsuario = tbuser.Text;
             emp.passwd = databaseConnector.instance.sha256(passwordBox.Password);
-            emp.rol = tbuser_Copy.Text;
+            switch (cbRol.Text)
+            {
+                case "Administrador":
+                    emp.rol = "1";
+                    break;
+                case "Teleoperador":
+                    emp.rol = "2";
+                    break;
+                default:
+                    emp.rol = "2";
+                    break;
+            }
 
             if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.tlfmovil.ToString()) || string.IsNullOrEmpty(emp.dni) || string.IsNullOrEmpty(emp.primerApellido) ||
                 string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.nombreUsuario)
