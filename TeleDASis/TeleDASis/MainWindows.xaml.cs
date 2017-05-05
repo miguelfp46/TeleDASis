@@ -65,8 +65,8 @@ namespace TeleDASis
 
         private void botonModificaciones_Click(object sender, RoutedEventArgs e)
         {
-            Modificación_Empleados modificar = new Modificación_Empleados();
-            modificar.Show();
+            ModificacionesUsuarios modificaru = new ModificacionesUsuarios();
+            modificaru.Show();
 
         }
 
