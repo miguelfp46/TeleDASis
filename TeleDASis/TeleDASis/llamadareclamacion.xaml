@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TeleDASis"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="TeleDASis.llamadareclamacion"
         mc:Ignorable="d"
-        Title="Llamada Reclamacion" Height="712" Width="779" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Llamadas" Height="712" Width="779" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="0,0,0,-1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -178,11 +178,11 @@
                 </Grid.RowDefinitions>
 
                 <Label x:Name="lMotivo" Content="Motivo:" VerticalAlignment = "Center" Margin="0,-2,513,50" Grid.Column = "0" Grid.Row = "0" Grid.ColumnSpan="2" Height="34"/>
-                <TextBox x:Name="tbMotivo" Text="" VerticalAlignment = "Center" Margin="16,17,17,21" Height="66" Grid.Column = "1" Grid.Row = "0"/>
+                <TextBox x:Name="tbMotivo" Text="" VerticalAlignment = "Center" Margin="16,17,17,21" Height="66" Grid.Column = "1" Grid.Row = "0" TextWrapping="Wrap"/>
 
                 <Label x:Name="lSolucion" Content="Solucion:" VerticalAlignment = "Center" Margin="0,12,513,60" Grid.Column = "0" Grid.Row = "1" Grid.ColumnSpan="2" Height="32"/>
 
-                <TextBox x:Name="tbSolucion" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1"/>
+                <TextBox x:Name="tbSolucion" Text="" VerticalAlignment = "Center" Margin="16,18,17,20" Height="66" Grid.Column = "1" Grid.Row = "1" TextWrapping="Wrap"/>
             </Grid>
         </GroupBox>
 

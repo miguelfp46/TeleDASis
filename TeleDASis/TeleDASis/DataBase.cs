@@ -845,30 +845,7 @@ namespace TeleDASis
                 Console.WriteLine(ex.ToString());
                 return false;
             }
-            //public bool insertarServiciosDeLlamada(List<LlamadaServicio> llamada)
-            //{
-
-            //    try
-            //    {
-            //        string sql = "INSERT INTO llamadaServicios VALUES(@idLlamada,@idServicios)";
-            //        MySqlCommand cmd = new MySqlCommand(sql, connection);
-
-            //        foreach (LlamadaServicio servicios in llamada)
-            //        {
-            //            cmd.Parameters.AddWithValue("@idLlamada", llamada);
-            //            cmd.Parameters.AddWithValue("@idServicios", llamada);
-            //            cmd.ExecuteNonQuery();
-            //        }
-            //        Console.WriteLine(cmd.CommandText);
-            //        cmd.ExecuteNonQuery();
-            //        return true;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine(ex.ToString());
-            //        return false;
-            //    }
-            //}
+            
         }
     }
 }
