@@ -24,7 +24,7 @@ namespace TeleDASis
         Usuario usuario = new Usuario();
         Agenda agenda = new Agenda();
         List<LlamadaServicio> serviciosList = new List<LlamadaServicio>();
-        LlamadaServicio servicio;
+        
 
         public llamadareclamacion()
         {
