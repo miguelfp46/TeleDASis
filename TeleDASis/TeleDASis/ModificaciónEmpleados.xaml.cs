@@ -159,7 +159,7 @@ namespace TeleDASis
             emp.dni = tbDNI.Text;
 
             if (string.IsNullOrEmpty(emp.nombre) || string.IsNullOrEmpty(emp.primerApellido) || string.IsNullOrEmpty(emp.segundoApellido) || string.IsNullOrEmpty(emp.dni) ||
-                string.IsNullOrEmpty(Convert.ToString(emp.rol)) || string.IsNullOrEmpty(Convert.ToString(emp.tlfmovil)) || string.IsNullOrEmpty(emp.passwd) || string.IsNullOrEmpty(emp.nombreUsuario))
+                string.IsNullOrEmpty(Convert.ToString(emp.rol)) || string.IsNullOrEmpty(Convert.ToString(emp.tlfmovil)) || string.IsNullOrEmpty(emp.nombreUsuario))
             {
                 MessageBox.Show("¡Debes rellenar todos los campos!", "Campos vacíos", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -168,6 +168,7 @@ namespace TeleDASis
                 if (databaseConnector.instance.updateEmp(emp) == true)
                 {
                     MessageBox.Show("Empleado " + emp.nombre + " actualizado correctamente.", "Actualizar usuario", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
                 }
                 else
                 {

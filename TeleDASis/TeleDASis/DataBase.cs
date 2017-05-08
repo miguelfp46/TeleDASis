@@ -377,7 +377,7 @@ namespace TeleDASis
         {
             try
             {
-                string sql = "UPDATE empleados SET nombre = @nombre, movil = @movil, rol = @rol, primerApellido = @primerApellido, segundoApellido = @segundoApellido ,passwd = @passwd , nombreUsuario = @usuario  WHERE dni = @dni";
+                string sql = "UPDATE empleados SET nombre = @nombre, movil = @movil, rol = @rol, primerApellido = @primerApellido, segundoApellido = @segundoApellido , nombreUsuario = @usuario  WHERE dni = @dni";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@nombre", user.nombre);
                 cmd.Parameters.AddWithValue("@movil", user.tlfmovil);
