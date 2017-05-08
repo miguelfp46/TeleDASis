@@ -25,13 +25,10 @@
 
         </Grid.RowDefinitions>
 
-        <Label x:Name="label" Content="Fecha:" VerticalAlignment = "Center" Width = "100" Grid.Column="1" Grid.Row="0" Margin="26,20,61,18"/>
-        <DatePicker x:Name="tbFecha" Text="" VerticalAlignment = "Center" Width = "100" Margin="76,20,11,20" Grid.Column="1" Grid.Row="0"/>
 
-
-        <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center" Width = "100" Grid.Column="3" Grid.Row="0"  Margin="55,26,90,36"/>
-        <TextBox x:Name="tbDNI" Text="" VerticalAlignment = "Center" Width = "100"  Margin="93,31,52,39" Grid.Column="3" Grid.Row="0"/>
-        <Button x:Name="btComprobar" Content="Comprobar" Width="75" Height="25" Margin="84,26,86,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="3" Grid.Row="1"/>
+        <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center" Width = "100" Grid.Column="1" Grid.Row="0"  Margin="55,26,90,36"/>
+        <TextBox x:Name="tbDNI" Text="" VerticalAlignment = "Center"  Margin="93,31,67,39" Grid.Column="1" Grid.Row="0"/>
+        <Button x:Name="btComprobar" Content="Comprobar" Height="27" Margin="89,58,89,0" Click="btComprobar_Click" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" />
 
 
         <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "100" Grid.Column = "1" Grid.Row = "2"/>
@@ -69,6 +66,7 @@
 
         <Button Width="Auto" Margin="60,40,60,0" Height="Auto" VerticalAlignment="Top" Click="cancel" Content="Salir" Grid.Column = "3" Grid.Row = "5"/>
         <Button Width="Auto" Margin="60,0,60,27" Height="Auto" VerticalAlignment="Bottom" Click="Guardar" Content="Guardar" Grid.Column = "2" Grid.Row = "5"/>
+        <GroupBox x:Name="groupBox1" Grid.Column="1" Header="Datos del Empleado" HorizontalAlignment="Left" Margin="14,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="713" Height="255" Grid.RowSpan="4" Grid.ColumnSpan="3"/>
 
 
     </Grid>

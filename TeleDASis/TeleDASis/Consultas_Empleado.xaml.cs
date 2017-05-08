@@ -65,7 +65,7 @@ namespace TeleDASis
             user.tlfmovil = txtMovil.Text;
             user.rol = txtTelefono.Text;
             user.dni = txtDni.Text;
-           
+            
             user.nombreUsuario = txtUser.Text;
             
             databaseConnector.instance.showEmpTable(dataGridTable, user);
