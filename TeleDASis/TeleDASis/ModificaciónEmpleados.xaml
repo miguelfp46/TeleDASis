@@ -30,8 +30,8 @@
 
 
         <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center" Width = "100" Grid.Column="3" Grid.Row="0"  Margin="55,26,90,36"/>
-        <TextBox x:Name="tbDNI" Text="" VerticalAlignment = "Center" Width = "100"  Margin="93,31,52,39" Grid.Column="3" Grid.Row="0"/>
-        <Button x:Name="btComprobar" Content="Comprobar" Width="75" Height="25" Margin="84,26,86,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="3" Grid.Row="1"/>
+        <TextBox x:Name="tbDNI" Text="" VerticalAlignment = "Center"  Margin="93,31,67,39" Grid.Column="3" Grid.Row="0"/>
+        <Button x:Name="btComprobar" Content="Comprobar" Height="27" Margin="84,26,101,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="3" Grid.Row="1"/>
 
 
         <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "100" Grid.Column = "1" Grid.Row = "2"/>
