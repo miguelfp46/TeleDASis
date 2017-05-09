@@ -64,7 +64,7 @@
         <Label x:Name="label11" Content="Dirección:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "Auto" Grid.Column = "3" Grid.Row = "4"/>
         <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "100"   Margin="79,25,21,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "3" Grid.Row = "4"/>
 
-        <Label x:Name="label12" Content="Puerta:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "Auto" Grid.Column = "1" Grid.Row = "5"/>
+        <Label x:Name="label12" Content="Puerta:" VerticalAlignment = "Center"  Margin="12,22,75,16" Width = "Auto" Grid.Column = "1" Grid.Row = "5"/>
         <TextBox x:Name="tbPuerta" Text="" VerticalAlignment = "Center" Width = "40"   Margin="72,25,82,21" PreviewTextInput="Letras" IsEnabled="False" Grid.Column = "1" Grid.Row = "5"/>
 
         <Button Width="Auto" Margin="120,36,0,0" Height="Auto" VerticalAlignment="Top" Click="cancel" Content="Salir" Grid.Column = "3" Grid.Row = "6"/>
