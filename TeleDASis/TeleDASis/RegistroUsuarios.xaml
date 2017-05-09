@@ -36,15 +36,15 @@
 
 
         <Label x:Name="lNombre" Content="Nombre:" VerticalAlignment = "Center" Width = "Auto" Grid.Column = "1" Grid.Row = "2" Margin="15,10,502,2" Height="Auto"/>
-        <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "2" Margin="88,15,100,7" Height="Auto" />
+        <TextBox x:Name="tbNombre" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "2" Margin="88,17,176,9" Height="Auto" MaxLength="45" />
 
 
         <Label x:Name="lApellido" Content="1º Apellido:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "3"  Margin="15,13,482,4" Height="26"/>
-        <TextBox x:Name="tbApellido" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "3" Margin="88,15,100,7" Height="18" />
+        <TextBox x:Name="tbApellido" MaxLength="45" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "3" Margin="88,17,176,9" Height="18" />
 
 
         <Label x:Name="lApellido2" Content="2º Apellido:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "4" Margin="15,11,475,3" Height="Auto"/>
-        <TextBox x:Name="tbApellido2" Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "4" Margin="88,15,100,7" Height="Auto" />
+        <TextBox x:Name="tbApellido2" Text="" MaxLength="45" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "4" Margin="88,17,176,9" Height="Auto" />
 
 
         <Label x:Name="lTelefono" Content="Teléfono:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "5" Margin="15,11,475,3" Height="Auto"/>
@@ -63,13 +63,13 @@
 
 
         <Label x:Name="lPoblacion" Content="Población:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "9"  Margin="15,11,475,3" Height="Auto"/>
-        <TextBox x:Name="tbPoblacion"  Text="" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "9" Margin="88,15,100,7" Height="Auto" />
+        <TextBox x:Name="tbPoblacion"  Text="" MaxLength="45" VerticalAlignment = "Center" Width = "Auto"  PreviewTextInput="Letras" Grid.Column = "1" Grid.Row = "9" Margin="88,17,176,9" Height="Auto" />
 
         <Label x:Name="lDireccion" Content="Dirección:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "10"  Margin="15,13,475,3" Height="Auto"/>
-        <TextBox x:Name="tbDireccion" Text="" VerticalAlignment = "Center" Width = "Auto"   Grid.Column = "1" Grid.Row = "10" Margin="88,17,100,8" Height="18" />
+        <TextBox x:Name="tbDireccion" MaxLength="45" Text="" VerticalAlignment = "Center" Width = "Auto"   Grid.Column = "1" Grid.Row = "10" Margin="88,18,176,8" Height="18" />
 
         <Label x:Name="lPuerta" Content="Puerta:" VerticalAlignment = "Center" Grid.Column = "1" Grid.Row = "11"  Margin="15,11,475,4" Height="Auto"/>
-        <TextBox x:Name="tbPuerta"  Text="" VerticalAlignment = "Center" Width = "Auto"  Grid.Column = "1" Grid.Row = "11" Margin="88,17,450,7" Height="19" />
+        <TextBox x:Name="tbPuerta"  Text="" MaxLength="10" VerticalAlignment = "Center" Width = "Auto"  Grid.Column = "1" Grid.Row = "11" Margin="88,17,450,7" Height="19" />
 
         <Button x:Name="btAccept" Content="Dar de Alta" Margin="0,0,120,10" HorizontalAlignment="Right" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Click="btAccept_Click" Grid.Column = "1" Grid.Row = "12"/>
         <Button x:Name="btCancel" Content="Cancelar" Margin="0,0,32,10" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto" Click="btCancel_Click" Grid.Column = "1" Grid.Row = "12"/>
