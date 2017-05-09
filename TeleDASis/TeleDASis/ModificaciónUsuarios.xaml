@@ -28,7 +28,7 @@
 
         <Label x:Name="label1" Content="DNI:" VerticalAlignment = "Center" Width = "100" Grid.Column="1" Grid.Row="0"  Margin="26,20,61,18"/>
         <TextBox x:Name="tbDNI" Text="" VerticalAlignment = "Center" Width = "100"  Margin="64,25,23,21" Grid.Column="1" Grid.Row="0"/>
-        <Button x:Name="btComprobar" Content="Comprobar" Width="75" Height="25" Margin="64,6,64,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="btComprobar" Content="Comprobar" Height="25" Margin="64,6,76,0" Click="btComprobar_Click" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"/>
 
 
         <Label x:Name="label2" Content="Nombre:" VerticalAlignment = "Center"  Margin="4,20,83,18" Width = "100" Grid.Column = "1" Grid.Row = "2"/>
