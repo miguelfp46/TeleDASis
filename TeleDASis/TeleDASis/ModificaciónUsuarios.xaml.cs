@@ -27,6 +27,7 @@ namespace TeleDASis
         public ModificacionesUsuarios()
         {
             InitializeComponent();
+         
             tbNombre.IsEnabled = false;
             tbApellido.IsEnabled = false;
             tbApellido2.IsEnabled = false;
