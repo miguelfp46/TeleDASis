@@ -27,7 +27,6 @@ namespace TeleDASis
         public ModificacionesUsuarios()
         {
             InitializeComponent();
-            tbFecha.SelectedDate = DateTime.Today;
             tbNombre.IsEnabled = false;
             tbApellido.IsEnabled = false;
             tbApellido2.IsEnabled = false;
