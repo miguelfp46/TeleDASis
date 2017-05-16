@@ -174,5 +174,10 @@ namespace TeleDASis
             this.Close();
             login.Show();
         }
+
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

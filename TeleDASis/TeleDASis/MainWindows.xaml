@@ -91,8 +91,11 @@
                 </TabItem>
             </TabControl>
             <Calendar Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
-            <Button Background="Transparent" Grid.Column="0" Grid.Row="2" Margin="100,60" BorderThickness="0" Click="Button_Click">
-                <Image x:Name="logout_png" Source="logout.png" Height="35" Width="40"/>
+            <Button Background="Transparent" Grid.Column="0" Grid.Row="2" Margin="98,72,147,64" BorderThickness="0" Click="Button_Click">
+                <Image x:Name="logout_png" Source="logout.png" Height="38" Width="36"/>
+            </Button>
+            <Button x:Name="help" Margin="144,77,92,0" Grid.Row="2" Click="help_Click" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" Height="42">
+                <Image x:Name="helpImage" Source="Assets/help.png" Height="35" Width="40"></Image>
             </Button>
         </Grid>
     </Grid>
