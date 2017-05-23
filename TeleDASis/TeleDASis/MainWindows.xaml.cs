@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -30,8 +32,6 @@ namespace TeleDASis
                 tabControl.SelectedIndex = 2;
                 (tabControl.SelectedItem as TabItem).Visibility = Visibility.Hidden;
                 tabControl.SelectedIndex = 0;
-                
-                
             }
         }
         /// <summary>
@@ -173,6 +173,13 @@ namespace TeleDASis
             LoginWindow login = new LoginWindow();
             this.Close();
             login.Show();
+        }
+        //Declara en un string el directorio actual de trabajo para abrir el documento de ayuda.
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+            string path = Directory.GetCurrentDirectory();
+            System.Windows.MessageBox.Show(path);
+            System.Diagnostics.Process.Start(path + @"\\TeleDASis.chm");
         }
     }
 }
