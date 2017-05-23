@@ -30,8 +30,6 @@ namespace TeleDASis
                 tabControl.SelectedIndex = 2;
                 (tabControl.SelectedItem as TabItem).Visibility = Visibility.Hidden;
                 tabControl.SelectedIndex = 0;
-                
-                
             }
         }
         /// <summary>
